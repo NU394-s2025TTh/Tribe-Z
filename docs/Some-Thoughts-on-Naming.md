@@ -2,7 +2,7 @@ Many teams in the first project talked about wanting to adhere to more standards
 
 ## File Structure
 
-First, in terms of project structure, a common method is to separate by structure functionally; in this case "containers" (i.e., React components that contain other components) go in a containers folder. Components that are used by multiple containers go in a components folder. Hooks go in a hooks folder, handlers go in a handlers folder. A flat structure with a component per file could be used; or alternatively components can be placed in subfolders (a visual example is provided in canvas)
+First, in terms of project structure, a common method is to separate by structure functionally; in this case "containers" (i.e., React components that contain other components) go in a containers folder. Components that are used by multiple containers go in a components folder. Hooks go in a hooks folder, handlers go in a handlers folder. A flat structure with a component per file could be used; or alternatively components can be placed in sub-folders (a visual example is provided in canvas)
 
 The benefit of folders, especially if locally scoped CSS in JavaScript is used, the styling can be placed in the folder; as can separate files that might have the definition of the properties. The disadvantage is the hierarchy gets deeper; also if the "index" convention is used, it is easy to get confused between the index files.
 
@@ -19,13 +19,13 @@ An alternative structure (one I prefer but there is no right answer here, it's l
    |--dashboardframe.tsx
 ```
 
-It's also possible to have a mix, perhaps some common UI components in a "widgets" folder, and then subfolders for major focus areas of the application.
+It's also possible to have a mix, perhaps some common UI components in a "widgets" folder, and then sub-folders for major focus areas of the application.
 
 ## Naming
 
 It has been said there are only two problems in computer science, cache invalidation and naming things. This provides some ideas with the latter. As discussed, I think the first help is to use a spell checker. I personally use the extension [Code Spell Checker from state street](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). The template and setup instructions for the first project included this. The nx workspace also includes prettier.
 
-Then it also makes sense to have some conventions. Here are some thoughts I have searching around on the web a bit, and dialoging with various AI bots:
+Then it also makes sense to have some conventions. Here are some thoughts I have searching around on the web a bit, and chatting with various AI bots:
 
 1. **Component Names**: Use PascalCase for React components. This helps React distinguish between components and HTML elements[^1].
 2. **File Names**:
