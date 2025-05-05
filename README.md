@@ -8,7 +8,7 @@
 
 ## Contents
 
-This workspace does not contain any applications or libraries. It is a blank slate for you to build upon. It does have the template documents for helping describe the work process of your tribe and teams. All of them in are in the [`docs`](docs) folder. You can add your own documents to this folder as well. The [Home](docs/home.md) document is the main page for your tribe. You can add links to other documents in this folder to help describe your work process.
+This workspace does not contain any applications or libraries. It is a blank slate for you to build upon. It does have the template documents for helping describe the work process of your tribe and teams. All of them in are in the [`docs`](docs) folder. You can add your own documents to this folder as well. The [Home](docs/Home.md) document is the main page for your tribe. You can add links to other documents in this folder to help describe your work process.
 
 ## Getting started
 
