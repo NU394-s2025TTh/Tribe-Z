@@ -12,10 +12,28 @@ This workspace does not contain any applications or libraries. It is a blank sla
 
 ## Getting started
 
+I recommend using degit to make a copy of this repository. This will create a new directory with the contents of this repository without taking its git history. Run the following command to create a new directory with the contents of this repository:
+
+```sh
+npx degit https://github.com/toddwseattle/cs394-nx-template-2025.git <your-project-name>
+```
+
+Then, navigate to the new directory:
+
+```sh
+cd <your-project-name>
+```
+
 To get started, run the following command to install the dependencies:
 
 ```sh
 npm install
+```
+
+and initialize the git repository:
+
+```sh
+git init
 ```
 
 applications can be add using

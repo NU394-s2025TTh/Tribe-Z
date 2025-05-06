@@ -2,12 +2,5 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": [
-    {
-      "path": "./apps/cs394-vite-nx-template-e2e"
-    },
-    {
-      "path": "./apps/cs394-vite-nx-template"
-    }
-  ]
+  "references": []
 }
