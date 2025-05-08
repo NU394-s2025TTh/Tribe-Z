@@ -1,11 +1,15 @@
 # Client Information and Interaction
 
-## Links to Client provided Information and contact information
+## Links to Client Provided Information and Contact information
+https://docs.google.com/spreadsheets/d/1WPJcVbdjuGhckkRDxWhwerNKCbyejhsUtmBwGmGxxnY/edit?gid=989288409#gid=989288409
 
 ### Overview Deck
+https://docs.google.com/presentation/d/1QrCITPAL4K_yVLtifIUMavjoguySdQjodxUHFWAVXZQ/edit#slide=id.g26f350c69e1_0_10
 
-link to the overview deck from the client
+### Meeting Minutes
+All client and tribe meeting notes can be found in the following Google Drive folder:
+https://drive.google.com/drive/folders/1PAtJ9s20I0rjSyh0PhNmWX7Xu4CFYgYL?usp=sharing 
 
-### Meeting minutes / recording /action items
+### Note
+We plan on moving all these files to the github repo for easier access.
 
-either create a project documentation page or link to another tools where the meeting minutes are recorded.

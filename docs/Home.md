@@ -1,6 +1,6 @@
 # Purpose
 
-This is the example project documentation for a Tribe. The home page should discuss which teams are part of the tribe and who the client is. Each Team should have a page and list the people who are part of that team.
+This is the overview of the project documentation for Tribe Z, which is composed of Team Green and Team Purple. Tribe Z is working with Ian Gibbs and Bob Rapp as clients. Please see below for links to other documentation files detailing the members of each team, client information, and tribe practices.
 
 # Key Elements of the Tribe Project Documentation
 
@@ -14,7 +14,31 @@ to help with attributing work in the project documentation; please indicate who 
 
 ## Teaching Guild
 
-| Team | Name          |
-| ---- | ------------- |
-| Gray | Todd Warren   |
-| Gray | Paula Kayango |
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Ashwin Baluja  |
+| Green  | Anthony Behery |
+
+[Architect Overview](Architecture-Overview.md)
+
+## Development Practices Guild
+
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Laura Felix    |
+| Green  | Ludi Yu        |
+
+## Client Interactions Guild 
+
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Laura Felix    |
+| Purple | Eric Polanski  |
+| Green  | Joanna Soltys  |
+
+## Architects Guild
+
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Ashwin Baluja  |
+| Green  | Anthony Behery |
