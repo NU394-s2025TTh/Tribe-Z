@@ -7,4 +7,7 @@ https://docs.google.com/spreadsheets/d/1WPJcVbdjuGhckkRDxWhwerNKCbyejhsUtmBwGmGx
 https://docs.google.com/presentation/d/1QrCITPAL4K_yVLtifIUMavjoguySdQjodxUHFWAVXZQ/edit#slide=id.g26f350c69e1_0_10
 
 ### Meeting Minutes
-https://docs.google.com/document/d/1Uqcr_zaJSmKHLNT8eJ4DopKrVTxgoCXqTyZuMeAjSwU/edit?usp=sharing
+All client and tribe meeting notes can be found in the following Google Drive folder:
+https://drive.google.com/drive/folders/1PAtJ9s20I0rjSyh0PhNmWX7Xu4CFYgYL?usp=sharing 
+
+
