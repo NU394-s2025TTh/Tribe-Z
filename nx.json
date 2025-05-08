@@ -78,6 +78,14 @@
   "targetDefaults": {
     "test": {
       "dependsOn": ["^build"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "deploy": {
+      "dependsOn": ["^deploy"],
+      "cache": true
     }
   },
   "generators": {

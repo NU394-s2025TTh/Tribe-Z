@@ -1,6 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "."
+  },
   "files": [],
   "references": [
     {
@@ -10,7 +13,7 @@
       "path": "./functions"
     },
     {
-      "path": "./shared"
+      "path": "./libs/shared"
     }
   ]
 }

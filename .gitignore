@@ -4,6 +4,7 @@
 dist
 tmp
 out-tsc
+lib
 
 # dependencies
 node_modules
@@ -45,3 +46,5 @@ vite.config.*.timestamp*
 vitest.config.*.timestamp*
 test-output
 .firebase/hosting.cGl6emEvZGlzdA.cache
+
+*.log

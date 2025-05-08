@@ -18,10 +18,6 @@ export default defineConfig(() => ({
     host: 'localhost',
   },
   plugins: [react(), tailwindcss()],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   build: {
     outDir: './dist',
     emptyOutDir: true,

@@ -7,7 +7,7 @@ Put css styling files with Typescript files in their corresponding folders.
 # Naming Conventions
 
 1. Component Names: Use PascalCase for React components. This helps React distinguish between components and HTML elements
-2. File Names: For non-component files, camelCase is common. For component files, stick with PascalCase to match the component names
+2. File Names: For non-component files, camelCase is common. For component files, stick with PascalCase to match the component names.
 3. Folders: Keep main directories lowercase to differentiate them from components
 4. CSS Modules: If you’re using CSS modules, use camelCase for class names to maintain consistency with JavaScript naming conventions
 5. TypeScript Types and Interfaces: PascalCase for naming and then add "Prop" at the end. For example, "ClassProps" would be a valid interface or type name.

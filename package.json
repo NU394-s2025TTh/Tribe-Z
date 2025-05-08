@@ -9,6 +9,7 @@
     "@react-router/serve": "^7.2.0",
     "axios": "^1.6.0",
     "express": "^4.21.2",
+    "g": "^2.0.1",
     "isbot": "^4.4.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -29,9 +30,11 @@
     "@nx/web": "21.0.0",
     "@nx/webpack": "21.0.0",
     "@nx/workspace": "21.0.0",
+    "@nxtend/firebase": "^12.1.0",
     "@playwright/test": "^1.36.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@react-router/dev": "^7.2.0",
+    "@simondotm/nx-firebase": "^2.3.0",
     "@svgr/webpack": "^8.0.1",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.6.0",
@@ -55,7 +58,7 @@
     "eslint-plugin-react-hooks": "5.0.0",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
-    "nx": "21.0.0",
+    "nx": "^21.0.0",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
     "tslib": "^2.3.0",
@@ -70,6 +73,7 @@
     "pizza",
     "functions",
     "functions-e2e",
-    "shared"
+    "shared",
+    "libs/*"
   ]
 }
