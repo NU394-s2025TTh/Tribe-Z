@@ -1,12 +1,10 @@
-Write your naming convention and approach here. see [Some Thoughts on Naming](Some-Thoughts-on-Naming.md)
-
-File Structure
+# File Structure
 
 Separate folders by structure functionality. For example, "containers" (i.e., React components that contain other components) go in a "containers" folder. Components that are used by multiple containers go in a "components" folder. Hooks go in a "hooks" folder, handlers go in a "handlers" folder. 
 Put css styling files with Typescript files in their corresponding folders.
 
 
-Naming Conventions
+# Naming Conventions
 
 1. Component Names: Use PascalCase for React components. This helps React distinguish between components and HTML elements
 2. File Names: For non-component files, camelCase is common. For component files, stick with PascalCase to match the component names
