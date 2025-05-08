@@ -1,0 +1,38 @@
+{
+  "name": "@cs394-vite-nx-template/functions",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/main.js",
+  "nx": {
+    "targets": {
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@cs394-vite-nx-template/functions:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@cs394-vite-nx-template/functions:build:development"
+          },
+          "production": {
+            "buildTarget": "@cs394-vite-nx-template/functions:build:production"
+          }
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "firebase-admin": "^13.3.0",
+    "firebase-functions": "^6.3.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18"
+  }
+}

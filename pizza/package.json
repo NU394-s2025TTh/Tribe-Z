@@ -1,0 +1,17 @@
+{
+  "name": "@cs394-vite-nx-template/pizza",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.508.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "tw-animate-css": "^1.2.9"
+  }
+}
