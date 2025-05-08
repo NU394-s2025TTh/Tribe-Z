@@ -1,11 +1,10 @@
 # Client Information and Interaction
 
-## Links to Client provided Information and contact information
+## Links to Client Provided Information and Contact information
+https://docs.google.com/spreadsheets/d/1WPJcVbdjuGhckkRDxWhwerNKCbyejhsUtmBwGmGxxnY/edit?gid=989288409#gid=989288409
 
 ### Overview Deck
+https://docs.google.com/presentation/d/1QrCITPAL4K_yVLtifIUMavjoguySdQjodxUHFWAVXZQ/edit#slide=id.g26f350c69e1_0_10
 
-link to the overview deck from the client
-
-### Meeting minutes / recording /action items
-
-either create a project documentation page or link to another tools where the meeting minutes are recorded.
+### Meeting Minutes
+https://docs.google.com/document/d/1Uqcr_zaJSmKHLNT8eJ4DopKrVTxgoCXqTyZuMeAjSwU/edit?usp=sharing
