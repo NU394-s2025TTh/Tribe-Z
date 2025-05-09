@@ -1,7 +1,4 @@
 {
-  "installation": {
-    "version": "21.0.3"
-  },
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
