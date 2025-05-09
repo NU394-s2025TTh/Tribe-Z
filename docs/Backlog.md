@@ -2,7 +2,7 @@
 
 ### How are stories and work items are recorded in the backlog?
 
-There are two seperate tabs in the [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/6/) that specify the [User Stories Backlog](https://github.com/orgs/NU394-s2025TTh/projects/6/views/1) & [Task Backlog](https://github.com/orgs/NU394-s2025TTh/projects/6/views/7)
+There are two separate tabs in the [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/6/) that specify the [User Stories Backlog](https://github.com/orgs/NU394-s2025TTh/projects/6/views/1) & [Task Backlog](https://github.com/orgs/NU394-s2025TTh/projects/6/views/7)
 
 ### How are stories and work items prioritized?
 

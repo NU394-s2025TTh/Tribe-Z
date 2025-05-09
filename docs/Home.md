@@ -1,10 +1,11 @@
 # Purpose
 
-This is the overview of the project documentation for Tribe Z, which is composed of Team Green and Team Purple. Tribe Z is working with Ian Gibbs and Bob Rapp as clients. Please see below for links to other documentation files detailing the members of each team, client information, and tribe practices.
+This is the overview of the project documentation for Tribe Z, which is composed of [Team Green](Green-Team-Members.md) and [Team Purple](Purple-Team-Members.md). Tribe Z is working with Ian Gibbs and Bob Rapp as clients. Please see below for links to other documentation files detailing the members of each team, client information, and tribe practices.
 
 # Key Elements of the Tribe Project Documentation
 
 [Organizational Practices](Organizational-Practices.md)\
+[Backlog](Backlog.md)\
 [Development Practices](Development-Practices.md)\
 [Client Information](Client-Information.md)\
 [Architecture Overview](Architecture-Overview.md)
