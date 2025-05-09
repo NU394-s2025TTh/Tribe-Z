@@ -12,6 +12,7 @@ interface TeamMember {
   description: string;
   team: string;
   profilePic: string;
+  email: string;
 }
 
 export default function Team() {
@@ -22,6 +23,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS20OKYBdcC0C51-IdLtZ1M-HYYXp6RoUBsbg&s',
+      email: 'anthonybehery2026@u.northwestern.edu',
     },
     {
       name: 'Aanand Patel',
@@ -29,6 +31,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw5HzYhIi5I522n60QeHeZ-yvlsCVrRJS4ZQ&s',
+      email: 'aanandpatel2026@u.northwestern.edu',
     },
     {
       name: 'Aidan Goodrow',
@@ -36,6 +39,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAh07BFiBqIWV8qzBO0K6O-Y0_fQLi1m4lw&s',
+      email: 'aidangoodrow2025@u.northwestern.edu',
     },
     {
       name: 'Ashwin Baluja',
@@ -43,6 +47,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE2fOcOdNxbWvutFAtpYef0op_Vo7UY2XvtA&s',
+      email: 'ashwinbaluja2025@u.northwestern.edu',
     },
     {
       name: 'Ludi Yu',
@@ -50,6 +55,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         'https://lh3.googleusercontent.com/m_drFBM8k9P5_ipJZbyplJzo0t-J00qED8C8wW4WhVD0C6Zb1kE4rd2Tc6edco9w_376X4M=s85',
+      email: 'ludiyu2026@u.northwestern.edu',
     },
     {
       name: 'David Park',
@@ -57,6 +63,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         'https://lh3.googleusercontent.com/B0naCuKiCxt_ZdiCl4I6yBeCjLmctRLsHnoOPDDBt-bq8kra0nZvhqEt-MGmtdMUUtcbKzU=s85',
+      email: 'davidpark2027@u.northwestern.edu',
     },
     {
       name: 'Eric Polanski',
@@ -64,6 +71,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD3xjwRZ4-dIiEVOypj2r8MB9173N_VCbFzw&s',
+      email: 'ericpolanski2025@u.northwestern.edu',
     },
     {
       name: 'Joanna Soltys',
@@ -71,6 +79,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREt7Zzh1Ozl7DipwOuXA0g0Kfe3Xw_wYvHnw&s',
+      email: 'joannasoltys2026@u.northwestern.edu',
     },
     {
       name: 'Laura Felix',
@@ -78,6 +87,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5mp-ERZRc6FyOXcUO9CyYi-ctq1PCut7osw&s',
+      email: 'laurafelix2026@u.northwestern.edu',
     },
   ];
 
@@ -106,10 +116,17 @@ export default function Team() {
             </CardHeader>
             <CardContent>
               {member?.description ?? 'no description provided'}
+              <p>
+                <a
+                  href={'mailto:' + member.email}
+                  className="text-blue-600 underline"
+                >
+                  {member.email}
+                </a>
+              </p>
             </CardContent>
           </Card>
         ))}
-      ;
     </>
   );
 }
