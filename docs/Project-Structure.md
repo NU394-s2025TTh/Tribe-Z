@@ -22,7 +22,6 @@
 ```
 
 The project is structured as 3 nx projects: functions, libs, and pizza.
-
-Pizza contains the main app, and is deployed to firebase hosting
-Functions contains firebase functinos, and is deployed to firebase functions
-Shared contains utilitie and types that are useful in both (e.g., types for firebase function req/res)
+- Pizza contains the main app and is deployed to firebase hosting
+- Functions contains firebase functinos and is deployed to firebase functions
+- Shared contains utilities and types that are useful in both (e.g., types for firebase function req/res)
