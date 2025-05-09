@@ -1,4 +1,25 @@
-Draw a diagram of the main components of your application. A generic 394 application looks a bit like this:
+<!--
+@startuml
+actor Client [
+  React Client
+]
 
-The PPT I used to create this is in the google drive for the class for you to use as a base. It must be saved as an image to be uploaded to the project documentation.
-![Example Architecture Slide](sample-architecture.png)
+package "Firebase" {
+  cloud Firestore
+  cloud "Firebase Functions" as Functions
+  cloud "Firebase Hosting" as Hosting
+
+}
+
+package "External Services" {
+  interface "Grocery/Supplies/Authenticated Non-Firebase API" as ExternalAPI
+}
+
+Client -r-> Firestore : Interacts directly
+Client -d-> Functions
+Functions -d-> ExternalAPI
+Hosting -u-> Client : Hosts
+@enduml
+-->
+
+![Architecture](arch.png)

@@ -1,19 +1,28 @@
-What are the folders within the repository the team is using?
-
-For example, the template project folder has the following structure:
+# What are the folders within the repository the team is using?
 
 ```
 + functions
-+ shared
-+ web
-    + .vscode
-    + dist
-    + node_modules
-    + resources
+  + src
+  + lib
+  + firebase.json
+  + ...
++ libs
+  + shared
     + src
+    + lib
+    + ...
++ pizza
+  + src
+    + components
+      + ui
+      + ...
+  + dist
+  + firebase.json
+  + ...
 ```
 
-the project is structured as 3 npm project functions, shared, and web.
+The project is structured as 3 nx projects: functions, libs, and pizza.
 
-Web is a react typescript application. How are components structured? what are the rules around shared? (implicitly it would be functions and types that can be used either in firebase functions or in react components). Reference [Some Thoughts on Naming](Some-Thoughts-on-Naming.md)
-...
+Pizza contains the main app, and is deployed to firebase hosting
+Functions contains firebase functinos, and is deployed to firebase functions
+Shared contains utilitie and types that are useful in both (e.g., types for firebase function req/res)
