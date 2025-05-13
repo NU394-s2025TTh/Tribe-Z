@@ -1,0 +1,15 @@
+[
+  {
+    "id": "guide_ccc_detailed",
+    "recipeId": "recipe_chocolate_chip_cookies",
+    "name": "Step-by-Step Chocolate Chip Cookies",
+    "steps": {
+      "Preheat Oven": "Set your oven to 375°F (190°C). Place rack in the center.",
+      "Cream Butter": "In a large bowl or stand mixer, beat the softened butter with granulated and brown sugars until light and fluffy.",
+      "Add Eggs": "Beat in one egg at a time, then stir in the vanilla extract."
+    },
+    "assets": {
+      "Cream Butter": "url/to/creaming_butter_video.mp4"
+    }
+  }
+]

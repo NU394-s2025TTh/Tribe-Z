@@ -1,4 +1,11 @@
-export * from './lib/TeamMember.js';
-export * from './lib/items/Ingredients.js';
-export * from './lib/items/Equipment.js';
-export * from './lib/Recipes.js';
+export type { TeamMember } from './lib/TeamMember';
+export type { Ingredient, IngredientType } from './lib/items/Ingredients';
+export { DietaryContraindication } from './lib/items/Ingredients';
+export type { Equipment, EquipmentType } from './lib/items/Equipment';
+export { EquipmentCategory } from './lib/items/Equipment';
+export type {
+  Recipe,
+  MeasuredIngredient,
+  GuidedRecipe,
+} from './lib/Recipes';
+export { MeasurementUnits } from './lib/Recipes';

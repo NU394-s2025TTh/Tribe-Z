@@ -4,13 +4,16 @@
     "baseUrl": ".",
     "rootDir": "src",
     "outDir": "dist",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
-    "emitDeclarationOnly": false,
     "module": "ESNext",
+    "emitDeclarationOnly": false,
     "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
-  "include": ["src/**/*.ts"],
-  "references": []
+  "include": ["src/**/*.ts", "src/data/*.json"],
+  "references": [
+    {
+      "path": "../shared/tsconfig.lib.json"
+    }
+  ]
 }

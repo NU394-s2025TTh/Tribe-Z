@@ -6,7 +6,7 @@ tmp
 out-tsc
 lib
 
-
+!pizza/**/lib
 !libs/shared/src/**
 
 # dependencies
@@ -51,3 +51,5 @@ test-output
 .firebase/hosting.cGl6emEvZGlzdA.cache
 
 *.log
+
+firebase-admin-sdk.json
