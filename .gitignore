@@ -6,6 +6,9 @@ tmp
 out-tsc
 lib
 
+
+!libs/shared/src/**
+
 # dependencies
 node_modules
 
