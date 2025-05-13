@@ -124,14 +124,6 @@ export default function Team() {
                   {member.email}
                 </a>
               </p>
-              <p>
-                <a
-                  href={'mailto:' + member.email}
-                  className="text-blue-600 underline"
-                >
-                  {member.email}
-                </a>
-              </p>
             </CardContent>
           </Card>
         ))}
