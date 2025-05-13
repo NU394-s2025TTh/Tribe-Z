@@ -21,63 +21,63 @@ export default function Team() {
       description: 'Computer Science',
       team: 'Green',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS20OKYBdcC0C51-IdLtZ1M-HYYXp6RoUBsbg&s',
+        '/pfp/anthony.jpg',
     },
     {
       name: 'Aanand Patel',
       description: 'Computer Science',
       team: 'Purple',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw5HzYhIi5I522n60QeHeZ-yvlsCVrRJS4ZQ&s',
+        '/pfp/aanand.jpg',
     },
     {
       name: 'Aidan Goodrow',
       description: 'Computer Science',
       team: 'Green',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAh07BFiBqIWV8qzBO0K6O-Y0_fQLi1m4lw&s',
+        '/pfp/aidan.jpg',
     },
     {
       name: 'Ashwin Baluja',
       description: 'Computer Science',
       team: 'Purple',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE2fOcOdNxbWvutFAtpYef0op_Vo7UY2XvtA&s',
+        '/pfp/ashwin.jpg',
     },
     {
       name: 'Ludi Yu',
       description: 'Computer Science',
       team: 'Green',
       profilePic:
-        'https://lh3.googleusercontent.com/m_drFBM8k9P5_ipJZbyplJzo0t-J00qED8C8wW4WhVD0C6Zb1kE4rd2Tc6edco9w_376X4M=s85',
+        '/pfp/ludi.jpg',
     },
     {
       name: 'David Park',
       description: 'Computer Science',
       team: 'Green',
       profilePic:
-        'https://lh3.googleusercontent.com/B0naCuKiCxt_ZdiCl4I6yBeCjLmctRLsHnoOPDDBt-bq8kra0nZvhqEt-MGmtdMUUtcbKzU=s85',
+        '/pfp/david.jpg',
     },
     {
       name: 'Eric Polanski',
       description: 'Computer Science',
       team: 'Purple',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD3xjwRZ4-dIiEVOypj2r8MB9173N_VCbFzw&s',
+        '/pfp/eric.jpg',
     },
     {
       name: 'Joanna Soltys',
       description: 'Computer Science',
       team: 'Green',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREt7Zzh1Ozl7DipwOuXA0g0Kfe3Xw_wYvHnw&s',
+        '/pfp/joanna.jpg',
     },
     {
       name: 'Laura Felix',
       description: 'Computer Science',
       team: 'Purple',
       profilePic:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5mp-ERZRc6FyOXcUO9CyYi-ctq1PCut7osw&s',
+        '/pfp/laura.jpg',
     },
   ];
 
