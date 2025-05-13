@@ -41,6 +41,6 @@ export interface GuidedRecipe {
   id: string;
   recipeId: Recipe['id']; // foreign key to Recipe
   name?: string; // optional, if not provided, use recipe name
-  steps: Map<string, string>; // step title to instruction
-  assets?: Map<string, string>; // step title to asset (image or video) url
+  steps: Record<string, string>; // step title to instruction
+  assets?: Record<string, string>; // step title to asset (image or video) url
 }
