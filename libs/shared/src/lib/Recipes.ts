@@ -1,22 +1,45 @@
-import { Ingredient, IngredientType } from './Ingredients.js';
+import { Equipment, EquipmentType } from './items/Equipment.js';
+import { Ingredient, IngredientType } from './items/Ingredients.js';
+
+export enum MeasurementUnits {
+  TEASPOON = 'teaspoon',
+  TABLESPOON = 'tablespoon',
+  CUP = 'cup',
+  PINT = 'pint',
+  QUART = 'quart',
+  GALLON = 'gallon',
+  FLUID_OUNCE = 'fluid ounce',
+  LITER = 'liter',
+  MILLILITER = 'milliliter',
+  GRAM = 'gram',
+  KILOGRAM = 'kilogram',
+  OUNCE = 'ounce',
+  POUND = 'pound',
+}
+
+export interface MeasuredIngredient {
+  ingredient: IngredientType;
+  recommendation: Ingredient['id']; // foreign key to Ingredient
+  amount: number; // amount of the ingredient
+  unit: MeasurementUnits; // unit of measurement
+}
 
 export interface Recipe {
   id: string;
   name: string;
   description: string;
   instructions: Array<string>;
-  ingredients: Array<IngredientType>; // list of ingredienttype ids
-  recommendedIngredients?: Array<Ingredient>; // list of ingredient ids
+  ingredients: Array<MeasuredIngredient>;
   servings: number;
   prepTime: number;
   cookTime: number;
-  equipment: Array<string>; // list of equipmenttype ids
-  recommendedEquipment?: Array<string>; // list of equipment ids
+  equipment: Array<EquipmentType>;
+  recommendedEquipment: Array<Equipment['id']>; // foreign key to Equipment
 }
 
 export interface GuidedRecipe {
   id: string;
-  recipeId: string; // foreign key to Recipe
+  recipeId: Recipe['id']; // foreign key to Recipe
   name?: string; // optional, if not provided, use recipe name
   steps: Map<string, string>; // step title to instruction
   assets?: Map<string, string>; // step title to asset (image or video) url

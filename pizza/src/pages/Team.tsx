@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { type TeamMember } from '@cs394-vite-nx-template/shared/';
+import { type TeamMember } from '@cs394-vite-nx-template/shared';
 
 export default function Team() {
   const teamMembers: TeamMember[] = [
