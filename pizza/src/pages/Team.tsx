@@ -1,19 +1,5 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-// import { type TeamMember } from '@cs394-vite-nx-template/shared';
-
-interface TeamMember {
-  name: string;
-  description: string;
-  team: string;
-  profilePic: string;
-  email: string;
-}
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { type TeamMember } from '@cs394-vite-nx-template/shared/';
 
 export default function Team() {
   const teamMembers: TeamMember[] = [
@@ -21,72 +7,63 @@ export default function Team() {
       name: 'Anthony Behery',
       description: 'Computer Science',
       team: 'Green',
-      profilePic:
-        '/pfp/anthony.jpg',
+      profilePic: '/pfp/anthony.jpg',
       email: 'anthonybehery2026@u.northwestern.edu',
     },
     {
       name: 'Aanand Patel',
       description: 'Computer Science',
       team: 'Purple',
-      profilePic:
-        '/pfp/aanand.jpg',
+      profilePic: '/pfp/aanand.jpg',
       email: 'aanandpatel2026@u.northwestern.edu',
     },
     {
       name: 'Aidan Goodrow',
       description: 'Computer Science',
       team: 'Green',
-      profilePic:
-        '/pfp/aidan.jpg',
+      profilePic: '/pfp/aidan.jpg',
       email: 'aidangoodrow2025@u.northwestern.edu',
     },
     {
       name: 'Ashwin Baluja',
       description: 'Computer Science',
       team: 'Purple',
-      profilePic:
-        '/pfp/ashwin.jpg',
+      profilePic: '/pfp/ashwin.jpg',
       email: 'ashwinbaluja2025@u.northwestern.edu',
     },
     {
       name: 'Ludi Yu',
       description: 'Computer Science',
       team: 'Green',
-      profilePic:
-        '/pfp/ludi.jpg',
+      profilePic: '/pfp/ludi.jpg',
       email: 'ludiyu2026@u.northwestern.edu',
     },
     {
       name: 'David Park',
       description: 'Computer Science',
       team: 'Green',
-      profilePic:
-        '/pfp/david.jpg',
+      profilePic: '/pfp/david.jpg',
       email: 'davidpark2027@u.northwestern.edu',
     },
     {
       name: 'Eric Polanski',
       description: 'Computer Science',
       team: 'Purple',
-      profilePic:
-        '/pfp/eric.jpg',
+      profilePic: '/pfp/eric.jpg',
       email: 'ericpolanski2025@u.northwestern.edu',
     },
     {
       name: 'Joanna Soltys',
       description: 'Computer Science',
       team: 'Green',
-      profilePic:
-        '/pfp/joanna.jpg',
+      profilePic: '/pfp/joanna.jpg',
       email: 'joannasoltys2026@u.northwestern.edu',
     },
     {
       name: 'Laura Felix',
       description: 'Computer Science',
       team: 'Purple',
-      profilePic:
-        '/pfp/laura.jpg',
+      profilePic: '/pfp/laura.jpg',
       email: 'laurafelix2026@u.northwestern.edu',
     },
   ];
