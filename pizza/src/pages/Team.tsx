@@ -12,6 +12,7 @@ interface TeamMember {
   description: string;
   team: string;
   profilePic: string;
+  email: string;
 }
 
 export default function Team() {
@@ -22,6 +23,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         '/pfp/anthony.jpg',
+      email: 'anthonybehery2026@u.northwestern.edu',
     },
     {
       name: 'Aanand Patel',
@@ -29,6 +31,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         '/pfp/aanand.jpg',
+      email: 'aanandpatel2026@u.northwestern.edu',
     },
     {
       name: 'Aidan Goodrow',
@@ -36,6 +39,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         '/pfp/aidan.jpg',
+      email: 'aidangoodrow2025@u.northwestern.edu',
     },
     {
       name: 'Ashwin Baluja',
@@ -43,6 +47,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         '/pfp/ashwin.jpg',
+      email: 'ashwinbaluja2025@u.northwestern.edu',
     },
     {
       name: 'Ludi Yu',
@@ -50,6 +55,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         '/pfp/ludi.jpg',
+      email: 'ludiyu2026@u.northwestern.edu',
     },
     {
       name: 'David Park',
@@ -57,6 +63,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         '/pfp/david.jpg',
+      email: 'davidpark2027@u.northwestern.edu',
     },
     {
       name: 'Eric Polanski',
@@ -64,6 +71,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         '/pfp/eric.jpg',
+      email: 'ericpolanski2025@u.northwestern.edu',
     },
     {
       name: 'Joanna Soltys',
@@ -71,6 +79,7 @@ export default function Team() {
       team: 'Green',
       profilePic:
         '/pfp/joanna.jpg',
+      email: 'joannasoltys2026@u.northwestern.edu',
     },
     {
       name: 'Laura Felix',
@@ -78,6 +87,7 @@ export default function Team() {
       team: 'Purple',
       profilePic:
         '/pfp/laura.jpg',
+      email: 'laurafelix2026@u.northwestern.edu',
     },
   ];
 
@@ -106,10 +116,17 @@ export default function Team() {
             </CardHeader>
             <CardContent>
               {member?.description ?? 'no description provided'}
+              <p>
+                <a
+                  href={'mailto:' + member.email}
+                  className="text-blue-600 underline"
+                >
+                  {member.email}
+                </a>
+              </p>
             </CardContent>
           </Card>
         ))}
-      ;
     </>
   );
 }
