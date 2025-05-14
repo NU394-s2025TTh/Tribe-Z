@@ -11,7 +11,7 @@ import * as admin from 'firebase-admin';
 import { onRequest } from 'firebase-functions/v2/https';
 
 // Kroger Access Endpoint
-import { fetchLocationsByZip } from './kroger';
+import { fetchLocationsByZip, fetchProductsBySearch } from './kroger';
 
 admin.initializeApp();
 
@@ -50,6 +50,23 @@ app.get('/api/kroger-locations', async (req, res) => {
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: 'Failed to fetch locations' });
+  }
+});
+
+app.get('/api/kroger-products', async (req, res) => {
+  const locationId = req.query.locationId as string;
+  const searchTerm = req.query.searchTerm as string;
+
+  if (!locationId || !searchTerm) {
+    return res.status(400).json({ error: 'Missing locationId or searchTerm' });
+  }
+
+  try {
+    const products = await fetchProductsBySearch(locationId, searchTerm);
+    return res.json(products);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: 'Failed to fetch products' });
   }
 });
 
