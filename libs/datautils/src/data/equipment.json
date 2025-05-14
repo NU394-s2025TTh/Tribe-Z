@@ -1,0 +1,21 @@
+[
+  {
+    "id": "eq_stand_mixer_kitchenaid",
+    "type": {
+      "name": "Stand Mixer",
+      "category": "appliance",
+      "description": "Electric mixer for doughs and batters."
+    },
+    "name": "KitchenAid Artisan Series 5-Quart Mixer",
+    "brand": "KitchenAid"
+  },
+  {
+    "id": "eq_baking_sheet_nordicware",
+    "type": {
+      "name": "Baking Sheet",
+      "description": "Standard half-sheet pan."
+    },
+    "name": "Nordic Ware Natural Aluminum Baker's Half Sheet",
+    "brand": "Nordic Ware"
+  }
+]

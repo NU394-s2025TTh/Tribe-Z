@@ -1,0 +1,16 @@
+{
+  "name": "datautils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/datautils/src",
+  "projectType": "library",
+  "targets": {
+    "import-recipes": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node libs/datautils/dist/index.js"
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

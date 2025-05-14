@@ -19,7 +19,7 @@ export enum MeasurementUnits {
 
 export interface MeasuredIngredient {
   ingredient: IngredientType;
-  recommendation: Ingredient['id']; // foreign key to Ingredient
+  recommendation?: Ingredient['id']; // foreign key to Ingredient
   amount: number; // amount of the ingredient
   unit: MeasurementUnits; // unit of measurement
 }
