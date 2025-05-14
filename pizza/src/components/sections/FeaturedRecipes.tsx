@@ -21,6 +21,7 @@ export function FeaturedCard({
   recipe: Recipe;
   index: number;
 }) {
+  console.log(recipe);
   return (
     <Link to={`/recipes/${recipe.id}`}>
       <Card key={recipe.id}>
@@ -32,7 +33,7 @@ export function FeaturedCard({
           />
         </CardContent>
         <CardFooter className="flex md:justify-between text-left flex-wrap align-middle justify-center">
-          <CardTitle>{recipe.name}</CardTitle>
+          <CardTitle className="truncate max-w-[50%]">{recipe.name}</CardTitle>
           <CardDescription className="hidden md:block">
             {(1000 * (7 - index) - index * 100).toLocaleString()} Cooked!
           </CardDescription>
@@ -50,7 +51,7 @@ export default function FeaturedRecipes() {
     const q = query(recipesRef, limit(7));
     const querySnapshot = await getDocs(q);
     console.log(querySnapshot.docs[0].data());
-    setRecipes(querySnapshot.docs.map((e, index) => e.data()) as Recipe[]);
+    setRecipes(querySnapshot.docs.map((e, index) => ({...e.data(), id: e.id})) as Recipe[]);
   }, []);
 
   useEffect(() => {

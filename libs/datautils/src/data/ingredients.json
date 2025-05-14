@@ -1,23 +1,363 @@
 [
   {
-    "id": "ing_flour_ap_kingarthur",
+    "id": "ing_red_star_yeast_ady",
     "type": {
-      "name": "All-Purpose Flour",
-      "description": "Standard bleached or unbleached all-purpose flour.",
-      "dietaryContraindications": ["gluten"]
+      "name": "Active Dry Yeast",
+      "description": "Active dry yeast for baking."
     },
-    "name": "King Arthur All-Purpose Flour",
-    "brand": "King Arthur",
-    "preferredVendor": "Local Supermarket",
-    "vendorProductId": "KA-AP-001"
+    "name": "Red Star Active Dry Yeast",
+    "brand": "Red Star",
+    "price": "$8.99",
+    "packageSize": "113.4g"
   },
   {
-    "id": "ing_sugar_granulated_domino",
+    "id": "ing_antimo_caputo_00_flour",
     "type": {
-      "name": "Granulated Sugar",
-      "description": "Refined white sugar."
+      "name": "00 Flour",
+      "description": "Fine Italian 00 flour, ideal for Neapolitan pizza.",
+      "dietaryContraindications": ["gluten"]
     },
-    "name": "Domino Granulated Sugar",
-    "brand": "Domino"
+    "name": "Antimo Caputo 00 Pizzeria Flour",
+    "brand": "Antimo Caputo",
+    "price": "$14.95",
+    "packageSize": "1995.8g"
+  },
+  {
+    "id": "ing_anthonys_diastatic_malt",
+    "type": {
+      "name": "Diastatic Malt Powder",
+      "description": "Diastatic malt powder for dough conditioning and browning.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "Anthony’s Diastatic Malt Powder",
+    "brand": "Anthony’s Goods",
+    "price": "$13.49",
+    "packageSize": "680g"
+  },
+  {
+    "id": "ing_maldon_sea_salt_flakes",
+    "type": {
+      "name": "Sea Salt Flakes",
+      "description": "Flaky sea salt for finishing."
+    },
+    "name": "Maldon Sea Salt Flakes",
+    "brand": "Maldon",
+    "price": "$7.65",
+    "packageSize": "125g"
+  },
+  {
+    "id": "ing_strianese_san_marzano_tomatoes",
+    "type": {
+      "name": "Canned San Marzano Tomatoes",
+      "description": "D.O.P. San Marzano whole peeled tomatoes."
+    },
+    "name": "Strianese San Marzano Tomatoes (D.O.P.)",
+    "brand": "Strianese",
+    "price": "$25.99",
+    "packageSize": "3 x 795g cans"
+  },
+  {
+    "id": "ing_whole_foods_kosher_salt",
+    "type": {
+      "name": "Kosher Salt",
+      "description": "Kosher salt for general use."
+    },
+    "name": "365 by Whole Foods Market Kosher Salt",
+    "brand": "365 by Whole Foods Market",
+    "price": "$3.29",
+    "packageSize": "998g"
+  },
+  {
+    "id": "ing_grande_mozzarella_curd",
+    "type": {
+      "name": "Mozzarella Curd",
+      "description": "Fresh mozzarella curd for making handmade mozzarella.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Grande Mozzarella Curd",
+    "brand": "Grande",
+    "price": "$9.29",
+    "packageSize": "455g"
+  },
+  {
+    "id": "ing_filippo_berio_evoo",
+    "type": {
+      "name": "Extra Virgin Olive Oil",
+      "description": "Extra virgin olive oil for cooking and finishing."
+    },
+    "name": "Filippo Berio Extra Virgin Olive Oil",
+    "brand": "Filippo Berio",
+    "price": "$7.32",
+    "packageSize": "8.4 fl oz"
+  },
+  {
+    "id": "ing_amazon_fresh_basil",
+    "type": {
+      "name": "Fresh Basil",
+      "description": "Fresh basil leaves."
+    },
+    "name": "Amazon Grocery Fresh Basil Leaves",
+    "brand": "Amazon Grocery",
+    "price": "$1.89",
+    "packageSize": "14g"
+  },
+  {
+    "id": "ing_king_arthur_hi_gluten_flour",
+    "type": {
+      "name": "High-Gluten Flour",
+      "description": "High-gluten flour for bread and pizza.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "King Arthur Sir Lancelot Unbleached Hi-Gluten Flour",
+    "brand": "King Arthur Baking Company"
+  },
+  {
+    "id": "ing_fine_semolina",
+    "type": {
+      "name": "Fine Semolina",
+      "description": "Fine semolina for dusting and dough.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "Bob's Red Mill Semolina Pasta Flour",
+    "brand": "Bob's Red Mill"
+  },
+  {
+    "id": "ing_711_ground_tomatoes",
+    "type": {
+      "name": "Canned Ground Tomatoes",
+      "description": "Ground tomatoes for sauces."
+    },
+    "name": "Stanislaus 7/11 Ground Tomatoes",
+    "brand": "Stanislaus"
+  },
+  {
+    "id": "ing_contadina_tomato_paste",
+    "type": {
+      "name": "Tomato Paste",
+      "description": "Concentrated tomato paste."
+    },
+    "name": "Contadina Tomato Paste",
+    "brand": "Contadina"
+  },
+  {
+    "id": "ing_dinapoli_whole_peeled_tomatoes",
+    "type": {
+      "name": "Canned Whole Peeled Tomatoes",
+      "description": "Whole peeled plum tomatoes."
+    },
+    "name": "DiNapoli Whole Peeled Tomatoes",
+    "brand": "DiNapoli"
+  },
+  {
+    "id": "ing_grande_whole_milk_mozzarella",
+    "type": {
+      "name": "Whole Milk Mozzarella",
+      "description": "Low-moisture whole milk mozzarella cheese.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Grande Whole Milk Low Moisture Mozzarella",
+    "brand": "Grande"
+  },
+  {
+    "id": "ing_parmigiano_reggiano",
+    "type": {
+      "name": "Parmigiano-Reggiano Cheese",
+      "description": "Aged Italian hard cheese.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Generic Parmigiano-Reggiano",
+    "brand": "Generic Brand"
+  },
+  {
+    "id": "ing_pecorino_romano",
+    "type": {
+      "name": "Pecorino Romano Cheese",
+      "description": "Aged Italian sheep's milk cheese.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Generic Pecorino Romano",
+    "brand": "Generic Brand"
+  },
+  {
+    "id": "ing_sliced_pepperoni_natural_casing",
+    "type": {
+      "name": "Pepperoni",
+      "description": "Sliced pepperoni, natural casing preferred."
+    },
+    "name": "Ezzo Natural Casing Pepperoni",
+    "brand": "Ezzo Sausage Co."
+  },
+  {
+    "id": "ing_sweet_fennel_sausage_bulk",
+    "type": {
+      "name": "Sweet Fennel Sausage",
+      "description": "Bulk sweet Italian sausage with fennel."
+    },
+    "name": "Generic Sweet Fennel Sausage (bulk)",
+    "brand": "Generic Butcher"
+  },
+  {
+    "id": "ing_calabrese_sausage_bulk",
+    "type": {
+      "name": "Calabrese Sausage",
+      "description": "Bulk spicy Calabrese style sausage."
+    },
+    "name": "Generic Calabrese Sausage (bulk)",
+    "brand": "Generic Butcher"
+  },
+  {
+    "id": "ing_polly_o_ricotta",
+    "type": {
+      "name": "Whole Milk Ricotta Cheese",
+      "description": "Creamy whole milk ricotta cheese.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Polly-O Whole Milk Ricotta Cheese",
+    "brand": "Polly-O"
+  },
+  {
+    "id": "ing_dried_oregano_greek",
+    "type": {
+      "name": "Dried Oregano",
+      "description": "Dried Greek oregano."
+    },
+    "name": "Generic Greek Oregano",
+    "brand": "Generic Brand"
+  },
+  {
+    "id": "ing_fresh_garlic",
+    "type": {
+        "name": "Fresh Garlic",
+        "description": "Whole garlic bulbs."
+    },
+    "name": "Generic Fresh Garlic",
+    "brand": "Generic Farm"
+  },
+  {
+    "id": "ing_ceresota_ap_flour",
+    "type": {
+      "name": "All-Purpose Flour",
+      "description": "All-purpose flour, unbleached.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "Ceresota Unbleached All-Purpose Flour",
+    "brand": "Ceresota"
+  },
+  {
+    "id": "ing_medium_grind_cornmeal",
+    "type": {
+      "name": "Cornmeal",
+      "description": "Medium-grind cornmeal.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "Bob's Red Mill Medium Grind Cornmeal",
+    "brand": "Bob's Red Mill"
+  },
+  {
+    "id": "ing_lard",
+    "type": {
+        "name": "Lard",
+        "description": "Rendered pork fat."
+    },
+    "name": "Armour Lard",
+    "brand": "Armour"
+  },
+  {
+    "id": "ing_unsalted_butter_european",
+    "type": {
+        "name": "Unsalted Butter",
+        "description": "European-style unsalted butter (higher fat).",
+        "dietaryContraindications": ["dairy"]
+    },
+    "name": "Plugrá European Style Butter",
+    "brand": "Plugrá"
+  },
+  {
+    "id": "ing_provolone_cheese",
+     "type": {
+        "name": "Provolone Cheese",
+        "description": "Sliced provolone cheese.",
+        "dietaryContraindications": ["dairy"]
+    },
+    "name": "Generic Provolone Cheese",
+    "brand": "Generic Brand"
+  },
+  {
+    "id": "ing_brick_cheese",
+     "type": {
+        "name": "Brick Cheese",
+        "description": "Wisconsin-style brick cheese.",
+        "dietaryContraindications": ["dairy"]
+    },
+    "name": "Widmer's Brick Cheese",
+    "brand": "Widmer's Cheese Cellars"
+  },
+  {
+    "id": "ing_white_cheddar_cheese_cabot",
+     "type": {
+        "name": "White Cheddar Cheese",
+        "description": "Sharp white cheddar cheese.",
+        "dietaryContraindications": ["dairy"]
+    },
+    "name": "Cabot Seriously Sharp White Cheddar",
+    "brand": "Cabot"
+  },
+  {
+    "id": "ing_stanislaus_tomato_magic",
+    "type": {
+      "name": "Canned Ground Tomatoes",
+      "description": "Ground tomatoes in purée for sauces."
+    },
+    "name": "Stanislaus Tomato Magic Ground Tomatoes",
+    "brand": "Stanislaus"
+  },
+  {
+    "id": "ing_provel_cheese",
+     "type": {
+        "name": "Provel Cheese",
+        "description": "Processed cheese blend (provolone, Swiss, cheddar).",
+        "dietaryContraindications": ["dairy"]
+    },
+    "name": "Imo's Pizza Provel Cheese",
+    "brand": "Imo's Pizza"
+  },
+  {
+    "id": "ing_simple_syrup",
+    "type": {
+        "name": "Simple Syrup",
+        "description": "Sugar dissolved in water."
+    },
+    "name": "Homemade Simple Syrup",
+    "brand": "Homemade"
+  },
+  {
+    "id": "ing_caputo_00_pizza_flour_wood_fired",
+    "type": {
+      "name": "00 Flour for Wood Fired",
+      "description": "Italian 00 flour, specifically for high-heat wood-fired ovens, often without malt.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "Antimo Caputo Pizzeria Flour (Blue Bag)",
+    "brand": "Antimo Caputo"
+  },
+  {
+    "id": "ing_fior_di_latte_mozzarella",
+    "type": {
+      "name": "Fresh Mozzarella (Fior di Latte)",
+      "description": "Fresh cow's milk mozzarella.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Generic Fior di Latte",
+    "brand": "Generic Italian Imports"
+  },
+  {
+    "id": "ing_mozzarella_di_bufala_dop",
+    "type": {
+      "name": "Buffalo Mozzarella (D.O.P.)",
+      "description": "Fresh water buffalo milk mozzarella, D.O.P. certified from Campania.",
+      "dietaryContraindications": ["dairy"]
+    },
+    "name": "Generic Mozzarella di Bufala Campana D.O.P.",
+    "brand": "Generic Italian Imports"
   }
 ]

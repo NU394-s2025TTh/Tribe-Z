@@ -2,7 +2,17 @@
   "hosting": {
     "public": "pizza/dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "predeploy": ["npx nx build pizza"]
+    "predeploy": ["npx nx build pizza"],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "main"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "functions": [
     {
