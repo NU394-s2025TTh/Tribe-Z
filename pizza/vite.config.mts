@@ -1,8 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite'
-import path from "path"
-
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 import react from '@vitejs/plugin-react';
 
@@ -12,6 +11,13 @@ export default defineConfig(() => ({
   server: {
     port: 4200,
     host: 'localhost',
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:5001/pizza-app-394/us-central1/main',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api'),
+      },
+    },
   },
   preview: {
     port: 4300,
@@ -28,7 +34,7 @@ export default defineConfig(() => ({
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   test: {
