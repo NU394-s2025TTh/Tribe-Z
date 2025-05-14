@@ -1,21 +1,206 @@
 [
   {
-    "id": "eq_stand_mixer_kitchenaid",
+    "id": "equip_digital_scale",
+    "type": {
+      "name": "Digital Scale",
+      "description": "Scale for measuring ingredients in grams and ounces.",
+      "category": "appliance"
+    },
+    "name": "OXO Good Grips Stainless Steel Food Scale with Pull-Out Display",
+    "brand": "OXO"
+  },
+  {
+    "id": "equip_stand_mixer",
     "type": {
       "name": "Stand Mixer",
-      "category": "appliance",
-      "description": "Electric mixer for doughs and batters."
+      "description": "Electric stand mixer with dough hook attachment.",
+      "category": "appliance"
     },
-    "name": "KitchenAid Artisan Series 5-Quart Mixer",
+    "name": "KitchenAid Artisan Series 5-Quart Tilt-Head Stand Mixer",
     "brand": "KitchenAid"
   },
   {
-    "id": "eq_baking_sheet_nordicware",
+    "id": "equip_immersion_blender",
     "type": {
-      "name": "Baking Sheet",
-      "description": "Standard half-sheet pan."
+      "name": "Immersion Blender",
+      "description": "Handheld blender for pureeing sauces.",
+      "category": "appliance"
     },
-    "name": "Nordic Ware Natural Aluminum Baker's Half Sheet",
+    "name": "Breville Control Grip Immersion Blender",
+    "brand": "Breville"
+  },
+  {
+    "id": "equip_prep_bowls_nesting",
+    "type": {
+      "name": "Prep Bowls",
+      "description": "Set of nesting glass or stainless steel bowls."
+    },
+    "name": "Pyrex Smart Essentials Mixing Bowl Set",
+    "brand": "Pyrex"
+  },
+  {
+    "id": "equip_measuring_cups_spoons",
+    "type": {
+      "name": "Measuring Cups and Spoons",
+      "description": "Standard set for wet and dry ingredients."
+    },
+    "name": "OXO Good Grips Measuring Cups and Spoons Set",
+    "brand": "OXO"
+  },
+  {
+    "id": "equip_instant_read_thermometer",
+    "type": {
+      "name": "Instant-Read Thermometer",
+      "description": "Thermometer for checking dough and water temperature."
+    },
+    "name": "ThermoWorks Thermapen ONE",
+    "brand": "ThermoWorks"
+  },
+  {
+    "id": "equip_dough_cutter_straight",
+    "type": {
+      "name": "Dough Cutter (Bench Scraper)",
+      "description": "Straight-edged tool for cutting and scraping dough.",
+      "category": "cutlery"
+    },
+    "name": "Dexter-Russell Sani-Safe Dough Cutter/Scraper",
+    "brand": "Dexter-Russell"
+  },
+  {
+    "id": "equip_bowl_scraper_round",
+    "type": {
+      "name": "Bowl Scraper",
+      "description": "Flexible, round-edged scraper for bowls."
+    },
+    "name": "Ateco Bowl Scraper",
+    "brand": "Ateco"
+  },
+  {
+    "id": "equip_half_sheet_pan",
+    "type": {
+      "name": "Half Sheet Pan",
+      "description": "Standard aluminum half sheet pan (approx 18x13 inches)."
+    },
+    "name": "Nordic Ware Natural Aluminum Commercial Baker's Half Sheet",
     "brand": "Nordic Ware"
+  },
+  {
+    "id": "equip_pizza_stone_rectangular",
+    "type": {
+      "name": "Pizza Stone/Steel (Rectangular)",
+      "description": "Rectangular baking stone or steel for oven use, at least 15 inches square."
+    },
+    "name": "The Original Baking Steel (16x14)",
+    "brand": "Baking Steel"
+  },
+  {
+    "id": "equip_pizza_peel_wood_14in",
+    "type": {
+      "name": "Wooden Pizza Peel",
+      "description": "Wooden peel for building and transferring pizzas, at least 14 inches."
+    },
+    "name": "Epicurean Gourmet Series Pizza Peel (14-inch)",
+    "brand": "Epicurean"
+  },
+  {
+    "id": "equip_rocking_pizza_cutter",
+    "type": {
+      "name": "Rocking Pizza Cutter (Mezzaluna)",
+      "description": "Large, curved blade for slicing pizza.",
+      "category": "cutlery"
+    },
+    "name": "Dexter-Russell 20-inch Pizza Rocker Knife",
+    "brand": "Dexter-Russell"
+  },
+  {
+    "id": "equip_pizza_wheel",
+    "type": {
+      "name": "Pizza Wheel",
+      "description": "Traditional wheel cutter for pizza and dough trimming.",
+      "category": "cutlery"
+    },
+    "name": "OXO Good Grips 4-inch Pizza Wheel",
+    "brand": "OXO"
+  },
+  {
+    "id": "equip_deep_dish_pan_12in_black_steel",
+    "type": {
+        "name": "Deep-Dish Pizza Pan (12-13 inch)",
+        "description": "Round black steel pan, 12-13 inches diameter, 2 inches deep."
+    },
+    "name": "LloydPans 12x2 Inch Deep Dish Pizza Pan (Pre-Seasoned PSTK)",
+    "brand": "LloydPans"
+  },
+  {
+    "id": "equip_rolling_pin_heavy",
+    "type": {
+        "name": "Rolling Pin",
+        "description": "Heavy rolling pin, preferably with ball bearings."
+    },
+    "name": "J.K. Adams French Tapered Rolling Pin",
+    "brand": "J.K. Adams"
+  },
+  {
+    "id": "equip_dough_docker",
+    "type": {
+        "name": "Dough Docker",
+        "description": "Tool for poking holes in dough to prevent puffing."
+    },
+    "name": "Norpro Dough Docker",
+    "brand": "Norpro"
+  },
+  {
+    "id": "equip_detroit_pan_steel",
+    "type": {
+        "name": "Detroit-Style Pizza Pan",
+        "description": "Rectangular black steel pan (e.g., 8.5x12.25 inches) for Detroit-style pizza."
+    },
+    "name": "LloydPans Kitchenware Detroit Style Pizza Pan 10x14 Inch",
+    "brand": "LloydPans"
+  },
+  {
+    "id": "equip_sicilian_pan_steel_12x18",
+    "type": {
+        "name": "Sicilian Pizza Pan (Steel)",
+        "description": "12x18 inch steel pan for Sicilian pizza."
+    },
+    "name": "Allied Metal 12x18 Inch Sicilian Pizza Pan (Black Steel)",
+    "brand": "Allied Metal"
+  },
+  {
+    "id": "equip_cast_iron_skillet_12in",
+    "type": {
+        "name": "Cast-Iron Skillet (12-inch)",
+        "description": "12-inch cast-iron skillet."
+    },
+    "name": "Lodge 12-Inch Cast Iron Skillet",
+    "brand": "Lodge"
+  },
+  {
+      "id": "equip_food_mill",
+      "type": {
+          "name": "Food Mill",
+          "description": "Food mill with fine screen for pureeing tomatoes."
+      },
+      "name": "OXO Good Grips Food Mill",
+      "brand": "OXO"
+  },
+  {
+    "id": "equip_metal_palino_wood_fired",
+    "type": {
+        "name": "Palino (Small Metal Peel)",
+        "description": "Small circular metal peel with a long handle for rotating pizzas in a wood-fired oven."
+    },
+    "name": "GI Metal Azzurra Turning Peel (Small Head)",
+    "brand": "GI Metal"
+  },
+  {
+    "id": "equip_long_handled_wood_peel_wood_fired",
+    "type": {
+        "name": "Long-Handled Wooden Peel (Wood-Fired)",
+        "description": "Wooden peel with a long handle (20+ inches) for wood-fired ovens."
+    },
+    "name": "American Metalcraft Wood Pizza Peel (Long Handle)",
+    "brand": "American Metalcraft"
   }
 ]

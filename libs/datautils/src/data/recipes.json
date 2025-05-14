@@ -1,56 +1,1143 @@
 [
   {
-    "id": "recipe_chocolate_chip_cookies",
-    "name": "Classic Chocolate Chip Cookies",
-    "description": "The best homemade chocolate chip cookies.",
+    "tempId": "recipe_master_dough_no_starter_preparation",
+    "name": "Master Dough Without Starter (Preparation)",
+    "description": "Master Class two-phase rising dough without starter, yielding two 13-ounce (370g) dough balls. This recipe is for the dough itself, based on Day One of the Master Class.",
     "instructions": [
-      "Preheat oven to 375°F (190°C).",
-      "Cream butter and sugars.",
-      "Beat in eggs and vanilla.",
-      "Combine dry ingredients and add to wet ingredients.",
-      "Stir in chocolate chips.",
-      "Drop by rounded tablespoons onto baking sheets.",
-      "Bake for 9-11 minutes."
+      "WEIGHING AND MEASURING: Weigh all ingredients separately. Yeast: 4.5g active dry. Flour: 453g King Arthur Sir Lancelot (or similar high-protein). Diastatic Malt: 9g. Fine Sea Salt: 9g. Extra Virgin Olive Oil: 5g. Ice Water (38-40°F): 225g. Lukewarm Water (80-85°F): 70g.",
+      "ACTIVATING THE YEAST: Add 70g lukewarm water to yeast. Whisk vigorously for 30 seconds until dissolved and foamy. If not, discard and restart with fresh yeast.",
+      "MAKING THE DOUGH (Stand Mixer): Fit mixer with dough hook. Add malt to flour in mixer bowl, mix on lowest speed. Pour in most ice water (reserve ~2 tbsp). Add yeast mixture. Swirl reserved ice water in yeast bowl, add to mixer.",
+      "Mix for 1 min until dough comes together. Stop mixer, pull dough from hook, scrape bowl. Check for unincorporated flour; press dough to pick up. If dry, add 1/2 tsp water, mix briefly.",
+      "Add salt, mix on lowest speed for 1 min. Stop mixer, pull dough from hook, add oil. Mix on lowest speed 1-2 mins, stopping to scrape, until oil is absorbed. Dough won't be completely smooth (target temp 68-72°F).",
+      "KNEADING THE DOUGH: Transfer to unfloured smooth surface (granite/marble ideal). Gather into a ball. Press top with heel of hand, pushing down and away. Turn dough 45 degrees, gather, repeat for 2-3 mins until smooth.",
+      "Cover dough with clean, damp, lint-free dish towel. Let rest at room temperature for 1 hour.",
+      "BULK FERMENTING: Transfer dough to a bowl allowing 25-50% rise. Spread few drops of water over dough surface. Cover bowl with plastic wrap, refrigerate for 24 hours."
+    ],
+    "ingredients": [
+      {
+        "ingredient": { "name": "Active Dry Yeast" },
+        "recommendation": "ing_red_star_yeast_ady",
+        "amount": 4.5,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "High-Gluten Flour",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_king_arthur_hi_gluten_flour",
+        "amount": 453,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Diastatic Malt",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_anthonys_diastatic_malt",
+        "amount": 9,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Fine Sea Salt" },
+        "recommendation": "ing_maldon_sea_salt_flakes",
+        "amount": 9,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Extra Virgin Olive Oil" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 5,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Ice Water" },
+        "amount": 225,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Lukewarm Water" },
+        "amount": 70,
+        "unit": "gram"
+      }
+    ],
+    "servings": 2,
+    "prepTime": 90,
+    "cookTime": 0,
+    "equipment": [
+      { "name": "Digital Scale", "category": "appliance" },
+      { "name": "Prep Bowls" },
+      { "name": "Instant-Read Thermometer" },
+      { "name": "Stand Mixer", "category": "appliance" },
+      { "name": "Rubber Spatula" },
+      { "name": "Bowl Scraper" },
+      { "name": "Dough Cutter" },
+      { "name": "Large Mixing Bowl" },
+      { "name": "Plastic Wrap" }
+    ],
+    "headerImage": "placeholder_master_dough.jpg"
+  },
+  {
+    "tempId": "recipe_new_yorker",
+    "name": "New Yorker",
+    "description": "Tony Gemignani's version of a classic New York tomato pie with mozzarella, pepperoni, and two types of house-made sausage. Based on Master Dough with Tiga starter.",
+    "instructions": [
+      "PREPARATION: Remove one 13-ounce (370g) ball of Master Dough (preferably with Tiga starter, see book p.98 for Master Dough with Starter) from refrigerator. Let warm to 60-65°F (approx. 1-2 hours). Preheat oven with two pizza stones/steels to 500°F for 1 hour.",
+      "Prepare dusting mixture: 3 parts flour to 1 part semolina. Put ricotta in a pastry bag with a 1/4-inch tip.",
+      "OPEN DOUGH: Dust work surface. Move dough to surface, dust top. Sprinkle wooden peel with dusting mix. Open dough to a 13-inch round with a slightly raised edge.",
+      "ASSEMBLE PIZZA: Move dough to peel. Arrange 7 thin slices of part-skim mozzarella (6 around outside, 1 in center), leaving a 3/4-inch border. Spoon 1 cup New York-New Jersey Tomato Sauce (room temp, see book p.113/490) onto center, spread to rim.",
+      "Add toppings: Arrange 1 oz sliced pepperoni. Pinch flat, nickel-size pieces of 3 oz Sweet Fennel Sausage (see book p.114) over pepperoni. Place slices of 1 (4oz) cooked and sliced Calabrese Honey Sausage (see book p.116) evenly. Scatter 5 Roasted Garlic Cloves (see book p.367). Drizzle with oil from roasted garlic.",
+      "BAKE - FIRST STAGE: Slide pizza onto top stone. Bake for 6 minutes.",
+      "BAKE - SECOND STAGE: Lift pizza onto peel, rotate 180 degrees. Transfer to bottom stone. Bake for another 6 minutes, until bottom is browned and crisp, top is golden brown.",
+      "FINISH: Transfer to cutting board. Cut into 6 wedges. Pipe dollops of 2 oz (1/4 cup) whole-milk ricotta (e.g., Polly-O) on top. Finish with a dusting of grated Parmesan cheese and dried oregano."
     ],
     "ingredients": [
       {
         "ingredient": {
-          "name": "All-Purpose Flour",
+          "name": "Master Dough Ball (with Tiga starter if possible)",
           "dietaryContraindications": ["gluten"]
         },
-        "recommendation": "ing_flour_ap_kingarthur",
-        "amount": 2.25,
-        "unit": "cup"
+        "amount": 370,
+        "unit": "gram"
       },
       {
-        "ingredient": { "name": "Granulated Sugar" },
-        "recommendation": "ing_sugar_granulated_domino",
-        "amount": 0.75,
+        "ingredient": {
+          "name": "Flour (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_king_arthur_hi_gluten_flour",
+        "amount": 0.25,
         "unit": "cup"
       },
       {
         "ingredient": {
-          "name": "Large Eggs",
-          "dietaryContraindications": ["egg"]
+          "name": "Semolina (for dusting)",
+          "dietaryContraindications": ["gluten"]
         },
-        "amount": 2,
+        "recommendation": "ing_fine_semolina",
+        "amount": 0.08,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Whole-Milk Ricotta Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_polly_o_ricotta",
+        "amount": 55,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Part-Skim or Dry Mozzarella Cheese, thinly sliced",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 140,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "New York-New Jersey Tomato Sauce (room temp, see book p.113/490)"
+        },
+        "recommendation": "ing_711_ground_tomatoes",
+        "amount": 1,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Sliced Pepperoni",
+          "description": "Preferably natural casing"
+        },
+        "recommendation": "ing_sliced_pepperoni_natural_casing",
+        "amount": 30,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Sweet Fennel Sausage (bulk, raw, see book p.114)"
+        },
+        "recommendation": "ing_sweet_fennel_sausage_bulk",
+        "amount": 85,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Calabrese Honey Sausage (cooked, sliced, see book p.116)"
+        },
+        "recommendation": "ing_calabrese_sausage_bulk",
+        "amount": 115,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Roasted Garlic Cloves (see book p.367)" },
+        "recommendation": "ing_fresh_garlic",
+        "amount": 5,
         "unit": "item"
+      },
+      {
+        "ingredient": { "name": "Oil from Roasted Garlic Cloves" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Parmesan Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_parmigiano_reggiano",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 1,
+        "unit": "teaspoon"
       }
     ],
-    "servings": 24,
-    "prepTime": 20,
-    "cookTime": 10,
+    "servings": 6,
+    "prepTime": 150,
+    "cookTime": 12,
     "equipment": [
-      {
-        "name": "Mixing Bowls",
-        "description": "Set of various sized mixing bowls."
-      },
-      { "name": "Measuring Cups and Spoons" }
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Wooden Pizza Peel" },
+      { "name": "Pastry Bag" },
+      { "name": "Rocking Pizza Cutter or Wheel" },
+      { "name": "Cutting Board" }
     ],
     "recommendedEquipment": [
-      "eq_stand_mixer_kitchenaid",
-      "eq_baking_sheet_nordicware"
+      "equip_pizza_stone_rectangular",
+      "equip_pizza_peel_wood_14in",
+      "equip_rocking_pizza_cutter"
     ],
-    "headerImage": "url/to/cookie_image.jpg"
+    "headerImage": "placeholder_new_yorker.jpg"
+  },
+  {
+    "tempId": "recipe_margherita_home_oven",
+    "name": "Margherita (Home-Oven Broiler Method)",
+    "description": "Classic Neapolitan Margherita pizza adapted for a home oven using the broiler method. Features San Marzano tomatoes, fresh mozzarella, and basil on Napoletana Dough.",
+    "instructions": [
+      "PREPARATION: Remove one 9-ounce (255g) ball of Napoletana Dough (with malt for home oven, see book p.330) from refrigerator. Let warm to 60-65°F (approx. 1-1.5 hours).",
+      "Set up oven with two baking steels (preferred) or pizza stones. Preheat to 500°F for 1 hour. When ready to open dough, switch oven to BROIL (high setting) to preheat broiler for ~5 mins.",
+      "Prepare dusting flour (00 flour).",
+      "OPEN DOUGH: Dust work surface with 00 flour. Move dough to surface, dust top. Sprinkle wooden peel with 00 flour. Open dough to a 12-inch round with a slightly raised edge.",
+      "ASSEMBLE PIZZA: Move dough to peel. Spoon generous 1/3 cup Napoletana Tomato Sauce (room temp, see book p.333) onto center. Using back of spoon, spread in spiral to 1/2-inch border (thin layer). Arrange 3 torn fresh basil leaves (shiny side up) over sauce.",
+      "Pinch 4 oz fresh mozzarella (fior di latte, well-drained) into quarter-size pieces. Place skin-side down, covering some basil to prevent burning. Sprinkle lightly with fine sea salt. Drizzle a spiral of ~1.5 tsp extra virgin olive oil from center outward.",
+      "BAKE (BROILER METHOD): Slide pizza onto top steel. Close door, broil for ~1.5 mins (check after 1 min to prevent burning).",
+      "Rotate: Slide peel under pizza, rotate 180 degrees, return to top steel. Broil another ~1.5 mins until top crust is speckled/charred and bottom is browned/speckled.",
+      "Final Crisp: Slide peel under pizza, lift, rotate 180 degrees. Transfer to BOTTOM steel. Bake (still on broil setting) for ~30 seconds to complete cooking and crisp bottom.",
+      "FINISH: Transfer pizza to cutting board. Cut into 6 wedges. Serve immediately."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Napoletana Dough Ball (with diastatic malt for home oven)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_antimo_caputo_00_flour",
+        "amount": 255,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "00 Flour (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_antimo_caputo_00_flour",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Napoletana Tomato Sauce (room temp, see book p.333)"
+        },
+        "recommendation": "ing_strianese_san_marzano_tomatoes",
+        "amount": 0.33,
+        "unit": "cup"
+      },
+      {
+        "ingredient": { "name": "Fresh Basil Leaves" },
+        "recommendation": "ing_amazon_fresh_basil",
+        "amount": 3,
+        "unit": "item"
+      },
+      {
+        "ingredient": {
+          "name": "Fresh Whole-Milk Mozzarella (Fior di Latte), well drained",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_fior_di_latte_mozzarella",
+        "amount": 115,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Fine Sea Salt" },
+        "recommendation": "ing_maldon_sea_salt_flakes",
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Extra Virgin Olive Oil" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1.5,
+        "unit": "teaspoon"
+      }
+    ],
+    "servings": 6,
+    "prepTime": 120,
+    "cookTime": 4,
+    "equipment": [
+      { "name": "Baking Steels or Pizza Stones (x2)" },
+      { "name": "Wooden Pizza Peel" },
+      { "name": "Rocking Pizza Cutter or Wheel" },
+      { "name": "Cutting Board" }
+    ],
+    "recommendedEquipment": [
+      "equip_pizza_stone_rectangular",
+      "equip_pizza_peel_wood_14in",
+      "equip_rocking_pizza_cutter"
+    ],
+    "headerImage": "placeholder_margherita.jpg"
+  },
+  {
+    "tempId": "recipe_chicago_deep_dish_sausages",
+    "name": "Chicago Deep-Dish with Calabrese and Fennel Sausages",
+    "description": "Quintessential Chicago deep-dish pizza with a cornmeal crust, filled with mozzarella, provolone, Calabrese sausage, and sweet fennel sausage.",
+    "instructions": [
+      "PREPARATION: Remove one 27-ounce (765g) ball of Chicago Deep-Dish Dough (see book p.147) from refrigerator. Let warm to 55-60°F. Preheat oven with two pizza stones/steels to 500°F for 1 hour.",
+      "Butter bottom and sides of a 12x2-inch or 13x2-inch round deep-dish pizza pan. Dust work surface generously with medium-grind cornmeal. Transfer dough to surface, coat both sides with cornmeal. Roll dough into a 17-inch round.",
+      "LINE PAN: Lift dough round, lower into center of prepared pan. Ease dough into corners. Dough will overhang rim. Press dough edge to pan rim. Rest at room temperature for 30 minutes.",
+      "LAYER CHEESE & SAUSAGE: Arrange 9 oz sliced part-skim mozzarella in bottom and slightly up sides, overlapping. Pinch quarter-size pieces of 8 oz Calabrese Honey Sausage and 8 oz Sweet Fennel Sausage; distribute evenly over cheese.",
+      "ADD MORE LAYERS: Sprinkle with light dusting of Pecorino Romano and 1 tsp finely chopped garlic. Arrange 9 oz sliced provolone cheese over top.",
+      "TRIM & BAKE (FIRST STAGE): Run rolling pin over lip of pan to cut excess dough. If dough shrinks, press around inside to extend to lip. Place pan on BOTTOM stone. Bake 15 mins. Rotate pan 180 degrees, bake another 12 mins, until cheese is melted and crust is rich golden brown.",
+      "ADD TOP MOZZARELLA: Take pan from oven. Sprinkle 5 oz shredded part-skim mozzarella over top. Place on TOP stone for 2 minutes to melt shredded cheese.",
+      "CHECK & FINISH BAKE: Remove from oven. Run long metal spatula around inside to loosen. Lift edge, check bottom crust (should be browned and crisp). If needed, return to BOTTOM stone for 1 min.",
+      "SERVE: Lift pizza from pan to cutting board. Using rocking cutter or serrated knife, cut into 6 large wedges. Spoon 2 cups warm Deep-Dish Tomato Sauce (see book p.152) over pizza, spread to edges. Finish with dusting of Pecorino Romano, dried oregano, and a drizzle of extra virgin olive oil."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Chicago Deep-Dish Dough Ball (see book p.147)",
+          "dietaryContraindications": ["gluten", "dairy"]
+        },
+        "amount": 765,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Medium-Grind Cornmeal (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_medium_grind_cornmeal",
+        "amount": 0.5,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Unsalted Butter (room temp)",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_unsalted_butter_european",
+        "amount": 2,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Part-Skim Mozzarella Cheese, thinly sliced",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 255,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Calabrese Honey Sausage (bulk, raw, see book p.116)"
+        },
+        "recommendation": "ing_calabrese_sausage_bulk",
+        "amount": 225,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Sweet Fennel Sausage (bulk, raw, see book p.114)"
+        },
+        "recommendation": "ing_sweet_fennel_sausage_bulk",
+        "amount": 225,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Pecorino Romano Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_pecorino_romano",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Finely Chopped Garlic" },
+        "recommendation": "ing_fresh_garlic",
+        "amount": 1,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Provolone Cheese, thinly sliced",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_provolone_cheese",
+        "amount": 255,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Part-Skim Mozzarella Cheese, shredded",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 140,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Deep-Dish Tomato Sauce (warm, see book p.152)"
+        },
+        "recommendation": "ing_strianese_san_marzano_tomatoes",
+        "amount": 2,
+        "unit": "cup"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 1,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Extra Virgin Olive Oil (for drizzling)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "servings": 6,
+    "prepTime": 60,
+    "cookTime": 30,
+    "equipment": [
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Deep-Dish Pizza Pan (12-13 inch)" },
+      { "name": "Rolling Pin" },
+      { "name": "Metal Spatula (long)" },
+      { "name": "Rocking Pizza Cutter or Serrated Knife" },
+      { "name": "Cutting Board" }
+    ],
+    "recommendedEquipment": [
+      "equip_pizza_stone_rectangular",
+      "equip_deep_dish_pan_12in_black_steel",
+      "equip_rolling_pin_heavy",
+      "equip_rocking_pizza_cutter"
+    ],
+    "headerImage": "placeholder_chicago_deep_dish.jpg"
+  },
+  {
+    "tempId": "recipe_detroit_red_top",
+    "name": "Detroit Red Top",
+    "description": "Rectangular, thick, and fluffy Detroit-style pizza with crispy, charred cheese edges, butter-greased pan, and 'red top' sauce stripes.",
+    "instructions": [
+      "PREPARATION: Remove one 22-ounce (625g) ball Master Dough Without Starter (see book p.104) from refrigerator. Let warm to 50-55°F (approx. 1 hour).",
+      "Grease Pan: Smear 2 tbsp room temp unsalted butter in an 8.5x12.25-inch seasoned black-steel Detroit pan. Spread 2 tbsp extra virgin olive oil over butter.",
+      "DOUGH IN PAN: Transfer dough to pan, flip to coat both sides with oil. Using fingertips, push dough outward to an even layer. Try to reach corners (don't worry if not perfect). Put pan in warm spot for 30 mins.",
+      "Push dough again to fill corners and degas. Let rest 1-1.5 hours, until risen (timing depends on room temp). Do not press again if it shrinks.",
+      "Preheat oven with two pizza stones/steels to 500°F for 1 hour. Make Tomato Sauce (see below or book p.131).",
+      "TOMATO SAUCE: Combine 13 oz ground tomatoes (Tomato Magic/DiNapoli), 4.5 oz tomato paste (Bontá/Saporito), 1.5 tsp EVOO, pinch fine sea salt, pinch dried oregano. Puree with immersion blender. Set aside.",
+      "FIRST BAKE: Place pizza pan on TOP stone. Bake 6 mins (dough will set, lightly colored).",
+      "ADD CHEESE: Remove from oven. Sprinkle 7 oz shredded brick cheese evenly to edges. Stack 1.75 cups (170g) of 7 oz total shredded white Cheddar (e.g., Cabot) around edges (to rise up sides). Sprinkle remaining Cheddar over top.",
+      "SECOND BAKE: Return pan to TOP stone. Bake ~7 mins (pizza lightly colored, cheese bubbling on sides). Rotate pan 180 degrees, transfer to BOTTOM stone. Bake 8-9 mins, until edge cheese is charred.",
+      "SAUCE & SERVE: Meanwhile, heat tomato sauce over medium-low heat. Remove pizza from oven. Use long metal spatula to loosen sides, remove pizza to cutting board. Cut into 4 quarters. Ladle 2 vertical 'racing stripes' of hot tomato sauce down length, spread slightly. Finish with dusting of Pecorino Romano, dried oregano, and a drizzle of Garlic Oil (see book p.70).",
+      "Garlic Oil (Quick Ref): Combine 1.5 tsp minced garlic with 1/4 cup EVOO. Refrigerate."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Master Dough Without Starter ball (see book p.104)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "amount": 625,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Unsalted Butter (room temp)",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_unsalted_butter_european",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Extra Virgin Olive Oil" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": {
+          "name": "Ground Tomatoes",
+          "description": "Preferably Tomato Magic or DiNapoli"
+        },
+        "recommendation": "ing_stanislaus_tomato_magic",
+        "amount": 360,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Tomato Paste",
+          "description": "Preferably Bontá or Saporito Super Heavy"
+        },
+        "recommendation": "ing_contadina_tomato_paste",
+        "amount": 125,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Fine Sea Salt" },
+        "recommendation": "ing_maldon_sea_salt_flakes",
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 1.25,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Brick Cheese, shredded",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_brick_cheese",
+        "amount": 200,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "White Cheddar Cheese, shredded",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_white_cheddar_cheese_cabot",
+        "amount": 200,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Pecorino Romano Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_pecorino_romano",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Garlic Oil (see book p.70 or description)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "servings": 4,
+    "prepTime": 120,
+    "cookTime": 22,
+    "equipment": [
+      { "name": "Detroit-Style Pizza Pan (8.5x12.25 inch black steel)" },
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Immersion Blender" },
+      { "name": "Saucepan" },
+      { "name": "Long Metal Spatula" },
+      { "name": "Cutting Board" },
+      { "name": "Rocking Pizza Cutter or Knife" }
+    ],
+    "recommendedEquipment": [
+      "equip_detroit_pan_steel",
+      "equip_pizza_stone_rectangular",
+      "equip_immersion_blender",
+      "equip_rocking_pizza_cutter"
+    ],
+    "headerImage": "placeholder_detroit_red_top.jpg"
+  },
+  {
+    "tempId": "recipe_st_louis",
+    "name": "St. Louis Pizza",
+    "description": "Cracker-thin crust pizza from St. Louis, featuring a sweet tomato-oregano sauce and Provel cheese, cut into squares.",
+    "instructions": [
+      "PREPARATION: Remove one 8-ounce (225g) ball Master Dough Without Starter (see book p.104) from refrigerator. Let warm to 60-65°F. Preheat oven with two pizza stones/steels to 500°F for 1 hour.",
+      "ST. LOUIS TOMATO SAUCE: Combine 4.2 oz ground tomatoes (Tomato Magic/DiNapoli), 4.5 oz tomato paste (SuperDolce), 3 tbsp Simple Syrup (see below or book p.138), pinch dried oregano, pinch fine sea salt. Puree with immersion blender. Set aside.",
+      "SIMPLE SYRUP (Quick Ref): Combine 1/4 cup sugar and 1/4 cup water in small saucepan. Simmer, stirring, until sugar dissolves. Cool.",
+      "DUST & ROLL: Prepare dusting mixture: 9 parts flour to 1 part semolina. Dust work surface. Move dough to surface, dust top. Sprinkle wooden peel with dusting mix. Roll dough to a 14-inch round. Press edges gently to flatten. Dock surface of dough (poke small holes).",
+      "ASSEMBLE (SAUCE ONLY): Move dough to peel. Spoon St. Louis Tomato Sauce onto center. Spread evenly with back of spoon to 3/4-inch border. Pull edges if dough contracted to maintain 14-inch round.",
+      "FIRST BAKE (CRUST & SAUCE): Slide pizza onto TOP stone. Bake for 4 minutes.",
+      "ADD TOPPINGS: Remove pizza to cutting board (or work on peel). Optional: Pinch nickel-size pieces of 4 oz Sweet Fennel Sausage OR arrange 1 oz sliced pepperoni. Sprinkle 7 oz shredded Provel cheese evenly over pizza.",
+      "SECOND BAKE: Return pizza to TOP stone. Bake 3 minutes. Lift onto peel, rotate 180 degrees, transfer to BOTTOM stone. Bake another 3-4 minutes until bottom is browned/crisp, top golden.",
+      "CUT & FINISH: Transfer to cutting board. Make 3 evenly spaced cuts in one direction, turn 90 degrees, repeat (16 squares). Finish with dusting of Parmesan cheese, dried oregano, and a drizzle of Garlic Oil (see book p.70)."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Master Dough Without Starter ball (see book p.104)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "amount": 225,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Flour (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_king_arthur_hi_gluten_flour",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Semolina (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_fine_semolina",
+        "amount": 0.03,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Ground Tomatoes",
+          "description": "Preferably Tomato Magic or DiNapoli"
+        },
+        "recommendation": "ing_stanislaus_tomato_magic",
+        "amount": 120,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Tomato Paste",
+          "description": "Preferably SuperDolce"
+        },
+        "recommendation": "ing_contadina_tomato_paste",
+        "amount": 125,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Simple Syrup (see description or book p.138)"
+        },
+        "recommendation": "ing_simple_syrup",
+        "amount": 3,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 1.25,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Fine Sea Salt" },
+        "recommendation": "ing_maldon_sea_salt_flakes",
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Sweet Fennel Sausage (optional, bulk, raw, see book p.114)"
+        },
+        "recommendation": "ing_sweet_fennel_sausage_bulk",
+        "amount": 115,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Sliced Pepperoni (optional, natural casing)" },
+        "recommendation": "ing_sliced_pepperoni_natural_casing",
+        "amount": 30,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Provel Cheese, shredded",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_provel_cheese",
+        "amount": 200,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Parmesan Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_parmigiano_reggiano",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Garlic Oil (see book p.70)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "servings": 16,
+    "prepTime": 45,
+    "cookTime": 11,
+    "equipment": [
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Immersion Blender" },
+      { "name": "Saucepan (for simple syrup)" },
+      { "name": "Rolling Pin" },
+      { "name": "Dough Docker" },
+      { "name": "Wooden Pizza Peel" },
+      { "name": "Pizza Wheel" },
+      { "name": "Cutting Board" }
+    ],
+    "recommendedEquipment": [
+      "equip_pizza_stone_rectangular",
+      "equip_immersion_blender",
+      "equip_rolling_pin_heavy",
+      "equip_dough_docker",
+      "equip_pizza_peel_wood_14in",
+      "equip_pizza_wheel"
+    ],
+    "headerImage": "placeholder_st_louis.jpg"
+  },
+  {
+    "tempId": "recipe_the_brooklyn_sicilian",
+    "name": "The Brooklyn (Sicilian)",
+    "description": "A Sicilian-style pizza modeled on L&B Spumoni Gardens, featuring an 'inverted-style' topping with sliced mozzarella first and tomato sauce on top.",
+    "instructions": [
+      "PREPARE SICILIAN DOUGH: Use one 35oz (990g) ball of Sicilian Dough (with or without starter, see book pp.218-220). Parbake the Sicilian dough according to instructions on book p.226. This involves oiling a 12x18-inch steel Sicilian pan, pressing dough into pan, letting it rise, then baking at 450°F (first on top stone 7 mins, then bottom stone 7 mins). Rest parbaked crust for at least 30 mins (or up to 10 hours wrapped).",
+      "PREHEAT OVEN (IF NEEDED): If oven was off after parbaking, reheat to 450°F for at least 1 hour with two stones/steels.",
+      "ASSEMBLE PIZZA: Return parbaked crust to the (cleaned, if necessary) Sicilian pan. Arrange 12 oz sliced whole-milk mozzarella evenly over dough, leaving a 3/4-inch border.",
+      "SPOON SAUCE: Spoon 1.5 cups Sicilian Tomato Sauce (room temp, see book p.233) onto center. Using back of spoon, spread sauce evenly over cheese.",
+      "BAKE (FIRST STAGE): Place pan on TOP stone. Bake 7 minutes.",
+      "BAKE (SECOND STAGE): Rotate pan 180 degrees, transfer to BOTTOM stone. Bake 6 minutes, until top is rich golden brown.",
+      "CHECK BOTTOM & FINISH BAKE: Using wide metal spatula, lift corner and check bottom. If darker/crunchier crust desired, transfer pan to TOP stone for 1-2 mins (watch cheese).",
+      "LOOSEN & SERVE: Run spatula around edges to ensure pizza isn't stuck. If so, drizzle olive oil down side and work to loosen. Lift pizza to cutting board. Make 2 lengthwise cuts and 3 widthwise cuts (12 squares). Finish with dusting of Pecorino Romano, dried oregano, and a drizzle of Garlic Oil (book p.70)."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Parbaked Sicilian Dough (from 35oz ball, see book p.226)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "amount": 1,
+        "unit": "item"
+      },
+      {
+        "ingredient": {
+          "name": "Whole-Milk Mozzarella Cheese, sliced",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 340,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Sicilian Tomato Sauce (room temp, see book p.233)"
+        },
+        "recommendation": "ing_strianese_san_marzano_tomatoes",
+        "amount": 1.5,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Olive Oil (for pan and potentially drizzling)"
+        },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Pecorino Romano Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_pecorino_romano",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 1,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Garlic Oil (see book p.70)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "servings": 12,
+    "prepTime": 180,
+    "cookTime": 15,
+    "equipment": [
+      { "name": "Sicilian Pizza Pan (12x18 inch steel)" },
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Wide Metal Spatula" },
+      { "name": "Cutting Board" },
+      { "name": "Rocking Pizza Cutter or Knife" }
+    ],
+    "recommendedEquipment": [
+      "equip_sicilian_pan_steel_12x18",
+      "equip_pizza_stone_rectangular",
+      "equip_rocking_pizza_cutter"
+    ],
+    "headerImage": "placeholder_brooklyn_sicilian.jpg"
+  },
+  {
+    "tempId": "recipe_cal_italia",
+    "name": "Cal-Italia",
+    "description": "A California-Italian fusion pizza with prosciutto, fig jam, Gorgonzola, Asiago, and balsamic glaze on Master Dough.",
+    "instructions": [
+      "PREPARATION: Remove one 13-ounce (370g) ball Master Dough (preferably with Poolish starter, see book p.98) from refrigerator. Let warm to 60-65°F. Preheat oven with two pizza stones/steels to 500°F for 1 hour.",
+      "Prepare dusting mixture: 3 parts flour to 1 part semolina.",
+      "ROLL & DOCK DOUGH: Dust work surface. Move dough, dust top. Sprinkle wooden peel. Roll dough into a 15-inch round. Trim with pizza wheel to 13-inch round. Flatten edge, then dock surface of dough.",
+      "ASSEMBLE CHEESE BASE: Move dough to peel. Shave 2 oz cold Asiago cheese over surface with vegetable peeler, leaving 3/4-inch border. Mound 6 oz shredded whole-milk mozzarella over Asiago, spread evenly.",
+      "FIRST BAKE: Slide pizza onto TOP stone. Bake for 7 minutes.",
+      "ADD GORGONZOLA & CONTINUE BAKING: Lift pizza onto peel. Distribute 1.5 oz Gorgonzola pieces evenly over top. Rotate pizza 180 degrees, transfer to BOTTOM stone. Bake 3-4 minutes, until bottom is browned/crisp, top golden.",
+      "FINISH & SERVE: Transfer to cutting board. Cut into 6 wedges. Spoon small dollops (about 1/4 tsp each) of 2-3 tbsp fig jam around pizza. Tear 3 oz prosciutto slices into 2-3 strips each, drape over slices. Squeeze a thin spiral of Balsamic Glaze (see book p.240) onto pizza."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Master Dough Ball (with Poolish starter if possible)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "amount": 370,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Flour (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_king_arthur_hi_gluten_flour",
+        "amount": 0.25,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Semolina (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_fine_semolina",
+        "amount": 0.08,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Asiago Cheese, cold (for shaving)",
+          "dietaryContraindications": ["dairy"]
+        },
+        "name": "Generic Asiago",
+        "brand": "Generic Brand",
+        "amount": 55,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Whole-Milk Mozzarella Cheese, shredded",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 170,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Gorgonzola Cheese, broken into small pieces",
+          "dietaryContraindications": ["dairy"]
+        },
+        "name": "Generic Gorgonzola",
+        "brand": "Generic Brand",
+        "amount": 45,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Fig Jam",
+          "description": "Preferably Dalmatia brand"
+        },
+        "name": "Dalmatia Fig Spread",
+        "brand": "Dalmatia",
+        "amount": 2.5,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Prosciutto, thinly sliced" },
+        "name": "Generic Prosciutto di Parma",
+        "brand": "Generic Brand",
+        "amount": 85,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Balsamic Glaze (see book p.240)" },
+        "name": "Homemade Balsamic Glaze",
+        "brand": "Homemade",
+        "amount": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "servings": 6,
+    "prepTime": 30,
+    "cookTime": 11,
+    "equipment": [
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Rolling Pin" },
+      { "name": "Pizza Wheel" },
+      { "name": "Dough Docker" },
+      { "name": "Wooden Pizza Peel" },
+      { "name": "Vegetable Peeler" },
+      { "name": "Cutting Board" }
+    ],
+    "recommendedEquipment": [
+      "equip_pizza_stone_rectangular",
+      "equip_rolling_pin_heavy",
+      "equip_pizza_wheel",
+      "equip_dough_docker",
+      "equip_pizza_peel_wood_14in"
+    ],
+    "headerImage": "placeholder_cal_italia.jpg"
+  },
+  {
+    "tempId": "recipe_cracker_thin_fennel_sausage",
+    "name": "Cracker-Thin with Fennel Sausage",
+    "description": "Chicago-style cracker-thin pizza with fennel sausage, provolone, and mozzarella on a cornmeal-based dough.",
+    "instructions": [
+      "PREPARATION: Remove one 10-ounce (280g) ball Cracker-Thin Dough (see book p.183) from refrigerator. Let warm to 60-65°F. Preheat oven with two pizza stones/steels to 500°F for 1 hour.",
+      "Dust work surface generously with medium-grind cornmeal. Transfer dough, dust top. Sprinkle wooden peel with cornmeal.",
+      "ROLL & PREPARE DOUGH: Roll dough into a thin round 13-15 inches diameter. Trim with pizza wheel to a 13-inch round. Press edges gently to flatten. Dock surface of dough.",
+      "SAUCE CRUST: Move dough to peel. Spoon 1/3 cup Cracker-Thin Tomato Sauce (room temp, see book p.188) onto center. Spread evenly with back of spoon to 1/4-inch border.",
+      "FIRST BAKE (CRUST & SAUCE): Slide pizza onto TOP stone. Bake for 3 minutes.",
+      "ADD TOPPINGS: Remove pizza to cutting board. Sprinkle with 1 tsp finely chopped garlic. Break 1 slice provolone cheese into small pieces, scatter over pizza. Mound 6 oz shredded part-skim mozzarella in center, spread to edge of sauce. Pinch nickel-size pieces of 4 oz Sweet Fennel Sausage, distribute evenly.",
+      "SECOND BAKE: Lift pizza with peel, rotate 180 degrees, transfer to BOTTOM stone. Bake 3 minutes. Lift onto peel, rotate 180 degrees, return to BOTTOM stone. Bake another 4 minutes.",
+      "FINAL CRISP: Move pizza to TOP stone for a final 1 minute to crisp bottom.",
+      "CUT & FINISH: Transfer to cutting board. Make 3 evenly spaced cuts in one direction, turn 90 degrees, repeat (16 squares). Finish with light dusting of Pecorino Romano, dried oregano, red pepper flakes (optional), and a drizzle of Garlic Oil (book p.70)."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Cracker-Thin Dough Ball (see book p.183)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "amount": 280,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Medium-Grind Cornmeal (for dusting)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_medium_grind_cornmeal",
+        "amount": 0.5,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Cracker-Thin Tomato Sauce (room temp, see book p.188)"
+        },
+        "recommendation": "ing_711_ground_tomatoes",
+        "amount": 0.33,
+        "unit": "cup"
+      },
+      {
+        "ingredient": { "name": "Finely Chopped Garlic" },
+        "recommendation": "ing_fresh_garlic",
+        "amount": 1,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Provolone Cheese, sliced",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_provolone_cheese",
+        "amount": 30,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Part-Skim Mozzarella Cheese, shredded",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 170,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Sweet Fennel Sausage (bulk, raw, see book p.114)"
+        },
+        "recommendation": "ing_sweet_fennel_sausage_bulk",
+        "amount": 115,
+        "unit": "gram"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Pecorino Romano Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_pecorino_romano",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Red Pepper Flakes (optional)" },
+        "amount": 0.25,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Garlic Oil (see book p.70)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "tablespoon"
+      }
+    ],
+    "servings": 16,
+    "prepTime": 45,
+    "cookTime": 11,
+    "equipment": [
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Rolling Pin" },
+      { "name": "Pizza Wheel" },
+      { "name": "Dough Docker" },
+      { "name": "Wooden Pizza Peel" },
+      { "name": "Cutting Board" }
+    ],
+    "recommendedEquipment": [
+      "equip_pizza_stone_rectangular",
+      "equip_rolling_pin_heavy",
+      "equip_pizza_wheel",
+      "equip_dough_docker",
+      "equip_pizza_peel_wood_14in"
+    ],
+    "headerImage": "placeholder_cracker_thin.jpg"
+  },
+  {
+    "tempId": "recipe_quattro_forni",
+    "name": "Quattro Forni",
+    "description": "An elaborate pizza cooked in multiple stages including deep-frying, resulting in a mile-high, crispy-soft crust. Topped with prosciutto.",
+    "instructions": [
+      "PREPARE DOUGH & OVEN: Use one 14-ounce (400g) ball Sicilian Dough Without Starter (see book p.221 for small batch). Let dough warm to 60-65°F. Preheat conventional oven with two stones/steels to 500°F for 1 hour. If using, prepare wood-fired oven (see book p.344).",
+      "PRESS DOUGH IN PAN: Pour 2 tbsp olive oil into an 8-inch square steel pan. Release sticky dough into pan, flip to coat. Press dough to fill pan, let rest uncovered in warm spot 30 mins. Press again to corners. Rest 1 hour more until risen near rim.",
+      "DEEP FRYER SETUP: Pour canola oil to 2-inch depth in a wide, deep pot (at least 10in wide, 6in deep). Heat to 350°F. Set cooling rack over sheet pan nearby.",
+      "FIRST BAKE (CONVENTIONAL OVEN): Place pan with dough on BOTTOM stone. Bake 7 mins (top golden, bottom richer brown). Remove pan, turn pizza over (still in pan). Rest 2 mins to flatten top.",
+      "DEEP FRY: Carefully transfer crust, top side down, to hot oil. Fry 2.5-3 mins until underside is browned. Using tongs, flip, fry 2.5 mins more until second side browned. Transfer to cooling rack.",
+      "TOP & SECOND BAKE (CONVENTIONAL OVEN): Arrange 4 oz sliced whole-milk mozzarella over fried crust (1/2-inch border). Spoon generous 1/2 cup Sicilian Tomato Sauce (book p.233) over cheese, spread. Sprinkle with 1/2 tsp chopped garlic. Using a peel, set pizza on TOP stone for ~2 mins to melt cheese.",
+      "THIRD BAKE (WOOD-FIRED OVEN - OPTIONAL): Lift pizza with long-handled metal peel. Hold towards wood fire (if using), ~10 inches from flame, to crisp one edge. Rotate on peel to crisp all edges (~30 secs total - doming technique). If no wood oven, this step is skipped (becomes Tre Forni).",
+      "FINISH & SERVE: Transfer to cutting board. Cut into 4 squares. Dust with Pecorino Romano and dried oregano. Drizzle with Garlic Oil (book p.70). Drape 1 slice of prosciutto over each square (optional).",
+      "NOTE: This recipe is complex and involves multiple cooking methods. Exercise caution with hot oil and ovens."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "Sicilian Dough Without Starter ball (14oz, see book p.221)",
+          "dietaryContraindications": ["gluten"]
+        },
+        "amount": 400,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Olive Oil (for pan)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 2,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Canola Oil (for deep-frying)" },
+        "name": "Generic Canola Oil",
+        "brand": "Generic Brand",
+        "amount": 2,
+        "unit": "inch"
+      },
+      {
+        "ingredient": {
+          "name": "Whole-Milk Mozzarella Cheese, sliced",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_grande_whole_milk_mozzarella",
+        "amount": 115,
+        "unit": "gram"
+      },
+      {
+        "ingredient": { "name": "Sicilian Tomato Sauce (see book p.233)" },
+        "recommendation": "ing_strianese_san_marzano_tomatoes",
+        "amount": 0.5,
+        "unit": "cup"
+      },
+      {
+        "ingredient": { "name": "Finely Chopped Garlic" },
+        "recommendation": "ing_fresh_garlic",
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": {
+          "name": "Grated Pecorino Romano Cheese",
+          "dietaryContraindications": ["dairy"]
+        },
+        "recommendation": "ing_pecorino_romano",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Dried Oregano" },
+        "recommendation": "ing_dried_oregano_greek",
+        "amount": 0.5,
+        "unit": "teaspoon"
+      },
+      {
+        "ingredient": { "name": "Garlic Oil (see book p.70)" },
+        "recommendation": "ing_filippo_berio_evoo",
+        "amount": 1,
+        "unit": "tablespoon"
+      },
+      {
+        "ingredient": { "name": "Prosciutto, thin slices (optional)" },
+        "name": "Generic Prosciutto di Parma",
+        "brand": "Generic Brand",
+        "amount": 55,
+        "unit": "gram"
+      }
+    ],
+    "servings": 4,
+    "prepTime": 120,
+    "cookTime": 20,
+    "equipment": [
+      { "name": "8-inch Square Steel Pan" },
+      { "name": "Pizza Stones or Baking Steels (x2)" },
+      { "name": "Wide, Deep Pot (for frying)" },
+      { "name": "Deep-Frying Thermometer" },
+      { "name": "Cooling Rack & Sheet Pan" },
+      { "name": "Tongs" },
+      { "name": "Pizza Peel (conventional)" },
+      { "name": "Long-Handled Metal Peel (if using wood oven)" },
+      { "name": "Cutting Board" },
+      { "name": "Rocking Pizza Cutter or Knife" }
+    ],
+    "recommendedEquipment": [
+      "equip_pizza_stone_rectangular",
+      "equip_pizza_peel_wood_14in",
+      "equip_metal_palino_wood_fired",
+      "equip_rocking_pizza_cutter"
+    ],
+    "headerImage": "placeholder_quattro_forni.jpg"
   }
 ]

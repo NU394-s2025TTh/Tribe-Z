@@ -1,14 +1,19 @@
 import https from 'https';
 import querystring from 'querystring';
 import zlib from 'zlib';
+import { defineString } from 'firebase-functions/params';
 
-const clientId = process.env.KROGER_CLIENT_ID!;
-const clientSecret = process.env.KROGER_CLIENT_SECRET!;
+const cId = defineString('KROGER_CLIENT_ID');
+const cSec = defineString('KROGER_CLIENT_SECRET');
 
 // Getting the access token, not exposed to the user but
 // required to make any calls to the locations/products
 // endpoints!
 export async function fetchAccessToken(): Promise<string> {
+
+  const clientId = cId.value();
+  const clientSecret = cSec.value();
+
   const postData = querystring.stringify({
     grant_type: 'client_credentials',
     scope: 'product.compact',

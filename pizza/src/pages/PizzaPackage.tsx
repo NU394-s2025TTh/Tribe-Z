@@ -1,103 +1,90 @@
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { StoreIngredientCard } from '../components/sections/StoreIngredientCard';
 import { useState, useEffect } from 'react';
+import {
+  Ingredient,
+  IngredientType,
+  Recipe,
+} from '@cs394-vite-nx-template/shared';
+import { doc, getDoc } from 'firebase/firestore';
 
-const ingredientData = [
-  {
-    id: 1,
-    name: 'Red Star Yeast',
-    type: {
-      name: 'yeast',
-      description: 'Active dry yeast for baking',
-    },
-    price: '$8.99',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/Red-Star-Active-Dry-Yeast/dp/B0014CWDJO',
-  },
-  {
-    id: 2,
-    name: 'Antimo Caputo 00 Flour',
-    type: {
-      name: 'flour',
-      description: '00 flour for pizza dough',
-    },
-    price: '$14.95',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/Antimo-Caputo-Chefs-Flour-Kilo/dp/B07144K4T6',
-  },
-  {
-    id: 3,
-    name: 'Anthony’s Diastatic Malt',
-    type: {
-      name: 'malt',
-      description: 'Diastatic malt powder for pizza dough',
-    },
-    price: '$13.49',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/dp/B00WGUYX96?tag=autopark-20&linkCode=osi&th=1&psc=1&keywords=diastatic%20malt%20powder',
-  },
-  {
-    id: 4,
-    name: 'Strianese San Marzano Tomatoes',
-    type: {
-      name: 'tomatoes',
-      description: 'San Marzano tomatoes for pizza sauce',
-    },
-    price: '$25.99',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/Strianese-San-Marzano-Tomatoes-Pack/dp/B004ROGYDM',
-  },
-  {
-    id: 5,
-    name: 'Whole Foods 365 Kosher Salt',
-    type: {
-      name: 'salt',
-      description: 'Kosher salt for seasoning',
-    },
-    price: '$3.29',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/365-Everyday-Value-Kosher-Coarse/dp/B074H5TMQ7?crid=12ZAWCLLHR8XU&dib=eyJ2IjoiMSJ9.pcg573Ss3CwpFpJUDIl-bEtgVo7lvXyxjdFsrJWvMMYufoPoVG_pmryqMirq8ACIBp32e6kPg6Q6Pi0mfo2LGFh02EZmjMryVlnb2jAM3J-MqcKSlukb9sZFsaU1MKZOFMuSXh6gQV11Wv8kE6S5iXd0qhqlT6R6zRDqsad32pTlCBXSKhhna9usD33cruFwQs295Tv5_3mQJrIx86kb1FkDiTdmjf30ee8p4DDMb0x4TN5uJHq09aK_Ba7zrfXr04Of1XQYSev31lc3eTNMojNnifh9qFLXsM4Wg2hiHi4.K6zLDrxaf1JAhl9fet4D1z8sT7faonlxitL3gfegilk&dib_tag=se&keywords=kosher%2Bsalt&qid=1747150869&s=grocery&sprefix=kosher%2Bsal%2Cgrocery%2C247&sr=1-5&th=1',
-  },
-  {
-    id: 6,
-    name: 'Filippo Berio Extra Virgin Olive Oil',
-    type: {
-      name: 'olive oil',
-      description: 'Extra virgin olive oil for drizzling',
-    },
-    price: '$7.32',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/Filippo-Berio-Extra-Virgin-Olive/dp/B004ZK4AES?th=1',
-  },
-  {
-    id: 7,
-    name: 'Amazon Grocery Basil Leaves',
-    type: {
-      name: 'basil',
-      description: 'Dried basil leaves for seasoning',
-    },
-    price: '$1.89',
-    preferredVendor: 'Amazon',
-    link: 'https://www.amazon.com/Amazon-Grocery-Previously-Fresh-Packaging/dp/B097F282FC?dib=eyJ2IjoiMSJ9.6HQSDQk2-QQw2i69AoELJ3Yobf6um36s5b7D-eD2hSMv7_eAwuez2yMssU2Dmxfe9DXpwFRnhV7be2zVyhjZlvfozGFqqhaALvL713hbFzvVpMHh5za6A65AMOHfqIEoRI0no_kSjcIhfDPfyKt7vWOz4TBhHeX_ERBvvxQnMkKfk6zM08XS8lrZz_DzGofAF-xQ6QfiQPXu4d8sukNVxmVBDnXnoNJpoDlbWPBuawxuTezAM8YrnrUnv-7IcfO9NAvvI-hGYIWKlNYZSM_MGV5HBP_5F4vk9xIK_9j3FkY.qqd_gy7lVrGPwyau1zFoiAJfyv8UY0O3O56rMJephzw&dib_tag=se&keywords=basil+leaves&qid=1747161466&sr=8-5',
-  },
-  {
-    id: 8,
-    name: 'Grande Mozzarella Curd',
-    type: {
-      name: 'cheese',
-      description: 'Mozzarella cheese curd for pizza',
-    },
-    price: '$9.29',
-    preferredVendor: 'PennMac',
-    link: 'https://www.pennmac.com/items/5130//Grande-Mozzarella-Curd-Cheese',
-  },
-];
+import { db } from '@/lib/firebase';
+import { resolveSoa } from 'dns';
+
+type ResIngType = [Response, IngredientType];
 
 function PizzaPackage() {
-  const [searchParams] = useSearchParams();
-  const pizzaName = searchParams.get('pizza');
-  const formattedPizzaName = pizzaName
-    ? pizzaName.charAt(0).toUpperCase() + pizzaName.slice(1)
+  // const [searchParams] = useSearchParams();
+  // const pizzaName = searchParams.get('pizza');
+  const { pizzaName } = useParams();
+
+  const [ingredientIds, setIngredientIds] = useState<
+    (string | IngredientType)[]
+  >([]);
+  const [ingredients, setIngredients] = useState<
+    (Ingredient | IngredientType)[]
+  >([]);
+
+  const [formattedName, setFormattedName] = useState('');
+
+  const getRecipe = async (): Promise<void> => {
+    if (!pizzaName) return; // Ensure recipeId is defined
+    try {
+      const recipeRef = doc(db, 'recipes', pizzaName); // Reference to the specific recipe
+      const recipeSnapshot = await getDoc(recipeRef);
+      if (recipeSnapshot.exists()) {
+        setIngredientIds(
+          (recipeSnapshot.data() as Recipe).ingredients.map(
+            (e, index) => e.recommendation ?? e.ingredient
+          )
+        ); // Set the recipe data
+        const data: Recipe = recipeSnapshot.data() as Recipe;
+        console.log('Recipe name:', data.name);
+        setFormattedName(data.name);
+      } else {
+        console.error('Recipe not found');
+      }
+    } catch (error) {
+      console.error('Error fetching recipe:', error);
+    }
+  };
+
+  useEffect(() => {
+    getRecipe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pizzaName]);
+
+  useEffect(() => {
+    const fetchIngredients = async () => {
+      const ingredientPromises = ingredientIds.map(async (ingredientId) => {
+        if (typeof ingredientId === 'string') {
+          const ingredientRef = doc(db, 'ingredients', ingredientId);
+          const ingredientSnapshot = await getDoc(ingredientRef);
+          if (ingredientSnapshot.exists()) {
+            return {
+              id: ingredientSnapshot.id,
+              ...ingredientSnapshot.data(),
+            } as Ingredient;
+          } else {
+            console.error('Ingredient not found');
+          }
+        }
+        return ingredientId;
+      });
+      const ingredients = await Promise.all(ingredientPromises);
+      const filteredIngredients = ingredients.filter(
+        (ingredient) => ingredient !== undefined
+      ) as Ingredient[];
+      console.log('Fetched Ingredients:', filteredIngredients);
+      setIngredients(filteredIngredients);
+    };
+    fetchIngredients();
+  }, [ingredientIds]);
+
+  console.log('Ingredients:', ingredients);
+
+  const formattedPizzaName = formattedName
+    ? formattedName.charAt(0).toUpperCase() + formattedName.slice(1)
     : '';
 
   const [storeToIngredients, setStoreToIngredients] = useState<
@@ -105,17 +92,128 @@ function PizzaPackage() {
   >({});
 
   useEffect(() => {
-    const transformedData = ingredientData.reduce((acc, ingredient) => {
-      const storeName = ingredient.preferredVendor || 'Unknown Store';
+    const transformedData = ingredients.reduce((acc, ingredient) => {
+      let storeName: string;
+      if ('preferredVendor' in ingredient && ingredient.preferredVendor) {
+        storeName = ingredient.preferredVendor;
+      } else {
+        storeName = 'Unknown Store';
+      }
       if (!acc[storeName]) {
         acc[storeName] = [];
       }
       acc[storeName].push(ingredient);
       return acc;
-    }, {} as Record<string, any[]>);
+    }, {} as Record<string, (Ingredient | IngredientType)[]>);
 
-    setStoreToIngredients(transformedData);
-  }, []);
+    if ('Unknown Store' in transformedData) {
+      const kroger = async () => {
+        const zip = '60201';
+        const locations = await fetch('/api/kroger-locations?zip=' + zip);
+        return (await locations.json())['data'][0];
+      };
+      const handleKrogerData = async () => {
+        try {
+          const location = await kroger();
+          console.log('Location:', location);
+
+          const initialRecommendations: string[] = [];
+
+          const responses = await Promise.allSettled(
+            transformedData['Unknown Store'].map((ingredient) => {
+              const searchTerm =
+                'brand' in ingredient || !('type' in ingredient)
+                  ? ingredient.name
+                  : ingredient.type.name;
+
+              initialRecommendations.push(searchTerm);
+
+              return fetch(
+                `/api/kroger-products?locationId=${
+                  location['locationId']
+                }&searchTerm=${searchTerm.split(' ').slice(0, 8).join(' ')}`
+              );
+            })
+          );
+
+          const fulfilledResponses = responses
+            .map((e, i) => [e, initialRecommendations[i]])
+            .filter(
+              ([r, i]) =>
+                (r as PromiseFulfilledResult<any>).status === 'fulfilled'
+            ) as [PromiseFulfilledResult<Response>, string][];
+
+          const remove: string[] = [];
+          const products = await Promise.all(
+            fulfilledResponses.map(async ([response, name]) => {
+              console.log(name);
+              try {
+                const data = await response.value.json();
+
+                const d = {
+                  id: data.data[0]['productId'],
+                  name:
+                    data.data[0]['description'] +
+                    ', ' +
+                    data.data[0]['items'][0]['size'],
+                  type: {} as IngredientType,
+                  brand: data.data[0]['brand'],
+                  preferredVendor: 'Kroger',
+                  vendorProductId: data.data[0]['productId'],
+                  link: "https://kroger.com" + data.data[0]['productPageURI'],
+                  price: '$' + data.data[0]['items'][0]['price']['regular'],
+                  additionalInfo: name,
+                } as Ingredient & {
+                  additionalInfo: string;
+                };
+                remove.push(name);
+                return d;
+              } catch {
+                // console.error('Error parsing Kroger response:', error);
+                return {
+                  id: 'unknown',
+                  name: 'Unknown',
+                  type: {} as IngredientType,
+                  brand: 'Unknown',
+                  preferredVendor: 'Kroger',
+                  vendorProductId: 'unknown',
+                  link: '',
+                  price: '0.00',
+                  additionalInfo: 'failed',
+                } as Ingredient & {
+                  additionalInfo: string;
+                };
+              }
+            })
+          );
+
+          console.log(products, 'transformed fully')
+          setStoreToIngredients({
+            [location['name']]: products.filter((p) => p.id !== 'unknown'),
+            'No Avaliable Merchants': transformedData['Unknown Store'].filter(
+              (e) =>
+                remove.indexOf(
+                  'brand' in e || !('type' in e) ? e.name : e.type.name
+                ) === -1
+            ),
+            ...Object.fromEntries(
+              Object.entries(transformedData).filter(
+                ([k, e]) => k !== 'Unknown Store'
+              )
+            ),
+          });
+        } catch (error) {
+          console.error('Error processing Kroger data:', error);
+        }
+      };
+
+      handleKrogerData();
+    } else {
+      setStoreToIngredients(transformedData);
+    }
+
+    console.log('Transformed Data:', transformedData);
+  }, [ingredients]);
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
