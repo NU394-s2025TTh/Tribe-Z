@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ing_flour_ap_kingarthur",
+    "type": {
+      "name": "All-Purpose Flour",
+      "description": "Standard bleached or unbleached all-purpose flour.",
+      "dietaryContraindications": ["gluten"]
+    },
+    "name": "King Arthur All-Purpose Flour",
+    "brand": "King Arthur",
+    "preferredVendor": "Local Supermarket",
+    "vendorProductId": "KA-AP-001"
+  },
+  {
+    "id": "ing_sugar_granulated_domino",
+    "type": {
+      "name": "Granulated Sugar",
+      "description": "Refined white sugar."
+    },
+    "name": "Domino Granulated Sugar",
+    "brand": "Domino"
+  }
+]

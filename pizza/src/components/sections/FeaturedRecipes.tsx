@@ -1,313 +1,18 @@
-import { cn } from '@/lib/utils';
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from '../ui/card';
 
-import { MeasurementUnits, type Recipe } from '@cs394-vite-nx-template/shared';
+import { type Recipe } from '@cs394-vite-nx-template/shared';
 
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const recipes: Recipe[] = [
-  {
-    id: '1',
-    name: 'Cheese Pizza',
-    description:
-      'A classic cheese pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake'],
-  },
-  {
-    id: '2',
-    name: 'Pepperoni Pizza',
-    description:
-      'A classic pepperoni pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake'],
-  },
-  {
-    id: '3',
-    name: 'Veggie Pizza',
-    description:
-      'A classic veggie pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake'],
-  },
-  {
-    id: '4',
-    name: 'BBQ Chicken Pizza',
-    description:
-      'A classic BBQ chicken pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake'],
-  },
-  {
-    id: '5',
-    name: 'Buffalo Chicken Pizza',
-    description:
-      'A classic buffalo chicken pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake'],
-  },
-  {
-    id: '6',
-    name: 'Hawaiian Pizza',
-    description:
-      'A classic Hawaiian pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake'],
-  },
-  {
-    id: '7',
-    name: 'Meat Lovers Pizza',
-    description:
-      'A classic meat lovers pizza with tomato sauce and mozzarella cheese.',
-    headerImage: 'https://placehold.co/600x400',
-    cookTime: 30,
-    ingredients: [
-      {
-        ingredient: {
-          name: 'Dough',
-          description: 'Pizza dough',
-        },
-        recommendation: '1 pizza dough',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Tomato Sauce',
-          description: 'Pizza sauce',
-        },
-        recommendation: '1/2 cup pizza sauce',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Mozzarella Cheese',
-          description: 'Shredded mozzarella cheese',
-        },
-        recommendation: '1 cup shredded mozzarella cheese',
-        amount: 1,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Pepperoni',
-          description: 'Sliced pepperoni',
-        },
-        recommendation: '1/2 cup sliced pepperoni',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Sausage',
-          description: 'Italian sausage',
-        },
-        recommendation: '1/2 cup cooked Italian sausage',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-      {
-        ingredient: {
-          name: 'Bacon',
-          description: 'Cooked bacon',
-        },
-        recommendation: '1/2 cup cooked bacon',
-        amount: 0.5,
-        unit: MeasurementUnits.CUP,
-      },
-    ],
-    instructions: ['preheat oven', 'add toppings', 'bake', 'slice and serve'],
-  },
-];
+import { db } from '@/lib/firebase';
+import { collection, getDocs, query, limit } from 'firebase/firestore';
 
 export function FeaturedCard({
   recipe,
@@ -338,11 +43,21 @@ export function FeaturedCard({
 }
 
 export default function FeaturedRecipes() {
-  const getRecipes = useCallback(() => {
-    return recipes;
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+
+  const getRecipes = useCallback(async (): Promise<void> => {
+    const recipesRef = collection(db, 'recipes');
+    const q = query(recipesRef, limit(7));
+    const querySnapshot = await getDocs(q);
+    console.log(querySnapshot.docs[0].data());
+    setRecipes(querySnapshot.docs.map((e, index) => e.data()) as Recipe[]);
   }, []);
 
-  const cards = getRecipes().map((recipe, index) => (
+  useEffect(() => {
+    getRecipes();
+  }, [getRecipes]);
+
+  const cards = recipes.map((recipe, index) => (
     <FeaturedCard key={index} recipe={recipe} index={index} />
   ));
 
@@ -351,7 +66,7 @@ export default function FeaturedRecipes() {
       <h1 className="text-2xl center sm:text-3xl md:text-4xl font-bold">
         Featured Recipes
       </h1>
-      <p className="text-lg">Check out our latest recipes!</p>
+      <p className="text-lg">See what recipes are trending!</p>
       <div className="hidden grid-cols-3 gap-4 mt-4 lg:grid grid-flow-row ">
         {[
           <span className="col-span-2">{cards[0]}</span>,

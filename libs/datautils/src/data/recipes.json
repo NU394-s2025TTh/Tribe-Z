@@ -1,0 +1,56 @@
+[
+  {
+    "id": "recipe_chocolate_chip_cookies",
+    "name": "Classic Chocolate Chip Cookies",
+    "description": "The best homemade chocolate chip cookies.",
+    "instructions": [
+      "Preheat oven to 375°F (190°C).",
+      "Cream butter and sugars.",
+      "Beat in eggs and vanilla.",
+      "Combine dry ingredients and add to wet ingredients.",
+      "Stir in chocolate chips.",
+      "Drop by rounded tablespoons onto baking sheets.",
+      "Bake for 9-11 minutes."
+    ],
+    "ingredients": [
+      {
+        "ingredient": {
+          "name": "All-Purpose Flour",
+          "dietaryContraindications": ["gluten"]
+        },
+        "recommendation": "ing_flour_ap_kingarthur",
+        "amount": 2.25,
+        "unit": "cup"
+      },
+      {
+        "ingredient": { "name": "Granulated Sugar" },
+        "recommendation": "ing_sugar_granulated_domino",
+        "amount": 0.75,
+        "unit": "cup"
+      },
+      {
+        "ingredient": {
+          "name": "Large Eggs",
+          "dietaryContraindications": ["egg"]
+        },
+        "amount": 2,
+        "unit": "item"
+      }
+    ],
+    "servings": 24,
+    "prepTime": 20,
+    "cookTime": 10,
+    "equipment": [
+      {
+        "name": "Mixing Bowls",
+        "description": "Set of various sized mixing bowls."
+      },
+      { "name": "Measuring Cups and Spoons" }
+    ],
+    "recommendedEquipment": [
+      "eq_stand_mixer_kitchenaid",
+      "eq_baking_sheet_nordicware"
+    ],
+    "headerImage": "url/to/cookie_image.jpg"
+  }
+]
