@@ -49,7 +49,7 @@ app.get('/api/kroger-locations', async (req, res) => {
     return res.json(locations);
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: 'Failed to fetch locations' });
+    return res.status(500).json({ error: 'Failed to fetch locations ' + err });
   }
 });
 
@@ -66,7 +66,7 @@ app.get('/api/kroger-products', async (req, res) => {
     return res.json(products);
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: 'Failed to fetch products' });
+    return res.status(500).json({ error: 'Failed to fetch products ' + err });
   }
 });
 

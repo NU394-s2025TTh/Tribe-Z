@@ -11,3 +11,5 @@ node_modules/
 
 # Local krogers keys
 .env.local
+.env.*
+.env.pizza-app-394
