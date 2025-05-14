@@ -1,6 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 import https from 'https';
 import querystring from 'querystring';
 import zlib from 'zlib';

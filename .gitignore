@@ -53,3 +53,5 @@ test-output
 *.log
 
 firebase-admin-sdk.json
+libs/datautils/tsconfig.lib.tsbuildinfo
+functions/.env.pizza-app-394

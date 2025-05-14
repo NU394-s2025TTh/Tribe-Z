@@ -7,13 +7,13 @@ import express from 'express';
 import * as path from 'path';
 
 import cors from 'cors';
-import * as admin from 'firebase-admin';
+import { initializeApp } from 'firebase-admin/app';
 import { onRequest } from 'firebase-functions/v2/https';
 
 // Kroger Access Endpoint
 import { fetchLocationsByZip, fetchProductsBySearch } from './kroger';
 
-admin.initializeApp();
+initializeApp();
 
 const app = express();
 
