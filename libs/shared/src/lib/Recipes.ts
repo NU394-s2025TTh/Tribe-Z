@@ -30,11 +30,12 @@ export interface Recipe {
   description: string;
   instructions: Array<string>;
   ingredients: Array<MeasuredIngredient>;
-  servings: number;
-  prepTime: number;
-  cookTime: number;
-  equipment: Array<EquipmentType>;
-  recommendedEquipment: Array<Equipment['id']>; // foreign key to Equipment
+  servings?: number;
+  prepTime?: number;
+  cookTime?: number;
+  equipment?: Array<EquipmentType>;
+  headerImage?: string; // url to the header image
+  recommendedEquipment?: Array<Equipment['id']>; // foreign key to Equipment
 }
 
 export interface GuidedRecipe {
