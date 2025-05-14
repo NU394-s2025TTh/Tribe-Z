@@ -10,6 +10,9 @@ import cors from 'cors';
 import * as admin from 'firebase-admin';
 import { onRequest } from 'firebase-functions/v2/https';
 
+// Kroger Access Endpoint
+import { fetchLocationsByZip } from './kroger';
+
 admin.initializeApp();
 
 const app = express();
@@ -24,11 +27,30 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to functions!' });
+  res.send({ message: 'die!!' });
 });
 
-exports.main = onRequest({ cors: true }, app);
+app.get('/', (req, res) => {
+  res.send({ message: 'Testing the automatic build!' });
+});
+
+app.get('/api/kroger-locations', async (req, res) => {
+  const zipCode = req.query.zip as string;
+
+  if (!/^\d{5}$/.test(zipCode)) {
+    return res.status(400).json({ error: 'Invalid or missing zip code' });
+  }
+
+  try {
+    const locations = await fetchLocationsByZip(zipCode);
+    return res.json(locations);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: 'Failed to fetch locations' });
+  }
+});
+
+export const main = onRequest({ cors: true }, app);
