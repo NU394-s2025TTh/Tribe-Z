@@ -61,7 +61,7 @@ export default function RecipeAndIngredientInfo({
     <div>
       <h1 className="text-3xl font-bold leading text-accent">{recipe.name}</h1>
       
-      <div className='w-[50%] text-center translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2'>
+      <div className='w-[50%] text-center translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
         <div>
           <img
             src="https://placehold.co/600x400"
