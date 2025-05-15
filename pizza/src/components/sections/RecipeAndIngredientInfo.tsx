@@ -61,7 +61,7 @@ export default function RecipeAndIngredientInfo({
     <div>
       <h1 className="text-3xl font-bold leading text-accent text-center">{recipe.name}</h1>
       
-      <div className='w-[50%] text-center translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
+      <div className='md:w-[50%] text-center md:translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
         <div>
           <img
             src="https://placehold.co/600x400"
@@ -75,7 +75,7 @@ export default function RecipeAndIngredientInfo({
         <div> <strong> Servings: </strong>{recipe.servings} servings </div>
         <div className='flex flex-row items-center justify-center gap-2'> <strong> Cook mode: </strong> <Switch /></div>
       </div>
-      <div className='w-[50%] translate-x-[50%] border-4 rounded-md p-2'> 
+      <div className='md:w-[50%] md:translate-x-[50%] border-4 rounded-md p-2'> 
       <p className='pt-5'>
         <strong>Ingredients Needed:</strong>
       </p>
