@@ -59,7 +59,7 @@ export default function RecipeAndIngredientInfo({
 
   return (
     <div>
-      <h1 className="text-3xl font-bold leading text-accent">{recipe.name}</h1>
+      <h1 className="text-3xl font-bold leading text-accent text-center">{recipe.name}</h1>
       
       <div className='w-[50%] text-center translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
         <div>
@@ -75,6 +75,7 @@ export default function RecipeAndIngredientInfo({
         <div> <strong> Servings: </strong>{recipe.servings} servings </div>
         <div className='flex flex-row items-center justify-center gap-2'> <strong> Cook mode: </strong> <Switch /></div>
       </div>
+      <div className='w-[50%] translate-x-[50%] border-4 rounded-md p-2'> 
       <p className='pt-5'>
         <strong>Ingredients Needed:</strong>
       </p>
@@ -117,6 +118,7 @@ export default function RecipeAndIngredientInfo({
           <li key={index} className='pt-2'>{step}</li>
         ))}
       </ol>
+      </div>
       <div className="mt-6 text-center bg-muted p-2 rounded-md">
         <p className='text-lg'>
           Missing some ingredients? See our consolidated list of recommended
