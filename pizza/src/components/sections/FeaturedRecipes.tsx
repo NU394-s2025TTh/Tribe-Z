@@ -24,7 +24,7 @@ export function FeaturedCard({
   console.log(recipe);
   return (
     <Link to={`/recipes/${recipe.id}`}>
-      <Card key={recipe.id}>
+      <Card key={recipe.id} className="hover:bg-accent hover:text-accent-foreground hover:scale-101">
         <CardContent>
           <img
             src="https://placehold.co/600x400"
@@ -33,8 +33,8 @@ export function FeaturedCard({
           />
         </CardContent>
         <CardFooter className="flex md:justify-between text-left flex-wrap align-middle justify-center">
-          <CardTitle className="truncate max-w-[50%]">{recipe.name}</CardTitle>
-          <CardDescription className="hidden md:block">
+          <CardTitle className="truncate max-w-[50%] text-inherit">{recipe.name}</CardTitle>
+          <CardDescription className="hidden md:block text-inherit">
             {(1000 * (7 - index) - index * 100).toLocaleString()} Cooked!
           </CardDescription>
         </CardFooter>
@@ -64,8 +64,8 @@ export default function FeaturedRecipes() {
 
   return (
     <div className="w-full text-center md:text-left">
-      <h1 className="text-2xl center sm:text-3xl md:text-4xl font-bold">
-        Featured Recipes
+      <h1 className="text-2xl center sm:text-3xl md:text-4xl font-bold text-accent">
+        Featured Recipes 🍕
       </h1>
       <p className="text-lg">See what recipes are trending!</p>
       <div className="hidden grid-cols-3 gap-4 mt-4 lg:grid grid-flow-row ">

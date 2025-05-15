@@ -94,7 +94,7 @@ export function FloatingNav() {
     before:bg-linear-to-b before:from-background/100 before:to-background/0 before:rounded-md before:-top-4"
     >
       <div className="flex-1">
-        <Logo className="" />
+        <Logo className="w-[80px]" />
       </div>
       <div className="rounded-md border bg-background/80 px-4 py-2">
         <NavigationMenu>

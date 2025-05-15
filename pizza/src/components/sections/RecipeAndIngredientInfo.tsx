@@ -1,9 +1,11 @@
 import { type Recipe } from '@cs394-vite-nx-template/shared';
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState, Dispatch} from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Switch } from "@/components/ui/switch"
+import { Checkbox } from "@/components/ui/checkbox"
 
 interface RecipeAndIngredientInfoProps {
   recipeId: string | undefined;
@@ -14,6 +16,17 @@ export default function RecipeAndIngredientInfo({
 }: RecipeAndIngredientInfoProps) {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const [checkedIngredients, setCheckedIngredients] = useState<Set<number>>(new Set());
+  const [checkedEquipment, setCheckedEquipment] = useState<Set<number>>(new Set());
+
+  const toggleItem = (index: number, setCheckedItem: Dispatch<SetStateAction<Set<number>>>) => {
+    setCheckedItem((prev) => {
+      const newSet = new Set(prev);
+      newSet.has(index) ? newSet.delete(index) : newSet.add(index);
+      return newSet;
+    });
+  };
 
   const getRecipe = async (): Promise<void> => {
     if (!recipeId) return; // Ensure recipeId is defined
@@ -46,56 +59,74 @@ export default function RecipeAndIngredientInfo({
 
   return (
     <div>
-      <h1 className="text-3xl font-bold leading">{recipe.name}</h1>
-      <div>
-        <img
-          src="https://placehold.co/600x400"
-          alt={recipe.name}
-          className="w-full h-48 object-cover rounded-md mt-4 mb-4"
-        />
+      <h1 className="text-3xl font-bold leading text-accent text-center">{recipe.name}</h1>
+      
+      <div className='md:w-[50%] text-center md:translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
+        <div>
+          <img
+            src="https://placehold.co/600x400"
+            alt={recipe.name}
+            className="w-full h-48 object-cover rounded-md mt-4 mb-4"
+          />
+        </div>
+        <div> <strong> {recipe.name}: </strong>  {recipe.description} </div>
+        <div> <strong> Estimated prep time:</strong> {recipe.prepTime} minutes</div>
+        <div> <strong> Cook time:</strong> {recipe.cookTime} minutes</div>
+        <div> <strong> Servings: </strong>{recipe.servings} servings </div>
+        <div className='flex flex-row items-center justify-center gap-2'> <strong> Cook mode: </strong> <Switch /></div>
       </div>
-      <p>
+      <div className='md:w-[50%] md:translate-x-[50%] border-4 rounded-md p-2'> 
+      <p className='pt-5'>
         <strong>Ingredients Needed:</strong>
       </p>
       <div className="flex flex-row">
         <div className="flex-col flex">
-          <ul style={{ listStyleType: '"- "', paddingLeft: '1.5rem' }}>
-            {recipe.ingredients.map((ingredient, index) => (
+          <ul style={{ paddingLeft: '1.5rem' }}>
+            {recipe.ingredients.map((ingredient, index) => { 
+              const isChecked = checkedIngredients.has(index);
+              
+              return (
               <li key={index}>
-                {ingredient.amount} {ingredient.unit}{' '}
-                {ingredient.ingredient.name}
+                <Checkbox checked={isChecked} onCheckedChange={() => toggleItem(index, setCheckedIngredients)}/> 
+                  <span className={isChecked ? "line-through text-accent" : ""}> {ingredient.amount} {ingredient.unit}{' '}
+                {ingredient.ingredient.name} </span>
               </li>
-            ))}
+            );})}
           </ul>
-          <p>
+          <p className='pt-5'>
             <strong>Equipment Needed:</strong>
           </p>
-          <ul style={{ listStyleType: '"- "', paddingLeft: '1.5rem' }}>
-            {recipe.equipment?.map((item, index) => (
+          <ul style={{ paddingLeft: '1.5rem' }}>
+            {recipe.equipment?.map((item, index) => {
+              const isChecked = checkedEquipment.has(index);
+
+              return (
               <li key={index}>
-                {item.name}
-                {item.description && `: ${item.description}`}
+                <Checkbox checked={isChecked} onCheckedChange={() => toggleItem(index, setCheckedEquipment)} /> 
+                  <span className={isChecked ? "line-through text-accent" : ""}> {item.name}
+                {item.description && `: ${item.description}`}</span>
               </li>
-            ))}
+            );})}
           </ul>
         </div>
       </div>
-      <p>
+      <p className='pt-5'>
         <strong>Instructions:</strong>
       </p>
-      <ol style={{ listStyleType: 'decimal', paddingLeft: '1.5rem' }}>
+      <ol style={{ listStyleType: 'decimal', paddingLeft: '1.5rem'}}>
         {recipe.instructions.map((step, index) => (
-          <li key={index}>{step}</li>
+          <li key={index} className='pt-2'>{step}</li>
         ))}
       </ol>
-      <div className="mt-6 text-center">
-        <p>
+      </div>
+      <div className="mt-6 text-center bg-muted p-2 rounded-md">
+        <p className='text-lg'>
           Missing some ingredients? See our consolidated list of recommended
           vendors for each ingredient!
         </p>
         <Link to={`/package/${recipeId}`}>
           <Button
-            className="rounded-md px-4 py-4 justify-self-end mt-4"
+            className="rounded-md px-4 py-4 justify-self-end mt-4 hover:scale-105" 
             variant="outline"
           >
             Go to {recipe.name} Package
