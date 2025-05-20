@@ -64,7 +64,7 @@ export default function RecipeAndIngredientInfo({
       <div className='md:w-[50%] text-center md:translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
         <div>
           <img
-            src="https://placehold.co/600x400"
+            src={recipe.headerImage} 
             alt={recipe.name}
             className="w-full h-48 object-cover rounded-md mt-4 mb-4"
           />
@@ -126,7 +126,7 @@ export default function RecipeAndIngredientInfo({
         </p>
         <Link to={`/package/${recipeId}`}>
           <Button
-            className="rounded-md px-4 py-4 justify-self-end mt-4 hover:scale-105" 
+            className="rounded-md px-4 py-4 justify-self-end mt-4 hover:scale-105 button-pointer"
             variant="outline"
           >
             Go to {recipe.name} Package

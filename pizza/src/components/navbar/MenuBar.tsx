@@ -133,7 +133,7 @@ export function FloatingNav() {
 
       <div className="flex-1 text-right">
         <Button
-          className="rounded-md px-4 py-4 justify-self-end"
+          className="rounded-md px-4 py-4 justify-self-end button-pointer"
           variant="outline"
         >
           Sign In
