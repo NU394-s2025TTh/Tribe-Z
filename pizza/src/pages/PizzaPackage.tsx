@@ -160,7 +160,7 @@ function PizzaPackage() {
                   brand: data.data[0]['brand'],
                   preferredVendor: 'Kroger',
                   vendorProductId: data.data[0]['productId'],
-                  link: "https://kroger.com" + data.data[0]['productPageURI'],
+                  link: 'https://kroger.com' + data.data[0]['productPageURI'],
                   price: '$' + data.data[0]['items'][0]['price']['regular'],
                   additionalInfo: name,
                 } as Ingredient & {
@@ -187,7 +187,7 @@ function PizzaPackage() {
             })
           );
 
-          console.log(products, 'transformed fully')
+          console.log(products, 'transformed fully');
           setStoreToIngredients({
             [location['name']]: products.filter((p) => p.id !== 'unknown'),
             'No Avaliable Merchants': transformedData['Unknown Store'].filter(

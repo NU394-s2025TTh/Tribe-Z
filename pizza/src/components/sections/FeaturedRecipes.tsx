@@ -24,16 +24,21 @@ export function FeaturedCard({
   console.log(recipe);
   return (
     <Link to={`/recipes/${recipe.id}`}>
-      <Card key={recipe.id} className="hover:bg-accent hover:text-accent-foreground hover:scale-101">
+      <Card
+        key={recipe.id}
+        className="hover:bg-accent hover:text-accent-foreground hover:scale-101"
+      >
         <CardContent>
           <img
-            src="https://placehold.co/600x400"
+            src={recipe.headerImage}
             alt="Pizza"
             className="w-full h-48 object-cover rounded-md"
           />
         </CardContent>
         <CardFooter className="flex md:justify-between text-left flex-wrap align-middle justify-center">
-          <CardTitle className="truncate max-w-[50%] text-inherit">{recipe.name}</CardTitle>
+          <CardTitle className="truncate max-w-[50%] text-inherit">
+            {recipe.name}
+          </CardTitle>
           <CardDescription className="hidden md:block text-inherit">
             {(1000 * (7 - index) - index * 100).toLocaleString()} Cooked!
           </CardDescription>
@@ -51,7 +56,12 @@ export default function FeaturedRecipes() {
     const q = query(recipesRef, limit(7));
     const querySnapshot = await getDocs(q);
     console.log(querySnapshot.docs[0].data());
-    setRecipes(querySnapshot.docs.map((e, index) => ({...e.data(), id: e.id})) as Recipe[]);
+    setRecipes(
+      querySnapshot.docs.map((e, index) => ({
+        ...e.data(),
+        id: e.id,
+      })) as Recipe[]
+    );
   }, []);
 
   useEffect(() => {
@@ -78,7 +88,7 @@ export default function FeaturedRecipes() {
         ]}
       </div>
       <div className="grid grid-cols-2 gap-4 mt-4 lg:hidden grid-flow-row ">
-        {[<span className="col-span-2">{cards[0]}</span>, cards.slice(1, 5)]}
+        {[<span className="col-span-2">{cards[0]} </span>, cards.slice(1, 5)]}
       </div>
     </div>
   );
