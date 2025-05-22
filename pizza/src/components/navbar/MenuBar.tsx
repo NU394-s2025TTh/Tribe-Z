@@ -12,8 +12,21 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 import Logo from '../logos/Logo';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, User } from 'firebase/auth';
-import { app } from '@/lib/firebase'; 
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  User,
+} from 'firebase/auth';
+import { app } from '@/lib/firebase';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from '../ui/dropdown-menu';
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -160,7 +173,7 @@ export function FloatingNav() {
         </NavigationMenu>
       </div>
 
-      <div className="flex-1 text-right">
+      <div className="flex-1 flex justify-end align-middle">
         <div className="relative inline-block">
           {!user && (
             <Button
@@ -172,26 +185,29 @@ export function FloatingNav() {
             </Button>
           )}
           {user && (
-            <div>
-              <img
-                src={user.photoURL || ''}
-                alt="User Avatar"
-                className="w-8 h-8 rounded-full cursor-pointer"
-                onClick={() => setShowProfileMenu(!showProfileMenu)}
-              />
-              {showProfileMenu && (
-                <div
-                  className="absolute right-0 mt-2 w-48 bg-cream border border-gray-300 rounded-md shadow-lg z-50"
-                >
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <img
+                  src={user.photoURL || ''}
+                  alt="User Avatar"
+                  className="w-8 h-8 rounded-full cursor-pointer"
+                  referrerPolicy="no-referrer"
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="">
+                <DropdownMenuLabel><b>My Account</b></DropdownMenuLabel>
+                <DropdownMenuItem>
                   <Button
                     onClick={handleSignOut}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 bg-cream hover:bg-red-700 hover:border-gray-200 hover:text-white"
+                    variant="secondary"
+                    className=" text-gray-700 bg-cream hover:bg-red-700 hover:border-gray-200 hover:text-white"
                   >
                     Sign Out
                   </Button>
-                </div>
-              )}
-            </div>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           )}
         </div>
       </div>
