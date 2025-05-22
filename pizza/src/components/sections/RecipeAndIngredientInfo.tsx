@@ -3,9 +3,10 @@ import { SetStateAction, useEffect, useState, Dispatch} from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Switch } from "@/components/ui/switch"
 import { Checkbox } from "@/components/ui/checkbox"
+import OverlayCard from '@/components/sections/LocationInputForm';
 
 interface RecipeAndIngredientInfoProps {
   recipeId: string | undefined;
@@ -14,9 +15,10 @@ interface RecipeAndIngredientInfoProps {
 export default function RecipeAndIngredientInfo({
   recipeId,
 }: RecipeAndIngredientInfoProps) {
+  const navigate = useNavigate();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const [overlayOpen, setOverlayOpen] = useState(false);
   const [checkedIngredients, setCheckedIngredients] = useState<Set<number>>(new Set());
   const [checkedEquipment, setCheckedEquipment] = useState<Set<number>>(new Set());
 
@@ -26,6 +28,15 @@ export default function RecipeAndIngredientInfo({
       newSet.has(index) ? newSet.delete(index) : newSet.add(index);
       return newSet;
     });
+  };
+
+  const handleGoToPackage = () => {
+    const location = localStorage.getItem("userLocation");
+    if (location) {
+      navigate(`/package/${recipeId}`);
+    } else {
+      setOverlayOpen(true);
+    }
   };
 
   const getRecipe = async (): Promise<void> => {
@@ -124,15 +135,15 @@ export default function RecipeAndIngredientInfo({
           Missing some ingredients? See our consolidated list of recommended
           vendors for each ingredient!
         </p>
-        <Link to={`/package/${recipeId}`}>
           <Button
             className="rounded-md px-4 py-4 justify-self-end mt-4 hover:scale-105 button-pointer"
             variant="outline"
+            onClick={handleGoToPackage}
           >
             Go to {recipe.name} Package
           </Button>
-        </Link>
       </div>
+      <OverlayCard open={overlayOpen} onClose={() => setOverlayOpen(false)} recipeId={recipeId}/>
     </div>
   );
 }
