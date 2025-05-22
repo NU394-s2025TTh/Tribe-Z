@@ -48,6 +48,11 @@ const l1: NavMenuLinks[] = [
     href: '/',
     description: 'See our current most popular recipes',
   },
+  {
+    title: 'Ingredients',
+    href: '/ingredients',
+    description: 'Search for ingredients to use', 
+  },
 ];
 
 const l2: NavMenuLinks[] = [
