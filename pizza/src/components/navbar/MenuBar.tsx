@@ -28,6 +28,29 @@ import {
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
 
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Separator } from "@/components/ui/separator"
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
@@ -104,9 +127,11 @@ function ListItem({
   );
 }
 
+
 export function FloatingNav() {
   const [user, setUser] = React.useState<User | null>(null); // State to hold user information
   const [showProfileMenu, setShowProfileMenu] = React.useState(false); // State to control profile menu visibility
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleGoogleSignIn = async () => {
     try {
@@ -211,7 +236,67 @@ export function FloatingNav() {
           )}
         </div>
         <div>
-        <img src="/cart/cart.svg" className='w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10' onClick={() => {}}/>
+          <Sheet>
+            <SheetTrigger asChild>
+              <img src="/cart/cart.svg" className='w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10' onClick={() => {}}/>
+            </SheetTrigger>
+
+            <SheetContent>
+          <SheetHeader>
+            <SheetTitle>See your shopping cart</SheetTitle>
+            <SheetDescription>
+              Checkout some items you have been looking at, literally and figuratively.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="grid gap-4 p-4">
+
+            <div className="grid grid-cols-3 items-center gap-4">
+              <img src="/flour/flour.png"/> 
+              <span> flour for your tummy </span>
+              <div className='text-center font-bold'> 1 </div>
+            </div>
+             <Separator />
+
+          </div>
+          <SheetFooter>
+            <SheetClose asChild>
+             
+              <Button type="submit" className='bg-accent hover:bg-destructive cursor-pointer' onClick={() => setDialogOpen(true)}>Checkout</Button>
+
+            </SheetClose>
+          </SheetFooter>
+        </SheetContent>
+        </Sheet>
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogContent className="sm:max-w-[725px]">
+          <DialogHeader>
+            <DialogTitle>Checkout</DialogTitle>
+            <DialogDescription>
+              Proceed with purchasing items you found interesting!
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              Name 
+              <Input id="name" placeholder='Jane Doe' className="col-span-3" />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              Mailing Adress
+              <Input id="name" placeholder='123 Main St, Alabama, USA' className="col-span-3" />
+            </div>
+             <div className="grid grid-cols-4 items-center gap-4">
+              Credit card number
+              <Input id="name" placeholder='1234 5678 ...' className="col-span-3" />
+            </div>
+          </div>
+          <DialogFooter>
+            <DialogClose>
+            <Button type="submit" className='bg-accent hover:bg-destructive cursor-pointer'>Buy</Button>
+            </DialogClose>
+
+          </DialogFooter>
+        </DialogContent>
+        </Dialog>
         </div>
       </div>
     </div>
