@@ -173,7 +173,7 @@ export function FloatingNav() {
         </NavigationMenu>
       </div>
 
-      <div className="flex-1 flex justify-end align-middle">
+      <div className="flex-1 flex justify-end align-middle gap-4">
         <div className="relative inline-block">
           {!user && (
             <Button
@@ -209,6 +209,9 @@ export function FloatingNav() {
               </DropdownMenuContent>
             </DropdownMenu>
           )}
+        </div>
+        <div>
+        <img src="/cart/cart.svg" className='w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10' onClick={() => {}}/>
         </div>
       </div>
     </div>
