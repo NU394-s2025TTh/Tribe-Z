@@ -9,9 +9,21 @@ import { db } from "@/lib/firebase";
 export default function Ingredients() {
   const [search, setSearch] = useState("");
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  // track IDs in cart
   const [cart, setCart] = useState<Set<string>>(new Set());
-  const categories = ["Flour", "Cheese", "Sauce", "Tomatoes", "Yeast", "Meats"];
+  // NEW: track which category is selected (or null for "all")
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // define what terms each category should match
+  const categoryFilters: Record<string, string[]> = {
+    Flour: ["flour"],
+    Cheese: ["cheese", "mozzarella", "parmesan"],
+    Sauce: ["sauce"],
+    Tomatoes: ["tomato"],
+    Yeast: ["yeast"],
+    Meats: ["sausage", "meat"],
+  };
+
+  const categories = Object.keys(categoryFilters);
 
   useEffect(() => {
     async function fetchIngredients() {
@@ -29,13 +41,22 @@ export default function Ingredients() {
     fetchIngredients();
   }, []);
 
-  const filtered = ingredients.filter((i) =>
-    i.name.toLowerCase().includes(search.toLowerCase())
-  );
+  // first filter by search text...
+  // then, if a category is selected, further filter by that category's terms
+  const filtered = ingredients
+    .filter((i) =>
+      i.name.toLowerCase().includes(search.toLowerCase())
+    )
+    .filter((i) => {
+      if (!selectedCategory) return true;
+      const terms = categoryFilters[selectedCategory];
+      const lower = i.name.toLowerCase();
+      return terms.some((t) => lower.includes(t));
+    });
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className=" mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-accent mb-8">
           Ingredients
         </h1>
@@ -49,16 +70,26 @@ export default function Ingredients() {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full px-8 py-4 text-2xl border rounded-lg mb-4"
           />
-          <div className="flex justify-between gap-4 flex-wrap w-full">
-        {categories.map((category, index) => (
-          <Button
-            key={index}
-            className="px-6 py-3 rounded-md text-lg button-pointer"
-            variant={"outline"}
-          >
-            {category}
-          </Button>
-        ))}
+          <div className="flex flex-nowrap gap-4">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+              return (
+                <Button
+                  key={category}
+                  variant={isActive ? "default" : "outline"}
+                  className={`px-8 py-4 whitespace-nowrap text-xl rounded-lg ${
+                    isActive ? "bg-accent text-white" : ""
+                  }`}
+                  onClick={() =>
+                    setSelectedCategory((prev) =>
+                      prev === category ? null : category
+                    )
+                  }
+                >
+                  {category}
+                </Button>
+              );
+            })}
           </div>
         </div>
 
