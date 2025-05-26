@@ -8,6 +8,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import PizzaPackage from './pages/PizzaPackage';
 import RecipeDetails from './pages/RecipeDetails';
+import Ingredients from './pages/Ingredients';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/package/:pizzaName" element={<PizzaPackage />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
+          <Route path="/ingredients" element={<Ingredients />} />
         </Route>
       </Routes>
     </div>
