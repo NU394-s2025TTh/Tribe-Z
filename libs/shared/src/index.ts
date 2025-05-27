@@ -9,3 +9,4 @@ export type {
   GuidedRecipe,
 } from './lib/Recipes';
 export { MeasurementUnits } from './lib/Recipes';
+export type { Cart, CartItem } from './lib/Cart';

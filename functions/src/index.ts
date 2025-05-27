@@ -71,3 +71,8 @@ app.get('/api/kroger-products', async (req, res) => {
 });
 
 export const main = onRequest({ cors: true }, app);
+
+const { getCart, updateCart } = require("./carts");
+
+exports.getCart = getCart;
+exports.updateCart = updateCart;

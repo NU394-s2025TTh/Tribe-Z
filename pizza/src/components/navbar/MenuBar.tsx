@@ -50,7 +50,10 @@ import {
   DialogClose,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
+import { CartItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
+import { onAuthStateChanged } from "firebase/auth";
 
+// Auth
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
@@ -138,14 +141,82 @@ export function FloatingNav() {
   const [showProfileMenu, setShowProfileMenu] = React.useState(false); // State to control profile menu visibility
   const [dialogOpen, setDialogOpen] = useState(false);
 
+  const [cartItems, setCartItems] = React.useState<CartItem[]>([]);
+
+  async function fetchCart() {
+    try {
+      const userId = user?.uid; // Assuming `user` is the authenticated Firebase user
+      if (!user) {
+        throw new Error("User is not authenticated");
+      }
+  
+      const response = await fetch("https://us-central1-pizza-app-394.cloudfunctions.net/getCart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error fetching cart: ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+      console.log("Fetched cart data:", data);
+  
+      // Merge fetched items with current cartItems
+      setCartItems((prevCartItems) => {
+        const fetchedItems = data.cart.items || [];
+        const mergedItems = [...prevCartItems];
+  
+        fetchedItems.forEach((fetchedItem : any) => {
+          const existingItemIndex = mergedItems.findIndex(
+            (item) => item.itemId === fetchedItem.itemId
+          );
+          if (existingItemIndex === -1) {
+            mergedItems.push(fetchedItem); // Add new items from the backend
+          } else {
+            mergedItems[existingItemIndex] = fetchedItem; // Update existing items
+          }
+        });
+  
+        return mergedItems;
+      });
+    } catch (error) {
+      console.error("Error fetching cart:", error);
+    }
+  }
+  
+  React.useEffect(() => {
+    // Check if the user is already authenticated when the component mounts
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        console.log("User is already authenticated:", currentUser);
+        setUser(currentUser); // Set the user state if already authenticated
+      } else {
+        console.log("No user is currently authenticated.");
+        setUser(null); // Clear the user state if no user is authenticated
+      }
+    });
+  
+    // Cleanup the listener on component unmount
+    return () => unsubscribe();
+  }, []);
+  
   const handleGoogleSignIn = async () => {
     try {
+      if (user) {
+        console.log("User is already signed in:", user);
+        return; // If the user is already signed in, do nothing
+      }
+  
       const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log('User signed in:', user);
-      setUser(user);
+      const signedInUser = result.user;
+      console.log("User signed in:", signedInUser);
+      setUser(signedInUser); // Update the user state
     } catch (error) {
-      console.error('Error signing in with Google:', error);
+      console.error("Error signing in with Google:", error);
     }
   };
 
@@ -241,7 +312,7 @@ export function FloatingNav() {
           )}
         </div>
         <div>
-          <Sheet>
+          <Sheet onOpenChange={(isOpen) => { if (isOpen) fetchCart(); }}>
             <SheetTrigger asChild>
               <img src="/cart/cart.svg" className='w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10' onClick={() => {}}/>
             </SheetTrigger>
@@ -254,12 +325,15 @@ export function FloatingNav() {
             </SheetDescription>
           </SheetHeader>
           <div className="grid gap-4 p-4">
-
-            <div className="grid grid-cols-3 items-center gap-4">
-              <img src="/flour/flour.png"/> 
-              <span> flour for your tummy </span>
-              <div className='text-center font-bold'> 1 </div>
-            </div>
+            {cartItems.map((item, index) => (
+              <div key={index} className="grid grid-cols-3 items-center gap-4">
+                {item.imageUrl ? <img src={item.imageUrl} alt={item.name} className="w-16 h-16 object-cover" /> : <></>}
+                <span>{item.name}</span>
+                <div className='text-center font-bold'>{item.quantity}</div>
+                <div className='text-center'>{item.price}</div>
+              </div>
+            ))}
+            
              <Separator />
 
           </div>
