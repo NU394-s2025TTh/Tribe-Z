@@ -1,6 +1,7 @@
 export interface Item {
   name: string;
   description: string;
+  category?: string;
 }
 
 export interface RecommendedItem<T extends Item> {
