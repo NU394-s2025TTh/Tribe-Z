@@ -55,3 +55,6 @@ test-output
 firebase-admin-sdk.json
 libs/datautils/tsconfig.lib.tsbuildinfo
 functions/.env.pizza-app-394
+
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
