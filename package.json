@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@firebase/app-check": "^0.10.0",
     "@kobalte/core": "^0.13.9",
     "@react-router/node": "^7.2.0",
     "@react-router/serve": "^7.2.0",
@@ -15,6 +16,7 @@
     "isbot": "^4.4.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-markdown": "^10.1.0",
     "react-router": "^7.2.0",
     "react-router-dom": "6.29.0"
   },
