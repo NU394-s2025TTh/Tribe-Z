@@ -75,7 +75,7 @@
       { "name": "Large Mixing Bowl" },
       { "name": "Plastic Wrap" }
     ],
-    "headerImage": "placeholder_master_dough.jpg"
+    "headerImage": "https://i.ibb.co/N2V0GTDT/DSC-0102-1024x651.jpg"
   },
   {
     "tempId": "recipe_new_yorker",
@@ -212,7 +212,7 @@
       "equip_pizza_peel_wood_14in",
       "equip_rocking_pizza_cutter"
     ],
-    "headerImage": "placeholder_new_yorker.jpg"
+    "headerImage": "https://images.axios.com/zriR0tDAS3MgtV5gDvPZOhkUEK0=/0x173:4032x2441/1920x1080/2023/11/20/1700517778304.jpg?w=2048"
   },
   {
     "tempId": "recipe_margherita_home_oven",
@@ -439,7 +439,7 @@
       "equip_rolling_pin_heavy",
       "equip_rocking_pizza_cutter"
     ],
-    "headerImage": "placeholder_chicago_deep_dish.jpg"
+    "headerImage": "https://i.ibb.co/mVnFcCSq/Deep-Dish-Pizza.jpg"
   },
   {
     "tempId": "recipe_detroit_red_top",
@@ -564,7 +564,7 @@
       "equip_immersion_blender",
       "equip_rocking_pizza_cutter"
     ],
-    "headerImage": "placeholder_detroit_red_top.jpg"
+    "headerImage": "https://i.ibb.co/4ZZnMK3j/de.jpg"
   },
   {
     "tempId": "recipe_st_louis",
@@ -706,7 +706,7 @@
       "equip_pizza_peel_wood_14in",
       "equip_pizza_wheel"
     ],
-    "headerImage": "placeholder_st_louis.jpg"
+    "headerImage": "https://i.ibb.co/B5QfDNBJ/St-Louis-Missouri-pizza-in-cardboard-box.jpg"
   },
   {
     "tempId": "recipe_the_brooklyn_sicilian",
@@ -793,7 +793,7 @@
       "equip_pizza_stone_rectangular",
       "equip_rocking_pizza_cutter"
     ],
-    "headerImage": "placeholder_brooklyn_sicilian.jpg"
+    "headerImage": "https://i.ibb.co/JR5Kx6kJ/40a298-a6e825a19d1c485790c7bb504e4ee505-mv2.jpg"
   },
   {
     "tempId": "recipe_cal_italia",
@@ -1138,6 +1138,6 @@
       "equip_metal_palino_wood_fired",
       "equip_rocking_pizza_cutter"
     ],
-    "headerImage": "placeholder_quattro_forni.jpg"
+    "headerImage": "https://www.usatoday.com/gcdn/-mm-/3998a43fab3c6a1b30e8689f28e130b41da7b09a/c=0-742-3996-3000/local/-/media/2017/03/02/USATODAY/USATODAY/636240534125636137-Capos-6.JPG?width=1320&height=746&fit=crop&format=pjpg&auto=webp"
   }
 ]
