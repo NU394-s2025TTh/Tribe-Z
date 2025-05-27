@@ -12,7 +12,13 @@ import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { db } from '@/lib/firebase';
-import { collection, getDocs, query, limit } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  query,
+  limit,
+  QueryConstraint,
+} from 'firebase/firestore';
 
 export function FeaturedCard({
   recipe,
@@ -53,15 +59,22 @@ export default function FeaturedRecipes() {
 
   const getRecipes = useCallback(async (): Promise<void> => {
     const recipesRef = collection(db, 'recipes');
-    const q = query(recipesRef, limit(7));
+    //query where headerImage does not contain placeholder
+    const q = query(recipesRef);
+
     const querySnapshot = await getDocs(q);
-    console.log(querySnapshot.docs[0].data());
-    setRecipes(
-      querySnapshot.docs.map((e, index) => ({
-        ...e.data(),
-        id: e.id,
-      })) as Recipe[]
+
+    let recipes: Recipe[] = querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    })) as Recipe[];
+
+    recipes = recipes.filter(
+      (recipe) => recipe.headerImage && !recipe.headerImage.includes('placeholder')
     );
+
+    console.log(querySnapshot.docs[0].data());
+    setRecipes(recipes);
   }, []);
 
   useEffect(() => {
