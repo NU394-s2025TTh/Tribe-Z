@@ -86,18 +86,18 @@ const l2: NavMenuLinks[] = [
   },
 ];
 
-// const l3: NavMenuLinks[] = [
-//   {
-//     title: 'Recipies',
-//     href: '/recipes',
-//     description: 'See recipies',
-//   },
-// ];
+const l3: NavMenuLinks[] = [
+  {
+    title: 'Ask a Question',
+    href: '/chatbot',
+    description: 'Ask Sensei Luigi any pizza question',
+  },
+];
 
 const navMenu: NavMenu[] = [
   { title: 'Home', links: l1 },
   { title: 'Team', links: l2 },
-  // { title: 'Team', links: l3 },
+  { title: 'Chatbot', links: l3 },
 ];
 
 // Simple ListItem component without forwardRef
@@ -243,7 +243,7 @@ export function FloatingNav() {
         <div>
           <Sheet>
             <SheetTrigger asChild>
-              <img src="/cart/cart.svg" className='w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10' onClick={() => {}}/>
+              <img src="/cart/cart.svg" alt="Shopping Cart" className='w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10' />
             </SheetTrigger>
 
             <SheetContent>
@@ -256,7 +256,7 @@ export function FloatingNav() {
           <div className="grid gap-4 p-4">
 
             <div className="grid grid-cols-3 items-center gap-4">
-              <img src="/flour/flour.png"/> 
+              <img src="/flour/flour.png" alt="Flour" /> 
               <span> flour for your tummy </span>
               <div className='text-center font-bold'> 1 </div>
             </div>
@@ -286,7 +286,7 @@ export function FloatingNav() {
               <Input id="name" placeholder='Jane Doe' className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              Mailing Adress
+              Mailing Address
               <Input id="name" placeholder='123 Main St, Alabama, USA' className="col-span-3" />
             </div>
              <div className="grid grid-cols-4 items-center gap-4">
