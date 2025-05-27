@@ -70,7 +70,7 @@ export default function Chatbot() {
           onChange={handleUserInput}
         />
         <button
-          className="px-4 py-2 ml-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none"
+          className="px-4 py-2 ml-2 rounded-lg bg-red-600 text-white hover:bg-accent focus:outline-none"
           onClick={sendMessage}
           disabled={isLoading}
         >
