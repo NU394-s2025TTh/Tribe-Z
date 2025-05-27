@@ -71,7 +71,7 @@ export default function FeaturedRecipes() {
 
     recipes = recipes.filter(
       (recipe) => recipe.headerImage && !recipe.headerImage.includes('placeholder')
-    );
+    ).slice(0, 7);
 
     console.log(querySnapshot.docs[0].data());
     setRecipes(recipes);
