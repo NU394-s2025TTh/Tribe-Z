@@ -28,6 +28,7 @@ export default function Ingredients() {
     Yeast: ['yeast'],
     Meats: ['sausage', 'meat'],
     Other: ['other'],
+    Equipment: ['equipment'],
   };
 
   const categories = Object.keys(categoryFilters);
@@ -42,8 +43,38 @@ export default function Ingredients() {
         price: doc.data().price ?? null,
         brand: doc.data().brand ?? 'Brand not specified',
         packageSize: doc.data().packageSize,
+        productImage: doc.data().productImage ?? null,
       })) as Ingredient[];
-      setIngredients(list);
+
+      const catValues: Record<string, number> = {
+        Flour: 5,
+        Cheese: 5,
+        Sauce: 4,
+        Tomatoes: 3,
+        Yeast: 3,
+        Meats: 3,
+        Other: 1,
+        Equipment: 2,
+      };
+
+      setIngredients(
+        list
+          .filter((e) => e.price !== 'N/A')
+          .sort((a, b) => {
+            const aCat = a.type?.category;
+            const bCat = b.type?.category;
+
+            if (aCat && bCat) {
+              return (
+                catValues[bCat] +
+                (Math.random() - 0.5) * 3 -
+                (catValues[aCat] + (Math.random() - 0.5) * 3)
+              );
+            }
+
+            return 0;
+          })
+      );
     }
     fetchIngredients();
     setUser(getAuth(app).currentUser); // Set the user state to the current authenticated user
@@ -66,7 +97,7 @@ export default function Ingredients() {
       //   const lower = i.name.toLowerCase();
       //   return terms.some((t) => lower.includes(t));
       // })(i);
-      return cond1 || (!selectedCategory); // cond2;
+      return cond1 || !selectedCategory; // cond2;
     });
 
   async function fetchCart() {
@@ -185,20 +216,22 @@ export default function Ingredients() {
   return (
     <div className="min-h-screen">
       <div className=" mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center text-accent mb-8">
-          Ingredients
+        <h1 className="text-2xl text-center sm:text-3xl md:text-4xl font-bold text-accent">
+          Materials
         </h1>
+        <p className="text-lg text-center pb-4">Get everything you need to make great pizza!</p>
+
 
         {/* Search + Categories */}
         <div className="w-full max-w-3xl mx-auto mb-10">
           <Input
             type="text"
-            placeholder="Search for ingredients"
+            placeholder="Search for materials"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full px-8 py-4 text-2xl border rounded-lg mb-4"
           />
-          <div className="flex flex-nowrap gap-4">
+          <div className="flex flex-nowrap gap-4 justify-center">
             {categories.map((category) => {
               const isActive = selectedCategory === category;
               return (
@@ -231,6 +264,7 @@ export default function Ingredients() {
                 description={ing.type.description}
                 price={ing.price ?? 'Price not available'}
                 brand={ing.brand}
+                productImage={ing.productImage}
                 packageSize={ing.packageSize}
                 isInCart={cartItems.some((item) => item.itemId === ing.id)}
                 onAddToCart={() =>

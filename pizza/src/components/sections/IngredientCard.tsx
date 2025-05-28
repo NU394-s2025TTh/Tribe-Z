@@ -7,6 +7,7 @@ interface IngredientCardProps {
   price: string;
   brand?: string;
   packageSize?: string;
+  productImage?: string; // optional, can be used for future enhancements
   isInCart: boolean;
   onAddToCart: () => void;  // now really a toggle
 }
@@ -17,10 +18,13 @@ export default function IngredientCard({
   price,
   brand,
   packageSize,
+  productImage,
   isInCart,
   onAddToCart,
 }: IngredientCardProps) {
   const [flipped, setFlipped] = useState(false);
+
+  console.log(productImage)
 
   return (
     <div
@@ -41,9 +45,12 @@ export default function IngredientCard({
           style={{ backfaceVisibility: "hidden" }}
         >
           <img
-            src="https://placehold.co/350x200"
+            src={productImage || "/logo/doughjo_main.png"}
             alt={name}
-            className="object-cover rounded-md mb-4 w-full"
+            className="object-contain rounded-md mb-4 w-full aspect-3/1"
+            onError={(e) => {
+              e.currentTarget.src = "/logo/doughjo_main.png";
+            }}
           />
           <p className="font-semibold text-lg text-center">{name}</p>
           <p className="text-gray-700 text-center mt-2">{price}</p>

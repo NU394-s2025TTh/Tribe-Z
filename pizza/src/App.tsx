@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/package/:pizzaName" element={<PizzaPackage />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
-          <Route path="/ingredients" element={<Ingredients />} />
+          <Route path="/materials" element={<Ingredients />} />
         </Route>
       </Routes>
     </div>
