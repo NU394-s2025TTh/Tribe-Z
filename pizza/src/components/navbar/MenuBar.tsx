@@ -340,8 +340,8 @@ export function FloatingNav() {
             <SheetTrigger asChild>
               <img
                 src="/cart/cart.svg"
+                alt="Shopping Cart"
                 className="w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10"
-                onClick={() => {}}
               />
             </SheetTrigger>
 
