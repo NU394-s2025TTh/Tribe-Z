@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import PizzaPackage from './pages/PizzaPackage';
 import RecipeDetails from './pages/RecipeDetails';
 import Ingredients from './pages/Ingredients';
+import Chatbot from './pages/Chatbot';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/package/:pizzaName" element={<PizzaPackage />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
           <Route path="/materials" element={<Ingredients />} />
+          <Route path="/chatbot" element={<Chatbot />} />
         </Route>
       </Routes>
     </div>
