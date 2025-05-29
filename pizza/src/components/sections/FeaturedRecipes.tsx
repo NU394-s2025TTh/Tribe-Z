@@ -69,9 +69,12 @@ export default function FeaturedRecipes() {
       id: doc.id,
     })) as Recipe[];
 
-    recipes = recipes.filter(
-      (recipe) => recipe.headerImage && !recipe.headerImage.includes('placeholder')
-    ).slice(0, 7);
+    recipes = recipes
+      .filter(
+        (recipe) =>
+          recipe.headerImage && !recipe.headerImage.includes('placeholder')
+      )
+      .slice(0, 7);
 
     console.log(querySnapshot.docs[0].data());
     setRecipes(recipes);
@@ -87,10 +90,12 @@ export default function FeaturedRecipes() {
 
   return (
     <div className="w-full text-center md:text-left">
-      <h1 className="text-2xl center sm:text-3xl md:text-4xl font-bold text-accent">
-        Featured Recipes 🍕
-      </h1>
-      <p className="text-lg">See what recipes are trending!</p>
+      <div className="py-8">
+        <h1 className="text-2xl text-center center sm:text-3xl md:text-4xl font-bold text-accent">
+          Featured Recipes 🍕
+        </h1>
+        <p className="text-lg text-center">See what recipes are trending!</p>
+      </div>
       <div className="hidden grid-cols-3 gap-4 mt-4 lg:grid grid-flow-row ">
         {[
           <span className="col-span-2">{cards[0]}</span>,
