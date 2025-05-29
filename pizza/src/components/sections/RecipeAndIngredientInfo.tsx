@@ -1,12 +1,14 @@
 import { type Recipe } from '@cs394-vite-nx-template/shared';
 import { SetStateAction, useEffect, useState, Dispatch} from 'react';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+import Fuse from 'fuse.js';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Switch } from "@/components/ui/switch"
 import { Checkbox } from "@/components/ui/checkbox"
 import OverlayCard from '@/components/sections/LocationInputForm';
+import type { Ingredient } from '@cs394-vite-nx-template/shared';
 
 interface RecipeAndIngredientInfoProps {
   recipeId: string | undefined;
@@ -59,6 +61,38 @@ export default function RecipeAndIngredientInfo({
   useEffect(() => {
     getRecipe();
   }, [recipeId]);
+
+
+  const logFuzzyMatches = async () => {
+    if (!recipe) return;
+    const snap = await getDocs(collection(db, 'ingredients'));
+    const allIngredients = snap.docs.map((doc) => ({
+      id: doc.id,
+      name: doc.data().name ?? 'Unknown Ingredient',
+      type: doc.data().type ?? { description: 'No description available' },
+      price: doc.data().price ?? null,
+      brand: doc.data().brand ?? 'Brand not specified',
+      packageSize: doc.data().packageSize,
+    })) as Ingredient[];
+
+    const fuse = new Fuse(allIngredients, {
+      keys: ['name'],
+      threshold: 0.55,          // higher threshold = more lenient
+      distance: 200,           // allow matches farther apart
+      minMatchCharLength: 1,   // match even short terms oka
+      ignoreLocation: true,    // don't penalize based on match location
+    });
+
+    //findds best match
+    const matches = recipe.ingredients
+      .map(({ ingredient }) => {
+        const results = fuse.search(ingredient.name);
+        return results.length ? results[0].item : null;
+      })
+      .filter((m): m is Ingredient => Boolean(m));
+
+    console.log('Fuzzy matches for recipe:', matches);
+  };
 
   if (loading) {
     return <div>Loading recipe...</div>; // Show a loading state while fetching
@@ -142,6 +176,13 @@ export default function RecipeAndIngredientInfo({
           >
             Go to {recipe.name} Package
           </Button>
+          <Button
+          variant="outline"
+          onClick={logFuzzyMatches}
+          disabled={!recipe}
+        >
+          Log Matching Ingredients
+        </Button>
       </div>
       <OverlayCard open={overlayOpen} onClose={() => setOverlayOpen(false)} recipeId={recipeId}/>
     </div>
