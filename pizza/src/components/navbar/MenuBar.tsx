@@ -170,28 +170,70 @@ export function FloatingNav() {
       console.log('Fetched cart data:', data);
 
       // Merge fetched items with current cartItems
-      setCartItems((prevCartItems) => {
-        const fetchedItems = data.cart.items || [];
-        const mergedItems = [...prevCartItems];
+      // setCartItems((prevCartItems) => {
+      //   const fetchedItems = data.cart.items || [];
+      //   const mergedItems = [...prevCartItems];
 
-        fetchedItems.forEach((fetchedItem: any) => {
-          const existingItemIndex = mergedItems.findIndex(
-            (item) => item.itemId === fetchedItem.itemId
-          );
-          if (existingItemIndex === -1) {
-            mergedItems.push(fetchedItem); // Add new items from the backend
-          } else {
-            mergedItems[existingItemIndex] = fetchedItem; // Update existing items
-          }
-        });
+      //   fetchedItems.forEach((fetchedItem: any) => {
+      //     const existingItemIndex = mergedItems.findIndex(
+      //       (item) => item.itemId === fetchedItem.itemId
+      //     );
+      //     if (existingItemIndex === -1) {
+      //       mergedItems.push(fetchedItem); // Add new items from the backend
+      //     }
+      //     else {
+      //       mergedItems[existingItemIndex] = fetchedItem; // Update existing items
+      //     }
+      //   });
 
-        return mergedItems;
-      });
+      //   return mergedItems;
+      // });
+      setCartItems(data.cart.items || []); // Set cart items from fetched data
     } catch (error) {
       console.error('Error fetching cart:', error);
     }
   }
 
+  async function removeItemFromCart(itemId: string) {
+    try {
+      const auth = getAuth(app); // Ensure Firebase Auth is initialized
+      const user = auth.currentUser; // Get the currently signed-in user
+  
+      if (!user) {
+        throw new Error("User is not authenticated");
+      }
+  
+      const userId = user.uid;
+  
+      // Update the local state by filtering out the removed item
+      setCartItems((prevCartItems) => prevCartItems.filter((item) => item.itemId !== itemId));
+  
+      // Send the updated cart to the backend
+      const response = await fetch(
+        "https://us-central1-pizza-app-394.cloudfunctions.net/updateCart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId,
+            items: cartItems.filter((item) => item.itemId !== itemId), // Updated cart
+          }),
+        }
+      );
+  
+      if (!response.ok) {
+        throw new Error(`Error updating cart: ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+      console.log("Cart updated successfully:", data);
+    } catch (error) {
+      console.error("Error removing item from cart:", error);
+    }
+  }
+  
   React.useEffect(() => {
     // Check if the user is already authenticated when the component mounts
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -344,19 +386,18 @@ export function FloatingNav() {
               />
             </SheetTrigger>
 
-            <SheetContent>
+            <SheetContent className="overflow-y-auto max-h-[100vh]">
               <SheetHeader>
                 <SheetTitle>See your shopping cart</SheetTitle>
                 <SheetDescription>
-                  Checkout some items you have been looking at, literally and
-                  figuratively.
+                  Checkout some items you have been looking at, literally and figuratively.
                 </SheetDescription>
               </SheetHeader>
               <div className="grid gap-4 p-4">
                 {cartItems.map((item, index) => (
                   <div
                     key={index}
-                    className="grid grid-cols-3 items-center gap-4"
+                    className="grid grid-cols-4 items-center gap-4"
                   >
                     {item.imageUrl ? (
                       <img
@@ -370,6 +411,12 @@ export function FloatingNav() {
                     <span>{item.name}</span>
                     <div className="text-center font-bold">{item.quantity}</div>
                     <div className="text-center">{item.price}</div>
+                    <Button
+                      className="text-red-600 text-xl bg-transparent rounded-full w-10 h-10 flex items-center justify-center hover:text-3xl active:text-3xl hover:bg-transparent"
+                      onClick={() => removeItemFromCart(item.itemId)}
+                    >
+                      🗑️
+                    </Button>
                   </div>
                 ))}
 

@@ -180,13 +180,13 @@ export default function RecipeAndIngredientInfo({
           >
             Go to {recipe.name} Package
           </Button>
-          <Button
+          {/* <Button
           variant="outline"
           onClick={logFuzzyMatches}
           disabled={!recipe}
         >
           Log Matching Ingredients
-        </Button>
+        </Button> */}
       </div>
       <OverlayCard open={overlayOpen} onClose={() => setOverlayOpen(false)} recipeId={recipeId}/>
     </div>
