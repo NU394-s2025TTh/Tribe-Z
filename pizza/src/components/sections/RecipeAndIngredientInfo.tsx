@@ -109,11 +109,11 @@ export default function RecipeAndIngredientInfo({
   return (
     <div>
       <h1 className="text-3xl font-bold leading text-accent text-center">{recipe.name}</h1>
-      
+
       <div className='md:w-[50%] text-center md:translate-x-[50%] bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4'>
         <div>
           <img
-            src={recipe.headerImage} 
+            src={recipe.headerImage}
             alt={recipe.name}
             className="w-full h-48 object-cover rounded-md mt-4 mb-4"
           />
@@ -124,19 +124,19 @@ export default function RecipeAndIngredientInfo({
         <div> <strong> Servings: </strong>{recipe.servings} servings </div>
         <div className='flex flex-row items-center justify-center gap-2'> <strong> Cook mode: </strong> <Switch /></div>
       </div>
-      <div className='md:w-[50%] md:translate-x-[50%] border-4 rounded-md p-2'> 
+      <div className='md:w-[50%] md:translate-x-[50%] border-4 rounded-md p-2'>
       <p className='pt-5'>
         <strong>Ingredients Needed:</strong>
       </p>
       <div className="flex flex-row">
         <div className="flex-col flex">
           <ul style={{ paddingLeft: '1.5rem' }}>
-            {recipe.ingredients.map((ingredient, index) => { 
+            {recipe.ingredients.map((ingredient, index) => {
               const isChecked = checkedIngredients.has(index);
-              
+
               return (
               <li key={index}>
-                <Checkbox checked={isChecked} onCheckedChange={() => toggleItem(index, setCheckedIngredients)}/> 
+                <Checkbox checked={isChecked} onCheckedChange={() => toggleItem(index, setCheckedIngredients)}/>
                   <span className={isChecked ? "line-through text-accent" : ""}> {ingredient.amount} {ingredient.unit}{' '}
                 {ingredient.ingredient.name} </span>
               </li>
@@ -151,7 +151,7 @@ export default function RecipeAndIngredientInfo({
 
               return (
               <li key={index}>
-                <Checkbox checked={isChecked} onCheckedChange={() => toggleItem(index, setCheckedEquipment)} /> 
+                <Checkbox checked={isChecked} onCheckedChange={() => toggleItem(index, setCheckedEquipment)} />
                   <span className={isChecked ? "line-through text-accent" : ""}> {item.name}
                 {item.description && `: ${item.description}`}</span>
               </li>

@@ -53,8 +53,13 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-4">Chatbot</h1>
+    <div className="container mx-auto px-4">
+      <div className="py-8">
+        <h1 className="text-2xl text-center center sm:text-3xl md:text-4xl font-bold text-accent">
+          Ask Sensei 🍕
+        </h1>
+        <p className="text-lg text-center">Chat with our chatbot!</p>
+      </div>
 
       <div className="chat-container rounded-lg shadow-md p-4">
         <ChatHistory chatHistory={chatHistory} />
