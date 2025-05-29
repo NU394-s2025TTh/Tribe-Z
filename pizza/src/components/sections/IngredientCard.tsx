@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 interface IngredientCardProps {
@@ -10,6 +10,7 @@ interface IngredientCardProps {
   productImage?: string; // optional, can be used for future enhancements
   isInCart: boolean;
   onAddToCart: () => void;  // now really a toggle
+  onFlip?: (flipped: boolean) => void; // Callback to notify parent of flip state
 }
 
 export default function IngredientCard({
@@ -21,16 +22,25 @@ export default function IngredientCard({
   productImage,
   isInCart,
   onAddToCart,
+  onFlip
 }: IngredientCardProps) {
   const [flipped, setFlipped] = useState(false);
 
-  console.log(productImage)
+  const handleFlip = () => {
+    setFlipped((prev) => {
+      const newFlipped = !prev;
+      if (onFlip) {
+        onFlip(newFlipped); // Notify parent of the new flipped state
+      }
+      return newFlipped;
+    });
+  };
 
   return (
     <div
       className="w-full cursor-pointer"
       style={{ perspective: "900px" }}
-      onClick={() => setFlipped((f) => !f)}
+      onClick={handleFlip}
     >
       <div
         className="relative w-full transition-transform duration-500"

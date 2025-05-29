@@ -5,17 +5,19 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import { CartItem, Cart } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
+import { CartItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
 import { app } from '@/lib/firebase';
 import { getAuth } from 'firebase/auth';
 import { User } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
+import { fetchCart, updateCart } from '../lib/function/cartFunctions'; // Adjust the import path as necessary
 
 export default function Ingredients() {
   const [search, setSearch] = useState('');
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  // NEW: track which category is selected (or null for "all")
+  
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  
   const [cartItems, setCartItems] = React.useState<CartItem[]>([]);
   const [user, setUser] = useState<User | null>(null);
 
@@ -100,49 +102,11 @@ export default function Ingredients() {
       return cond1 || !selectedCategory; // cond2;
     });
 
-  async function fetchCart() {
+  async function loadCart() {
     try {
-      const userId = user?.uid; // Assuming `user` is the authenticated Firebase user
-      if (!user) {
-        throw new Error('User is not authenticated');
-      }
+      const data = await fetchCart(user!);
+      setCartItems(data.cart.items || []); // Set cart items from fetched data
 
-      const response = await fetch(
-        'https://us-central1-pizza-app-394.cloudfunctions.net/getCart',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ userId }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`Error fetching cart: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      console.log('Fetched cart data:', data);
-
-      // Merge fetched items with current cartItems
-      setCartItems((prevCartItems) => {
-        const fetchedItems = data.cart.items || [];
-        const mergedItems = [...prevCartItems];
-
-        fetchedItems.forEach((fetchedItem: any) => {
-          const existingItemIndex = mergedItems.findIndex(
-            (item) => item.itemId === fetchedItem.itemId
-          );
-          if (existingItemIndex === -1) {
-            mergedItems.push(fetchedItem); // Add new items from the backend
-          } else {
-            mergedItems[existingItemIndex] = fetchedItem; // Update existing items
-          }
-        });
-
-        return mergedItems;
-      });
     } catch (error) {
       console.error('Error fetching cart:', error);
     }
@@ -169,7 +133,7 @@ export default function Ingredients() {
   useEffect(() => {
     if (user) {
       console.log('Fetching cart for authenticated user:', user);
-      fetchCart();
+      loadCart();
     }
   }, [user]); // Run this effect whenever `user` changes
 
@@ -185,28 +149,7 @@ export default function Ingredients() {
         throw new Error('User is not authenticated');
       }
 
-      const userId = user.uid;
-
-      // Post the updated cart to Firebase
-      const response = await fetch(
-        'https://us-central1-pizza-app-394.cloudfunctions.net/updateCart',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            userId,
-            items: updatedCartItems, // Send the updated cartItems array
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`Error updating cart: ${response.statusText}`);
-      }
-
-      const data = await response.json();
+      const data = await updateCart(user, updatedCartItems);
       console.log('Cart updated successfully:', data);
     } catch (error) {
       console.error('Error updating cart:', error);
@@ -267,6 +210,7 @@ export default function Ingredients() {
                 productImage={ing.productImage}
                 packageSize={ing.packageSize}
                 isInCart={cartItems.some((item) => item.itemId === ing.id)}
+                onFlip={() => {loadCart()}}
                 onAddToCart={() =>
                   setCartItems((prevCartItems) => {
                     let isRemoving = false;

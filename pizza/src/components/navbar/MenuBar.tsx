@@ -12,21 +12,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 import Logo from '../logos/Logo';
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  User,
-} from 'firebase/auth';
 import { app } from '@/lib/firebase';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
 import { Separator } from '@/components/ui/separator';
 import {
   Sheet,
@@ -51,11 +37,17 @@ import {
 import { Input } from '@/components/ui/input';
 import { CartItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
 import { onAuthStateChanged } from 'firebase/auth';
+import { deleteItem, fetchCart } from '@/lib/function/cartFunctions'; // Adjust the import path as necessary
+import {
+  getAuth,
+  User,
+} from 'firebase/auth';
+import ProfileNav from './ProfileNav';
+import { useEffect } from 'react';
 
 // Auth
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
-
+  
 interface NavMenuLinks {
   title: string;
   href: string;
@@ -139,56 +131,24 @@ function ListItem({
 }
 
 export function FloatingNav() {
-  const [user, setUser] = React.useState<User | null>(null); // State to hold user information
-  const [showProfileMenu, setShowProfileMenu] = React.useState(false); // State to control profile menu visibility
   const [dialogOpen, setDialogOpen] = useState(false);
-
   const [cartItems, setCartItems] = React.useState<CartItem[]>([]);
+  const [user, setUser] = React.useState<User | null>(null); // State to hold the user object
+  
+  useEffect(() => {
+    const auth = getAuth(app); // Ensure Firebase Auth is initialized
+    const user = auth.currentUser; // Get the currently signed-in user
 
-  async function fetchCart() {
+    if (!user) {
+      throw new Error('User is not authenticated');
+    }
+
+    setUser(user); // Set the user state
+  }, []);
+
+  async function loadCart() {
     try {
-      const userId = user?.uid; // Assuming `user` is the authenticated Firebase user
-      if (!user) {
-        throw new Error('User is not authenticated');
-      }
-
-      const response = await fetch(
-        'https://us-central1-pizza-app-394.cloudfunctions.net/getCart',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ userId }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`Error fetching cart: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      console.log('Fetched cart data:', data);
-
-      // Merge fetched items with current cartItems
-      // setCartItems((prevCartItems) => {
-      //   const fetchedItems = data.cart.items || [];
-      //   const mergedItems = [...prevCartItems];
-
-      //   fetchedItems.forEach((fetchedItem: any) => {
-      //     const existingItemIndex = mergedItems.findIndex(
-      //       (item) => item.itemId === fetchedItem.itemId
-      //     );
-      //     if (existingItemIndex === -1) {
-      //       mergedItems.push(fetchedItem); // Add new items from the backend
-      //     }
-      //     else {
-      //       mergedItems[existingItemIndex] = fetchedItem; // Update existing items
-      //     }
-      //   });
-
-      //   return mergedItems;
-      // });
+      const data = await fetchCart(user!);
       setCartItems(data.cart.items || []); // Set cart items from fetched data
     } catch (error) {
       console.error('Error fetching cart:', error);
@@ -203,33 +163,12 @@ export function FloatingNav() {
       if (!user) {
         throw new Error("User is not authenticated");
       }
-  
-      const userId = user.uid;
-  
+    
       // Update the local state by filtering out the removed item
       setCartItems((prevCartItems) => prevCartItems.filter((item) => item.itemId !== itemId));
   
-      // Send the updated cart to the backend
-      const response = await fetch(
-        "https://us-central1-pizza-app-394.cloudfunctions.net/updateCart",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId,
-            items: cartItems.filter((item) => item.itemId !== itemId), // Updated cart
-          }),
-        }
-      );
-  
-      if (!response.ok) {
-        throw new Error(`Error updating cart: ${response.statusText}`);
-      }
-  
-      const data = await response.json();
-      console.log("Cart updated successfully:", data);
+      return await deleteItem(itemId, cartItems, user);
+
     } catch (error) {
       console.error("Error removing item from cart:", error);
     }
@@ -251,31 +190,6 @@ export function FloatingNav() {
     return () => unsubscribe();
   }, []);
 
-  const handleGoogleSignIn = async () => {
-    try {
-      if (user) {
-        console.log('User is already signed in:', user);
-        return; // If the user is already signed in, do nothing
-      }
-
-      const result = await signInWithPopup(auth, provider);
-      const signedInUser = result.user;
-      console.log('User signed in:', signedInUser);
-      setUser(signedInUser); // Update the user state
-    } catch (error) {
-      console.error('Error signing in with Google:', error);
-    }
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      console.log('User signed out');
-      setUser(null); // Clear the user from state
-    } catch (error) {
-      console.error('Error signing out:', error);
-    }
-  };
 
   return (
     <div
@@ -333,50 +247,11 @@ export function FloatingNav() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-
-      <div className="flex-1 flex justify-end align-middle gap-4">
-        <div className="relative inline-block">
-          {!user && (
-            <Button
-              onClick={handleGoogleSignIn}
-              className="rounded-md px-4 py-4 justify-self-end button-pointer"
-              variant="outline"
-            >
-              Sign In
-            </Button>
-          )}
-          {user && (
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <img
-                  src={user.photoURL || ''}
-                  alt="User Avatar"
-                  className="w-8 h-8 rounded-full cursor-pointer"
-                  referrerPolicy="no-referrer"
-                  onClick={() => setShowProfileMenu(!showProfileMenu)}
-                />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="">
-                <DropdownMenuLabel>
-                  <b>My Account</b>
-                </DropdownMenuLabel>
-                <DropdownMenuItem>
-                  <Button
-                    onClick={handleSignOut}
-                    variant="secondary"
-                    className=" text-gray-700 bg-cream hover:bg-red-700 hover:border-gray-200 hover:text-white"
-                  >
-                    Sign Out
-                  </Button>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
-        </div>
+      <ProfileNav  />
         <div>
           <Sheet
             onOpenChange={(isOpen) => {
-              if (isOpen) fetchCart();
+              if (isOpen) loadCart();
             }}
           >
             <SheetTrigger asChild>
@@ -484,6 +359,5 @@ export function FloatingNav() {
           </Dialog>
         </div>
       </div>
-    </div>
   );
 }

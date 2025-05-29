@@ -8,6 +8,7 @@ import { app } from '@/lib/firebase';
 import { getAuth } from 'firebase/auth';
 import type { CartItem } from '@cs394-vite-nx-template/shared';
 import { useEffect, useState } from 'react';
+import { updateCart } from '@/lib/function/cartFunctions';
 
 interface StoreIngredientCardProps {
   ingredients: Ingredient[];
@@ -55,27 +56,7 @@ export function StoreIngredientCard({
         throw new Error('User is not authenticated');
       }
 
-      const userId = user.uid;
-      // Post the updated cart to Firebase
-      const response = await fetch(
-        'https://us-central1-pizza-app-394.cloudfunctions.net/updateCart',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            userId,
-            items: updatedCartItems, // Send the updated cartItems array
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`Error updating cart: ${response.statusText}`);
-      }
-
-      const data = await response.json();
+      const data = await updateCart(user, updatedCartItems);
       console.log('Cart updated successfully:', data);
     } catch (error) {
       console.error('Error updating cart:', error);

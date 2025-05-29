@@ -9,9 +9,9 @@ import {
 import { doc, getDoc } from 'firebase/firestore';
 
 import { db } from '@/lib/firebase';
-import { resolveSoa } from 'dns';
+// import { resolveSoa } from 'dns';
 
-type ResIngType = [Response, IngredientType];
+// type ResIngType = [Response, IngredientType];
 
 function PizzaPackage() {
   // const [searchParams] = useSearchParams();
@@ -26,6 +26,9 @@ function PizzaPackage() {
   >([]);
 
   const [formattedName, setFormattedName] = useState('');
+  const [storeToIngredients, setStoreToIngredients] = useState<
+    Record<string, any[]>
+  >({});
 
   const getRecipe = async (): Promise<void> => {
     if (!pizzaName) return; // Ensure recipeId is defined
@@ -81,15 +84,9 @@ function PizzaPackage() {
     fetchIngredients();
   }, [ingredientIds]);
 
-  console.log('Ingredients:', ingredients);
-
   const formattedPizzaName = formattedName
     ? formattedName.charAt(0).toUpperCase() + formattedName.slice(1)
     : '';
-
-  const [storeToIngredients, setStoreToIngredients] = useState<
-    Record<string, any[]>
-  >({});
 
   useEffect(() => {
     const transformedData = ingredients.reduce((acc, ingredient) => {
