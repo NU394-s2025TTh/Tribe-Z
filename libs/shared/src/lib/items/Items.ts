@@ -13,4 +13,5 @@ export interface RecommendedItem<T extends Item> {
   preferredVendor?: string,
   vendorProductId?: string,
   link?: string;
+  productImage?: string;
 }
