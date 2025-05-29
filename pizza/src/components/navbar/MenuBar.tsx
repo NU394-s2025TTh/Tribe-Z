@@ -77,9 +77,9 @@ const l1: NavMenuLinks[] = [
 
 const l2: NavMenuLinks[] = [
   {
-    title: 'Ingredients',
-    href: '/ingredients',
-    description: 'Search for ingredients to use',
+    title: 'Materials',
+    href: '/materials',
+    description: 'Get everything you need to make great pizza',
   },
 ];
 
@@ -101,7 +101,7 @@ const l3: NavMenuLinks[] = [
 
 const navMenu: NavMenu[] = [
   { title: 'Recipes', links: l1 },
-  { title: 'Ingredients', links: l2 },
+  { title: 'Materials', links: l2 },
   { title: 'Team', links: l3 },
 ];
 

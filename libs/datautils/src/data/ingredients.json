@@ -1,2503 +1,2866 @@
 [
-  {
-    "id": "ing_red_star_yeast_ady",
-    "type": {
-      "name": "Active Dry Yeast",
-      "description": "Active dry yeast for baking.",
-      "category": "Yeast"
-    },
-    "name": "Red Star Active Dry Yeast",
-    "brand": "Red Star",
-    "price": "$8.99",
-    "packageSize": "113.4g"
-  },
-  {
-    "id": "ing_antimo_caputo_00_flour",
-    "type": {
-      "name": "00 Flour",
-      "description": "Fine Italian 00 flour, ideal for Neapolitan pizza.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Flour"
-    },
-    "name": "Antimo Caputo 00 Pizzeria Flour",
-    "brand": "Antimo Caputo",
-    "price": "$14.95",
-    "packageSize": "1995.8g"
-  },
-  {
-    "id": "ing_anthonys_diastatic_malt",
-    "type": {
-      "name": "Diastatic Malt Powder",
-      "description": "Diastatic malt powder for dough conditioning and browning.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Other"
-    },
-    "name": "Anthony’s Diastatic Malt Powder",
-    "brand": "Anthony’s Goods",
-    "price": "$13.49",
-    "packageSize": "680g"
-  },
-  {
-    "id": "ing_maldon_sea_salt_flakes",
-    "type": {
-      "name": "Sea Salt Flakes",
-      "description": "Flaky sea salt for finishing.",
-      "category": "Other"
-    },
-    "name": "Maldon Sea Salt Flakes",
-    "brand": "Maldon",
-    "price": "$7.65",
-    "packageSize": "125g"
-  },
-  {
-    "id": "ing_strianese_san_marzano_tomatoes",
-    "type": {
-      "name": "Canned San Marzano Tomatoes",
-      "description": "D.O.P. San Marzano whole peeled tomatoes.",
-      "category": "Tomatoes"
-    },
-    "name": "Strianese San Marzano Tomatoes (D.O.P.)",
-    "brand": "Strianese",
-    "price": "$25.99",
-    "packageSize": "3 x 795g cans"
-  },
-  {
-    "id": "ing_whole_foods_kosher_salt",
-    "type": {
-      "name": "Kosher Salt",
-      "description": "Kosher salt for general use.",
-      "category": "Other"
-    },
-    "name": "365 by Whole Foods Market Kosher Salt",
-    "brand": "365 by Whole Foods Market",
-    "price": "$3.29",
-    "packageSize": "998g"
-  },
-  {
-    "id": "ing_grande_mozzarella_curd",
-    "type": {
-      "name": "Mozzarella Curd",
-      "description": "Fresh mozzarella curd for making handmade mozzarella.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Grande Mozzarella Curd",
-    "brand": "Grande",
-    "price": "$9.29",
-    "packageSize": "455g"
-  },
-  {
-    "id": "ing_filippo_berio_evoo",
-    "type": {
-      "name": "Extra Virgin Olive Oil",
-      "description": "Extra virgin olive oil for cooking and finishing.",
-      "category": "Other"
-    },
-    "name": "Filippo Berio Extra Virgin Olive Oil",
-    "brand": "Filippo Berio",
-    "price": "$7.32",
-    "packageSize": "8.4 fl oz"
-  },
-  {
-    "id": "ing_amazon_fresh_basil",
-    "type": {
-      "name": "Fresh Basil",
-      "description": "Fresh basil leaves.",
-      "category": "Other"
-    },
-    "name": "Amazon Grocery Fresh Basil Leaves",
-    "brand": "Amazon Grocery",
-    "price": "$1.89",
-    "packageSize": "14g"
-  },
-  {
-    "id": "ing_king_arthur_hi_gluten_flour",
-    "type": {
-      "name": "High-Gluten Flour",
-      "description": "High-gluten flour for bread and pizza.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Flour"
-    },
-    "name": "King Arthur Sir Lancelot Unbleached Hi-Gluten Flour",
-    "brand": "King Arthur Baking Company",
-    "price": "$7.99",
-    "packageSize": "5 lb"
-  },
-  {
-    "id": "ing_fine_semolina",
-    "type": {
-      "name": "Fine Semolina",
-      "description": "Fine semolina for dusting and dough.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Flour"
-    },
-    "name": "Bob's Red Mill Semolina Pasta Flour",
-    "brand": "Bob's Red Mill",
-    "price": "$3.99",
-    "packageSize": "24 oz"
-  },
-  {
-    "id": "ing_711_ground_tomatoes",
-    "type": {
-      "name": "Canned Ground Tomatoes",
-      "description": "Ground tomatoes for sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "Stanislaus 7/11 Ground Tomatoes",
-    "brand": "Stanislaus",
-    "price": "$3.49",
-    "packageSize": "28 oz can"
-  },
-  {
-    "id": "ing_contadina_tomato_paste",
-    "type": {
-      "name": "Tomato Paste",
-      "description": "Concentrated tomato paste.",
-      "category": "Tomatoes"
-    },
-    "name": "Contadina Tomato Paste",
-    "brand": "Contadina",
-    "price": "$1.79",
-    "packageSize": "12 oz can"
-  },
-  {
-    "id": "ing_dinapoli_whole_peeled_tomatoes",
-    "type": {
-      "name": "Canned Whole Peeled Tomatoes",
-      "description": "Whole peeled plum tomatoes.",
-      "category": "Tomatoes"
-    },
-    "name": "DiNapoli Whole Peeled Tomatoes",
-    "brand": "DiNapoli",
-    "price": "$3.99",
-    "packageSize": "28 oz can"
-  },
-  {
-    "id": "ing_grande_whole_milk_mozzarella",
-    "type": {
-      "name": "Whole Milk Mozzarella",
-      "description": "Low-moisture whole milk mozzarella cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Grande Whole Milk Low Moisture Mozzarella",
-    "brand": "Grande",
-    "price": "$6.99",
-    "packageSize": "16 oz"
-  },
-  {
-    "id": "ing_parmigiano_reggiano",
-    "type": {
-      "name": "Parmigiano-Reggiano Cheese",
-      "description": "Aged Italian hard cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Generic Parmigiano-Reggiano",
-    "brand": "Generic Brand",
-    "price": "$12.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_pecorino_romano",
-    "type": {
-      "name": "Pecorino Romano Cheese",
-      "description": "Aged Italian sheep's milk cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Generic Pecorino Romano",
-    "brand": "Generic Brand",
-    "price": "$9.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_sliced_pepperoni_natural_casing",
-    "type": {
-      "name": "Pepperoni",
-      "description": "Sliced pepperoni, natural casing preferred.",
-      "category": "Meats"
-    },
-    "name": "Ezzo Natural Casing Pepperoni",
-    "brand": "Ezzo Sausage Co.",
-    "price": "$7.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_sweet_fennel_sausage_bulk",
-    "type": {
-      "name": "Sweet Fennel Sausage",
-      "description": "Bulk sweet Italian sausage with fennel.",
-      "category": "Meats"
-    },
-    "name": "Generic Sweet Fennel Sausage (bulk)",
-    "brand": "Generic Butcher",
-    "price": "N/A",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_calabrese_sausage_bulk",
-    "type": {
-      "name": "Calabrese Sausage",
-      "description": "Bulk spicy Calabrese style sausage.",
-      "category": "Meats"
-    },
-    "name": "Generic Calabrese Sausage (bulk)",
-    "brand": "Generic Butcher",
-    "price": "N/A",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_polly_o_ricotta",
-    "type": {
-      "name": "Whole Milk Ricotta Cheese",
-      "description": "Creamy whole milk ricotta cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Polly-O Whole Milk Ricotta Cheese",
-    "brand": "Polly-O",
-    "price": "$4.99",
-    "packageSize": "15 oz"
-  },
-  {
-    "id": "ing_dried_oregano_greek",
-    "type": {
-      "name": "Dried Oregano",
-      "description": "Dried Greek oregano.",
-      "category": "Other"
-    },
-    "name": "Generic Greek Oregano",
-    "brand": "Generic Brand",
-    "price": "$2.99",
-    "packageSize": "0.75 oz"
-  },
-  {
-    "id": "ing_fresh_garlic",
-    "type": {
-      "name": "Fresh Garlic",
-      "description": "Whole garlic bulbs.",
-      "category": "Other"
-    },
-    "name": "Generic Fresh Garlic",
-    "brand": "Generic Farm",
-    "price": "$0.79",
-    "packageSize": "1 head"
-  },
-  {
-    "id": "ing_ceresota_ap_flour",
-    "type": {
-      "name": "All-Purpose Flour",
-      "description": "All-purpose flour, unbleached.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Flour"
-    },
-    "name": "Ceresota Unbleached All-Purpose Flour",
-    "brand": "Ceresota",
-    "price": "$4.49",
-    "packageSize": "5 lb"
-  },
-  {
-    "id": "ing_medium_grind_cornmeal",
-    "type": {
-      "name": "Cornmeal",
-      "description": "Medium-grind cornmeal.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Flour"
-    },
-    "name": "Bob's Red Mill Medium Grind Cornmeal",
-    "brand": "Bob's Red Mill",
-    "price": "$3.99",
-    "packageSize": "24 oz"
-  },
-  {
-    "id": "ing_lard",
-    "type": {
-      "name": "Lard",
-      "description": "Rendered pork fat.",
-      "category": "Meats"
-    },
-    "name": "Armour Lard",
-    "brand": "Armour",
-    "price": "$3.49",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_unsalted_butter_european",
-    "type": {
-      "name": "Unsalted Butter",
-      "description": "European-style unsalted butter (higher fat).",
-      "dietaryContraindications": ["dairy"],
-      "category": "Other"
-    },
-    "name": "Plugrá European Style Butter",
-    "brand": "Plugrá",
-    "price": "$4.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_provolone_cheese",
-    "type": {
-      "name": "Provolone Cheese",
-      "description": "Sliced provolone cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Generic Provolone Cheese",
-    "brand": "Generic Brand",
-    "price": "$7.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_brick_cheese",
-    "type": {
-      "name": "Brick Cheese",
-      "description": "Wisconsin-style brick cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Widmer's Brick Cheese",
-    "brand": "Widmer's Cheese Cellars",
-    "price": "$6.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_white_cheddar_cheese_cabot",
-    "type": {
-      "name": "White Cheddar Cheese",
-      "description": "Sharp white cheddar cheese.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Cabot Seriously Sharp White Cheddar",
-    "brand": "Cabot",
-    "price": "$5.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_stanislaus_tomato_magic",
-    "type": {
-      "name": "Canned Ground Tomatoes",
-      "description": "Ground tomatoes in purée for sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "Stanislaus Tomato Magic Ground Tomatoes",
-    "brand": "Stanislaus",
-    "price": "$3.49",
-    "packageSize": "28 oz can"
-  },
-  {
-    "id": "ing_provel_cheese",
-    "type": {
-      "name": "Provel Cheese",
-      "description": "Processed cheese blend (provolone, Swiss, cheddar).",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Imo's Pizza Provel Cheese",
-    "brand": "Imo's Pizza",
-    "price": "$5.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_simple_syrup",
-    "type": {
-      "name": "Simple Syrup",
-      "description": "Sugar dissolved in water.",
-      "category": "Other"
-    },
-    "name": "Homemade Simple Syrup",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "1 cup"
-  },
-  {
-    "id": "ing_caputo_00_pizza_flour_wood_fired",
-    "type": {
-      "name": "00 Flour for Wood Fired",
-      "description": "Italian 00 flour, specifically for high-heat wood-fired ovens, often without malt.",
-      "dietaryContraindications": ["gluten"],
-      "category": "Flour"
-    },
-    "name": "Antimo Caputo Pizzeria Flour (Blue Bag)",
-    "brand": "Antimo Caputo",
-    "price": "$14.95",
-    "packageSize": "1995.8g"
-  },
-  {
-    "id": "ing_fior_di_latte_mozzarella",
-    "type": {
-      "name": "Fresh Mozzarella (Fior di Latte)",
-      "description": "Fresh cow's milk mozzarella.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Generic Fior di Latte",
-    "brand": "Generic Italian Imports",
-    "price": "$7.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_mozzarella_di_bufala_dop",
-    "type": {
-      "name": "Buffalo Mozzarella (D.O.P.)",
-      "description": "Fresh water buffalo milk mozzarella, D.O.P. certified from Campania.",
-      "dietaryContraindications": ["dairy"],
-      "category": "Cheese"
-    },
-    "name": "Generic Mozzarella di Bufala Campana D.O.P.",
-    "brand": "Generic Italian Imports",
-    "price": "$10.99",
-    "packageSize": "8.8 oz"
-  },
-  {
-    "id": "ing_flour_high_gluten",
-    "type": {
-      "name": "High-Gluten Flour",
-      "description": "Strong flour with high protein content, ideal for long maturation doughs.",
-      "category": "Flour"
-    },
-    "name": "High-Gluten Flour",
-    "brand": "King Arthur Sir Lancelot",
-    "price": "$7.99",
-    "packageSize": "5 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_all_purpose",
-    "type": {
-      "name": "All-Purpose Flour",
-      "description": "General purpose flour, suitable for Chicago-style pizzas.",
-      "category": "Flour"
-    },
-    "name": "All-Purpose Flour",
-    "brand": "Ceresota",
-    "price": "$4.49",
-    "packageSize": "5 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_00",
-    "type": {
-      "name": "00 Flour",
-      "description": "Finely milled Italian flour for tender Neapolitan doughs.",
-      "category": "Flour"
-    },
-    "name": "00 Flour",
-    "brand": "Caputo",
-    "price": "$9.99",
-    "packageSize": "2.2 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_whole_wheat",
-    "type": {
-      "name": "Whole Wheat Flour",
-      "description": "Flour made from whole wheat grains, adding nutty flavor.",
-      "category": "Flour"
-    },
-    "name": "Whole Wheat Flour",
-    "brand": "Central Milling Organic Whole Wheat Medium",
-    "price": "$6.99",
-    "packageSize": "2 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_rye",
-    "type": {
-      "name": "Rye Flour",
-      "description": "Dark rye flour, great for enhancing starters and adding fermentation kick.",
-      "category": "Flour"
-    },
-    "name": "Rye Flour",
-    "brand": "Central Milling Organic Dark Rye",
-    "price": "$5.99",
-    "packageSize": "1.5 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_khorasan",
-    "type": {
-      "name": "Khorasan Flour",
-      "description": "Ancient wheat flour with a nutty, slightly sweet flavor.",
-      "category": "Flour"
-    },
-    "name": "Khorasan Flour",
-    "brand": "Central Milling Organic White Khorasan",
-    "price": "$8.49",
-    "packageSize": "2 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_einkorn",
-    "type": {
-      "name": "Einkorn Flour",
-      "description": "Ancient wheat, less elastic than modern wheat, with a unique flavor.",
-      "category": "Flour"
-    },
-    "name": "Einkorn Flour",
-    "brand": "Jovial",
-    "price": "$7.99",
-    "packageSize": "2 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_organic_type_70_malted",
-    "type": {
-      "name": "Organic Type 70 Malted Flour",
-      "description": "Organic flour with a sweet, wheaty flavor.",
-      "category": "Flour"
-    },
-    "name": "Organic Type 70 Malted Flour",
-    "brand": "Central Milling",
-    "price": "$7.49",
-    "packageSize": "2 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_harvest_king",
-    "type": {
-      "name": "Harvest King Flour",
-      "description": "Light, nutty, medium-strong flour made from winter wheat.",
-      "category": "Flour"
-    },
-    "name": "Harvest King Flour",
-    "brand": "General Mills",
-    "price": "$5.49",
-    "packageSize": "5 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_flour_sprouted_wheat_mash",
-    "type": {
-      "name": "Sprouted Wheat Mash",
-      "description": "Moist, ground sprouted grain for enhanced nutrition and earthy flavor.",
-      "category": "Flour"
-    },
-    "name": "Sprouted Wheat Mash",
-    "brand": "Central Milling",
-    "price": "$6.99",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_semolina_fine",
-    "type": {
-      "name": "Fine Semolina",
-      "description": "Coarse-textured durum wheat, used for dusting to prevent sticking.",
-      "category": "Flour"
-    },
-    "name": "Fine Semolina",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "24 oz",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_yeast_active_dry",
-    "type": {
-      "name": "Active Dry Yeast",
-      "description": "Granulated yeast that needs to be activated in warm water.",
-      "category": "Yeast"
-    },
-    "name": "Active Dry Yeast",
-    "brand": "Red Star",
-    "price": "$8.99",
-    "packageSize": "113.4g"
-  },
-  {
-    "id": "ing_yeast_fresh_compressed",
-    "type": {
-      "name": "Fresh Compressed Yeast",
-      "description": "Also known as cake yeast, sold in pressed cubes and requires refrigeration.",
-      "category": "Yeast"
-    },
-    "name": "Fresh Compressed Yeast",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "2 oz"
-  },
-  {
-    "id": "ing_yeast_quick_rise",
-    "type": {
-      "name": "Quick Rise Yeast",
-      "description": "Instant yeast that speeds up proofing process (generally not recommended for slow fermentation).",
-      "category": "Yeast"
-    },
-    "name": "Quick Rise Yeast",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "0.75 oz"
-  },
-  {
-    "id": "ing_salt_fine_sea",
-    "type": {
-      "name": "Fine Sea Salt",
-      "description": "Intense, clean-flavored salt with a fine grind for even dispersion.",
-      "category": "Other"
-    },
-    "name": "Fine Sea Salt",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "26 oz"
-  },
-  {
-    "id": "ing_salt_kosher",
-    "type": {
-      "name": "Kosher Salt",
-      "description": "Coarse-grained salt, often used for brining and general cooking.",
-      "category": "Other"
-    },
-    "name": "Kosher Salt",
-    "brand": "Morton",
-    "price": "$3.99",
-    "packageSize": "3 lb"
-  },
-  {
-    "id": "ing_salt_maldon_sea",
-    "type": {
-      "name": "Maldon Sea Salt",
-      "description": "Large, visible flakes of sea salt, ideal for finishing dishes.",
-      "category": "Other"
-    },
-    "name": "Maldon Sea Salt",
-    "brand": "Maldon",
-    "price": "$6.99",
-    "packageSize": "8.5 oz"
-  },
-  {
-    "id": "ing_salt_fleur_de_sel",
-    "type": {
-      "name": "Fleur de Sel",
-      "description": "Delicate, flaky sea salt harvested from the surface of salt evaporation ponds.",
-      "category": "Other"
-    },
-    "name": "Fleur de Sel",
-    "brand": "Various",
-    "price": "$8.99",
-    "packageSize": "4.4 oz"
-  },
-  {
-    "id": "ing_oil_extra_virgin_olive",
-    "type": {
-      "name": "Extra Virgin Olive Oil",
-      "description": "Fruity, not too grassy or peppery, used for dough and finishing.",
-      "category": "Other"
-    },
-    "name": "Extra Virgin Olive Oil",
-    "brand": "Filippo Berio",
-    "price": "$12.99",
-    "packageSize": "16.9 fl oz"
-  },
-  {
-    "id": "ing_oil_pure_olive",
-    "type": {
-      "name": "Pure Olive Oil",
-      "description": "Olive oil suitable for higher heat cooking like sautéing and frying.",
-      "category": "Other"
-    },
-    "name": "Pure Olive Oil",
-    "brand": "Filippo Berio",
-    "price": "$9.99",
-    "packageSize": "16.9 fl oz"
-  },
-  {
-    "id": "ing_oil_canola",
-    "type": {
-      "name": "Canola Oil",
-      "description": "Neutral-flavored oil suitable for deep-frying.",
-      "category": "Other"
-    },
-    "name": "Canola Oil",
-    "brand": "Various",
-    "price": "$5.49",
-    "packageSize": "48 fl oz"
-  },
-  {
-    "id": "ing_oil_hot_pepper",
-    "type": {
-      "name": "Hot Pepper Oil",
-      "description": "Spicy oil infused with chiles, for drizzling and adding heat.",
-      "category": "Sauce"
-    },
-    "name": "Hot Pepper Oil",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "8 fl oz"
-  },
-  {
-    "id": "ing_malt_diastatic",
-    "type": {
-      "name": "Diastatic Malt",
-      "description": "Malted barley powder with active enzymes, aids browning and fuels yeast.",
-      "category": "Other"
-    },
-    "name": "Diastatic Malt",
-    "brand": "Various",
-    "price": "$6.99",
-    "packageSize": "4 oz"
-  },
-  {
-    "id": "ing_tomatoes_ground",
-    "type": {
-      "name": "Ground Tomatoes",
-      "description": "Canned ground tomatoes for sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "Ground Tomatoes",
-    "brand": "Stanislaus 7/11",
-    "price": "$3.49",
-    "packageSize": "28 oz can"
-  },
-  {
-    "id": "ing_tomatoes_paste",
-    "type": {
-      "name": "Tomato Paste",
-      "description": "Concentrated tomato product for sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "Tomato Paste",
-    "brand": "Contadina",
-    "price": "$1.79",
-    "packageSize": "12 oz can"
-  },
-  {
-    "id": "ing_tomatoes_whole_plum_pear",
-    "type": {
-      "name": "Whole Plum or Pear Tomatoes",
-      "description": "Canned whole tomatoes, often hand-crushed for sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "Whole Plum or Pear Tomatoes",
-    "brand": "DiNapoli",
-    "price": "$3.99",
-    "packageSize": "28 oz can"
-  },
-  {
-    "id": "ing_tomatoes_san_marzano",
-    "type": {
-      "name": "San Marzano Tomatoes",
-      "description": "DOP certified Italian tomatoes, ideal for authentic Neapolitan sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "San Marzano Tomatoes",
-    "brand": "Strianese",
-    "price": "$5.99",
-    "packageSize": "28 oz can"
-  },
-  {
-    "id": "ing_tomatoes_cherry",
-    "type": {
-      "name": "Cherry Tomatoes",
-      "description": "Small, sweet tomatoes, fresh or roasted.",
-      "category": "Tomatoes"
-    },
-    "name": "Cherry Tomatoes",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "1 pint"
-  },
-  {
-    "id": "ing_tomatoes_early_girl",
-    "type": {
-      "name": "Early Girl Tomatoes",
-      "description": "Ripe tomatoes for sweet, rich sauces.",
-      "category": "Tomatoes"
-    },
-    "name": "Early Girl Tomatoes",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_cheese_mozzarella_whole_milk",
-    "type": {
-      "name": "Whole-Milk Mozzarella Cheese",
-      "description": "Rich, creamy mozzarella that holds and reheats well.",
-      "category": "Cheese"
-    },
-    "name": "Whole-Milk Mozzarella Cheese",
-    "brand": "Grande",
-    "price": "$6.99",
-    "packageSize": "16 oz"
-  },
-  {
-    "id": "ing_cheese_mozzarella_part_skim",
-    "type": {
-      "name": "Part-Skim Mozzarella Cheese",
-      "description": "Mozzarella with lower fat content, for a stronger pizza structure.",
-      "category": "Cheese"
-    },
-    "name": "Part-Skim Mozzarella Cheese",
-    "brand": "Grande",
-    "price": "$6.49",
-    "packageSize": "16 oz"
-  },
-  {
-    "id": "ing_cheese_mozzarella_fresh",
-    "type": {
-      "name": "Fresh Mozzarella (Fior di Latte)",
-      "description": "Delicate, moist mozzarella made from cow's milk.",
-      "category": "Cheese"
-    },
-    "name": "Fresh Mozzarella",
-    "brand": "Homemade",
-    "price": "$7.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_mozzarella_di_bufala",
-    "type": {
-      "name": "Mozzarella di Bufala",
-      "description": "Creamier mozzarella made from water buffalo milk, traditional for Margherita Extra.",
-      "category": "Cheese"
-    },
-    "name": "Mozzarella di Bufala",
-    "brand": "Various",
-    "price": "$10.99",
-    "packageSize": "8.8 oz"
-  },
-  {
-    "id": "ing_cheese_provolone",
-    "type": {
-      "name": "Provolone Cheese",
-      "description": "Salty and intense cheese, often used to balance mozzarella.",
-      "category": "Cheese"
-    },
-    "name": "Provolone Cheese",
-    "brand": "Grande Provo-Nello",
-    "price": "$7.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_parmigiano_reggiano",
-    "type": {
-      "name": "Parmigiano-Reggiano Cheese",
-      "description": "Hard, salty Italian cheese, for shaving or dusting.",
-      "category": "Cheese"
-    },
-    "name": "Parmigiano-Reggiano Cheese",
-    "brand": "Various",
-    "price": "$12.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_pecorino_romano",
-    "type": {
-      "name": "Pecorino Romano Cheese",
-      "description": "Hard, salty sheep's milk cheese, for dusting.",
-      "category": "Cheese"
-    },
-    "name": "Pecorino Romano Cheese",
-    "brand": "Various",
-    "price": "$9.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_provel",
-    "type": {
-      "name": "Provel Cheese",
-      "description": "Processed blend of provolone, Swiss, and Cheddar, signature of St. Louis style.",
-      "category": "Cheese"
-    },
-    "name": "Provel Cheese",
-    "brand": "Various",
-    "price": "$5.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_white_cheddar",
-    "type": {
-      "name": "White Cheddar Cheese",
-      "description": "Sharp, tangy cheddar, used in Detroit-style pizza.",
-      "category": "Cheese"
-    },
-    "name": "White Cheddar Cheese",
-    "brand": "Cabot",
-    "price": "$5.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_brick",
-    "type": {
-      "name": "Brick Cheese",
-      "description": "Cheese used in Detroit-style pizza for its unique charring effect.",
-      "category": "Cheese"
-    },
-    "name": "Brick Cheese",
-    "brand": "Various",
-    "price": "$6.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_asiago",
-    "type": {
-      "name": "Asiago Cheese",
-      "description": "Italian cheese, for shaving.",
-      "category": "Cheese"
-    },
-    "name": "Asiago Cheese",
-    "brand": "Various",
-    "price": "$7.49",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_cheese_gorgonzola",
-    "type": {
-      "name": "Gorgonzola Cheese",
-      "description": "Italian blue cheese with a pungent, creamy flavor.",
-      "category": "Cheese"
-    },
-    "name": "Gorgonzola Cheese",
-    "brand": "Various",
-    "price": "$8.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_cheese_monterey_jack",
-    "type": {
-      "name": "Monterey Jack Cheese",
-      "description": "Mild, creamy American cheese.",
-      "category": "Cheese"
-    },
-    "name": "Monterey Jack Cheese",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_goat",
-    "type": {
-      "name": "Goat Cheese",
-      "description": "Tangy, creamy cheese made from goat's milk.",
-      "category": "Cheese"
-    },
-    "name": "Goat Cheese",
-    "brand": "Laura Chenel",
-    "price": "$6.99",
-    "packageSize": "4 oz"
-  },
-  {
-    "id": "ing_cheese_feta",
-    "type": {
-      "name": "Feta Cheese",
-      "description": "Salty, tangy Greek cheese, often water-packed.",
-      "category": "Cheese"
-    },
-    "name": "Feta Cheese",
-    "brand": "Various",
-    "price": "$5.49",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_cheese_comte",
-    "type": {
-      "name": "Comté Cheese",
-      "description": "Nutty French cheese.",
-      "category": "Cheese"
-    },
-    "name": "Comté Cheese",
-    "brand": "Various",
-    "price": "$9.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_cheese_saint_andre",
-    "type": {
-      "name": "Saint André Cheese",
-      "description": "Rich, buttery triple-cream French cheese.",
-      "category": "Cheese"
-    },
-    "name": "Saint André Cheese",
-    "brand": "Various",
-    "price": "$11.99",
-    "packageSize": "7 oz"
-  },
-  {
-    "id": "ing_cheese_piave",
-    "type": {
-      "name": "Piave Cheese",
-      "description": "Italian hard cheese, similar to Parmigiano-Reggiano, for shaving.",
-      "category": "Cheese"
-    },
-    "name": "Piave Cheese",
-    "brand": "Various",
-    "price": "$10.49",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_fiore_sardo",
-    "type": {
-      "name": "Fiore Sardo Cheese",
-      "description": "Hard Sardinian sheep's milk cheese, for shaving.",
-      "category": "Cheese"
-    },
-    "name": "Fiore Sardo Cheese",
-    "brand": "Various",
-    "price": "$13.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_cheese_pecorino_sardo_aged",
-    "type": {
-      "name": "Aged Pecorino Sardo Cheese",
-      "description": "Longer-aged Sardinian sheep's milk cheese, for shaving.",
-      "category": "Cheese"
-    },
-    "name": "Aged Pecorino Sardo Cheese",
-    "brand": "Various",
-    "price": "$12.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_cheese_pecorino_sardo_young",
-    "type": {
-      "name": "Young Sardinian Pecorino Cheese",
-      "description": "Young, soft Sardinian sheep's milk cheese.",
-      "category": "Cheese"
-    },
-    "name": "Young Sardinian Pecorino Cheese",
-    "brand": "Various",
-    "price": "$11.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_squacquerone",
-    "type": {
-      "name": "Squacquerone Cheese",
-      "description": "Soft, runny Italian cheese from Rimini.",
-      "category": "Cheese"
-    },
-    "name": "Squacquerone Cheese",
-    "brand": "Various",
-    "price": "$9.99",
-    "packageSize": "7 oz"
-  },
-  {
-    "id": "ing_cheese_crescenza_stracchino",
-    "type": {
-      "name": "Crescenza/Stracchino Cheese",
-      "description": "Soft, fresh Italian cheese, similar to squacquerone.",
-      "category": "Cheese"
-    },
-    "name": "Crescenza/Stracchino Cheese",
-    "brand": "Various",
-    "price": "$9.49",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_cheese_robiola",
-    "type": {
-      "name": "Robiola Cheese",
-      "description": "Soft, creamy cheese from northern Italy.",
-      "category": "Cheese"
-    },
-    "name": "Robiola Cheese",
-    "brand": "Various",
-    "price": "$10.99",
-    "packageSize": "4 oz"
-  },
-  {
-    "id": "ing_cheese_fromage_blanc",
-    "type": {
-      "name": "Fromage Blanc",
-      "description": "Fresh, creamy French cheese.",
-      "category": "Cheese"
-    },
-    "name": "Fromage Blanc",
-    "brand": "Various",
-    "price": "$5.99",
-    "packageSize": "8 oz",
-    "dietaryContraindications": ["dairy"]
-  },
-  {
-    "id": "ing_pepperoni",
-    "type": {
-      "name": "Pepperoni",
-      "description": "Spicy American salami, often with natural casing for 'cupping' effect.",
-      "category": "Meats"
-    },
-    "name": "Pepperoni",
-    "brand": "Ezzo",
-    "price": "$7.99",
-    "packageSize": "6 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_sausage_fennel_sweet",
-    "type": {
-      "name": "Sweet Fennel Sausage",
-      "description": "Pork sausage flavored with fennel and a touch of honey.",
-      "category": "Meats"
-    },
-    "name": "Sweet Fennel Sausage",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_sausage_calabrese_honey",
-    "type": {
-      "name": "Calabrese Honey Sausage",
-      "description": "Spicy pork sausage with red pepper flakes, Calabrese peppers, and serrano chiles.",
-      "category": "Meats"
-    },
-    "name": "Calabrese Honey Sausage",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_sausage_chorizo_fresh_bulk",
-    "type": {
-      "name": "Fresh Bulk Chorizo",
-      "description": "Uncured, ground Spanish sausage.",
-      "category": "Meats"
-    },
-    "name": "Fresh Bulk Chorizo",
-    "brand": "Fontanini",
-    "price": "$6.99",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_sausage_chorizo_cured_spanish",
-    "type": {
-      "name": "Cured Spanish Chorizo",
-      "description": "Dry-cured, spicy Spanish sausage, thinly sliced.",
-      "category": "Meats"
-    },
-    "name": "Cured Spanish Chorizo",
-    "brand": "Fra’ Mani",
-    "price": "$8.99",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_salami_molinari_dry",
-    "type": {
-      "name": "Molinari Dry Salami",
-      "description": "Traditional dry salami, often used as a topping.",
-      "category": "Meats"
-    },
-    "name": "Molinari Dry Salami",
-    "brand": "Molinari",
-    "price": "$9.99",
-    "packageSize": "6 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_salami_genoa",
-    "type": {
-      "name": "Genoa Salami",
-      "description": "Soft, cured Italian salami.",
-      "category": "Meats"
-    },
-    "name": "Genoa Salami",
-    "brand": "Various",
-    "price": "$6.49",
-    "packageSize": "6 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_salami_soppressata_piccante",
-    "type": {
-      "name": "Soppressata Piccante",
-      "description": "Spicy Italian salami, also known as salame piccante.",
-      "category": "Meats"
-    },
-    "name": "Soppressata Piccante",
-    "brand": "Various",
-    "price": "$8.99",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_prosciutto",
-    "type": {
-      "name": "Prosciutto",
-      "description": "Thinly sliced, dry-cured ham.",
-      "category": "Meats"
-    },
-    "name": "Prosciutto",
-    "brand": "Various",
-    "price": "$9.99",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_prosciutto_cotto",
-    "type": {
-      "name": "Prosciutto Cotto",
-      "description": "Cooked ham, paler and less smoky than typical American deli ham.",
-      "category": "Meats"
-    },
-    "name": "Prosciutto Cotto",
-    "brand": "Various",
-    "price": "$8.49",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_guanciale",
-    "type": {
-      "name": "Guanciale",
-      "description": "Cured pork jowl or cheek, rich and flavorful.",
-      "category": "Meats"
-    },
-    "name": "Guanciale",
-    "brand": "Various",
-    "price": "$11.99",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_lardo",
-    "type": {
-      "name": "Lardo",
-      "description": "Salt-cured pork fat, thinly sliced.",
-      "category": "Meats"
-    },
-    "name": "Lardo",
-    "brand": "Various",
-    "price": "$9.99",
-    "packageSize": "3 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_speck",
-    "type": {
-      "name": "Speck",
-      "description": "Smoked, cured ham, similar to prosciutto but with a distinct smoky flavor.",
-      "category": "Meats"
-    },
-    "name": "Speck",
-    "brand": "Various",
-    "price": "$10.99",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_bacon",
-    "type": {
-      "name": "Bacon",
-      "description": "Cured pork belly, typically sliced into strips.",
-      "category": "Meats"
-    },
-    "name": "Bacon",
-    "brand": "Various",
-    "price": "$6.99",
-    "packageSize": "12 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_corned_beef_brisket",
-    "type": {
-      "name": "Corned Beef Brisket",
-      "description": "Brined beef brisket, slow-cooked until fork-tender.",
-      "category": "Meats"
-    },
-    "name": "Corned Beef Brisket",
-    "brand": "Snake River Farms",
-    "price": "$18.99",
-    "packageSize": "2 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_ground_beef",
-    "type": {
-      "name": "Ground Beef",
-      "description": "Ground beef, often with a specific fat percentage for meatballs.",
-      "category": "Meats"
-    },
-    "name": "Ground Beef",
-    "brand": "Niman Ranch",
-    "price": "$7.99",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_ground_veal",
-    "type": {
-      "name": "Ground Veal",
-      "description": "Ground veal, used in meatball mixtures for tenderness.",
-      "category": "Meats"
-    },
-    "name": "Ground Veal",
-    "brand": "Various",
-    "price": "$9.99",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_meatballs_cooked",
-    "type": {
-      "name": "Cooked Meatballs",
-      "description": "Prepared meatballs, for pizza toppings or calzone fillings.",
-      "category": "Meats"
-    },
-    "name": "Cooked Meatballs",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_chicken_thighs",
-    "type": {
-      "name": "Chicken Thighs",
-      "description": "Bone-in, skin-on chicken thighs, often grilled for pizza.",
-      "category": "Meats"
-    },
-    "name": "Chicken Thighs",
-    "brand": "Various",
-    "price": "$5.99",
-    "packageSize": "1.5 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_steak_strip",
-    "type": {
-      "name": "Strip Steak",
-      "description": "Cut of beef, often grilled for pizza toppings.",
-      "category": "Meats"
-    },
-    "name": "Strip Steak",
-    "brand": "Various",
-    "price": "$14.99",
-    "packageSize": "1 lb",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_arugula",
-    "type": {
-      "name": "Arugula",
-      "description": "Peppery green leaves, often used as a fresh garnish.",
-      "category": "Other"
-    },
-    "name": "Arugula",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "5 oz"
-  },
-  {
-    "id": "ing_basil_fresh",
-    "type": {
-      "name": "Fresh Basil",
-      "description": "Aromatic herb, used in sauces and as a fresh topping.",
-      "category": "Other"
-    },
-    "name": "Fresh Basil",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "0.75 oz"
-  },
-  {
-    "id": "ing_garlic",
-    "type": {
-      "name": "Garlic",
-      "description": "Pungent bulb used in various forms (minced, roasted, fresh cloves).",
-      "category": "Other"
-    },
-    "name": "Garlic",
-    "brand": "Various",
-    "price": "$0.79",
-    "packageSize": "1 head"
-  },
-  {
-    "id": "ing_onion_white",
-    "type": {
-      "name": "White Onion",
-      "description": "Mild onion, used in sauces and as a topping.",
-      "category": "Other"
-    },
-    "name": "White Onion",
-    "brand": "Various",
-    "price": "$1.29",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_onion_yellow",
-    "type": {
-      "name": "Yellow Onion",
-      "description": "Common onion, often caramelized for toppings.",
-      "category": "Other"
-    },
-    "name": "Yellow Onion",
-    "brand": "Various",
-    "price": "$1.29",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_onion_red",
-    "type": {
-      "name": "Red Onion",
-      "description": "Sharp, colorful onion, used fresh or sautéed.",
-      "category": "Other"
-    },
-    "name": "Red Onion",
-    "brand": "Various",
-    "price": "$1.49",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_mushrooms_assorted",
-    "type": {
-      "name": "Assorted Mushrooms",
-      "description": "Various types of mushrooms (pioppini, oyster, shiitake, trumpet, clamshell) for sautéing.",
-      "category": "Other"
-    },
-    "name": "Assorted Mushrooms",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_pepper_red_bell",
-    "type": {
-      "name": "Red Bell Pepper",
-      "description": "Sweet, mild pepper, often sautéed for toppings.",
-      "category": "Other"
-    },
-    "name": "Red Bell Pepper",
-    "brand": "Various",
-    "price": "$1.99",
-    "packageSize": "1 unit"
-  },
-  {
-    "id": "ing_escarole",
-    "type": {
-      "name": "Escarole",
-      "description": "Slightly bitter leafy green, used as a topping.",
-      "category": "Other"
-    },
-    "name": "Escarole",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "1 head"
-  },
-  {
-    "id": "ing_dandelion_greens",
-    "type": {
-      "name": "Dandelion Greens",
-      "description": "Bitter leafy greens, often sautéed.",
-      "category": "Other"
-    },
-    "name": "Dandelion Greens",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "5 oz"
-  },
-  {
-    "id": "ing_watercress",
-    "type": {
-      "name": "Watercress",
-      "description": "Peppery aquatic green, used as a fresh topping.",
-      "category": "Other"
-    },
-    "name": "Watercress",
-    "brand": "Various",
-    "price": "$2.79",
-    "packageSize": "3 oz"
-  },
-  {
-    "id": "ing_squash_zucchini",
-    "type": {
-      "name": "Zucchini",
-      "description": "Green summer squash, often grilled or roasted.",
-      "category": "Other"
-    },
-    "name": "Zucchini",
-    "brand": "Various",
-    "price": "$1.99",
-    "packageSize": "1 unit"
-  },
-  {
-    "id": "ing_squash_yellow_straight_neck",
-    "type": {
-      "name": "Yellow Straight-Neck Squash",
-      "description": "Yellow summer squash, often grilled or roasted.",
-      "category": "Other"
-    },
-    "name": "Yellow Straight-Neck Squash",
-    "brand": "Various",
-    "price": "$1.99",
-    "packageSize": "1 unit"
-  },
-  {
-    "id": "ing_olives_kalamata",
-    "type": {
-      "name": "Kalamata Olives",
-      "description": "Dark purple Greek olives with a distinct flavor.",
-      "category": "Other"
-    },
-    "name": "Kalamata Olives",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_olives_oil_cured_black",
-    "type": {
-      "name": "Oil-Cured Black Olives",
-      "description": "Wrinkly, intensely flavored black olives.",
-      "category": "Other"
-    },
-    "name": "Oil-Cured Black Olives",
-    "brand": "Various",
-    "price": "$5.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_olives_mediterranean_mixed",
-    "type": {
-      "name": "Mediterranean Mixed Olives",
-      "description": "Assortment of olives from the Mediterranean region.",
-      "category": "Other"
-    },
-    "name": "Mediterranean Mixed Olives",
-    "brand": "Various",
-    "price": "$6.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_olives_castelvetrano",
-    "type": {
-      "name": "Castelvetrano Olives",
-      "description": "Bright green, buttery Italian olives.",
-      "category": "Other"
-    },
-    "name": "Castelvetrano Olives",
-    "brand": "Various",
-    "price": "$7.99",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_olives_pugliese",
-    "type": {
-      "name": "Pugliese Olives",
-      "description": "Olives from Puglia, Italy, often used in regional dishes.",
-      "category": "Other"
-    },
-    "name": "Pugliese Olives",
-    "brand": "Various",
-    "price": "$6.49",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_artichokes_marinated",
-    "type": {
-      "name": "Marinated Artichokes",
-      "description": "Artichoke hearts preserved in oil and seasonings.",
-      "category": "Other"
-    },
-    "name": "Marinated Artichokes",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_tomato_sun_dried",
-    "type": {
-      "name": "Sun-Dried Tomato",
-      "description": "Dried tomatoes with intensified flavor.",
-      "category": "Tomatoes"
-    },
-    "name": "Sun-Dried Tomato",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "3 oz"
-  },
-  {
-    "id": "ing_fig_jam",
-    "type": {
-      "name": "Fig Jam",
-      "description": "Sweet preserve made from figs.",
-      "category": "Other"
-    },
-    "name": "Fig Jam",
-    "brand": "Dalmatia",
-    "price": "$5.99",
-    "packageSize": "8.5 oz"
-  },
-  {
-    "id": "ing_figs_fresh_mission",
-    "type": {
-      "name": "Fresh Mission Figs",
-      "description": "Sweet, dark-skinned fresh figs.",
-      "category": "Other"
-    },
-    "name": "Fresh Mission Figs",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "6 oz"
-  },
-  {
-    "id": "ing_mango_ripe",
-    "type": {
-      "name": "Ripe Mango",
-      "description": "Sweet tropical fruit, often diced for salsas.",
-      "category": "Other"
-    },
-    "name": "Ripe Mango",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "1 unit"
-  },
-  {
-    "id": "ing_cilantro",
-    "type": {
-      "name": "Cilantro",
-      "description": "Fresh herb with a distinctive, pungent flavor.",
-      "category": "Other"
-    },
-    "name": "Cilantro",
-    "brand": "Various",
-    "price": "$1.49",
-    "packageSize": "1 bunch"
-  },
-  {
-    "id": "ing_lime_juice_fresh",
-    "type": {
-      "name": "Freshly Squeezed Lime Juice",
-      "description": "Tart juice from fresh limes.",
-      "category": "Other"
-    },
-    "name": "Freshly Squeezed Lime Juice",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "8 fl oz"
-  },
-  {
-    "id": "ing_raspberries",
-    "type": {
-      "name": "Raspberries",
-      "description": "Sweet-tart berries, used as a fresh topping.",
-      "category": "Other"
-    },
-    "name": "Raspberries",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "6 oz",
-    "dietaryContraindications": ["berry"]
-  },
-  {
-    "id": "ing_almonds_salted_roasted_marcona",
-    "type": {
-      "name": "Salted Roasted Marcona Almonds",
-      "description": "Sweet, plump Spanish almonds, roasted and salted.",
-      "category": "Other"
-    },
-    "name": "Salted Roasted Marcona Almonds",
-    "brand": "Various",
-    "price": "$7.99",
-    "packageSize": "4 oz",
-    "dietaryContraindications": ["nuts"]
-  },
-  {
-    "id": "ing_potatoes_purple_small",
-    "type": {
-      "name": "Small Purple Potatoes",
-      "description": "Small potatoes with purple skin and flesh, adding color to dishes.",
-      "category": "Other"
-    },
-    "name": "Small Purple Potatoes",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "1 lb"
-  },
-  {
-    "id": "ing_potatoes_white_yellow",
-    "type": {
-      "name": "White/Yellow Potatoes",
-      "description": "Common potato varieties, used in chunks for braises.",
-      "category": "Other"
-    },
-    "name": "White/Yellow Potatoes",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "2 lb"
-  },
-  {
-    "id": "ing_quail_eggs",
-    "type": {
-      "name": "Quail Eggs",
-      "description": "Small eggs from quail, used as a delicate topping.",
-      "category": "Other"
-    },
-    "name": "Quail Eggs",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "12 count",
-    "dietaryContraindications": ["egg"]
-  },
-  {
-    "id": "ing_eggs_farm_fresh",
-    "type": {
-      "name": "Farm-Fresh Eggs",
-      "description": "Eggs from chickens, used in various recipes.",
-      "category": "Other"
-    },
-    "name": "Farm-Fresh Eggs",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "1 dozen",
-    "dietaryContraindications": ["egg"]
-  },
-  {
-    "id": "ing_syrup_simple",
-    "type": {
-      "name": "Simple Syrup",
-      "description": "Basic syrup made from sugar and water.",
-      "category": "Other"
-    },
-    "name": "Simple Syrup",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "1 cup"
-  },
-  {
-    "id": "ing_glaze_balsamic",
-    "type": {
-      "name": "Balsamic Glaze",
-      "description": "Reduced balsamic vinegar, sweet and tangy.",
-      "category": "Sauce"
-    },
-    "name": "Balsamic Glaze",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "4 fl oz"
-  },
-  {
-    "id": "ing_campari",
-    "type": {
-      "name": "Campari",
-      "description": "Bitter Italian aperitif, used in a syrup for pizza.",
-      "category": "Other"
-    },
-    "name": "Campari",
-    "brand": "Campari",
-    "price": "$24.99",
-    "packageSize": "750 ml"
-  },
-  {
-    "id": "ing_syrup_blood_orange",
-    "type": {
-      "name": "Blood Orange Syrup",
-      "description": "Sweet syrup flavored with blood oranges.",
-      "category": "Other"
-    },
-    "name": "Blood Orange Syrup",
-    "brand": "Torani",
-    "price": "$7.99",
-    "packageSize": "25.4 fl oz"
-  },
-  {
-    "id": "ing_bitters_angostura",
-    "type": {
-      "name": "Angostura Bitters",
-      "description": "Concentrated aromatic bitters, used in cocktails.",
-      "category": "Other"
-    },
-    "name": "Angostura Bitters",
-    "brand": "Angostura",
-    "price": "$8.99",
-    "packageSize": "4 fl oz",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_bitters_peychauds",
-    "type": {
-      "name": "Peychaud's Bitters",
-      "description": "Aromatic bitters with a unique anise and mint flavor.",
-      "category": "Other"
-    },
-    "name": "Peychaud's Bitters",
-    "brand": "Peychaud's",
-    "price": "$9.99",
-    "packageSize": "5 fl oz",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_marmalade_orange",
-    "type": {
-      "name": "Orange Marmalade",
-      "description": "Citrus preserve made from oranges.",
-      "category": "Other"
-    },
-    "name": "Orange Marmalade",
-    "brand": "Various",
-    "price": "$4.49",
-    "packageSize": "12 oz"
-  },
-  {
-    "id": "ing_syrup_maple",
-    "type": {
-      "name": "Maple Syrup",
-      "description": "Sweet syrup made from maple tree sap.",
-      "category": "Other"
-    },
-    "name": "Maple Syrup",
-    "brand": "Various",
-    "price": "$8.99",
-    "packageSize": "8 fl oz",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_bitters_aromatic",
-    "type": {
-      "name": "Aromatic Bitters",
-      "description": "General aromatic bitters for cocktails.",
-      "category": "Other"
-    },
-    "name": "Aromatic Bitters",
-    "brand": "Fee Brothers Old Fashion",
-    "price": "$7.99",
-    "packageSize": "5 fl oz",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_bitters_orange",
-    "type": {
-      "name": "Orange Bitters",
-      "description": "Bitters with a strong orange flavor.",
-      "category": "Other"
-    },
-    "name": "Orange Bitters",
-    "brand": "Fee Brothers West Indian",
-    "price": "$7.99",
-    "packageSize": "5 fl oz",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_seltzer_water",
-    "type": {
-      "name": "Seltzer Water",
-      "description": "Carbonated water, used in cocktails.",
-      "category": "Other"
-    },
-    "name": "Seltzer Water",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "1 liter"
-  },
-  {
-    "id": "ing_cognac_courvoisier",
-    "type": {
-      "name": "Courvoisier Cognac",
-      "description": "French brandy, used in cocktails.",
-      "category": "Other"
-    },
-    "name": "Courvoisier Cognac",
-    "brand": "Courvoisier",
-    "price": "$34.99",
-    "packageSize": "750 ml",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_liqueur_cointreau",
-    "type": {
-      "name": "Cointreau Liqueur",
-      "description": "Orange-flavored liqueur.",
-      "category": "Other"
-    },
-    "name": "Cointreau Liqueur",
-    "brand": "Cointreau",
-    "price": "$29.99",
-    "packageSize": "750 ml",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_prosecco",
-    "type": {
-      "name": "Prosecco",
-      "description": "Italian sparkling wine.",
-      "category": "Other"
-    },
-    "name": "Prosecco",
-    "brand": "Col de’ Salici Prosecco Superiore",
-    "price": "$14.99",
-    "packageSize": "750 ml",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_sugar_light_brown",
-    "type": {
-      "name": "Light Brown Sugar",
-      "description": "Sugar with a soft texture and molasses flavor.",
-      "category": "Other"
-    },
-    "name": "Light Brown Sugar",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "2 lb"
-  },
-  {
-    "id": "ing_cherry_amarena",
-    "type": {
-      "name": "Amarena Cherries",
-      "description": "Sweet-tart Italian cherries, often bottled in syrup.",
-      "category": "Other"
-    },
-    "name": "Amarena Cherries",
-    "brand": "Various",
-    "price": "$12.99",
-    "packageSize": "14 oz"
-  },
-  {
-    "id": "ing_whiskey_rye",
-    "type": {
-      "name": "Rye Whiskey",
-      "description": "Whiskey made primarily from rye grain.",
-      "category": "Other"
-    },
-    "name": "Rye Whiskey",
-    "brand": "Wild Turkey",
-    "price": "$24.99",
-    "packageSize": "750 ml",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_agave_nectar",
-    "type": {
-      "name": "Agave Nectar",
-      "description": "Natural sweetener from the agave plant.",
-      "category": "Other"
-    },
-    "name": "Agave Nectar",
-    "brand": "Various",
-    "price": "$6.99",
-    "packageSize": "11.75 oz",
-    "dietaryContraindications": ["none"]
-  },
-  {
-    "id": "ing_pepper_black_freshly_ground",
-    "type": {
-      "name": "Freshly Ground Black Pepper",
-      "description": "Pungent spice from ground black peppercorns.",
-      "category": "Other"
-    },
-    "name": "Freshly Ground Black Pepper",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "4 oz"
-  },
-  {
-    "id": "ing_pepper_white_freshly_ground",
-    "type": {
-      "name": "Freshly Ground White Pepper",
-      "description": "Milder than black pepper, used for lighter-colored dishes.",
-      "category": "Other"
-    },
-    "name": "Freshly Ground White Pepper",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "4 oz"
-  },
-  {
-    "id": "ing_pepper_cayenne",
-    "type": {
-      "name": "Cayenne Pepper",
-      "description": "Hot chili powder, adds heat to dishes.",
-      "category": "Other"
-    },
-    "name": "Cayenne Pepper",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "1.5 oz"
-  },
-  {
-    "id": "ing_pepper_red_flakes",
-    "type": {
-      "name": "Red Pepper Flakes",
-      "description": "Dried and crushed red chili peppers, adds heat.",
-      "category": "Other"
-    },
-    "name": "Red Pepper Flakes",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "2 oz"
-  },
-  {
-    "id": "ing_paprika_smoked_sweet",
-    "type": {
-      "name": "Smoked Sweet Paprika",
-      "description": "Paprika with a smoky, sweet flavor.",
-      "category": "Other"
-    },
-    "name": "Smoked Sweet Paprika",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "2.5 oz"
-  },
-  {
-    "id": "ing_pepper_nora_ground",
-    "type": {
-      "name": "Ground Ñora Pepper",
-      "description": "Mild, sweet Spanish pepper, dried and ground.",
-      "category": "Other"
-    },
-    "name": "Ground Ñora Pepper",
-    "brand": "Various",
-    "price": "$5.99",
-    "packageSize": "1 oz"
-  },
-  {
-    "id": "ing_seasoning_italian",
-    "type": {
-      "name": "Italian Seasoning",
-      "description": "Blend of dried herbs commonly used in Italian cuisine.",
-      "category": "Other"
-    },
-    "name": "Italian Seasoning",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "0.75 oz"
-  },
-  {
-    "id": "ing_garlic_granulated",
-    "type": {
-      "name": "Granulated Garlic",
-      "description": "Dried, granulated garlic.",
-      "category": "Other"
-    },
-    "name": "Granulated Garlic",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "3 oz"
-  },
-  {
-    "id": "ing_onion_powder",
-    "type": {
-      "name": "Onion Powder",
-      "description": "Dried, ground onion.",
-      "category": "Other"
-    },
-    "name": "Onion Powder",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "2 oz"
-  },
-  {
-    "id": "ing_allspice_whole",
-    "type": {
-      "name": "Whole Allspice",
-      "description": "Dried berries of the allspice tree, used as a spice.",
-      "category": "Other"
-    },
-    "name": "Whole Allspice",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "1 oz"
-  },
-  {
-    "id": "ing_juniper_berries",
-    "type": {
-      "name": "Juniper Berries",
-      "description": "Aromatic berries used as a spice, common in gin and some meat dishes.",
-      "category": "Other"
-    },
-    "name": "Juniper Berries",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "0.75 oz"
-  },
-  {
-    "id": "ing_cloves_whole",
-    "type": {
-      "name": "Whole Cloves",
-      "description": "Dried flower buds, used as a spice.",
-      "category": "Other"
-    },
-    "name": "Whole Cloves",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "1 oz"
-  },
-  {
-    "id": "ing_ginger_ground",
-    "type": {
-      "name": "Ground Ginger",
-      "description": "Dried, ground ginger root, used as a spice.",
-      "category": "Other"
-    },
-    "name": "Ground Ginger",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "1.5 oz"
-  },
-  {
-    "id": "ing_mustard_seeds_yellow",
-    "type": {
-      "name": "Yellow Mustard Seeds",
-      "description": "Small, round seeds used as a spice.",
-      "category": "Other"
-    },
-    "name": "Yellow Mustard Seeds",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "2 oz"
-  },
-  {
-    "id": "ing_peppercorns_black",
-    "type": {
-      "name": "Black Peppercorns",
-      "description": "Dried berries of the pepper plant, ground for spice.",
-      "category": "Other"
-    },
-    "name": "Black Peppercorns",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "4 oz"
-  },
-  {
-    "id": "ing_bay_leaves",
-    "type": {
-      "name": "Bay Leaves",
-      "description": "Aromatic leaves used to flavor stews and braises.",
-      "category": "Other"
-    },
-    "name": "Bay Leaves",
-    "brand": "Various",
-    "price": "$2.49",
-    "packageSize": "0.25 oz"
-  },
-  {
-    "id": "ing_honey",
-    "type": {
-      "name": "Honey",
-      "description": "Sweet, viscous food substance made by bees.",
-      "category": "Other"
-    },
-    "name": "Honey",
-    "brand": "Various",
-    "price": "$7.99",
-    "packageSize": "12 oz",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_liquid_smoke",
-    "type": {
-      "name": "Liquid Smoke",
-      "description": "Condiment used to impart a smoky flavor.",
-      "category": "Other"
-    },
-    "name": "Liquid Smoke",
-    "brand": "Wright's",
-    "price": "$3.49",
-    "packageSize": "3.5 fl oz"
-  },
-  {
-    "id": "ing_mayonnaise",
-    "type": {
-      "name": "Mayonnaise",
-      "description": "Thick, creamy sauce made from oil, egg yolk, vinegar or lemon juice.",
-      "category": "Sauce"
-    },
-    "name": "Mayonnaise",
-    "brand": "Hellmann's",
-    "price": "$4.99",
-    "packageSize": "15 oz",
-    "dietaryContraindications": ["egg"]
-  },
-  {
-    "id": "ing_ketchup",
-    "type": {
-      "name": "Ketchup",
-      "description": "Sweet and tangy tomato-based condiment.",
-      "category": "Sauce"
-    },
-    "name": "Ketchup",
-    "brand": "Heinz",
-    "price": "$3.49",
-    "packageSize": "20 oz"
-  },
-  {
-    "id": "ing_worcestershire_sauce",
-    "type": {
-      "name": "Worcestershire Sauce",
-      "description": "Fermented liquid condiment, adds savory flavor.",
-      "category": "Sauce"
-    },
-    "name": "Worcestershire Sauce",
-    "brand": "Lea & Perrins",
-    "price": "$4.99",
-    "packageSize": "10 fl oz",
-    "dietaryContraindications": ["fish"]
-  },
-  {
-    "id": "ing_horseradish_prepared",
-    "type": {
-      "name": "Prepared Horseradish",
-      "description": "Grated horseradish root mixed with vinegar and salt.",
-      "category": "Other"
-    },
-    "name": "Prepared Horseradish",
-    "brand": "Various",
-    "price": "$3.99",
-    "packageSize": "5 oz"
-  },
-  {
-    "id": "ing_chili_powder",
-    "type": {
-      "name": "Chili Powder",
-      "description": "Spice blend containing ground chili peppers and other spices.",
-      "category": "Other"
-    },
-    "name": "Chili Powder",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "2 oz"
-  },
-  {
-    "id": "ing_parsley_flat_leaf",
-    "type": {
-      "name": "Flat-Leaf Parsley",
-      "description": "Fresh herb, used for flavor and garnish.",
-      "category": "Other"
-    },
-    "name": "Flat-Leaf Parsley",
-    "brand": "Various",
-    "price": "$1.99",
-    "packageSize": "1 bunch"
-  },
-  {
-    "id": "ing_hot_pepper_sauce",
-    "type": {
-      "name": "Hot Pepper Sauce",
-      "description": "Spicy condiment made from chili peppers.",
-      "category": "Sauce"
-    },
-    "name": "Hot Pepper Sauce",
-    "brand": "Tabasco",
-    "price": "$3.49",
-    "packageSize": "2 fl oz"
-  },
-  {
-    "id": "ing_buttermilk",
-    "type": {
-      "name": "Buttermilk",
-      "description": "Cultured dairy product, adds tanginess and moisture.",
-      "category": "Other"
-    },
-    "name": "Buttermilk",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "32 fl oz",
-    "dietaryContraindications": ["dairy"]
-  },
-  {
-    "id": "ing_vinegar_distilled_white",
-    "type": {
-      "name": "Distilled White Vinegar",
-      "description": "Clear vinegar made from grain alcohol.",
-      "category": "Other"
-    },
-    "name": "Distilled White Vinegar",
-    "brand": "Heinz",
-    "price": "$1.99",
-    "packageSize": "32 fl oz"
-  },
-  {
-    "id": "ing_vinegar_rice",
-    "type": {
-      "name": "Rice Vinegar",
-      "description": "Mild, slightly sweet vinegar made from fermented rice.",
-      "category": "Other"
-    },
-    "name": "Rice Vinegar",
-    "brand": "Various",
-    "price": "$3.49",
-    "packageSize": "12 fl oz"
-  },
-  {
-    "id": "ing_beer_german",
-    "type": {
-      "name": "German Beer",
-      "description": "Beer brewed in Germany, or in the German style.",
-      "category": "Other"
-    },
-    "name": "German Beer",
-    "brand": "Paulaner",
-    "price": "$9.99",
-    "packageSize": "6-pack",
-    "dietaryContraindications": ["gluten", "vegan"]
-  },
-  {
-    "id": "ing_jagermeister",
-    "type": {
-      "name": "Jägermeister",
-      "description": "Herbal liqueur, used in a syrup for pizza.",
-      "category": "Other"
-    },
-    "name": "Jägermeister",
-    "brand": "Jägermeister",
-    "price": "$19.99",
-    "packageSize": "750 ml",
-    "dietaryContraindications": ["vegan"]
-  },
-  {
-    "id": "ing_pretzel_hard",
-    "type": {
-      "name": "Hard Pretzel",
-      "description": "Crunchy baked snack, crushed for topping.",
-      "category": "Other"
-    },
-    "name": "Hard Pretzel",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "10 oz",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_mortadella",
-    "type": {
-      "name": "Mortadella",
-      "description": "Large Italian sausage, often with pistachios and fat.",
-      "category": "Meats"
-    },
-    "name": "Mortadella",
-    "brand": "Various",
-    "price": "$7.99",
-    "packageSize": "6 oz",
-    "dietaryContraindications": ["vegetarian", "vegan"]
-  },
-  {
-    "id": "ing_lettuce_butter",
-    "type": {
-      "name": "Butter Lettuce",
-      "description": "Soft, tender lettuce leaves.",
-      "category": "Other"
-    },
-    "name": "Butter Lettuce",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "1 head"
-  },
-  {
-    "id": "ing_mustard_dijon",
-    "type": {
-      "name": "Dijon Mustard",
-      "description": "Creamy French mustard with a tangy flavor.",
-      "category": "Sauce"
-    },
-    "name": "Dijon Mustard",
-    "brand": "Grey Poupon",
-    "price": "$3.49",
-    "packageSize": "8 oz"
-  },
-  {
-    "id": "ing_mustard_spicy_brown",
-    "type": {
-      "name": "Spicy Brown Mustard",
-      "description": "Mustard with a coarser texture and spicy kick.",
-      "category": "Sauce"
-    },
-    "name": "Spicy Brown Mustard",
-    "brand": "Various",
-    "price": "$2.99",
-    "packageSize": "12 oz"
-  },
-  {
-    "id": "ing_bread_crumbs_seasoned",
-    "type": {
-      "name": "Seasoned Bread Crumbs",
-      "description": "Bread crumbs mixed with herbs and spices.",
-      "category": "Other"
-    },
-    "name": "Seasoned Bread Crumbs",
-    "brand": "Homemade",
-    "price": "N/A",
-    "packageSize": "8 oz",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_bread_artisanal_white",
-    "type": {
-      "name": "Artisanal White Bread",
-      "description": "High-quality white bread, often used for homemade bread crumbs.",
-      "category": "Other"
-    },
-    "name": "Artisanal White Bread",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "1 loaf",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_giardiniera",
-    "type": {
-      "name": "Giardiniera",
-      "description": "Pickled Italian relish with mixed vegetables, often spicy.",
-      "category": "Other"
-    },
-    "name": "Giardiniera",
-    "brand": "Fontanini",
-    "price": "$5.99",
-    "packageSize": "16 oz"
-  },
-  {
-    "id": "ing_pasta_bucatini",
-    "type": {
-      "name": "Bucatini",
-      "description": "Thick spaghetti-like pasta with a hole running through the center.",
-      "category": "Other"
-    },
-    "name": "Bucatini",
-    "brand": "Barilla",
-    "price": "$2.49",
-    "packageSize": "16 oz",
-    "dietaryContraindications": ["gluten"]
-  },
-  {
-    "id": "ing_mussels",
-    "type": {
-      "name": "Mussels",
-      "description": "Edible bivalve mollusks, often steamed.",
-      "category": "Other"
-    },
-    "name": "Mussels",
-    "brand": "Various",
-    "price": "$6.99",
-    "packageSize": "2 lb",
-    "dietaryContraindications": ["shellfish"]
-  },
-  {
-    "id": "ing_wine_dry_white",
-    "type": {
-      "name": "Dry White Wine",
-      "description": "Wine used for cooking, adds flavor to sauces and steamed dishes.",
-      "category": "Other"
-    },
-    "name": "Dry White Wine",
-    "brand": "Various",
-    "price": "$8.99",
-    "packageSize": "750 ml"
-  },
-  {
-    "id": "ing_corn_ear_of",
-    "type": {
-      "name": "Ear of Corn",
-      "description": "Fresh corn on the cob, kernels often used as a topping.",
-      "category": "Other"
-    },
-    "name": "Ear of Corn",
-    "brand": "Various",
-    "price": "$0.79",
-    "packageSize": "1 unit"
-  },
-  {
-    "id": "ing_lavender_ground_dried",
-    "type": {
-      "name": "Ground Dried Lavender",
-      "description": "Dried lavender flowers, ground for a floral spice.",
-      "category": "Other"
-    },
-    "name": "Ground Dried Lavender",
-    "brand": "Various",
-    "price": "$4.99",
-    "packageSize": "0.5 oz"
-  }
+    {
+        "id": "ing_red_star_yeast_ady",
+        "type": {
+            "name": "Active Dry Yeast",
+            "description": "Active dry yeast for baking.",
+            "category": "Yeast"
+        },
+        "name": "Red Star Active Dry Yeast",
+        "brand": "Red Star",
+        "price": "$8.99",
+        "packageSize": "113.4g",
+        "productImage": "https://redstaryeast.com/wp-content/uploads/2021/07/Red-Star-Yeast-Active-Dry-Yeast-Jar.png"
+    },
+    {
+        "id": "ing_antimo_caputo_00_flour",
+        "type": {
+            "name": "00 Flour",
+            "description": "Fine Italian 00 flour, ideal for Neapolitan pizza.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Flour"
+        },
+        "name": "Antimo Caputo 00 Pizzeria Flour",
+        "brand": "Antimo Caputo",
+        "price": "$14.95",
+        "packageSize": "1995.8g"
+    },
+    {
+        "id": "ing_anthonys_diastatic_malt",
+        "type": {
+            "name": "Diastatic Malt Powder",
+            "description": "Diastatic malt powder for dough conditioning and browning.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Other"
+        },
+        "name": "Anthony\u2019s Diastatic Malt Powder",
+        "brand": "Anthony\u2019s Goods",
+        "price": "$13.49",
+        "packageSize": "680g",
+        "productImage": "http://anthonysgoods.com/cdn/shop/files/DryMaltPowderFront_0943fe0f-c278-4622-abf5-50b208fb0c86.jpg?v=1742235063&width=1024"
+    },
+    {
+        "id": "ing_maldon_sea_salt_flakes",
+        "type": {
+            "name": "Sea Salt Flakes",
+            "description": "Flaky sea salt for finishing.",
+            "category": "Other"
+        },
+        "name": "Maldon Sea Salt Flakes",
+        "brand": "Maldon",
+        "price": "$7.65",
+        "packageSize": "125g",
+        "productImage": "https://maldonsalt.com/wp-content/uploads/2021/06/Maldon-Original-250g-UK-Front-with-Alpha.png"
+    },
+    {
+        "id": "ing_strianese_san_marzano_tomatoes",
+        "type": {
+            "name": "Canned San Marzano Tomatoes",
+            "description": "D.O.P. San Marzano whole peeled tomatoes.",
+            "category": "Tomatoes"
+        },
+        "name": "Strianese San Marzano Tomatoes (D.O.P.)",
+        "brand": "Strianese",
+        "price": "$25.99",
+        "packageSize": "3 x 795g cans",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10158548217552965"
+    },
+    {
+        "id": "ing_whole_foods_kosher_salt",
+        "type": {
+            "name": "Kosher Salt",
+            "description": "Kosher salt for general use.",
+            "category": "Other"
+        },
+        "name": "365 by Whole Foods Market Kosher Salt",
+        "brand": "365 by Whole Foods Market",
+        "price": "$3.29",
+        "packageSize": "998g",
+        "productImage": "https://m.media-amazon.com/images/I/51KW0ZYM7xL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_grande_mozzarella_curd",
+        "type": {
+            "name": "Mozzarella Curd",
+            "description": "Fresh mozzarella curd for making handmade mozzarella.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Grande Mozzarella Curd",
+        "brand": "Grande",
+        "price": "$9.29",
+        "packageSize": "455g",
+        "productImage": "http://www.nealsyarddairy.co.uk/cdn/shop/files/Appleby_sCheshire_1065x1065px.jpg?v=1687357166"
+    },
+    {
+        "id": "ing_filippo_berio_evoo",
+        "type": {
+            "name": "Extra Virgin Olive Oil",
+            "description": "Extra virgin olive oil for cooking and finishing.",
+            "category": "Other"
+        },
+        "name": "Filippo Berio Extra Virgin Olive Oil",
+        "brand": "Filippo Berio",
+        "price": "$7.32",
+        "packageSize": "8.4 fl oz",
+        "productImage": "http://filippoberiowebsite.s3.amazonaws.com/wp-content/uploads/2016/04/logo-black.png"
+    },
+    {
+        "id": "ing_amazon_fresh_basil",
+        "type": {
+            "name": "Fresh Basil",
+            "description": "Fresh basil leaves.",
+            "category": "Other"
+        },
+        "name": "Amazon Grocery Fresh Basil Leaves",
+        "brand": "Amazon Grocery",
+        "price": "$1.89",
+        "packageSize": "14g",
+        "productImage": "https://m.media-amazon.com/images/I/41U3frOAosL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA4%252C282,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_king_arthur_hi_gluten_flour",
+        "type": {
+            "name": "High-Gluten Flour",
+            "description": "High-gluten flour for bread and pizza.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Flour"
+        },
+        "name": "King Arthur Sir Lancelot Unbleached Hi-Gluten Flour",
+        "brand": "King Arthur Baking Company",
+        "price": "$7.99",
+        "packageSize": "5 lb",
+        "productImage": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/538/images/7121/high-gluten-flour-3-lb-1__24972_561__29875.1724079449.386.513.jpg?c=1"
+    },
+    {
+        "id": "ing_fine_semolina",
+        "type": {
+            "name": "Fine Semolina",
+            "description": "Fine semolina for dusting and dough.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Flour"
+        },
+        "name": "Bob's Red Mill Semolina Pasta Flour",
+        "brand": "Bob's Red Mill",
+        "price": "$3.99",
+        "packageSize": "24 oz",
+        "productImage": "https://m.media-amazon.com/images/I/51M+9iCuK5L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA2%252C198,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFIVE-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_711_ground_tomatoes",
+        "type": {
+            "name": "Canned Ground Tomatoes",
+            "description": "Ground tomatoes for sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "Stanislaus 7/11 Ground Tomatoes",
+        "brand": "Stanislaus",
+        "price": "$3.49",
+        "packageSize": "28 oz can",
+        "productImage": "https://m.media-amazon.com/images/I/51p5m9VzDsL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA46,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOUR-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_contadina_tomato_paste",
+        "type": {
+            "name": "Tomato Paste",
+            "description": "Concentrated tomato paste.",
+            "category": "Tomatoes"
+        },
+        "name": "Contadina Tomato Paste",
+        "brand": "Contadina",
+        "price": "$1.79",
+        "packageSize": "12 oz can",
+        "productImage": "https://www.contadina.com/sites/default/files/02828ca342188d56bb84bdb1d61f45f956cb2153_4.jpg"
+    },
+    {
+        "id": "ing_dinapoli_whole_peeled_tomatoes",
+        "type": {
+            "name": "Canned Whole Peeled Tomatoes",
+            "description": "Whole peeled plum tomatoes.",
+            "category": "Tomatoes"
+        },
+        "name": "DiNapoli Whole Peeled Tomatoes",
+        "brand": "DiNapoli",
+        "price": "$3.99",
+        "packageSize": "28 oz can",
+        "productImage": "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/PIE/product/51loPpKRl6L._FMwebp__SR600,600_.jpg"
+    },
+    {
+        "id": "ing_grande_whole_milk_mozzarella",
+        "type": {
+            "name": "Whole Milk Mozzarella",
+            "description": "Low-moisture whole milk mozzarella cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Grande Whole Milk Low Moisture Mozzarella",
+        "brand": "Grande",
+        "price": "$6.99",
+        "packageSize": "16 oz",
+        "productImage": "https://preview.redd.it/14-ny-style-street-slice-galbani-vs-grande-low-moisture-v0-4aho19fhis4a1.jpg?width=1080&crop=smart&auto=webp&s=cde4c7bdfa5dba3a24b3417fc14a659f084bce1d"
+    },
+    {
+        "id": "ing_parmigiano_reggiano",
+        "type": {
+            "name": "Parmigiano-Reggiano Cheese",
+            "description": "Aged Italian hard cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Generic Parmigiano-Reggiano",
+        "brand": "Generic Brand",
+        "price": "$12.99",
+        "packageSize": "8 oz",
+        "productImage": "https://m.media-amazon.com/images/I/3187TgR1FIL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg"
+    },
+    {
+        "id": "ing_pecorino_romano",
+        "type": {
+            "name": "Pecorino Romano Cheese",
+            "description": "Aged Italian sheep's milk cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Generic Pecorino Romano",
+        "brand": "Generic Brand",
+        "price": "$9.99",
+        "packageSize": "8 oz",
+        "productImage": "https://m.media-amazon.com/images/I/7175ifV1H+L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_sliced_pepperoni_natural_casing",
+        "type": {
+            "name": "Pepperoni",
+            "description": "Sliced pepperoni, natural casing preferred.",
+            "category": "Meats"
+        },
+        "name": "Ezzo Natural Casing Pepperoni",
+        "brand": "Ezzo Sausage Co.",
+        "price": "$7.99",
+        "packageSize": "6 oz",
+        "productImage": "https://preview.redd.it/my-food-supplier-finally-ezzo-pepperoni-and-im-never-going-v0-m6zetmc5a67a1.jpg?width=1080&crop=smart&auto=webp&s=61b5bc686931870348742d0fddcf54542ea47620"
+    },
+    {
+        "id": "ing_sweet_fennel_sausage_bulk",
+        "type": {
+            "name": "Sweet Fennel Sausage",
+            "description": "Bulk sweet Italian sausage with fennel.",
+            "category": "Meats"
+        },
+        "name": "Generic Sweet Fennel Sausage (bulk)",
+        "brand": "Generic Butcher",
+        "price": "N/A",
+        "packageSize": "1 lb"
+    },
+    {
+        "id": "ing_calabrese_sausage_bulk",
+        "type": {
+            "name": "Calabrese Sausage",
+            "description": "Bulk spicy Calabrese style sausage.",
+            "category": "Meats"
+        },
+        "name": "Generic Calabrese Sausage (bulk)",
+        "brand": "Generic Butcher",
+        "price": "N/A",
+        "packageSize": "1 lb"
+    },
+    {
+        "id": "ing_polly_o_ricotta",
+        "type": {
+            "name": "Whole Milk Ricotta Cheese",
+            "description": "Creamy whole milk ricotta cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Polly-O Whole Milk Ricotta Cheese",
+        "brand": "Polly-O",
+        "price": "$4.99",
+        "packageSize": "15 oz",
+        "productImage": "https://images.wegmans.com/is/image/wegmanscsprod/App-Icon-2025?wid=1200&hei=630"
+    },
+    {
+        "id": "ing_dried_oregano_greek",
+        "type": {
+            "name": "Dried Oregano",
+            "description": "Dried Greek oregano.",
+            "category": "Other"
+        },
+        "name": "Generic Greek Oregano",
+        "brand": "Generic Brand",
+        "price": "$2.99",
+        "packageSize": "0.75 oz"
+    },
+    {
+        "id": "ing_fresh_garlic",
+        "type": {
+            "name": "Fresh Garlic",
+            "description": "Whole garlic bulbs.",
+            "category": "Other"
+        },
+        "name": "Generic Fresh Garlic",
+        "brand": "Generic Farm",
+        "price": "$0.79",
+        "packageSize": "1 head"
+    },
+    {
+        "id": "ing_ceresota_ap_flour",
+        "type": {
+            "name": "All-Purpose Flour",
+            "description": "All-purpose flour, unbleached.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Flour"
+        },
+        "name": "Ceresota Unbleached All-Purpose Flour",
+        "brand": "Ceresota",
+        "price": "$4.49",
+        "packageSize": "5 lb",
+        "productImage": "http://heckersceresota.com/Themes/canvas-template/assets/dist/images/uhlmann/logo.jpg"
+    },
+    {
+        "id": "ing_medium_grind_cornmeal",
+        "type": {
+            "name": "Cornmeal",
+            "description": "Medium-grind cornmeal.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Flour"
+        },
+        "name": "Bob's Red Mill Medium Grind Cornmeal",
+        "brand": "Bob's Red Mill",
+        "price": "$3.99",
+        "packageSize": "24 oz",
+        "productImage": "https://bobs-redmill.transforms.svdcdn.com/production/product/1148s244_cornmealmediumgrind_f_1.jpg?w=1200&h=630&q=82&auto=format&fit=min&dm=1730401502&s=25b409027372b0a600af8e81b94b5a30"
+    },
+    {
+        "id": "ing_lard",
+        "type": {
+            "name": "Lard",
+            "description": "Rendered pork fat.",
+            "category": "Meats"
+        },
+        "name": "Armour Lard",
+        "brand": "Armour",
+        "price": "$3.49",
+        "packageSize": "1 lb",
+        "productImage": "https://i5.walmartimages.com/seo/Armour-Lard-Net-Weight-16-oz-1-lb-454-g_3dcc9065-9edc-408a-85ad-b7a9931897bf_3.151b3b337df243be70cb5c48687e01a1.jpeg"
+    },
+    {
+        "id": "ing_unsalted_butter_european",
+        "type": {
+            "name": "Unsalted Butter",
+            "description": "European-style unsalted butter (higher fat).",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Other"
+        },
+        "name": "Plugr\u00e1 European Style Butter",
+        "brand": "Plugr\u00e1",
+        "price": "$4.99",
+        "packageSize": "8 oz",
+        "productImage": "https://plugra.com/wp-content/uploads/2020/10/popovers-scaled.jpg"
+    },
+    {
+        "id": "ing_provolone_cheese",
+        "type": {
+            "name": "Provolone Cheese",
+            "description": "Sliced provolone cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Generic Provolone Cheese",
+        "brand": "Generic Brand",
+        "price": "$7.99",
+        "packageSize": "8 oz",
+        "productImage": "https://images-na.ssl-images-amazon.com/images/I/71ik+UmTvBL._AC_UL375_SR375,375_.jpg"
+    },
+    {
+        "id": "ing_brick_cheese",
+        "type": {
+            "name": "Brick Cheese",
+            "description": "Wisconsin-style brick cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Widmer's Brick Cheese",
+        "brand": "Widmer's Cheese Cellars",
+        "price": "$6.99",
+        "packageSize": "8 oz",
+        "productImage": "https://www.widmerscheese.com/wp-content/uploads/csm/s-nfnlz3mm/products/169/images/414/wisconsin_mild_brick_cheese_1lb__20714.1438883576.1280.1280.jpgc-2.jpg"
+    },
+    {
+        "id": "ing_white_cheddar_cheese_cabot",
+        "type": {
+            "name": "White Cheddar Cheese",
+            "description": "Sharp white cheddar cheese.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Cabot Seriously Sharp White Cheddar",
+        "brand": "Cabot",
+        "price": "$5.99",
+        "packageSize": "8 oz",
+        "productImage": "http://cabotcreamery.com/cdn/shop/files/b083c91d48a97a03146937ce37d69b68cb0677b4_1024x.png?v=1747265053"
+    },
+    {
+        "id": "ing_stanislaus_tomato_magic",
+        "type": {
+            "name": "Canned Ground Tomatoes",
+            "description": "Ground tomatoes in pur\u00e9e for sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "Stanislaus Tomato Magic Ground Tomatoes",
+        "brand": "Stanislaus",
+        "price": "$3.49",
+        "packageSize": "28 oz can",
+        "productImage": "https://m.media-amazon.com/images/I/51zMnBS0ecL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA255,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_provel_cheese",
+        "type": {
+            "name": "Provel Cheese",
+            "description": "Processed cheese blend (provolone, Swiss, cheddar).",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Imo's Pizza Provel Cheese",
+        "brand": "Imo's Pizza",
+        "price": "$5.99",
+        "packageSize": "8 oz",
+        "productImage": "https://www.imospizza.com/app/uploads/2022/10/Provel_Shredded_8oz.png"
+    },
+    {
+        "id": "ing_simple_syrup",
+        "type": {
+            "name": "Simple Syrup",
+            "description": "Sugar dissolved in water.",
+            "category": "Other"
+        },
+        "name": "Homemade Simple Syrup",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "1 cup",
+        "productImage": "https://www.allrecipes.com/thmb/dlvLvxjBSWZZSyQI9XCc4orLaFA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-RM-20216-simple-syrup-ddmfs-1x2-3bef9a5677184ad2be72974de911efa4.jpg"
+    },
+    {
+        "id": "ing_caputo_00_pizza_flour_wood_fired",
+        "type": {
+            "name": "00 Flour for Wood Fired",
+            "description": "Italian 00 flour, specifically for high-heat wood-fired ovens, often without malt.",
+            "dietaryContraindications": [
+                "gluten"
+            ],
+            "category": "Flour"
+        },
+        "name": "Antimo Caputo Pizzeria Flour (Blue Bag)",
+        "brand": "Antimo Caputo",
+        "price": "$14.95",
+        "packageSize": "1995.8g"
+    },
+    {
+        "id": "ing_fior_di_latte_mozzarella",
+        "type": {
+            "name": "Fresh Mozzarella (Fior di Latte)",
+            "description": "Fresh cow's milk mozzarella.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Generic Fior di Latte",
+        "brand": "Generic Italian Imports",
+        "price": "$7.99",
+        "packageSize": "8 oz",
+        "productImage": "https://preview.redd.it/favorite-brand-of-mozzarella-to-use-for-your-pizzas-or-v0-k0necxqxr52d1.jpeg?width=1080&crop=smart&auto=webp&s=ac5e43883c194cbf5837d6ac18eb4ef3f8013b07"
+    },
+    {
+        "id": "ing_mozzarella_di_bufala_dop",
+        "type": {
+            "name": "Buffalo Mozzarella (D.O.P.)",
+            "description": "Fresh water buffalo milk mozzarella, D.O.P. certified from Campania.",
+            "dietaryContraindications": [
+                "dairy"
+            ],
+            "category": "Cheese"
+        },
+        "name": "Generic Mozzarella di Bufala Campana D.O.P.",
+        "brand": "Generic Italian Imports",
+        "price": "$10.99",
+        "packageSize": "8.8 oz",
+        "productImage": "https://m.media-amazon.com/images/I/517cMF5tdfL.jpg"
+    },
+    {
+        "id": "ing_flour_high_gluten",
+        "type": {
+            "name": "High-Gluten Flour",
+            "description": "Strong flour with high protein content, ideal for long maturation doughs.",
+            "category": "Flour"
+        },
+        "name": "High-Gluten Flour",
+        "brand": "King Arthur Sir Lancelot",
+        "price": "$7.99",
+        "packageSize": "5 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/538/images/7121/high-gluten-flour-3-lb-1__24972_561__29875.1724079449.386.513.jpg?c=1"
+    },
+    {
+        "id": "ing_flour_all_purpose",
+        "type": {
+            "name": "All-Purpose Flour",
+            "description": "General purpose flour, suitable for Chicago-style pizzas.",
+            "category": "Flour"
+        },
+        "name": "All-Purpose Flour",
+        "brand": "Ceresota",
+        "price": "$4.49",
+        "packageSize": "5 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "http://heckersceresota.com/Themes/canvas-template/assets/dist/images/uhlmann/logo.jpg"
+    },
+    {
+        "id": "ing_flour_00",
+        "type": {
+            "name": "00 Flour",
+            "description": "Finely milled Italian flour for tender Neapolitan doughs.",
+            "category": "Flour"
+        },
+        "name": "00 Flour",
+        "brand": "Caputo",
+        "price": "$9.99",
+        "packageSize": "2.2 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/51fM-c9f4qL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA1%252C046,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_flour_whole_wheat",
+        "type": {
+            "name": "Whole Wheat Flour",
+            "description": "Flour made from whole wheat grains, adding nutty flavor.",
+            "category": "Flour"
+        },
+        "name": "Whole Wheat Flour",
+        "brand": "Central Milling Organic Whole Wheat Medium",
+        "price": "$6.99",
+        "packageSize": "2 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "http://centralmilling.com/wp-content/uploads/2016/10/Organic-Whole-Wheat-Hi-Pro-Medium.jpg"
+    },
+    {
+        "id": "ing_flour_rye",
+        "type": {
+            "name": "Rye Flour",
+            "description": "Dark rye flour, great for enhancing starters and adding fermentation kick.",
+            "category": "Flour"
+        },
+        "name": "Rye Flour",
+        "brand": "Central Milling Organic Dark Rye",
+        "price": "$5.99",
+        "packageSize": "1.5 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "http://theryebaker.com/wp-content/uploads/2017/09/RyeFlourBLOG.gif"
+    },
+    {
+        "id": "ing_flour_khorasan",
+        "type": {
+            "name": "Khorasan Flour",
+            "description": "Ancient wheat flour with a nutty, slightly sweet flavor.",
+            "category": "Flour"
+        },
+        "name": "Khorasan Flour",
+        "brand": "Central Milling Organic White Khorasan",
+        "price": "$8.49",
+        "packageSize": "2 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://centralmilling.com/wp-content/uploads/2017/10/Organic-Whole-Khorasan-Flour.jpg"
+    },
+    {
+        "id": "ing_flour_einkorn",
+        "type": {
+            "name": "Einkorn Flour",
+            "description": "Ancient wheat, less elastic than modern wheat, with a unique flavor.",
+            "category": "Flour"
+        },
+        "name": "Einkorn Flour",
+        "brand": "Jovial",
+        "price": "$7.99",
+        "packageSize": "2 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "http://jovialfoods.com/cdn/shop/collections/amazonlp_jovial_einkorn_ls_stawccookie.jpg?v=1743105317"
+    },
+    {
+        "id": "ing_flour_organic_type_70_malted",
+        "type": {
+            "name": "Organic Type 70 Malted Flour",
+            "description": "Organic flour with a sweet, wheaty flavor.",
+            "category": "Flour"
+        },
+        "name": "Organic Type 70 Malted Flour",
+        "brand": "Central Milling",
+        "price": "$7.49",
+        "packageSize": "2 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "http://centralmilling.com/wp-content/uploads/2016/10/Organic-Type-70-Malted.jpg"
+    },
+    {
+        "id": "ing_flour_harvest_king",
+        "type": {
+            "name": "Harvest King Flour",
+            "description": "Light, nutty, medium-strong flour made from winter wheat.",
+            "category": "Flour"
+        },
+        "name": "Harvest King Flour",
+        "brand": "General Mills",
+        "price": "$5.49",
+        "packageSize": "5 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://www.pizzamaking.com/forum/avatars/default.png"
+    },
+    {
+        "id": "ing_flour_sprouted_wheat_mash",
+        "type": {
+            "name": "Sprouted Wheat Mash",
+            "description": "Moist, ground sprouted grain for enhanced nutrition and earthy flavor.",
+            "category": "Flour"
+        },
+        "name": "Sprouted Wheat Mash",
+        "brand": "Central Milling",
+        "price": "$6.99",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://thebakingnetwork.com/wp-content/uploads/2017/09/grain2-533x300.jpg"
+    },
+    {
+        "id": "ing_semolina_fine",
+        "type": {
+            "name": "Fine Semolina",
+            "description": "Coarse-textured durum wheat, used for dusting to prevent sticking.",
+            "category": "Flour"
+        },
+        "name": "Fine Semolina",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "24 oz",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/411sveumb3L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA686,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_yeast_active_dry",
+        "type": {
+            "name": "Active Dry Yeast",
+            "description": "Granulated yeast that needs to be activated in warm water.",
+            "category": "Yeast"
+        },
+        "name": "Active Dry Yeast",
+        "brand": "Red Star",
+        "price": "$8.99",
+        "packageSize": "113.4g",
+        "productImage": "https://redstaryeast.com/wp-content/uploads/2021/07/Red-Star-Yeast-Active-Dry-Yeast-Jar.png"
+    },
+    {
+        "id": "ing_yeast_fresh_compressed",
+        "type": {
+            "name": "Fresh Compressed Yeast",
+            "description": "Also known as cake yeast, sold in pressed cubes and requires refrigeration.",
+            "category": "Yeast"
+        },
+        "name": "Fresh Compressed Yeast",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "2 oz",
+        "productImage": "http://theitaliandishblog.com/storage/yeast%20bread.JPG?__SQUARESPACE_CACHEVERSION=1710538910154"
+    },
+    {
+        "id": "ing_yeast_quick_rise",
+        "type": {
+            "name": "Quick Rise Yeast",
+            "description": "Instant yeast that speeds up proofing process (generally not recommended for slow fermentation).",
+            "category": "Yeast"
+        },
+        "name": "Quick Rise Yeast",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "0.75 oz",
+        "productImage": "https://m.media-amazon.com/images/I/51MnQtgiI1L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA193,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_salt_fine_sea",
+        "type": {
+            "name": "Fine Sea Salt",
+            "description": "Intense, clean-flavored salt with a fine grind for even dispersion.",
+            "category": "Other"
+        },
+        "name": "Fine Sea Salt",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "26 oz",
+        "productImage": "http://redmond.life/cdn/shop/files/Real_Salt_Fine_Refill_Pouch_26_oz._Front_copia_1200x1200.jpg?v=1724408238"
+    },
+    {
+        "id": "ing_salt_kosher",
+        "type": {
+            "name": "Kosher Salt",
+            "description": "Coarse-grained salt, often used for brining and general cooking.",
+            "category": "Other"
+        },
+        "name": "Kosher Salt",
+        "brand": "Morton",
+        "price": "$3.99",
+        "packageSize": "3 lb",
+        "productImage": "https://i5.walmartimages.com/seo/Morton-Salt-Coarse-Kosher-Salt-for-Cooking-Grilling-Brining-Salt-Rimming-48-oz-box_96ad0bb0-d8af-488d-98ba-833d56838348.7e3ee51deacee13e40f971d66afc619f.jpeg"
+    },
+    {
+        "id": "ing_salt_maldon_sea",
+        "type": {
+            "name": "Maldon Sea Salt",
+            "description": "Large, visible flakes of sea salt, ideal for finishing dishes.",
+            "category": "Other"
+        },
+        "name": "Maldon Sea Salt",
+        "brand": "Maldon",
+        "price": "$6.99",
+        "packageSize": "8.5 oz",
+        "productImage": "https://m.media-amazon.com/images/I/71xx-V89PuL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_salt_fleur_de_sel",
+        "type": {
+            "name": "Fleur de Sel",
+            "description": "Delicate, flaky sea salt harvested from the surface of salt evaporation ponds.",
+            "category": "Other"
+        },
+        "name": "Fleur de Sel",
+        "brand": "Various",
+        "price": "$8.99",
+        "packageSize": "4.4 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41VAChI5SGL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA5%252C502,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_oil_extra_virgin_olive",
+        "type": {
+            "name": "Extra Virgin Olive Oil",
+            "description": "Fruity, not too grassy or peppery, used for dough and finishing.",
+            "category": "Other"
+        },
+        "name": "Extra Virgin Olive Oil",
+        "brand": "Filippo Berio",
+        "price": "$12.99",
+        "packageSize": "16.9 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/71tZonX0NpL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_oil_pure_olive",
+        "type": {
+            "name": "Pure Olive Oil",
+            "description": "Olive oil suitable for higher heat cooking like saut\u00e9ing and frying.",
+            "category": "Other"
+        },
+        "name": "Pure Olive Oil",
+        "brand": "Filippo Berio",
+        "price": "$9.99",
+        "packageSize": "16.9 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/41QuW575BZL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA5%252C821,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_oil_canola",
+        "type": {
+            "name": "Canola Oil",
+            "description": "Neutral-flavored oil suitable for deep-frying.",
+            "category": "Other"
+        },
+        "name": "Canola Oil",
+        "brand": "Various",
+        "price": "$5.49",
+        "packageSize": "48 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/81tpFxMORQL._AC_UF350,350_QL80_.jpg"
+    },
+    {
+        "id": "ing_oil_hot_pepper",
+        "type": {
+            "name": "Hot Pepper Oil",
+            "description": "Spicy oil infused with chiles, for drizzling and adding heat.",
+            "category": "Sauce"
+        },
+        "name": "Hot Pepper Oil",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "8 fl oz",
+        "productImage": "https://ozlemsturkishtable.com/files/2010/04/Pepper-pastem-biber-salcasi.jpg"
+    },
+    {
+        "id": "ing_malt_diastatic",
+        "type": {
+            "name": "Diastatic Malt",
+            "description": "Malted barley powder with active enzymes, aids browning and fuels yeast.",
+            "category": "Other"
+        },
+        "name": "Diastatic Malt",
+        "brand": "Various",
+        "price": "$6.99",
+        "packageSize": "4 oz",
+        "productImage": "https://cdn11.bigcommerce.com/s-ihwnd7z21q/products/121/images/6049/diastatic-malt-powder-1__70212_977__19116_5991__54682.1724079440.386.513.jpg?c=1"
+    },
+    {
+        "id": "ing_tomatoes_ground",
+        "type": {
+            "name": "Ground Tomatoes",
+            "description": "Canned ground tomatoes for sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "Ground Tomatoes",
+        "brand": "Stanislaus 7/11",
+        "price": "$3.49",
+        "packageSize": "28 oz can",
+        "productImage": "https://m.media-amazon.com/images/I/51p5m9VzDsL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA46,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOUR-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_tomatoes_paste",
+        "type": {
+            "name": "Tomato Paste",
+            "description": "Concentrated tomato product for sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "Tomato Paste",
+        "brand": "Contadina",
+        "price": "$1.79",
+        "packageSize": "12 oz can",
+        "productImage": "https://www.contadina.com/sites/default/files/02828ca342188d56bb84bdb1d61f45f956cb2153_4.jpg"
+    },
+    {
+        "id": "ing_tomatoes_whole_plum_pear",
+        "type": {
+            "name": "Whole Plum or Pear Tomatoes",
+            "description": "Canned whole tomatoes, often hand-crushed for sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "Whole Plum or Pear Tomatoes",
+        "brand": "DiNapoli",
+        "price": "$3.99",
+        "packageSize": "28 oz can",
+        "productImage": "https://m.media-amazon.com/images/I/51FeIKWBrjL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA52,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_tomatoes_san_marzano",
+        "type": {
+            "name": "San Marzano Tomatoes",
+            "description": "DOP certified Italian tomatoes, ideal for authentic Neapolitan sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "San Marzano Tomatoes",
+        "brand": "Strianese",
+        "price": "$5.99",
+        "packageSize": "28 oz can",
+        "productImage": "https://s42301.pcdn.co/wp-content/uploads/2022/01/721035_240x315.jpg"
+    },
+    {
+        "id": "ing_tomatoes_cherry",
+        "type": {
+            "name": "Cherry Tomatoes",
+            "description": "Small, sweet tomatoes, fresh or roasted.",
+            "category": "Tomatoes"
+        },
+        "name": "Cherry Tomatoes",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "1 pint"
+    },
+    {
+        "id": "ing_tomatoes_early_girl",
+        "type": {
+            "name": "Early Girl Tomatoes",
+            "description": "Ripe tomatoes for sweet, rich sauces.",
+            "category": "Tomatoes"
+        },
+        "name": "Early Girl Tomatoes",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "1 lb",
+        "productImage": "https://external-preview.redd.it/which-one-is-the-sucker-on-my-early-girl-tomato-left-or-v0-SRcqHswwA9-nfSrfYK4KD3QBmjlRIId01eG0yzYEJnA.jpg?width=1080&crop=smart&auto=webp&s=ab4fabe5b1b9892a6fa2cf0c04b6a6b0706b7354"
+    },
+    {
+        "id": "ing_cheese_mozzarella_whole_milk",
+        "type": {
+            "name": "Whole-Milk Mozzarella Cheese",
+            "description": "Rich, creamy mozzarella that holds and reheats well.",
+            "category": "Cheese"
+        },
+        "name": "Whole-Milk Mozzarella Cheese",
+        "brand": "Grande",
+        "price": "$6.99",
+        "packageSize": "16 oz",
+        "productImage": "https://preview.redd.it/14-ny-style-street-slice-galbani-vs-grande-low-moisture-v0-4aho19fhis4a1.jpg?width=1080&crop=smart&auto=webp&s=cde4c7bdfa5dba3a24b3417fc14a659f084bce1d"
+    },
+    {
+        "id": "ing_cheese_mozzarella_part_skim",
+        "type": {
+            "name": "Part-Skim Mozzarella Cheese",
+            "description": "Mozzarella with lower fat content, for a stronger pizza structure.",
+            "category": "Cheese"
+        },
+        "name": "Part-Skim Mozzarella Cheese",
+        "brand": "Grande",
+        "price": "$6.49",
+        "packageSize": "16 oz",
+        "productImage": "https://preview.redd.it/14-ny-style-street-slice-galbani-vs-grande-low-moisture-v0-4aho19fhis4a1.jpg?width=1080&crop=smart&auto=webp&s=cde4c7bdfa5dba3a24b3417fc14a659f084bce1d"
+    },
+    {
+        "id": "ing_cheese_mozzarella_fresh",
+        "type": {
+            "name": "Fresh Mozzarella (Fior di Latte)",
+            "description": "Delicate, moist mozzarella made from cow's milk.",
+            "category": "Cheese"
+        },
+        "name": "Fresh Mozzarella",
+        "brand": "Homemade",
+        "price": "$7.99",
+        "packageSize": "8 oz",
+        "productImage": "http://static1.squarespace.com/static/535167fae4b0b045e6866915/5352cf0fe4b05a88e5fe0f46/55de7289e4b0e7873657acd8/1669772182888/tabasco-14.jpg?format=1500w"
+    },
+    {
+        "id": "ing_cheese_mozzarella_di_bufala",
+        "type": {
+            "name": "Mozzarella di Bufala",
+            "description": "Creamier mozzarella made from water buffalo milk, traditional for Margherita Extra.",
+            "category": "Cheese"
+        },
+        "name": "Mozzarella di Bufala",
+        "brand": "Various",
+        "price": "$10.99",
+        "packageSize": "8.8 oz",
+        "productImage": "https://www.agatavalentina.com/GetImage.ashx?Path=%7E%2FAssets%2FProductImages%2F802307400022-06.jpg&maintainAspectRatio=true"
+    },
+    {
+        "id": "ing_cheese_provolone",
+        "type": {
+            "name": "Provolone Cheese",
+            "description": "Salty and intense cheese, often used to balance mozzarella.",
+            "category": "Cheese"
+        },
+        "name": "Provolone Cheese",
+        "brand": "Grande Provo-Nello",
+        "price": "$7.99",
+        "packageSize": "8 oz",
+        "productImage": "https://www.vernscheese.com/wp-content/uploads/2018/11/chgr0320-provolone-cheese-7lb-grande-wisconsin.jpg"
+    },
+    {
+        "id": "ing_cheese_parmigiano_reggiano",
+        "type": {
+            "name": "Parmigiano-Reggiano Cheese",
+            "description": "Hard, salty Italian cheese, for shaving or dusting.",
+            "category": "Cheese"
+        },
+        "name": "Parmigiano-Reggiano Cheese",
+        "brand": "Various",
+        "price": "$12.99",
+        "packageSize": "8 oz",
+        "productImage": "https://m.media-amazon.com/images/I/21k2DD3t21L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_cheese_pecorino_romano",
+        "type": {
+            "name": "Pecorino Romano Cheese",
+            "description": "Hard, salty sheep's milk cheese, for dusting.",
+            "category": "Cheese"
+        },
+        "name": "Pecorino Romano Cheese",
+        "brand": "Various",
+        "price": "$9.99",
+        "packageSize": "8 oz",
+        "productImage": "https://d13jicmd7uan86.cloudfront.net/a8dc6cfd-974c-490f-87b8-b1a5011a3bba/510?format=webp"
+    },
+    {
+        "id": "ing_cheese_provel",
+        "type": {
+            "name": "Provel Cheese",
+            "description": "Processed blend of provolone, Swiss, and Cheddar, signature of St. Louis style.",
+            "category": "Cheese"
+        },
+        "name": "Provel Cheese",
+        "brand": "Various",
+        "price": "$5.99",
+        "packageSize": "8 oz",
+        "productImage": "https://www.sargento.com/assets/40096_SH_MzzrllPrvln_8oz_Trd_5507163_Frnt.png"
+    },
+    {
+        "id": "ing_cheese_white_cheddar",
+        "type": {
+            "name": "White Cheddar Cheese",
+            "description": "Sharp, tangy cheddar, used in Detroit-style pizza.",
+            "category": "Cheese"
+        },
+        "name": "White Cheddar Cheese",
+        "brand": "Cabot",
+        "price": "$5.99",
+        "packageSize": "8 oz",
+        "productImage": "http://cabotcreamery.com/cdn/shop/files/b083c91d48a97a03146937ce37d69b68cb0677b4_1024x.png?v=1747265053"
+    },
+    {
+        "id": "ing_cheese_brick",
+        "type": {
+            "name": "Brick Cheese",
+            "description": "Cheese used in Detroit-style pizza for its unique charring effect.",
+            "category": "Cheese"
+        },
+        "name": "Brick Cheese",
+        "brand": "Various",
+        "price": "$6.99",
+        "packageSize": "8 oz",
+        "productImage": "https://www.widmerscheese.com/wp-content/uploads/2019/10/Mild-Brick-Cheese.jpg"
+    },
+    {
+        "id": "ing_cheese_asiago",
+        "type": {
+            "name": "Asiago Cheese",
+            "description": "Italian cheese, for shaving.",
+            "category": "Cheese"
+        },
+        "name": "Asiago Cheese",
+        "brand": "Various",
+        "price": "$7.49",
+        "packageSize": "6 oz",
+        "productImage": "http://www.johnwmmacys.com/cdn/shop/products/CheeseCrisps-large_79160afc-1c9b-4b76-bd25-f2e68aec83e8_600x.png?v=1606338420"
+    },
+    {
+        "id": "ing_cheese_gorgonzola",
+        "type": {
+            "name": "Gorgonzola Cheese",
+            "description": "Italian blue cheese with a pungent, creamy flavor.",
+            "category": "Cheese"
+        },
+        "name": "Gorgonzola Cheese",
+        "brand": "Various",
+        "price": "$8.99",
+        "packageSize": "6 oz",
+        "productImage": "http://pointreyescheese.com/cdn/shop/files/OB.jpg?v=1728415690"
+    },
+    {
+        "id": "ing_cheese_monterey_jack",
+        "type": {
+            "name": "Monterey Jack Cheese",
+            "description": "Mild, creamy American cheese.",
+            "category": "Cheese"
+        },
+        "name": "Monterey Jack Cheese",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "8 oz",
+        "productImage": "https://www.sargento.com/assets/40018_SH_MntryJck_8oz_Fn_5507181_Frnt.png"
+    },
+    {
+        "id": "ing_cheese_goat",
+        "type": {
+            "name": "Goat Cheese",
+            "description": "Tangy, creamy cheese made from goat's milk.",
+            "category": "Cheese"
+        },
+        "name": "Goat Cheese",
+        "brand": "Laura Chenel",
+        "price": "$6.99",
+        "packageSize": "4 oz",
+        "productImage": "https://d21xdlbomssmji.cloudfront.net/products/_1200x630_crop_center-center_82_none/log-original.png?mtime=1702771843"
+    },
+    {
+        "id": "ing_cheese_feta",
+        "type": {
+            "name": "Feta Cheese",
+            "description": "Salty, tangy Greek cheese, often water-packed.",
+            "category": "Cheese"
+        },
+        "name": "Feta Cheese",
+        "brand": "Various",
+        "price": "$5.49",
+        "packageSize": "6 oz",
+        "productImage": "https://i5.walmartimages.com/seo/President-Crumbled-Feta-Cheese-6-oz-Refrigerated_169170b1-f4c8-4e30-a011-ca44d7a48c66.fd75ca99c43341708556d1db5cf9993c.png"
+    },
+    {
+        "id": "ing_cheese_comte",
+        "type": {
+            "name": "Comt\u00e9 Cheese",
+            "description": "Nutty French cheese.",
+            "category": "Cheese"
+        },
+        "name": "Comt\u00e9 Cheese",
+        "brand": "Various",
+        "price": "$9.99",
+        "packageSize": "6 oz",
+        "productImage": "https://andrewzimmern.com/wp-content/uploads/French-Roots-CVR-scaled.jpg"
+    },
+    {
+        "id": "ing_cheese_saint_andre",
+        "type": {
+            "name": "Saint Andr\u00e9 Cheese",
+            "description": "Rich, buttery triple-cream French cheese.",
+            "category": "Cheese"
+        },
+        "name": "Saint Andr\u00e9 Cheese",
+        "brand": "Various",
+        "price": "$11.99",
+        "packageSize": "7 oz",
+        "productImage": "https://www.cheeselovershop.com/wp-content/uploads/2020/07/saint_andre-2.jpg"
+    },
+    {
+        "id": "ing_cheese_piave",
+        "type": {
+            "name": "Piave Cheese",
+            "description": "Italian hard cheese, similar to Parmigiano-Reggiano, for shaving.",
+            "category": "Cheese"
+        },
+        "name": "Piave Cheese",
+        "brand": "Various",
+        "price": "$10.49",
+        "packageSize": "8 oz",
+        "productImage": "http://dibruno.com/cdn/shop/files/PiaveVecchioRed_web__29229.jpg?v=1745341039"
+    },
+    {
+        "id": "ing_cheese_fiore_sardo",
+        "type": {
+            "name": "Fiore Sardo Cheese",
+            "description": "Hard Sardinian sheep's milk cheese, for shaving.",
+            "category": "Cheese"
+        },
+        "name": "Fiore Sardo Cheese",
+        "brand": "Various",
+        "price": "$13.99",
+        "packageSize": "6 oz",
+        "productImage": "https://www.pansardo.com/wp-content/uploads/2020/04/strabecco1-300x300.jpg"
+    },
+    {
+        "id": "ing_cheese_pecorino_sardo_aged",
+        "type": {
+            "name": "Aged Pecorino Sardo Cheese",
+            "description": "Longer-aged Sardinian sheep's milk cheese, for shaving.",
+            "category": "Cheese"
+        },
+        "name": "Aged Pecorino Sardo Cheese",
+        "brand": "Various",
+        "price": "$12.99",
+        "packageSize": "6 oz",
+        "productImage": "https://www.pansardo.com/wp-content/uploads/2020/04/strabecco1-300x300.jpg"
+    },
+    {
+        "id": "ing_cheese_pecorino_sardo_young",
+        "type": {
+            "name": "Young Sardinian Pecorino Cheese",
+            "description": "Young, soft Sardinian sheep's milk cheese.",
+            "category": "Cheese"
+        },
+        "name": "Young Sardinian Pecorino Cheese",
+        "brand": "Various",
+        "price": "$11.99",
+        "packageSize": "8 oz",
+        "productImage": "https://preview.redd.it/a-few-days-ago-someone-was-asking-what-brand-of-pecorino-v0-yf7wwgrkih9d1.jpeg?width=1080&crop=smart&auto=webp&s=f47b44327e291763baf4d3388c484d8ee26c6878"
+    },
+    {
+        "id": "ing_cheese_squacquerone",
+        "type": {
+            "name": "Squacquerone Cheese",
+            "description": "Soft, runny Italian cheese from Rimini.",
+            "category": "Cheese"
+        },
+        "name": "Squacquerone Cheese",
+        "brand": "Various",
+        "price": "$9.99",
+        "packageSize": "7 oz",
+        "productImage": "https://media.lacucinaitaliana.com/photos/5f2036d34d263f75e463d843/1:1/pass/0%20(3).jpg"
+    },
+    {
+        "id": "ing_cheese_crescenza_stracchino",
+        "type": {
+            "name": "Crescenza/Stracchino Cheese",
+            "description": "Soft, fresh Italian cheese, similar to squacquerone.",
+            "category": "Cheese"
+        },
+        "name": "Crescenza/Stracchino Cheese",
+        "brand": "Various",
+        "price": "$9.49",
+        "packageSize": "8 oz"
+    },
+    {
+        "id": "ing_cheese_robiola",
+        "type": {
+            "name": "Robiola Cheese",
+            "description": "Soft, creamy cheese from northern Italy.",
+            "category": "Cheese"
+        },
+        "name": "Robiola Cheese",
+        "brand": "Various",
+        "price": "$10.99",
+        "packageSize": "4 oz",
+        "productImage": "http://static1.squarespace.com/static/54052b85e4b079634baf3bbf/t/6469004b373231632ecc701a/1684602955534/Instagram+67_DSC0047.jpg?format=1500w"
+    },
+    {
+        "id": "ing_cheese_fromage_blanc",
+        "type": {
+            "name": "Fromage Blanc",
+            "description": "Fresh, creamy French cheese.",
+            "category": "Cheese"
+        },
+        "name": "Fromage Blanc",
+        "brand": "Various",
+        "price": "$5.99",
+        "packageSize": "8 oz",
+        "dietaryContraindications": [
+            "dairy"
+        ],
+        "productImage": "http://facerockcreamery.com/cdn/shop/files/FRC-fro-apr_11a620b2-499a-4429-9081-3a7ad9ba554f-removebg-preview_600x600.png?v=1707247456"
+    },
+    {
+        "id": "ing_pepperoni",
+        "type": {
+            "name": "Pepperoni",
+            "description": "Spicy American salami, often with natural casing for 'cupping' effect.",
+            "category": "Meats"
+        },
+        "name": "Pepperoni",
+        "brand": "Ezzo",
+        "price": "$7.99",
+        "packageSize": "6 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://preview.redd.it/homemade-20-inch-monster-pepperoni-pizza-v0-wvr14i7sp6be1.jpg?width=1080&crop=smart&auto=webp&s=5a389ad5fe4c16f100b6af65afeee8ebbaad73dc"
+    },
+    {
+        "id": "ing_sausage_fennel_sweet",
+        "type": {
+            "name": "Sweet Fennel Sausage",
+            "description": "Pork sausage flavored with fennel and a touch of honey.",
+            "category": "Meats"
+        },
+        "name": "Sweet Fennel Sausage",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://www.idratherbeachef.com/wp-content/uploads/2015/11/Sweet-Fennel-Sausage-Recipe-open-graph-image.jpg"
+    },
+    {
+        "id": "ing_sausage_calabrese_honey",
+        "type": {
+            "name": "Calabrese Honey Sausage",
+            "description": "Spicy pork sausage with red pepper flakes, Calabrese peppers, and serrano chiles.",
+            "category": "Meats"
+        },
+        "name": "Calabrese Honey Sausage",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://preview.redd.it/homemade-18-sausage-pizza-same-day-dough-v0-2w62rvtlzmvb1.jpg?width=1080&crop=smart&auto=webp&s=6bbd22c9e43a438f3794da17b93d41b1711f9f2d"
+    },
+    {
+        "id": "ing_sausage_chorizo_fresh_bulk",
+        "type": {
+            "name": "Fresh Bulk Chorizo",
+            "description": "Uncured, ground Spanish sausage.",
+            "category": "Meats"
+        },
+        "name": "Fresh Bulk Chorizo",
+        "brand": "Fontanini",
+        "price": "$6.99",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://www.hormelfoodservice.com/wp-content/uploads/2023/06/hormel-foodservice-culinary-solutions.jpg"
+    },
+    {
+        "id": "ing_sausage_chorizo_cured_spanish",
+        "type": {
+            "name": "Cured Spanish Chorizo",
+            "description": "Dry-cured, spicy Spanish sausage, thinly sliced.",
+            "category": "Meats"
+        },
+        "name": "Cured Spanish Chorizo",
+        "brand": "Fra\u2019 Mani",
+        "price": "$8.99",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "http://stjamescheese.com/cdn/shop/t/11/assets/logo.png?v=70943258048968110061695746695"
+    },
+    {
+        "id": "ing_salami_molinari_dry",
+        "type": {
+            "name": "Molinari Dry Salami",
+            "description": "Traditional dry salami, often used as a topping.",
+            "category": "Meats"
+        },
+        "name": "Molinari Dry Salami",
+        "brand": "Molinari",
+        "price": "$9.99",
+        "packageSize": "6 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/31Eo0QB5rKS._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA969,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_salami_genoa",
+        "type": {
+            "name": "Genoa Salami",
+            "description": "Soft, cured Italian salami.",
+            "category": "Meats"
+        },
+        "name": "Genoa Salami",
+        "brand": "Various",
+        "price": "$6.49",
+        "packageSize": "6 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/41PJBHp4CoL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA51,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_salami_soppressata_piccante",
+        "type": {
+            "name": "Soppressata Piccante",
+            "description": "Spicy Italian salami, also known as salame piccante.",
+            "category": "Meats"
+        },
+        "name": "Soppressata Piccante",
+        "brand": "Various",
+        "price": "$8.99",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "http://www.angelsalumi.com/cdn/shop/files/SOPPRESSATAPICCANTESHOPIFY22_43812e7d-8759-4172-8331-6cd9ed691e8d.jpg?v=1690893806"
+    },
+    {
+        "id": "ing_prosciutto",
+        "type": {
+            "name": "Prosciutto",
+            "description": "Thinly sliced, dry-cured ham.",
+            "category": "Meats"
+        },
+        "name": "Prosciutto",
+        "brand": "Various",
+        "price": "$9.99",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://images.cdn.shoprite.com/cell/00035032117303_1"
+    },
+    {
+        "id": "ing_prosciutto_cotto",
+        "type": {
+            "name": "Prosciutto Cotto",
+            "description": "Cooked ham, paler and less smoky than typical American deli ham.",
+            "category": "Meats"
+        },
+        "name": "Prosciutto Cotto",
+        "brand": "Various",
+        "price": "$8.49",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://www.bellaitaliafoodstore.com/media/catalog/product/cache/8abc882f67addab2247fad42e7d8a8ae/r/o/rovagnati-prosciutto-cotto-classic-italian-cooked-ham.jpg"
+    },
+    {
+        "id": "ing_guanciale",
+        "type": {
+            "name": "Guanciale",
+            "description": "Cured pork jowl or cheek, rich and flavorful.",
+            "category": "Meats"
+        },
+        "name": "Guanciale",
+        "brand": "Various",
+        "price": "$11.99",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "http://www.digiacomobros.com/cdn/shop/products/image_822a64d2-2a75-4068-a6fb-8efb2a70a558_1200x1200.jpg?v=1614138896"
+    },
+    {
+        "id": "ing_lardo",
+        "type": {
+            "name": "Lardo",
+            "description": "Salt-cured pork fat, thinly sliced.",
+            "category": "Meats"
+        },
+        "name": "Lardo",
+        "brand": "Various",
+        "price": "$9.99",
+        "packageSize": "3 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://foodperestroika.com/wp-content/uploads/2019/08/newlogo-no-text.png"
+    },
+    {
+        "id": "ing_speck",
+        "type": {
+            "name": "Speck",
+            "description": "Smoked, cured ham, similar to prosciutto but with a distinct smoky flavor.",
+            "category": "Meats"
+        },
+        "name": "Speck",
+        "brand": "Various",
+        "price": "$10.99",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/41Jp3jqGTmS._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA352,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_bacon",
+        "type": {
+            "name": "Bacon",
+            "description": "Cured pork belly, typically sliced into strips.",
+            "category": "Meats"
+        },
+        "name": "Bacon",
+        "brand": "Various",
+        "price": "$6.99",
+        "packageSize": "12 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "http://cdn.allotta.io/image/upload/v1712506809/dxp-images/oscarmayer/products/00044700102787-naturally-hardwood-smoked-bacon-original/marketing-view-color-front_5b5c92ca042df7f21590788169d904b3ad32163e_a542232ee4543b0a2f97c4ed2958880d.png"
+    },
+    {
+        "id": "ing_corned_beef_brisket",
+        "type": {
+            "name": "Corned Beef Brisket",
+            "description": "Brined beef brisket, slow-cooked until fork-tender.",
+            "category": "Meats"
+        },
+        "name": "Corned Beef Brisket",
+        "brand": "Snake River Farms",
+        "price": "$18.99",
+        "packageSize": "2 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "http://snakeriverfarms.com/cdn/shop/files/SRFCornedBeefBrisket-64081-1.jpg?v=1719928795"
+    },
+    {
+        "id": "ing_ground_beef",
+        "type": {
+            "name": "Ground Beef",
+            "description": "Ground beef, often with a specific fat percentage for meatballs.",
+            "category": "Meats"
+        },
+        "name": "Ground Beef",
+        "brand": "Niman Ranch",
+        "price": "$7.99",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://www.perduefarms.com/dw/image/v2/BDQM_PRD/on/demandware.static/-/Sites-masterCatalog_perdue/default/dw15b765e3/images/product-images/B-ZADGB15-B_niman_ranch_80_20_ground_beef_3_pack_bundle_pkg_hero.png?sw=1000&sh=1000"
+    },
+    {
+        "id": "ing_ground_veal",
+        "type": {
+            "name": "Ground Veal",
+            "description": "Ground veal, used in meatball mixtures for tenderness.",
+            "category": "Meats"
+        },
+        "name": "Ground Veal",
+        "brand": "Various",
+        "price": "$9.99",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ]
+    },
+    {
+        "id": "ing_meatballs_cooked",
+        "type": {
+            "name": "Cooked Meatballs",
+            "description": "Prepared meatballs, for pizza toppings or calzone fillings.",
+            "category": "Meats"
+        },
+        "name": "Cooked Meatballs",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://www.iheartnaptime.net/wp-content/uploads/2019/01/meatballs-3.jpg"
+    },
+    {
+        "id": "ing_chicken_thighs",
+        "type": {
+            "name": "Chicken Thighs",
+            "description": "Bone-in, skin-on chicken thighs, often grilled for pizza.",
+            "category": "Meats"
+        },
+        "name": "Chicken Thighs",
+        "brand": "Various",
+        "price": "$5.99",
+        "packageSize": "1.5 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ]
+    },
+    {
+        "id": "ing_steak_strip",
+        "type": {
+            "name": "Strip Steak",
+            "description": "Cut of beef, often grilled for pizza toppings.",
+            "category": "Meats"
+        },
+        "name": "Strip Steak",
+        "brand": "Various",
+        "price": "$14.99",
+        "packageSize": "1 lb",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://healthyrecipesblogs.com/wp-content/uploads/2021/09/new-york-strip-steak-featured-1-2022.jpg"
+    },
+    {
+        "id": "ing_arugula",
+        "type": {
+            "name": "Arugula",
+            "description": "Peppery green leaves, often used as a fresh garnish.",
+            "category": "Other"
+        },
+        "name": "Arugula",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "5 oz",
+        "productImage": "https://fullcirclemarketbrand.com/wp-content/uploads/2023/12/fxm-logo.png"
+    },
+    {
+        "id": "ing_basil_fresh",
+        "type": {
+            "name": "Fresh Basil",
+            "description": "Aromatic herb, used in sauces and as a fresh topping.",
+            "category": "Other"
+        },
+        "name": "Fresh Basil",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "0.75 oz",
+        "productImage": "https://storage.googleapis.com/images-frt-prd-1d32268.frt.prd.v8.commerce.mi9cloud.com/web/img/missing-Image-Square.svg"
+    },
+    {
+        "id": "ing_garlic",
+        "type": {
+            "name": "Garlic",
+            "description": "Pungent bulb used in various forms (minced, roasted, fresh cloves).",
+            "category": "Other"
+        },
+        "name": "Garlic",
+        "brand": "Various",
+        "price": "$0.79",
+        "packageSize": "1 head",
+        "productImage": "https://preview.redd.it/garlic-but-each-one-is-a-single-clove-v0-fsrh34wp23b81.jpg?width=1080&crop=smart&auto=webp&s=6a8a712e993960c1b2b9519674b800183b46ccc4"
+    },
+    {
+        "id": "ing_onion_white",
+        "type": {
+            "name": "White Onion",
+            "description": "Mild onion, used in sauces and as a topping.",
+            "category": "Other"
+        },
+        "name": "White Onion",
+        "brand": "Various",
+        "price": "$1.29",
+        "packageSize": "1 lb",
+        "productImage": "https://www.frontiercoop.com/media/catalog/product/0/8/089836003720-frontier-co-op-onion-white-chopped-organic-372-square.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=520&width=520&canvas=520:520"
+    },
+    {
+        "id": "ing_onion_yellow",
+        "type": {
+            "name": "Yellow Onion",
+            "description": "Common onion, often caramelized for toppings.",
+            "category": "Other"
+        },
+        "name": "Yellow Onion",
+        "brand": "Various",
+        "price": "$1.29",
+        "packageSize": "1 lb",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1165727081585603"
+    },
+    {
+        "id": "ing_onion_red",
+        "type": {
+            "name": "Red Onion",
+            "description": "Sharp, colorful onion, used fresh or saut\u00e9ed.",
+            "category": "Other"
+        },
+        "name": "Red Onion",
+        "brand": "Various",
+        "price": "$1.49",
+        "packageSize": "1 lb",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1631099534050446&get_thumbnail=1"
+    },
+    {
+        "id": "ing_mushrooms_assorted",
+        "type": {
+            "name": "Assorted Mushrooms",
+            "description": "Various types of mushrooms (pioppini, oyster, shiitake, trumpet, clamshell) for saut\u00e9ing.",
+            "category": "Other"
+        },
+        "name": "Assorted Mushrooms",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "8 oz",
+        "productImage": "https://m.media-amazon.com/images/I/712tQ0csVmL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_pepper_red_bell",
+        "type": {
+            "name": "Red Bell Pepper",
+            "description": "Sweet, mild pepper, often saut\u00e9ed for toppings.",
+            "category": "Other"
+        },
+        "name": "Red Bell Pepper",
+        "brand": "Various",
+        "price": "$1.99",
+        "packageSize": "1 unit"
+    },
+    {
+        "id": "ing_escarole",
+        "type": {
+            "name": "Escarole",
+            "description": "Slightly bitter leafy green, used as a topping.",
+            "category": "Other"
+        },
+        "name": "Escarole",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "1 head",
+        "productImage": "https://orangette.net/wp-content/themes/orangette/assets/images/logo.png"
+    },
+    {
+        "id": "ing_dandelion_greens",
+        "type": {
+            "name": "Dandelion Greens",
+            "description": "Bitter leafy greens, often saut\u00e9ed.",
+            "category": "Other"
+        },
+        "name": "Dandelion Greens",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "5 oz",
+        "productImage": "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0587d3f7-d2f1-4bbb-a9d7-e5e2155ab31f_3000x2000.heic"
+    },
+    {
+        "id": "ing_watercress",
+        "type": {
+            "name": "Watercress",
+            "description": "Peppery aquatic green, used as a fresh topping.",
+            "category": "Other"
+        },
+        "name": "Watercress",
+        "brand": "Various",
+        "price": "$2.79",
+        "packageSize": "3 oz",
+        "productImage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBmKNfhWkIe1l3KodF8ro_ZtdwtByQ_8cgnNCvEJpZPc9dgRAgZOGsvUNCsZQfA2maXVQczIeOf0QffN_UXmcprO0dYVDinfRZSq4mlCYyZwis0EutDpuTmN1j1VGhlA14Y6OdcG_yFcFB/w1200-h630-p-k-no-nu/Watercress+Fig+Autumn+Salad.jpg"
+    },
+    {
+        "id": "ing_squash_zucchini",
+        "type": {
+            "name": "Zucchini",
+            "description": "Green summer squash, often grilled or roasted.",
+            "category": "Other"
+        },
+        "name": "Zucchini",
+        "brand": "Various",
+        "price": "$1.99",
+        "packageSize": "1 unit",
+        "productImage": "https://preview.redd.it/1mr8yoauwti71.jpg?width=1080&crop=smart&auto=webp&s=0cd4b19dc35d39710a734c4ef0627062e6635e96"
+    },
+    {
+        "id": "ing_squash_yellow_straight_neck",
+        "type": {
+            "name": "Yellow Straight-Neck Squash",
+            "description": "Yellow summer squash, often grilled or roasted.",
+            "category": "Other"
+        },
+        "name": "Yellow Straight-Neck Squash",
+        "brand": "Various",
+        "price": "$1.99",
+        "packageSize": "1 unit",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=9704654402933283"
+    },
+    {
+        "id": "ing_olives_kalamata",
+        "type": {
+            "name": "Kalamata Olives",
+            "description": "Dark purple Greek olives with a distinct flavor.",
+            "category": "Other"
+        },
+        "name": "Kalamata Olives",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "6 oz",
+        "productImage": "http://www.mezzetta.com/cdn/shop/products/PittedGreekKalamataOlives_16oz.png?v=1625883187"
+    },
+    {
+        "id": "ing_olives_oil_cured_black",
+        "type": {
+            "name": "Oil-Cured Black Olives",
+            "description": "Wrinkly, intensely flavored black olives.",
+            "category": "Other"
+        },
+        "name": "Oil-Cured Black Olives",
+        "brand": "Various",
+        "price": "$5.99",
+        "packageSize": "6 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41T9UAx1wEL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA527,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOUR-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_olives_mediterranean_mixed",
+        "type": {
+            "name": "Mediterranean Mixed Olives",
+            "description": "Assortment of olives from the Mediterranean region.",
+            "category": "Other"
+        },
+        "name": "Mediterranean Mixed Olives",
+        "brand": "Various",
+        "price": "$6.99",
+        "packageSize": "8 oz",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=473345629179381"
+    },
+    {
+        "id": "ing_olives_castelvetrano",
+        "type": {
+            "name": "Castelvetrano Olives",
+            "description": "Bright green, buttery Italian olives.",
+            "category": "Other"
+        },
+        "name": "Castelvetrano Olives",
+        "brand": "Various",
+        "price": "$7.99",
+        "packageSize": "8 oz",
+        "productImage": "http://www.mezzetta.com/cdn/shop/products/ColossalCastelvetranoStylePittedOlives_16oz.png?v=1625882732"
+    },
+    {
+        "id": "ing_olives_pugliese",
+        "type": {
+            "name": "Pugliese Olives",
+            "description": "Olives from Puglia, Italy, often used in regional dishes.",
+            "category": "Other"
+        },
+        "name": "Pugliese Olives",
+        "brand": "Various",
+        "price": "$6.49",
+        "packageSize": "6 oz",
+        "productImage": "https://italianharvest.com/cdn/shop/files/50620Ranise2024.png?v=1704850583&width=533"
+    },
+    {
+        "id": "ing_artichokes_marinated",
+        "type": {
+            "name": "Marinated Artichokes",
+            "description": "Artichoke hearts preserved in oil and seasonings.",
+            "category": "Other"
+        },
+        "name": "Marinated Artichokes",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "6 oz",
+        "productImage": "https://cdn11.bigcommerce.com/s-cjh14ahqln/products/252/images/5808/artichokes_front_web__30829.1722528550.386.513.jpg?c=1"
+    },
+    {
+        "id": "ing_tomato_sun_dried",
+        "type": {
+            "name": "Sun-Dried Tomato",
+            "description": "Dried tomatoes with intensified flavor.",
+            "category": "Tomatoes"
+        },
+        "name": "Sun-Dried Tomato",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "3 oz",
+        "productImage": "https://bellasunluci.com/public/uploads/recipes/_masonry_thumb/Mediterranean-Nachos-1_square-web.jpg"
+    },
+    {
+        "id": "ing_fig_jam",
+        "type": {
+            "name": "Fig Jam",
+            "description": "Sweet preserve made from figs.",
+            "category": "Other"
+        },
+        "name": "Fig Jam",
+        "brand": "Dalmatia",
+        "price": "$5.99",
+        "packageSize": "8.5 oz",
+        "productImage": "https://m.media-amazon.com/images/I/51O3DWCPZmL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA944,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_figs_fresh_mission",
+        "type": {
+            "name": "Fresh Mission Figs",
+            "description": "Sweet, dark-skinned fresh figs.",
+            "category": "Other"
+        },
+        "name": "Fresh Mission Figs",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "6 oz",
+        "productImage": "https://valleyfig.com/wp-content/uploads/2020/04/sm-golden-proof.jpg"
+    },
+    {
+        "id": "ing_mango_ripe",
+        "type": {
+            "name": "Ripe Mango",
+            "description": "Sweet tropical fruit, often diced for salsas.",
+            "category": "Other"
+        },
+        "name": "Ripe Mango",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "1 unit",
+        "productImage": "https://www.unit1404.com/wp-content/uploads/PeachMangoPies1.jpg"
+    },
+    {
+        "id": "ing_cilantro",
+        "type": {
+            "name": "Cilantro",
+            "description": "Fresh herb with a distinctive, pungent flavor.",
+            "category": "Other"
+        },
+        "name": "Cilantro",
+        "brand": "Various",
+        "price": "$1.49",
+        "packageSize": "1 bunch",
+        "productImage": "https://food52.com/assets/hotline/f52_logo.jpg"
+    },
+    {
+        "id": "ing_lime_juice_fresh",
+        "type": {
+            "name": "Freshly Squeezed Lime Juice",
+            "description": "Tart juice from fresh limes.",
+            "category": "Other"
+        },
+        "name": "Freshly Squeezed Lime Juice",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "8 fl oz",
+        "productImage": "https://jeffreymorgenthaler.com/wp-content/uploads/2006/07/IMG_8313.jpg"
+    },
+    {
+        "id": "ing_raspberries",
+        "type": {
+            "name": "Raspberries",
+            "description": "Sweet-tart berries, used as a fresh topping.",
+            "category": "Other"
+        },
+        "name": "Raspberries",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "6 oz",
+        "dietaryContraindications": [
+            "berry"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/71zDOH2ugQL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_almonds_salted_roasted_marcona",
+        "type": {
+            "name": "Salted Roasted Marcona Almonds",
+            "description": "Sweet, plump Spanish almonds, roasted and salted.",
+            "category": "Other"
+        },
+        "name": "Salted Roasted Marcona Almonds",
+        "brand": "Various",
+        "price": "$7.99",
+        "packageSize": "4 oz",
+        "dietaryContraindications": [
+            "nuts"
+        ],
+        "productImage": "https://www.tastewiththeeyes.com/wp-content/uploads/2014/05/IMG_4258.jpg"
+    },
+    {
+        "id": "ing_potatoes_purple_small",
+        "type": {
+            "name": "Small Purple Potatoes",
+            "description": "Small potatoes with purple skin and flesh, adding color to dishes.",
+            "category": "Other"
+        },
+        "name": "Small Purple Potatoes",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "1 lb",
+        "productImage": "https://farm3.static.flickr.com/2725/4348804727_703214edf5_b.jpg"
+    },
+    {
+        "id": "ing_potatoes_white_yellow",
+        "type": {
+            "name": "White/Yellow Potatoes",
+            "description": "Common potato varieties, used in chunks for braises.",
+            "category": "Other"
+        },
+        "name": "White/Yellow Potatoes",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "2 lb",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1188726495943529&get_thumbnail=1"
+    },
+    {
+        "id": "ing_quail_eggs",
+        "type": {
+            "name": "Quail Eggs",
+            "description": "Small eggs from quail, used as a delicate topping.",
+            "category": "Other"
+        },
+        "name": "Quail Eggs",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "12 count",
+        "dietaryContraindications": [
+            "egg"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/51rw5bTrllL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA37,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOTHREE-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_eggs_farm_fresh",
+        "type": {
+            "name": "Farm-Fresh Eggs",
+            "description": "Eggs from chickens, used in various recipes.",
+            "category": "Other"
+        },
+        "name": "Farm-Fresh Eggs",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "1 dozen",
+        "dietaryContraindications": [
+            "egg"
+        ]
+    },
+    {
+        "id": "ing_syrup_simple",
+        "type": {
+            "name": "Simple Syrup",
+            "description": "Basic syrup made from sugar and water.",
+            "category": "Other"
+        },
+        "name": "Simple Syrup",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "1 cup",
+        "productImage": "https://www.allrecipes.com/thmb/dlvLvxjBSWZZSyQI9XCc4orLaFA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-RM-20216-simple-syrup-ddmfs-1x2-3bef9a5677184ad2be72974de911efa4.jpg"
+    },
+    {
+        "id": "ing_glaze_balsamic",
+        "type": {
+            "name": "Balsamic Glaze",
+            "description": "Reduced balsamic vinegar, sweet and tangy.",
+            "category": "Sauce"
+        },
+        "name": "Balsamic Glaze",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "4 fl oz",
+        "productImage": "http://mobile.luciatramonte.com/var/m_c/c8/c89/43955/715151-394b1edb-6e6f-4592-8dbe-0ec4b0b6603a.jpg"
+    },
+    {
+        "id": "ing_campari",
+        "type": {
+            "name": "Campari",
+            "description": "Bitter Italian aperitif, used in a syrup for pizza.",
+            "category": "Other"
+        },
+        "name": "Campari",
+        "brand": "Campari",
+        "price": "$24.99",
+        "packageSize": "750 ml",
+        "productImage": "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/h12/h35/27957003583518.png"
+    },
+    {
+        "id": "ing_syrup_blood_orange",
+        "type": {
+            "name": "Blood Orange Syrup",
+            "description": "Sweet syrup flavored with blood oranges.",
+            "category": "Other"
+        },
+        "name": "Blood Orange Syrup",
+        "brand": "Torani",
+        "price": "$7.99",
+        "packageSize": "25.4 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/311d7xkQzAL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA874,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_bitters_angostura",
+        "type": {
+            "name": "Angostura Bitters",
+            "description": "Concentrated aromatic bitters, used in cocktails.",
+            "category": "Other"
+        },
+        "name": "Angostura Bitters",
+        "brand": "Angostura",
+        "price": "$8.99",
+        "packageSize": "4 fl oz",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/312cBac5HGL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA376,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFIVE-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_bitters_peychauds",
+        "type": {
+            "name": "Peychaud's Bitters",
+            "description": "Aromatic bitters with a unique anise and mint flavor.",
+            "category": "Other"
+        },
+        "name": "Peychaud's Bitters",
+        "brand": "Peychaud's",
+        "price": "$9.99",
+        "packageSize": "5 fl oz",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/31fjkIxCLHL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA607,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFIVE-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_marmalade_orange",
+        "type": {
+            "name": "Orange Marmalade",
+            "description": "Citrus preserve made from oranges.",
+            "category": "Other"
+        },
+        "name": "Orange Marmalade",
+        "brand": "Various",
+        "price": "$4.49",
+        "packageSize": "12 oz",
+        "productImage": "http://www.smuckers.com/smuckers/products/sweet-orange-marmalade/68166/image-thumb__68166__schema_image/sweet-orange-marmalade_00051500006795_C1C1.f4fc38cd.jpg"
+    },
+    {
+        "id": "ing_syrup_maple",
+        "type": {
+            "name": "Maple Syrup",
+            "description": "Sweet syrup made from maple tree sap.",
+            "category": "Other"
+        },
+        "name": "Maple Syrup",
+        "brand": "Various",
+        "price": "$8.99",
+        "packageSize": "8 fl oz",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "http://static1.squarespace.com/static/6032bde4186dda02003df14c/6032d07a9e66a02673bb2faf/605f3707c2b09650231e9656/1616852794495/8oz_Ice.jpg?format=1500w"
+    },
+    {
+        "id": "ing_bitters_aromatic",
+        "type": {
+            "name": "Aromatic Bitters",
+            "description": "General aromatic bitters for cocktails.",
+            "category": "Other"
+        },
+        "name": "Aromatic Bitters",
+        "brand": "Fee Brothers Old Fashion",
+        "price": "$7.99",
+        "packageSize": "5 fl oz",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/31CQjfPJ0rL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA274,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_bitters_orange",
+        "type": {
+            "name": "Orange Bitters",
+            "description": "Bitters with a strong orange flavor.",
+            "category": "Other"
+        },
+        "name": "Orange Bitters",
+        "brand": "Fee Brothers West Indian",
+        "price": "$7.99",
+        "packageSize": "5 fl oz",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/31iMKPW9fqL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA1%252C797,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_seltzer_water",
+        "type": {
+            "name": "Seltzer Water",
+            "description": "Carbonated water, used in cocktails.",
+            "category": "Other"
+        },
+        "name": "Seltzer Water",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "1 liter",
+        "productImage": "https://m.media-amazon.com/images/I/51sf+adcZNL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_PIRIOFIVE-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_cognac_courvoisier",
+        "type": {
+            "name": "Courvoisier Cognac",
+            "description": "French brandy, used in cocktails.",
+            "category": "Other"
+        },
+        "name": "Courvoisier Cognac",
+        "brand": "Courvoisier",
+        "price": "$34.99",
+        "packageSize": "750 ml",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://applejack.com/sca-dev-2020-1/img/no_image_available.jpeg"
+    },
+    {
+        "id": "ing_liqueur_cointreau",
+        "type": {
+            "name": "Cointreau Liqueur",
+            "description": "Orange-flavored liqueur.",
+            "category": "Other"
+        },
+        "name": "Cointreau Liqueur",
+        "brand": "Cointreau",
+        "price": "$29.99",
+        "packageSize": "750 ml",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/he9/h80/31610062045214.png"
+    },
+    {
+        "id": "ing_prosecco",
+        "type": {
+            "name": "Prosecco",
+            "description": "Italian sparkling wine.",
+            "category": "Other"
+        },
+        "name": "Prosecco",
+        "brand": "Col de\u2019 Salici Prosecco Superiore",
+        "price": "$14.99",
+        "packageSize": "750 ml",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "http://buywinesonline.com/cdn/shop/files/Colde_SaliciValdobbiadeneProseccoSuperioreMillesimatoExtraDry.jpg?v=1695246679"
+    },
+    {
+        "id": "ing_sugar_light_brown",
+        "type": {
+            "name": "Light Brown Sugar",
+            "description": "Sugar with a soft texture and molasses flavor.",
+            "category": "Other"
+        },
+        "name": "Light Brown Sugar",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "2 lb",
+        "productImage": "https://i5.walmartimages.com/seo/Domino-Dark-Brown-Sugar-2-lb_2529eaaf-27ba-4aaf-a868-595288e7500e.58fa10e11d987e0178a7017cee75a08c.jpeg"
+    },
+    {
+        "id": "ing_cherry_amarena",
+        "type": {
+            "name": "Amarena Cherries",
+            "description": "Sweet-tart Italian cherries, often bottled in syrup.",
+            "category": "Other"
+        },
+        "name": "Amarena Cherries",
+        "brand": "Various",
+        "price": "$12.99",
+        "packageSize": "14 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41SRrUQD3aL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA8,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_whiskey_rye",
+        "type": {
+            "name": "Rye Whiskey",
+            "description": "Whiskey made primarily from rye grain.",
+            "category": "Other"
+        },
+        "name": "Rye Whiskey",
+        "brand": "Wild Turkey",
+        "price": "$24.99",
+        "packageSize": "750 ml",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://preview.redd.it/review-wild-turkey-101-rye-v0-8il3scskrjla1.jpg?width=1080&crop=smart&auto=webp&s=71bcb43772e0a97e7012cbaedbd61ffcb83410b8"
+    },
+    {
+        "id": "ing_agave_nectar",
+        "type": {
+            "name": "Agave Nectar",
+            "description": "Natural sweetener from the agave plant.",
+            "category": "Other"
+        },
+        "name": "Agave Nectar",
+        "brand": "Various",
+        "price": "$6.99",
+        "packageSize": "11.75 oz",
+        "dietaryContraindications": [
+            "none"
+        ],
+        "productImage": "https://fullcirclemarketbrand.com/wp-content/uploads/2023/12/fxm-logo.png"
+    },
+    {
+        "id": "ing_pepper_black_freshly_ground",
+        "type": {
+            "name": "Freshly Ground Black Pepper",
+            "description": "Pungent spice from ground black peppercorns.",
+            "category": "Other"
+        },
+        "name": "Freshly Ground Black Pepper",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "4 oz",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1256129488208695&get_thumbnail=1"
+    },
+    {
+        "id": "ing_pepper_white_freshly_ground",
+        "type": {
+            "name": "Freshly Ground White Pepper",
+            "description": "Milder than black pepper, used for lighter-colored dishes.",
+            "category": "Other"
+        },
+        "name": "Freshly Ground White Pepper",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "4 oz",
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=3921653931244406"
+    },
+    {
+        "id": "ing_pepper_cayenne",
+        "type": {
+            "name": "Cayenne Pepper",
+            "description": "Hot chili powder, adds heat to dishes.",
+            "category": "Other"
+        },
+        "name": "Cayenne Pepper",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "1.5 oz",
+        "productImage": "https://www.magicseasoningblends.com/wp-content/uploads/2018/06/img-product-16-1.jpg"
+    },
+    {
+        "id": "ing_pepper_red_flakes",
+        "type": {
+            "name": "Red Pepper Flakes",
+            "description": "Dried and crushed red chili peppers, adds heat.",
+            "category": "Other"
+        },
+        "name": "Red Pepper Flakes",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "2 oz",
+        "productImage": "http://static1.squarespace.com/static/541b1515e4b0a990b33a796e/5f91d9339d0f796956dd8fe6/636c1fc8fe6d21153163b3c6/1719941560352/Screen+Shot+2022-11-09+at+4.48.05+PM.png?format=1500w"
+    },
+    {
+        "id": "ing_paprika_smoked_sweet",
+        "type": {
+            "name": "Smoked Sweet Paprika",
+            "description": "Paprika with a smoky, sweet flavor.",
+            "category": "Other"
+        },
+        "name": "Smoked Sweet Paprika",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "2.5 oz",
+        "productImage": "https://m.media-amazon.com/images/I/51Yiy6+-WpL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA3%252C018,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_pepper_nora_ground",
+        "type": {
+            "name": "Ground \u00d1ora Pepper",
+            "description": "Mild, sweet Spanish pepper, dried and ground.",
+            "category": "Other"
+        },
+        "name": "Ground \u00d1ora Pepper",
+        "brand": "Various",
+        "price": "$5.99",
+        "packageSize": "1 oz",
+        "productImage": "https://www.spicejungle.com/media/catalog/product/cache/572165a13717fa73fb425098c27332e0/w/h/whole-nora-chile-macro.jpg"
+    },
+    {
+        "id": "ing_seasoning_italian",
+        "type": {
+            "name": "Italian Seasoning",
+            "description": "Blend of dried herbs commonly used in Italian cuisine.",
+            "category": "Other"
+        },
+        "name": "Italian Seasoning",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "0.75 oz",
+        "productImage": "https://badiaspices.com/wp-content/uploads/2025/02/033844001698_Front-1.jpg"
+    },
+    {
+        "id": "ing_garlic_granulated",
+        "type": {
+            "name": "Granulated Garlic",
+            "description": "Dried, granulated garlic.",
+            "category": "Other"
+        },
+        "name": "Granulated Garlic",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "3 oz",
+        "productImage": "https://badiaspices.com/wp-content/uploads/2025/02/033844002565.jpg"
+    },
+    {
+        "id": "ing_onion_powder",
+        "type": {
+            "name": "Onion Powder",
+            "description": "Dried, ground onion.",
+            "category": "Other"
+        },
+        "name": "Onion Powder",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "2 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41BjCK-sG9L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA809,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFIVE-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_allspice_whole",
+        "type": {
+            "name": "Whole Allspice",
+            "description": "Dried berries of the allspice tree, used as a spice.",
+            "category": "Other"
+        },
+        "name": "Whole Allspice",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "1 oz",
+        "productImage": "https://m.media-amazon.com/images/I/418rqxgqfNL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA852,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_juniper_berries",
+        "type": {
+            "name": "Juniper Berries",
+            "description": "Aromatic berries used as a spice, common in gin and some meat dishes.",
+            "category": "Other"
+        },
+        "name": "Juniper Berries",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "0.75 oz"
+    },
+    {
+        "id": "ing_cloves_whole",
+        "type": {
+            "name": "Whole Cloves",
+            "description": "Dried flower buds, used as a spice.",
+            "category": "Other"
+        },
+        "name": "Whole Cloves",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "1 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41-wnHWujIL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA224,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_ginger_ground",
+        "type": {
+            "name": "Ground Ginger",
+            "description": "Dried, ground ginger root, used as a spice.",
+            "category": "Other"
+        },
+        "name": "Ground Ginger",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "1.5 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41KEYSqRXvL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA4%252C746,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_mustard_seeds_yellow",
+        "type": {
+            "name": "Yellow Mustard Seeds",
+            "description": "Small, round seeds used as a spice.",
+            "category": "Other"
+        },
+        "name": "Yellow Mustard Seeds",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "2 oz",
+        "productImage": "https://www.leftyspoon.com/wp-content/uploads/2014/08/mason-jar-homemade-mustard-3-1024x681.jpg"
+    },
+    {
+        "id": "ing_peppercorns_black",
+        "type": {
+            "name": "Black Peppercorns",
+            "description": "Dried berries of the pepper plant, ground for spice.",
+            "category": "Other"
+        },
+        "name": "Black Peppercorns",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "4 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41efZ99eITL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA10%252C778,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_bay_leaves",
+        "type": {
+            "name": "Bay Leaves",
+            "description": "Aromatic leaves used to flavor stews and braises.",
+            "category": "Other"
+        },
+        "name": "Bay Leaves",
+        "brand": "Various",
+        "price": "$2.49",
+        "packageSize": "0.25 oz",
+        "productImage": "https://lacriolla.com/wp-content/uploads/2018/06/00052_0.25oz_LaCriolla_Website_WholeBayLeaves.png"
+    },
+    {
+        "id": "ing_honey",
+        "type": {
+            "name": "Honey",
+            "description": "Sweet, viscous food substance made by bees.",
+            "category": "Other"
+        },
+        "name": "Honey",
+        "brand": "Various",
+        "price": "$7.99",
+        "packageSize": "12 oz",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "https://www.planters.com/wp-content/uploads/2022/02/Web_640_PLANTERS-Honey-Roasted-Peanuts-12-OZ.png"
+    },
+    {
+        "id": "ing_liquid_smoke",
+        "type": {
+            "name": "Liquid Smoke",
+            "description": "Condiment used to impart a smoky flavor.",
+            "category": "Other"
+        },
+        "name": "Liquid Smoke",
+        "brand": "Wright's",
+        "price": "$3.49",
+        "packageSize": "3.5 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/41AImfQSMsL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA1%252C377,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_mayonnaise",
+        "type": {
+            "name": "Mayonnaise",
+            "description": "Thick, creamy sauce made from oil, egg yolk, vinegar or lemon juice.",
+            "category": "Sauce"
+        },
+        "name": "Mayonnaise",
+        "brand": "Hellmann's",
+        "price": "$4.99",
+        "packageSize": "15 oz",
+        "dietaryContraindications": [
+            "egg"
+        ],
+        "productImage": "https://i5.walmartimages.com/seo/Hellmann-s-Made-with-Cage-Free-Eggs-Real-Mayonnaise-Condiments-15-Oz_307558fe-1a9c-4daa-b47f-1e19a5b3d927.cd9805ef5de6c90829d420c43270123b.jpeg"
+    },
+    {
+        "id": "ing_ketchup",
+        "type": {
+            "name": "Ketchup",
+            "description": "Sweet and tangy tomato-based condiment.",
+            "category": "Sauce"
+        },
+        "name": "Ketchup",
+        "brand": "Heinz",
+        "price": "$3.49",
+        "packageSize": "20 oz",
+        "productImage": "https://m.media-amazon.com/images/I/41QwGSr0+IL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA36%252C333,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_worcestershire_sauce",
+        "type": {
+            "name": "Worcestershire Sauce",
+            "description": "Fermented liquid condiment, adds savory flavor.",
+            "category": "Sauce"
+        },
+        "name": "Worcestershire Sauce",
+        "brand": "Lea & Perrins",
+        "price": "$4.99",
+        "packageSize": "10 fl oz",
+        "dietaryContraindications": [
+            "fish"
+        ],
+        "productImage": "https://m.media-amazon.com/images/I/91BqzgZ8i7L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "id": "ing_horseradish_prepared",
+        "type": {
+            "name": "Prepared Horseradish",
+            "description": "Grated horseradish root mixed with vinegar and salt.",
+            "category": "Other"
+        },
+        "name": "Prepared Horseradish",
+        "brand": "Various",
+        "price": "$3.99",
+        "packageSize": "5 oz",
+        "productImage": "https://www.silverspringfoods.com/assets/images/2023/11/large/ssf106_phrk_prepared_horseradish_5oz_hero_2023_front_1044x2000.webp"
+    },
+    {
+        "id": "ing_chili_powder",
+        "type": {
+            "name": "Chili Powder",
+            "description": "Spice blend containing ground chili peppers and other spices.",
+            "category": "Other"
+        },
+        "name": "Chili Powder",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "2 oz",
+        "productImage": "https://fullcirclemarketbrand.com/wp-content/uploads/2023/12/fxm-logo.png"
+    },
+    {
+        "id": "ing_parsley_flat_leaf",
+        "type": {
+            "name": "Flat-Leaf Parsley",
+            "description": "Fresh herb, used for flavor and garnish.",
+            "category": "Other"
+        },
+        "name": "Flat-Leaf Parsley",
+        "brand": "Various",
+        "price": "$1.99",
+        "packageSize": "1 bunch",
+        "productImage": "https://honestlyyum.com/wp-content/uploads/2016/07/cheeseboard.papi_.chulo_.green_.sauce_.3.1-800x1200.jpg"
+    },
+    {
+        "id": "ing_hot_pepper_sauce",
+        "type": {
+            "name": "Hot Pepper Sauce",
+            "description": "Spicy condiment made from chili peppers.",
+            "category": "Sauce"
+        },
+        "name": "Hot Pepper Sauce",
+        "brand": "Tabasco",
+        "price": "$3.49",
+        "packageSize": "2 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/813jPjfEPgL._AC_UF350,350_QL80_.jpg"
+    },
+    {
+        "id": "ing_buttermilk",
+        "type": {
+            "name": "Buttermilk",
+            "description": "Cultured dairy product, adds tanginess and moisture.",
+            "category": "Other"
+        },
+        "name": "Buttermilk",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "32 fl oz",
+        "dietaryContraindications": [
+            "dairy"
+        ],
+        "productImage": "https://images.media.gianteagle.com/00030034948696-aa172964-18c0-4be9-9f33-15b4575fea99.png?auto=format%2Ccompress&fill=solid&fit=fill&h=256&q=92&trim=auto&trim-md=0&w=256"
+    },
+    {
+        "id": "ing_vinegar_distilled_white",
+        "type": {
+            "name": "Distilled White Vinegar",
+            "description": "Clear vinegar made from grain alcohol.",
+            "category": "Other"
+        },
+        "name": "Distilled White Vinegar",
+        "brand": "Heinz",
+        "price": "$1.99",
+        "packageSize": "32 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/41ZYRjcfUCL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA10%252C716,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_vinegar_rice",
+        "type": {
+            "name": "Rice Vinegar",
+            "description": "Mild, slightly sweet vinegar made from fermented rice.",
+            "category": "Other"
+        },
+        "name": "Rice Vinegar",
+        "brand": "Various",
+        "price": "$3.49",
+        "packageSize": "12 fl oz",
+        "productImage": "https://m.media-amazon.com/images/I/41TMJtnjOSL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA2%252C741,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_beer_german",
+        "type": {
+            "name": "German Beer",
+            "description": "Beer brewed in Germany, or in the German style.",
+            "category": "Other"
+        },
+        "name": "German Beer",
+        "brand": "Paulaner",
+        "price": "$9.99",
+        "packageSize": "6-pack",
+        "dietaryContraindications": [
+            "gluten",
+            "vegan"
+        ]
+    },
+    {
+        "id": "ing_jagermeister",
+        "type": {
+            "name": "J\u00e4germeister",
+            "description": "Herbal liqueur, used in a syrup for pizza.",
+            "category": "Other"
+        },
+        "name": "J\u00e4germeister",
+        "brand": "J\u00e4germeister",
+        "price": "$19.99",
+        "packageSize": "750 ml",
+        "dietaryContraindications": [
+            "vegan"
+        ],
+        "productImage": "http://www.remedyliquor.com/cdn/shop/products/jager.jpg?v=1655314871"
+    },
+    {
+        "id": "ing_pretzel_hard",
+        "type": {
+            "name": "Hard Pretzel",
+            "description": "Crunchy baked snack, crushed for topping.",
+            "category": "Other"
+        },
+        "name": "Hard Pretzel",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "10 oz",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://cdn11.bigcommerce.com/s-fnc0mtzrrh/products/3029/images/13136/KH_BitesRender_2024-eComm__93913.1718646962.386.513.png?c=1"
+    },
+    {
+        "id": "ing_mortadella",
+        "type": {
+            "name": "Mortadella",
+            "description": "Large Italian sausage, often with pistachios and fat.",
+            "category": "Meats"
+        },
+        "name": "Mortadella",
+        "brand": "Various",
+        "price": "$7.99",
+        "packageSize": "6 oz",
+        "dietaryContraindications": [
+            "vegetarian",
+            "vegan"
+        ],
+        "productImage": "https://images.albertsons-media.com/is/image/ABS/970120658-C1N1?$ng-ecom-pdp-desktop$&defaultImage=Not_Available"
+    },
+    {
+        "id": "ing_lettuce_butter",
+        "type": {
+            "name": "Butter Lettuce",
+            "description": "Soft, tender lettuce leaves.",
+            "category": "Other"
+        },
+        "name": "Butter Lettuce",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "1 head",
+        "productImage": "http://static1.squarespace.com/static/55470460e4b0b5d7d7c67dad/557dc078e4b01a4242175316/557dc079e4b01a42421788b8/1434306391715/HONEY_TAHINI_BUTTER_LETTUCE_01.jpg?format=1500w"
+    },
+    {
+        "id": "ing_mustard_dijon",
+        "type": {
+            "name": "Dijon Mustard",
+            "description": "Creamy French mustard with a tangy flavor.",
+            "category": "Sauce"
+        },
+        "name": "Dijon Mustard",
+        "brand": "Grey Poupon",
+        "price": "$3.49",
+        "packageSize": "8 oz",
+        "productImage": "https://m.media-amazon.com/images/I/413tmDv8JyL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA5%252C990,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg"
+    },
+    {
+        "id": "ing_mustard_spicy_brown",
+        "type": {
+            "name": "Spicy Brown Mustard",
+            "description": "Mustard with a coarser texture and spicy kick.",
+            "category": "Sauce"
+        },
+        "name": "Spicy Brown Mustard",
+        "brand": "Various",
+        "price": "$2.99",
+        "packageSize": "12 oz",
+        "productImage": "http://shop.mccormick.com/cdn/shop/files/8ea3722780bc1c8034b4a63a36167f0d4b495f04.jpg?v=1744307684&width=1024"
+    },
+    {
+        "id": "ing_bread_crumbs_seasoned",
+        "type": {
+            "name": "Seasoned Bread Crumbs",
+            "description": "Bread crumbs mixed with herbs and spices.",
+            "category": "Other"
+        },
+        "name": "Seasoned Bread Crumbs",
+        "brand": "Homemade",
+        "price": "N/A",
+        "packageSize": "8 oz",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10236420272197077"
+    },
+    {
+        "id": "ing_bread_artisanal_white",
+        "type": {
+            "name": "Artisanal White Bread",
+            "description": "High-quality white bread, often used for homemade bread crumbs.",
+            "category": "Other"
+        },
+        "name": "Artisanal White Bread",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "1 loaf",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://sugarspunrun.com/wp-content/uploads/2023/12/Artisan-Bread-1-of-1-3.jpg"
+    },
+    {
+        "id": "ing_giardiniera",
+        "type": {
+            "name": "Giardiniera",
+            "description": "Pickled Italian relish with mixed vegetables, often spicy.",
+            "category": "Other"
+        },
+        "name": "Giardiniera",
+        "brand": "Fontanini",
+        "price": "$5.99",
+        "packageSize": "16 oz",
+        "productImage": "http://static1.squarespace.com/static/5b12980b50a54f0e4c9354d6/t/5b129b37352f535b020e8f7a/1527946042868/BW-Chicago-Pizza-2017_transparent.png?format=1500w"
+    },
+    {
+        "id": "ing_pasta_bucatini",
+        "type": {
+            "name": "Bucatini",
+            "description": "Thick spaghetti-like pasta with a hole running through the center.",
+            "category": "Other"
+        },
+        "name": "Bucatini",
+        "brand": "Barilla",
+        "price": "$2.49",
+        "packageSize": "16 oz",
+        "dietaryContraindications": [
+            "gluten"
+        ],
+        "productImage": "https://images.ctfassets.net/43ibah8kumsy/49SVdn07dEv9MiMdibEOBX/e72a829c0f07fec14d2db072a3e95dc7/Barilla_Al_Bronzo_Bucatini_Pasta_2025_Relaunch.jpg?w=1600&h=1600&fm=webp&q=50"
+    },
+    {
+        "id": "ing_mussels",
+        "type": {
+            "name": "Mussels",
+            "description": "Edible bivalve mollusks, often steamed.",
+            "category": "Other"
+        },
+        "name": "Mussels",
+        "brand": "Various",
+        "price": "$6.99",
+        "packageSize": "2 lb",
+        "dietaryContraindications": [
+            "shellfish"
+        ],
+        "productImage": "https://profish.com/images/products/compressed/xvV1KBBmrD.jpeg"
+    },
+    {
+        "id": "ing_wine_dry_white",
+        "type": {
+            "name": "Dry White Wine",
+            "description": "Wine used for cooking, adds flavor to sauces and steamed dishes.",
+            "category": "Other"
+        },
+        "name": "Dry White Wine",
+        "brand": "Various",
+        "price": "$8.99",
+        "packageSize": "750 ml",
+        "productImage": "https://www.instacart.com/assets/domains/product-image/file/large_b8dd7582-db2b-4ce0-8bc4-a43543543902.jpg"
+    },
+    {
+        "id": "ing_corn_ear_of",
+        "type": {
+            "name": "Ear of Corn",
+            "description": "Fresh corn on the cob, kernels often used as a topping.",
+            "category": "Other"
+        },
+        "name": "Ear of Corn",
+        "brand": "Various",
+        "price": "$0.79",
+        "packageSize": "1 unit"
+    },
+    {
+        "id": "ing_lavender_ground_dried",
+        "type": {
+            "name": "Ground Dried Lavender",
+            "description": "Dried lavender flowers, ground for a floral spice.",
+            "category": "Other"
+        },
+        "name": "Ground Dried Lavender",
+        "brand": "Various",
+        "price": "$4.99",
+        "packageSize": "0.5 oz",
+        "productImage": "http://whiteoaklavender.com/cdn/shop/files/Culinary-Lavender.png?v=1736522077"
+    }
 ]
