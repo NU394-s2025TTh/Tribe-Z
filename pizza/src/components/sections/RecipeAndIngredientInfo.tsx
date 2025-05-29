@@ -74,8 +74,12 @@ export default function RecipeAndIngredientInfo({
       brand: doc.data().brand ?? 'Brand not specified',
       packageSize: doc.data().packageSize,
     })) as Ingredient[];
+    const ingredientOnly = allIngredients.filter((i) => {
+      const cat = (i.type as any).category;
+      return !cat || String(cat).toLowerCase() !=='equipment';
+    });
 
-    const fuse = new Fuse(allIngredients, {
+    const fuse = new Fuse(ingredientOnly,{
       keys: ['name'],
       threshold: 0.55,          // higher threshold = more lenient
       distance: 200,           // allow matches farther apart
