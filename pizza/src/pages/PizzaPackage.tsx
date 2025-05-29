@@ -106,111 +106,111 @@ function PizzaPackage() {
       return acc;
     }, {} as Record<string, (Ingredient | IngredientType)[]>);
 
-    if ('Unknown Store' in transformedData) {
-      const kroger = async () => {
-        const zip = '60201';
-        const locations = await fetch('/api/kroger-locations?zip=' + zip);
-        return (await locations.json())['data'][0];
-      };
-      const handleKrogerData = async () => {
-        try {
-          const location = await kroger();
-          console.log('Location:', location);
+    // if ('Unknown Store' in transformedData) {
+    //   const kroger = async () => {
+    //     const zip = '60201';
+    //     const locations = await fetch('/api/kroger-locations?zip=' + zip);
+    //     return (await locations.json())['data'][0];
+    //   };
+    //   const handleKrogerData = async () => {
+    //     try {
+    //       const location = await kroger();
+    //       console.log('Location:', location);
 
-          const initialRecommendations: string[] = [];
+    //       const initialRecommendations: string[] = [];
 
-          const responses = await Promise.allSettled(
-            transformedData['Unknown Store'].map((ingredient) => {
-              const searchTerm =
-                'brand' in ingredient || !('type' in ingredient)
-                  ? ingredient.name
-                  : ingredient.type.name;
+    //       const responses = await Promise.allSettled(
+    //         transformedData['Unknown Store'].map((ingredient) => {
+    //           const searchTerm =
+    //             'brand' in ingredient || !('type' in ingredient)
+    //               ? ingredient.name
+    //               : ingredient.type.name;
 
-              initialRecommendations.push(searchTerm);
+    //           initialRecommendations.push(searchTerm);
 
-              return fetch(
-                `/api/kroger-products?locationId=${
-                  location['locationId']
-                }&searchTerm=${searchTerm.split(' ').slice(0, 8).join(' ')}`
-              );
-            })
-          );
+    //           return fetch(
+    //             `/api/kroger-products?locationId=${
+    //               location['locationId']
+    //             }&searchTerm=${searchTerm.split(' ').slice(0, 8).join(' ')}`
+    //           );
+    //         })
+    //       );
 
-          const fulfilledResponses = responses
-            .map((e, i) => [e, initialRecommendations[i]])
-            .filter(
-              ([r, i]) =>
-                (r as PromiseFulfilledResult<any>).status === 'fulfilled'
-            ) as [PromiseFulfilledResult<Response>, string][];
+    //       const fulfilledResponses = responses
+    //         .map((e, i) => [e, initialRecommendations[i]])
+    //         .filter(
+    //           ([r, i]) =>
+    //             (r as PromiseFulfilledResult<any>).status === 'fulfilled'
+    //         ) as [PromiseFulfilledResult<Response>, string][];
 
-          const remove: string[] = [];
-          const products = await Promise.all(
-            fulfilledResponses.map(async ([response, name]) => {
-              console.log(name);
-              try {
-                const data = await response.value.json();
+    //       const remove: string[] = [];
+    //       const products = await Promise.all(
+    //         fulfilledResponses.map(async ([response, name]) => {
+    //           console.log(name);
+    //           try {
+    //             const data = await response.value.json();
 
-                const d = {
-                  id: data.data[0]['productId'],
-                  name:
-                    data.data[0]['description'] +
-                    ', ' +
-                    data.data[0]['items'][0]['size'],
-                  type: {} as IngredientType,
-                  brand: data.data[0]['brand'],
-                  preferredVendor: 'Kroger',
-                  vendorProductId: data.data[0]['productId'],
-                  link: 'https://kroger.com' + data.data[0]['productPageURI'],
-                  price: '$' + data.data[0]['items'][0]['price']['regular'],
-                  additionalInfo: name,
-                } as Ingredient & {
-                  additionalInfo: string;
-                };
-                remove.push(name);
-                return d;
-              } catch {
-                // console.error('Error parsing Kroger response:', error);
-                return {
-                  id: 'unknown',
-                  name: 'Unknown',
-                  type: {} as IngredientType,
-                  brand: 'Unknown',
-                  preferredVendor: 'Kroger',
-                  vendorProductId: 'unknown',
-                  link: '',
-                  price: '0.00',
-                  additionalInfo: 'failed',
-                } as Ingredient & {
-                  additionalInfo: string;
-                };
-              }
-            })
-          );
+    //             const d = {
+    //               id: data.data[0]['productId'],
+    //               name:
+    //                 data.data[0]['description'] +
+    //                 ', ' +
+    //                 data.data[0]['items'][0]['size'],
+    //               type: {} as IngredientType,
+    //               brand: data.data[0]['brand'],
+    //               preferredVendor: 'Kroger',
+    //               vendorProductId: data.data[0]['productId'],
+    //               link: 'https://kroger.com' + data.data[0]['productPageURI'],
+    //               price: '$' + data.data[0]['items'][0]['price']['regular'],
+    //               additionalInfo: name,
+    //             } as Ingredient & {
+    //               additionalInfo: string;
+    //             };
+    //             remove.push(name);
+    //             return d;
+    //           } catch {
+    //             // console.error('Error parsing Kroger response:', error);
+    //             return {
+    //               id: 'unknown',
+    //               name: 'Unknown',
+    //               type: {} as IngredientType,
+    //               brand: 'Unknown',
+    //               preferredVendor: 'Kroger',
+    //               vendorProductId: 'unknown',
+    //               link: '',
+    //               price: '0.00',
+    //               additionalInfo: 'failed',
+    //             } as Ingredient & {
+    //               additionalInfo: string;
+    //             };
+    //           }
+    //         })
+    //       );
 
-          console.log(products, 'transformed fully');
-          setStoreToIngredients({
-            [location['name']]: products.filter((p) => p.id !== 'unknown'),
-            'No Avaliable Merchants': transformedData['Unknown Store'].filter(
-              (e) =>
-                remove.indexOf(
-                  'brand' in e || !('type' in e) ? e.name : e.type.name
-                ) === -1
-            ),
-            ...Object.fromEntries(
-              Object.entries(transformedData).filter(
-                ([k, e]) => k !== 'Unknown Store'
-              )
-            ),
-          });
-        } catch (error) {
-          console.error('Error processing Kroger data:', error);
-        }
-      };
+    //       console.log(products, 'transformed fully');
+    //       setStoreToIngredients({
+    //         [location['name']]: products.filter((p) => p.id !== 'unknown'),
+    //         'No Avaliable Merchants': transformedData['Unknown Store'].filter(
+    //           (e) =>
+    //             remove.indexOf(
+    //               'brand' in e || !('type' in e) ? e.name : e.type.name
+    //             ) === -1
+    //         ),
+    //         ...Object.fromEntries(
+    //           Object.entries(transformedData).filter(
+    //             ([k, e]) => k !== 'Unknown Store'
+    //           )
+    //         ),
+    //       });
+    //     } catch (error) {
+    //       console.error('Error processing Kroger data:', error);
+    //     }
+    //   };
 
-      handleKrogerData();
-    } else {
+    //   handleKrogerData();
+    // } else {
       setStoreToIngredients(transformedData);
-    }
+    // }
 
     console.log('Transformed Data:', transformedData);
   }, [ingredients]);
