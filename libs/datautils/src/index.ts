@@ -46,7 +46,7 @@ db.settings({ ignoreUndefinedProperties: true });
 console.log(db, '!!');
 
 const INGREDIENTS_COLLECTION = 'ingredients';
-const EQUIPMENT_COLLECTION = 'equipment';
+const EQUIPMENT_COLLECTION = 'ingredients';
 const RECIPES_COLLECTION = 'recipes';
 const GUIDES_COLLECTION = 'guidedRecipes';
 

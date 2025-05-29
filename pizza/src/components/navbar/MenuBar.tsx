@@ -77,13 +77,21 @@ const l1: NavMenuLinks[] = [
 
 const l2: NavMenuLinks[] = [
   {
-    title: 'Ingredients',
-    href: '/ingredients',
-    description: 'Search for ingredients to use',
+    title: 'Materials',
+    href: '/materials',
+    description: 'Get everything you need to make great pizza',
   },
 ];
 
 const l3: NavMenuLinks[] = [
+  {
+    title: 'Ask a Question',
+    href: '/chatbot',
+    description: 'Ask Sensei Luigi any pizza question',
+  },
+];
+
+const l4: NavMenuLinks[] = [
   {
     title: 'Team',
     href: '/team',
@@ -91,18 +99,11 @@ const l3: NavMenuLinks[] = [
   },
 ];
 
-// const l3: NavMenuLinks[] = [
-//   {
-//     title: 'Recipies',
-//     href: '/recipes',
-//     description: 'See recipies',
-//   },
-// ];
-
 const navMenu: NavMenu[] = [
   { title: 'Recipes', links: l1 },
   { title: 'Ingredients', links: l2 },
-  { title: 'Team', links: l3 },
+  { title: 'Chatbot', links: l3 },
+  { title: 'Team', links: l4 },
 ];
 
 // Simple ListItem component without forwardRef
@@ -381,8 +382,8 @@ export function FloatingNav() {
             <SheetTrigger asChild>
               <img
                 src="/cart/cart.svg"
+                alt="Shopping Cart"
                 className="w-8 h-8 cursor-pointer transition duration-150 ease-in-out hover:rotate-10"
-                onClick={() => {}}
               />
             </SheetTrigger>
 

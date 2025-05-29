@@ -1,206 +1,288 @@
 [
-  {
-    "id": "equip_digital_scale",
-    "type": {
-      "name": "Digital Scale",
-      "description": "Scale for measuring ingredients in grams and ounces.",
-      "category": "appliance"
+    {
+        "id": "equip_digital_scale",
+        "type": {
+            "name": "Digital Scale",
+            "description": "Scale for measuring ingredients in grams and ounces.",
+            "category": "Equipment"
+        },
+        "name": "OXO Good Grips Stainless Steel Food Scale with Pull-Out Display",
+        "brand": "OXO",
+        "productImage": "https://www.oxo.com/media/catalog/product/cache/b2f1ce2dfe10d3d31bf2056bf6e0d10f/g/g/gg_11214800_2.jpg",
+        "price": "$50.00",
+        "packageSize": "1 unit"
     },
-    "name": "OXO Good Grips Stainless Steel Food Scale with Pull-Out Display",
-    "brand": "OXO"
-  },
-  {
-    "id": "equip_stand_mixer",
-    "type": {
-      "name": "Stand Mixer",
-      "description": "Electric stand mixer with dough hook attachment.",
-      "category": "appliance"
+    {
+        "id": "equip_stand_mixer",
+        "type": {
+            "name": "Stand Mixer",
+            "description": "Electric stand mixer with dough hook attachment.",
+            "category": "Equipment"
+        },
+        "name": "KitchenAid Artisan Series 5-Quart Tilt-Head Stand Mixer",
+        "brand": "KitchenAid",
+        "productImage": "https://www.kitchenaid.com/is/image/content/dam/global/kitchenaid/countertop-appliance/stand-mixer/images/hero-KSM150PSER.tif?hei=600",
+        "price": "$450.00",
+        "packageSize": "1 unit"
     },
-    "name": "KitchenAid Artisan Series 5-Quart Tilt-Head Stand Mixer",
-    "brand": "KitchenAid"
-  },
-  {
-    "id": "equip_immersion_blender",
-    "type": {
-      "name": "Immersion Blender",
-      "description": "Handheld blender for pureeing sauces.",
-      "category": "appliance"
+    {
+        "id": "equip_immersion_blender",
+        "type": {
+            "name": "Immersion Blender",
+            "description": "Handheld blender for pureeing sauces.",
+            "category": "Equipment"
+        },
+        "name": "Breville Control Grip Immersion Blender",
+        "brand": "Breville",
+        "productImage": "https://www.breville.com/content/dam/breville/ca/catalog/products/images/bsb/bsb510xl/pdp.jpg?pdp",
+        "price": "$100.00",
+        "packageSize": "1 unit"
     },
-    "name": "Breville Control Grip Immersion Blender",
-    "brand": "Breville"
-  },
-  {
-    "id": "equip_prep_bowls_nesting",
-    "type": {
-      "name": "Prep Bowls",
-      "description": "Set of nesting glass or stainless steel bowls."
+    {
+        "id": "equip_prep_bowls_nesting",
+        "type": {
+            "name": "Prep Bowls",
+            "description": "Set of nesting glass or stainless steel bowls.",
+            "category": "Equipment"
+        },
+        "name": "Pyrex Smart Essentials Mixing Bowl Set",
+        "brand": "Pyrex",
+        "productImage": "http://pyrexhome.com/cdn/shop/files/pyr_smart_essentials_rnd_8pc_mixing_bowl_set_mass_1086053_1.jpg?crop=center&height=1200&v=1738687903&width=1200",
+        "price": "$30.00",
+        "packageSize": "1 set"
     },
-    "name": "Pyrex Smart Essentials Mixing Bowl Set",
-    "brand": "Pyrex"
-  },
-  {
-    "id": "equip_measuring_cups_spoons",
-    "type": {
-      "name": "Measuring Cups and Spoons",
-      "description": "Standard set for wet and dry ingredients."
+    {
+        "id": "equip_measuring_cups_spoons",
+        "type": {
+            "name": "Measuring Cups and Spoons",
+            "description": "Standard set for wet and dry ingredients.",
+            "category": "Equipment"
+        },
+        "name": "OXO Good Grips Measuring Cups and Spoons Set",
+        "brand": "OXO",
+        "productImage": "https://www.oxo.com/media/catalog/product/cache/b2f1ce2dfe10d3d31bf2056bf6e0d10f/g/g/gg_11180500_2_-set_1.jpg",
+        "price": "$25.00",
+        "packageSize": "1 set"
     },
-    "name": "OXO Good Grips Measuring Cups and Spoons Set",
-    "brand": "OXO"
-  },
-  {
-    "id": "equip_instant_read_thermometer",
-    "type": {
-      "name": "Instant-Read Thermometer",
-      "description": "Thermometer for checking dough and water temperature."
+    {
+        "id": "equip_instant_read_thermometer",
+        "type": {
+            "name": "Instant-Read Thermometer",
+            "description": "Thermometer for checking dough and water temperature.",
+            "category": "Equipment"
+        },
+        "name": "ThermoWorks Thermapen ONE",
+        "brand": "ThermoWorks",
+        "productImage": "https://cdn11.bigcommerce.com/s-2mj19jirgg/products/847/images/3998/ThermapenOne_red-01__53123.1724445716.386.513.jpg?c=1",
+        "price": "$90.00",
+        "packageSize": "1 unit"
     },
-    "name": "ThermoWorks Thermapen ONE",
-    "brand": "ThermoWorks"
-  },
-  {
-    "id": "equip_dough_cutter_straight",
-    "type": {
-      "name": "Dough Cutter (Bench Scraper)",
-      "description": "Straight-edged tool for cutting and scraping dough.",
-      "category": "cutlery"
+    {
+        "id": "equip_dough_cutter_straight",
+        "type": {
+            "name": "Dough Cutter (Bench Scraper)",
+            "description": "Straight-edged tool for cutting and scraping dough.",
+            "category": "Equipment"
+        },
+        "name": "Dexter-Russell Sani-Safe Dough Cutter/Scraper",
+        "brand": "Dexter-Russell",
+        "productImage": "https://dexter1818.com/wp-content/webpc-passthru.php?src=https://dexter1818.com/wp-content/uploads/2022/04/Dexter-Russell-logo-white.png&nocache=1",
+        "price": "$15.00",
+        "packageSize": "1 unit"
     },
-    "name": "Dexter-Russell Sani-Safe Dough Cutter/Scraper",
-    "brand": "Dexter-Russell"
-  },
-  {
-    "id": "equip_bowl_scraper_round",
-    "type": {
-      "name": "Bowl Scraper",
-      "description": "Flexible, round-edged scraper for bowls."
+    {
+        "id": "equip_bowl_scraper_round",
+        "type": {
+            "name": "Bowl Scraper",
+            "description": "Flexible, round-edged scraper for bowls.",
+            "category": "Equipment"
+        },
+        "name": "Ateco Bowl Scraper",
+        "brand": "Ateco",
+        "productImage": "https://m.media-amazon.com/images/I/31AWTQ81cdL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA3%252C270,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg",
+        "price": "$8.00",
+        "packageSize": "1 unit"
     },
-    "name": "Ateco Bowl Scraper",
-    "brand": "Ateco"
-  },
-  {
-    "id": "equip_half_sheet_pan",
-    "type": {
-      "name": "Half Sheet Pan",
-      "description": "Standard aluminum half sheet pan (approx 18x13 inches)."
+    {
+        "id": "equip_half_sheet_pan",
+        "type": {
+            "name": "Half Sheet Pan",
+            "description": "Standard aluminum half sheet pan (approx 18x13 inches).",
+            "category": "Equipment"
+        },
+        "name": "Nordic Ware Natural Aluminum Commercial Baker's Half Sheet",
+        "brand": "Nordic Ware",
+        "productImage": "https://www.nordicware.com/wp-content/uploads/2021/04/43100_Half_Sheet_Overhead_1000x1000__92562.1748023069.1280.1280.jpg",
+        "price": "$20.00",
+        "packageSize": "1 unit"
     },
-    "name": "Nordic Ware Natural Aluminum Commercial Baker's Half Sheet",
-    "brand": "Nordic Ware"
-  },
-  {
-    "id": "equip_pizza_stone_rectangular",
-    "type": {
-      "name": "Pizza Stone/Steel (Rectangular)",
-      "description": "Rectangular baking stone or steel for oven use, at least 15 inches square."
+    {
+        "id": "equip_pizza_stone_rectangular",
+        "type": {
+            "name": "Pizza Stone/Steel (Rectangular)",
+            "description": "Rectangular baking stone or steel for oven use, at least 15 inches square.",
+            "category": "Equipment"
+        },
+        "name": "The Original Baking Steel (16x14)",
+        "brand": "Baking Steel",
+        "productImage": "http://bakingsteel.com/cdn/shop/files/Baking_Steel_Original.jpg?v=1747702910",
+        "price": "$120.00",
+        "packageSize": "1 unit"
     },
-    "name": "The Original Baking Steel (16x14)",
-    "brand": "Baking Steel"
-  },
-  {
-    "id": "equip_pizza_peel_wood_14in",
-    "type": {
-      "name": "Wooden Pizza Peel",
-      "description": "Wooden peel for building and transferring pizzas, at least 14 inches."
+    {
+        "id": "equip_pizza_peel_wood_14in",
+        "type": {
+            "name": "Wooden Pizza Peel",
+            "description": "Wooden peel for building and transferring pizzas, at least 14 inches.",
+            "category": "Equipment"
+        },
+        "name": "Epicurean Gourmet Series Pizza Peel (14-inch)",
+        "brand": "Epicurean",
+        "productImage": "http://epicureanusa.com/cdn/shop/files/PizzaPeel_7650f4a3-15e2-4c7d-b0cc-a5fa1e577ef2_1200x1200.jpg?v=1705595230",
+        "price": "$40.00",
+        "packageSize": "1 unit"
     },
-    "name": "Epicurean Gourmet Series Pizza Peel (14-inch)",
-    "brand": "Epicurean"
-  },
-  {
-    "id": "equip_rocking_pizza_cutter",
-    "type": {
-      "name": "Rocking Pizza Cutter (Mezzaluna)",
-      "description": "Large, curved blade for slicing pizza.",
-      "category": "cutlery"
+    {
+        "id": "equip_rocking_pizza_cutter",
+        "type": {
+            "name": "Rocking Pizza Cutter (Mezzaluna)",
+            "description": "Large, curved blade for slicing pizza.",
+            "category": "Equipment"
+        },
+        "name": "Dexter-Russell 20-inch Pizza Rocker Knife",
+        "brand": "Dexter-Russell",
+        "productImage": "https://dexter1818.com/wp-content/webpc-passthru.php?src=https://dexter1818.com/wp-content/uploads/2025/04/18040_1__45697.1744811982.1280.1280-370x370.png&nocache=1",
+        "price": "$35.00",
+        "packageSize": "1 unit"
     },
-    "name": "Dexter-Russell 20-inch Pizza Rocker Knife",
-    "brand": "Dexter-Russell"
-  },
-  {
-    "id": "equip_pizza_wheel",
-    "type": {
-      "name": "Pizza Wheel",
-      "description": "Traditional wheel cutter for pizza and dough trimming.",
-      "category": "cutlery"
+    {
+        "id": "equip_pizza_wheel",
+        "type": {
+            "name": "Pizza Wheel",
+            "description": "Traditional wheel cutter for pizza and dough trimming.",
+            "category": "Equipment"
+        },
+        "name": "OXO Good Grips 4-inch Pizza Wheel",
+        "brand": "OXO",
+        "productImage": "https://m.media-amazon.com/images/I/214HETN4iQL._BO30,255,255,255_UF900,850_SR1910,1000,0,C_ZA6%252C831,500,900,420,420,AmazonEmber,50,4,0,0_PIRIOFOURANDHALF-medium,BottomLeft,30,-20_QL100_.jpg",
+        "price": "$15.00",
+        "packageSize": "1 unit"
     },
-    "name": "OXO Good Grips 4-inch Pizza Wheel",
-    "brand": "OXO"
-  },
-  {
-    "id": "equip_deep_dish_pan_12in_black_steel",
-    "type": {
-        "name": "Deep-Dish Pizza Pan (12-13 inch)",
-        "description": "Round black steel pan, 12-13 inches diameter, 2 inches deep."
+    {
+        "id": "equip_deep_dish_pan_12in_black_steel",
+        "type": {
+            "name": "Deep-Dish Pizza Pan (12-13 inch)",
+            "description": "Round black steel pan, 12-13 inches diameter, 2 inches deep.",
+            "category": "Equipment"
+        },
+        "name": "LloydPans 12x2 Inch Deep Dish Pizza Pan (Pre-Seasoned PSTK)",
+        "brand": "LloydPans",
+        "productImage": "https://lloydpans.com/media/catalog/product/d/e/deepdish_stacking_closeup.jpg?quality=80&fit=bounds&height=373&width=560&canvas=560:373",
+        "price": "$45.00",
+        "packageSize": "1 unit"
     },
-    "name": "LloydPans 12x2 Inch Deep Dish Pizza Pan (Pre-Seasoned PSTK)",
-    "brand": "LloydPans"
-  },
-  {
-    "id": "equip_rolling_pin_heavy",
-    "type": {
-        "name": "Rolling Pin",
-        "description": "Heavy rolling pin, preferably with ball bearings."
+    {
+        "id": "equip_rolling_pin_heavy",
+        "type": {
+            "name": "Rolling Pin",
+            "description": "Heavy rolling pin, preferably with ball bearings.",
+            "category": "Equipment"
+        },
+        "name": "J.K. Adams French Tapered Rolling Pin",
+        "brand": "J.K. Adams",
+        "productImage": "http://www.jkadams.com/cdn/shop/files/JK-ADAMS-FRP-1-1.jpg?v=1683670826",
+        "price": "$30.00",
+        "packageSize": "1 unit"
     },
-    "name": "J.K. Adams French Tapered Rolling Pin",
-    "brand": "J.K. Adams"
-  },
-  {
-    "id": "equip_dough_docker",
-    "type": {
-        "name": "Dough Docker",
-        "description": "Tool for poking holes in dough to prevent puffing."
+    {
+        "id": "equip_dough_docker",
+        "type": {
+            "name": "Dough Docker",
+            "description": "Tool for poking holes in dough to prevent puffing.",
+            "category": "Equipment"
+        },
+        "name": "Norpro Dough Docker",
+        "brand": "Norpro",
+        "productImage": "https://target.scene7.com/is/image/Target/GUEST_32932061-9fff-45e8-8e84-c50998f28fd3",
+        "price": "$12.00",
+        "packageSize": "1 unit"
     },
-    "name": "Norpro Dough Docker",
-    "brand": "Norpro"
-  },
-  {
-    "id": "equip_detroit_pan_steel",
-    "type": {
-        "name": "Detroit-Style Pizza Pan",
-        "description": "Rectangular black steel pan (e.g., 8.5x12.25 inches) for Detroit-style pizza."
+    {
+        "id": "equip_detroit_pan_steel",
+        "type": {
+            "name": "Detroit-Style Pizza Pan",
+            "description": "Rectangular black steel pan (e.g., 8.5x12.25 inches) for Detroit-style pizza.",
+            "category": "Equipment"
+        },
+        "name": "LloydPans Kitchenware Detroit Style Pizza Pan 10x14 Inch",
+        "brand": "LloydPans",
+        "productImage": "https://lloydpans.com/media/catalog/product/d/e/detroit-large.jpg?quality=80&fit=bounds&height=373&width=560&canvas=560:373",
+        "price": "$50.00",
+        "packageSize": "1 unit"
     },
-    "name": "LloydPans Kitchenware Detroit Style Pizza Pan 10x14 Inch",
-    "brand": "LloydPans"
-  },
-  {
-    "id": "equip_sicilian_pan_steel_12x18",
-    "type": {
-        "name": "Sicilian Pizza Pan (Steel)",
-        "description": "12x18 inch steel pan for Sicilian pizza."
+    {
+        "id": "equip_sicilian_pan_steel_12x18",
+        "type": {
+            "name": "Sicilian Pizza Pan (Steel)",
+            "description": "12x18 inch steel pan for Sicilian pizza.",
+            "category": "Equipment"
+        },
+        "name": "Allied Metal 12x18 Inch Sicilian Pizza Pan (Black Steel)",
+        "brand": "Allied Metal",
+        "productImage": "https://i5.walmartimages.com/seo/Winco-SPP-1218-Sicilian-Pizza-Pans-12-Inch-by-18-Inch_756a9de8-e7bc-4253-a7a6-c5b9b980d74f_1.f3344282133fba072ecf89d0e9a9cd3a.jpeg",
+        "price": "$35.00",
+        "packageSize": "1 unit"
     },
-    "name": "Allied Metal 12x18 Inch Sicilian Pizza Pan (Black Steel)",
-    "brand": "Allied Metal"
-  },
-  {
-    "id": "equip_cast_iron_skillet_12in",
-    "type": {
-        "name": "Cast-Iron Skillet (12-inch)",
-        "description": "12-inch cast-iron skillet."
+    {
+        "id": "equip_cast_iron_skillet_12in",
+        "type": {
+            "name": "Cast-Iron Skillet (12-inch)",
+            "description": "12-inch cast-iron skillet.",
+            "category": "Equipment"
+        },
+        "name": "Lodge 12-Inch Cast Iron Skillet",
+        "brand": "Lodge",
+        "productImage": "https://preview.redd.it/buying-my-first-cast-iron-whats-your-opinion-on-this-lodge-v0-ipfkovc2ygxc1.jpeg?auto=webp&s=05adeadfb686a644d39c79f5bdde8b4130bd2cc3",
+        "price": "$40.00",
+        "packageSize": "1 unit"
     },
-    "name": "Lodge 12-Inch Cast Iron Skillet",
-    "brand": "Lodge"
-  },
-  {
-      "id": "equip_food_mill",
-      "type": {
-          "name": "Food Mill",
-          "description": "Food mill with fine screen for pureeing tomatoes."
-      },
-      "name": "OXO Good Grips Food Mill",
-      "brand": "OXO"
-  },
-  {
-    "id": "equip_metal_palino_wood_fired",
-    "type": {
-        "name": "Palino (Small Metal Peel)",
-        "description": "Small circular metal peel with a long handle for rotating pizzas in a wood-fired oven."
+    {
+        "id": "equip_food_mill",
+        "type": {
+            "name": "Food Mill",
+            "description": "Food mill with fine screen for pureeing tomatoes.",
+            "category": "Equipment"
+        },
+        "name": "OXO Good Grips Food Mill",
+        "brand": "OXO",
+        "productImage": "https://m.media-amazon.com/images/I/61d757SN4lL._AC_UF894,1000_QL80_.jpg",
+        "price": "$60.00",
+        "packageSize": "1 unit"
     },
-    "name": "GI Metal Azzurra Turning Peel (Small Head)",
-    "brand": "GI Metal"
-  },
-  {
-    "id": "equip_long_handled_wood_peel_wood_fired",
-    "type": {
-        "name": "Long-Handled Wooden Peel (Wood-Fired)",
-        "description": "Wooden peel with a long handle (20+ inches) for wood-fired ovens."
+    {
+        "id": "equip_metal_palino_wood_fired",
+        "type": {
+            "name": "Palino (Small Metal Peel)",
+            "description": "Small circular metal peel with a long handle for rotating pizzas in a wood-fired oven.",
+            "category": "Equipment"
+        },
+        "name": "GI Metal Azzurra Turning Peel (Small Head)",
+        "brand": "GI Metal",
+        "productImage": "https://cdn.yellowfincommerce.com/gimetalusa/product/307/md/17a7fbfac4-1919b6-934b5c-028802-5556946b643c01.png",
+        "price": "$80.00",
+        "packageSize": "1 unit"
     },
-    "name": "American Metalcraft Wood Pizza Peel (Long Handle)",
-    "brand": "American Metalcraft"
-  }
+    {
+        "id": "equip_long_handled_wood_peel_wood_fired",
+        "type": {
+            "name": "Long-Handled Wooden Peel (Wood-Fired)",
+            "description": "Wooden peel with a long handle (20+ inches) for wood-fired ovens.",
+            "category": "Equipment"
+        },
+        "name": "American Metalcraft Wood Pizza Peel (Long Handle)",
+        "brand": "American Metalcraft",
+        "productImage": null,
+        "price": "$60.00",
+        "packageSize": "1 unit"
+    }
 ]
