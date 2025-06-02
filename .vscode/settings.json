@@ -11,5 +11,6 @@
     "terminal.background": "#00000000",
     "minimap.background": "#00000000",
     "scrollbar.shadow": "#00000000"
-  }
+  },
+  "github.copilot.instructionsFile": ".github/copilot-test-instructions.md"
 }
