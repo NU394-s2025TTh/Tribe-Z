@@ -54,12 +54,13 @@ export function FeaturedCard({
   );
 }
 
+// ...existing imports...
+
 export default function FeaturedRecipes() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   const getRecipes = useCallback(async (): Promise<void> => {
     const recipesRef = collection(db, 'recipes');
-    //query where headerImage does not contain placeholder
     const q = query(recipesRef);
 
     const querySnapshot = await getDocs(q);
@@ -76,7 +77,6 @@ export default function FeaturedRecipes() {
       )
       .slice(0, 7);
 
-    console.log(querySnapshot.docs[0].data());
     setRecipes(recipes);
   }, []);
 
@@ -90,8 +90,21 @@ export default function FeaturedRecipes() {
 
   return (
     <div className="w-full text-center md:text-left">
+      {/* Marketing Header */}
+      <div className="bg-accent text-accent-foreground py-8 px-4 rounded-md shadow-md">
+        <h2 role="heading" className="text-2xl sm:text-3xl md:text-4xl font-bold">
+          DoughJo: Your One-Stop Shop for Crafting World-Class Pizza at Home
+        </h2>
+        <p className="text-lg mt-4">
+          Giving home pizza makers everything they need to effortlessly create
+          delicious pizza right from their own kitchen. Fresh ingredients,
+          high-quality equipment, and a helpful chatbot are just a click away!
+        </p>
+      </div>
+
+      {/* Featured Recipes Section */}
       <div className="py-8">
-        <h1 className="text-2xl text-center center sm:text-3xl md:text-4xl font-bold text-accent">
+        <h1 className="text-2xl text-center sm:text-3xl md:text-4xl font-bold text-accent">
           Featured Recipes 🍕
         </h1>
         <p className="text-lg text-center">See what recipes are trending!</p>
