@@ -3,7 +3,7 @@ import IngredientCard from '@/components/sections/IngredientCard';
 import type { Ingredient } from '@cs394-vite-nx-template/shared';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { collection, getDocs, doc, onSnapshot } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { CartItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
 import { app } from '@/lib/firebase';
@@ -11,7 +11,6 @@ import { getAuth } from 'firebase/auth';
 import { User } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
 import { fetchCart, updateCart } from '../lib/function/cartFunctions'; // Adjust the import path as necessary
-
 
 export default function Ingredients() {
   const [search, setSearch] = useState('');
@@ -21,7 +20,6 @@ export default function Ingredients() {
   
   const [cartItems, setCartItems] = React.useState<CartItem[]>([]);
   const [user, setUser] = useState<User | null>(null);
-  // const [cartLoaded, setCartLoaded] = useState(false);
 
   // define what terms each category should match
   const categoryFilters: Record<string, string[]> = {
@@ -81,6 +79,7 @@ export default function Ingredients() {
       );
     }
     fetchIngredients();
+    setUser(getAuth(app).currentUser); // Set the user state to the current authenticated user
   }, []);
 
   console.log(selectedCategory, 'selectedCategory');
@@ -102,20 +101,15 @@ export default function Ingredients() {
       // })(i);
       return cond1 || !selectedCategory; // cond2;
     });
-  
-  
-  function subscribeToCart(uid: string) {
-    const cartRef = doc(db, 'carts', uid);
-  
-    return onSnapshot(cartRef, snap => {
-      if (!snap.exists()) {
-        setCartItems([]);        
-        return;
-      }
-  
-      const data = snap.data() as { items: CartItem[] };
-      setCartItems(data.items);
-    });
+
+  async function loadCart() {
+    try {
+      const data = await fetchCart(user!);
+      setCartItems(data.cart.items || []); // Set cart items from fetched data
+
+    } catch (error) {
+      console.error('Error fetching cart:', error);
+    }
   }
 
   useEffect(() => {
@@ -123,9 +117,13 @@ export default function Ingredients() {
 
     // Listen for authentication state changes
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser((prevUser) =>
-        prevUser?.uid === currentUser?.uid ? prevUser : currentUser
-      );
+      if (currentUser) {
+        console.log('User is authenticated:', currentUser);
+        setUser(currentUser); // Update the user state
+      } else {
+        console.warn('No user is currently authenticated.');
+        setUser(null); // Clear the user state if no user is authenticated
+      }
     });
 
     // Cleanup the listener on component unmount
@@ -133,11 +131,11 @@ export default function Ingredients() {
   }, []);
 
   useEffect(() => {
-    if (!user) return;
-
-    const unsubscribe = subscribeToCart(user.uid);
-    return () => unsubscribe(); 
-  }, [user])
+    if (user) {
+      console.log('Fetching cart for authenticated user:', user);
+      loadCart();
+    }
+  }, [user]); // Run this effect whenever `user` changes
 
   async function handleUpdateCart(
     updatedCartItems: CartItem[],
@@ -212,7 +210,7 @@ export default function Ingredients() {
                 productImage={ing.productImage}
                 packageSize={ing.packageSize}
                 isInCart={cartItems.some((item) => item.itemId === ing.id)}
-                onFlip={() => {}}
+                onFlip={() => {loadCart()}}
                 onAddToCart={() =>
                   setCartItems((prevCartItems) => {
                     let isRemoving = false;
