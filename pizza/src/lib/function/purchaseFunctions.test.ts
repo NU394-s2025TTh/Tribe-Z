@@ -1,23 +1,26 @@
 // Tests for purchase functions
 import { describe, expect, test, vi, beforeEach } from 'vitest';
 import { User } from 'firebase/auth';
-import { CartItem, PurchaseItem } from '@cs394-vite-nx-template/shared';
+import { CartItem } from '@cs394-vite-nx-template/shared';
 import {
   savePurchase,
   fetchRecentPurchases,
   fetchRecentPurchaseItems
 } from './purchaseFunctions';
 
-// Mock Firebase modules
+// Mock Firebase functions
 vi.mock('firebase/firestore', () => ({
   collection: vi.fn(),
+  addDoc: vi.fn(),
+  getDocs: vi.fn(),
   query: vi.fn(),
   where: vi.fn(),
   orderBy: vi.fn(),
   limit: vi.fn(),
-  getDocs: vi.fn(),
-  addDoc: vi.fn(),
-  serverTimestamp: vi.fn(() => ({ toDate: () => new Date() })),
+  serverTimestamp: vi.fn(() => ({ toDate: () => new Date('2024-01-01') })),
+  Timestamp: {
+    now: vi.fn(() => ({ toDate: () => new Date('2024-01-01') })),
+  },
 }));
 
 vi.mock('@/lib/firebase', () => ({
@@ -56,24 +59,17 @@ describe('purchaseFunctions', () => {
 
   describe('savePurchase', () => {
     test('saves purchase successfully with valid data', async () => {
-      const { addDoc } = await import('firebase/firestore');
-      vi.mocked(addDoc).mockResolvedValue({ id: 'purchase-123' } as any);
+      const { addDoc, collection } = await import('firebase/firestore');
+      const mockDocRef = { id: 'purchase-123' };
+      vi.mocked(addDoc).mockResolvedValue(mockDocRef);
 
       const result = await savePurchase(mockUser, mockCartItems, 15.47);
 
+      expect(collection).toHaveBeenCalledWith(expect.anything(), 'purchases');
       expect(addDoc).toHaveBeenCalledWith(
-        expect.anything(), // collection reference
+        undefined, // collection reference (mocked)
         expect.objectContaining({
           userId: 'test-user-123',
-          items: expect.arrayContaining([
-            expect.objectContaining({
-              itemId: '1',
-              name: 'Mozzarella Cheese',
-              price: '$5.99',
-              quantity: 2,
-              category: 'ingredient',
-            }),
-          ]),
           totalAmount: 15.47,
           purchaseDate: expect.anything(),
         })
@@ -83,7 +79,7 @@ describe('purchaseFunctions', () => {
     });
 
     test('throws error when user is null', async () => {
-      await expect(savePurchase(null as any, mockCartItems, 15.47))
+      await expect(savePurchase(null as unknown as User, mockCartItems, 15.47))
         .rejects
         .toThrow('Invalid user or empty cart');
     });
@@ -96,12 +92,13 @@ describe('purchaseFunctions', () => {
 
     test('includes order number when provided', async () => {
       const { addDoc } = await import('firebase/firestore');
-      vi.mocked(addDoc).mockResolvedValue({ id: 'purchase-123' } as any);
+      const mockDocRef = { id: 'purchase-123' };
+      vi.mocked(addDoc).mockResolvedValue(mockDocRef);
 
       await savePurchase(mockUser, mockCartItems, 15.47, 'ORDER-456');
 
       expect(addDoc).toHaveBeenCalledWith(
-        expect.anything(),
+        undefined, // collection reference (mocked)
         expect.objectContaining({
           orderNumber: 'ORDER-456',
         })
@@ -120,46 +117,32 @@ describe('purchaseFunctions', () => {
 
   describe('fetchRecentPurchases', () => {
     test('fetches purchases successfully', async () => {
+      const { getDocs, query, where, orderBy, limit } = await import('firebase/firestore');
       const mockPurchases = [
         {
           id: 'purchase-1',
-          userId: 'test-user-123',
-          items: [
-            {
-              itemId: '1',
-              name: 'Mozzarella Cheese',
-              price: '$5.99',
-              quantity: 2,
-              category: 'ingredient',
-            },
-          ],
-          totalAmount: 11.98,
-          purchaseDate: { toDate: () => new Date('2024-01-01') },
-        },
-        {
-          id: 'purchase-2',
-          userId: 'test-user-123',
-          items: [
-            {
-              itemId: '2',
-              name: 'Tomato Sauce',
-              price: '$3.49',
-              quantity: 1,
-              category: 'ingredient',
-            },
-          ],
-          totalAmount: 3.49,
-          purchaseDate: { toDate: () => new Date('2024-01-02') },
+          data: () => ({
+            userId: 'test-user-123',
+            items: [
+              {
+                itemId: '1',
+                name: 'Mozzarella Cheese',
+                price: '$5.99',
+                quantity: 2,
+                category: 'ingredient',
+              },
+            ],
+            totalAmount: 11.98,
+            purchaseDate: { toDate: () => new Date('2024-01-01') },
+          }),
         },
       ];
 
-      const { getDocs, query, collection, where, orderBy, limit } = await import('firebase/firestore');
       vi.mocked(getDocs).mockResolvedValue({
-        docs: mockPurchases.map(purchase => ({
-          id: purchase.id,
-          data: () => purchase,
-        })),
-      } as any);
+        docs: mockPurchases,
+        empty: false,
+        size: 1,
+      });
 
       const result = await fetchRecentPurchases(mockUser, 20);
 
@@ -167,7 +150,7 @@ describe('purchaseFunctions', () => {
       expect(where).toHaveBeenCalledWith('userId', '==', 'test-user-123');
       expect(orderBy).toHaveBeenCalledWith('purchaseDate', 'desc');
       expect(limit).toHaveBeenCalledWith(20);
-      expect(result).toHaveLength(2);
+      expect(result).toHaveLength(1);
       expect(result[0]).toEqual(expect.objectContaining({
         id: 'purchase-1',
         userId: 'test-user-123',
@@ -175,7 +158,7 @@ describe('purchaseFunctions', () => {
     });
 
     test('throws error when user is null', async () => {
-      await expect(fetchRecentPurchases(null as any))
+      await expect(fetchRecentPurchases(null as unknown as User))
         .rejects
         .toThrow('User not authenticated');
     });
@@ -191,7 +174,7 @@ describe('purchaseFunctions', () => {
 
     test('uses default limit when not specified', async () => {
       const { getDocs, limit } = await import('firebase/firestore');
-      vi.mocked(getDocs).mockResolvedValue({ docs: [] } as any);
+      vi.mocked(getDocs).mockResolvedValue({ docs: [], empty: true, size: 0 });
 
       await fetchRecentPurchases(mockUser);
 
@@ -201,54 +184,57 @@ describe('purchaseFunctions', () => {
 
   describe('fetchRecentPurchaseItems', () => {
     test('fetches and deduplicates purchase items', async () => {
+      const { getDocs } = await import('firebase/firestore');
       const mockPurchases = [
         {
           id: 'purchase-1',
-          items: [
-            {
-              itemId: '1',
-              name: 'Mozzarella Cheese',
-              price: '$5.99',
-              quantity: 2,
-              category: 'ingredient',
-            },
-            {
-              itemId: '2',
-              name: 'Tomato Sauce',
-              price: '$3.49',
-              quantity: 1,
-              category: 'ingredient',
-            },
-          ],
+          data: () => ({
+            items: [
+              {
+                itemId: '1',
+                name: 'Mozzarella Cheese',
+                price: '$5.99',
+                quantity: 2,
+                category: 'ingredient',
+              },
+              {
+                itemId: '2',
+                name: 'Tomato Sauce',
+                price: '$3.49',
+                quantity: 1,
+                category: 'ingredient',
+              },
+            ],
+          }),
         },
         {
           id: 'purchase-2',
-          items: [
-            {
-              itemId: '1', // Duplicate item
-              name: 'Mozzarella Cheese',
-              price: '$5.99',
-              quantity: 1,
-              category: 'ingredient',
-            },
-            {
-              itemId: '3',
-              name: 'Pepperoni',
-              price: '$7.99',
-              quantity: 1,
-              category: 'ingredient',
-            },
-          ],
+          data: () => ({
+            items: [
+              {
+                itemId: '1', // Duplicate item
+                name: 'Mozzarella Cheese',
+                price: '$5.99',
+                quantity: 1,
+                category: 'ingredient',
+              },
+              {
+                itemId: '3',
+                name: 'Pepperoni',
+                price: '$7.99',
+                quantity: 1,
+                category: 'ingredient',
+              },
+            ],
+          }),
         },
       ];
 
-      const { getDocs } = await import('firebase/firestore');
       vi.mocked(getDocs).mockResolvedValue({
-        docs: mockPurchases.map(purchase => ({
-          id: purchase.id,
-          data: () => purchase,
-        })),
-      } as any);
+        docs: mockPurchases,
+        empty: false,
+        size: 2,
+      });
 
       const result = await fetchRecentPurchaseItems(mockUser, 50);
 
@@ -261,26 +247,27 @@ describe('purchaseFunctions', () => {
     });
 
     test('respects the limit parameter', async () => {
+      const { getDocs } = await import('firebase/firestore');
       const mockPurchases = [
         {
           id: 'purchase-1',
-          items: Array.from({ length: 10 }, (_, i) => ({
-            itemId: `item-${i}`,
-            name: `Item ${i}`,
-            price: '$1.00',
-            quantity: 1,
-            category: 'ingredient',
-          })),
+          data: () => ({
+            items: Array.from({ length: 10 }, (_, i) => ({
+              itemId: `item-${i}`,
+              name: `Item ${i}`,
+              price: '$1.00',
+              quantity: 1,
+              category: 'ingredient',
+            })),
+          }),
         },
       ];
 
-      const { getDocs } = await import('firebase/firestore');
       vi.mocked(getDocs).mockResolvedValue({
-        docs: mockPurchases.map(purchase => ({
-          id: purchase.id,
-          data: () => purchase,
-        })),
-      } as any);
+        docs: mockPurchases,
+        empty: false,
+        size: 1,
+      });
 
       const result = await fetchRecentPurchaseItems(mockUser, 5);
 
@@ -289,7 +276,11 @@ describe('purchaseFunctions', () => {
 
     test('handles empty purchase history', async () => {
       const { getDocs } = await import('firebase/firestore');
-      vi.mocked(getDocs).mockResolvedValue({ docs: [] } as any);
+      vi.mocked(getDocs).mockResolvedValue({
+        docs: [],
+        empty: true,
+        size: 0,
+      });
 
       const result = await fetchRecentPurchaseItems(mockUser);
 

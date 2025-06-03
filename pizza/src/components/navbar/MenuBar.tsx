@@ -157,6 +157,7 @@ export function FloatingNav() {
       setCartItems(data.cart.items || []); // Set cart items from fetched data
     } catch (error) {
       console.error('Error fetching cart:', error);
+      setCartItems([]); // Reset cart items on error
     }
   }
 
@@ -176,6 +177,8 @@ export function FloatingNav() {
 
     } catch (error) {
       console.error("Error removing item from cart:", error);
+      // Reload cart to ensure consistency on error
+      loadCart();
     }
   }
 
@@ -390,6 +393,7 @@ export function FloatingNav() {
                     <Button
                       className="text-red-600 text-xl bg-transparent rounded-full w-10 h-10 flex items-center justify-center hover:text-3xl active:text-3xl hover:bg-transparent"
                       onClick={() => removeItemFromCart(item.itemId)}
+                      aria-label="Delete item"
                     >
                       <span role="img" aria-label="Delete item">🗑️</span>
                     </Button>
