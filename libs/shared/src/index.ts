@@ -10,3 +10,4 @@ export type {
 } from './lib/Recipes';
 export { MeasurementUnits } from './lib/Recipes';
 export type { Cart, CartItem } from './lib/Cart';
+export type { Purchase, PurchaseItem, CreatePurchase } from './lib/Purchase';

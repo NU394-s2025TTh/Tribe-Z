@@ -51,7 +51,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { CartItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
 import { onAuthStateChanged } from 'firebase/auth';
-import { deleteItem, fetchCart } from '@/lib/function/cartFunctions'; // Adjust the import path as necessary
+import { deleteItem, fetchCart, updateCart } from '@/lib/function/cartFunctions'; // Adjust the import path as necessary
+import { savePurchase } from '@/lib/function/purchaseFunctions';
 
 // Auth
 const auth = getAuth(app);
@@ -148,7 +149,11 @@ export function FloatingNav() {
 
   async function loadCart() {
     try {
-      const data = await fetchCart(user!);
+      if (!user) {
+        console.error('Cannot load cart: user not authenticated');
+        return;
+      }
+      const data = await fetchCart(user);
       setCartItems(data.cart.items || []); // Set cart items from fetched data
     } catch (error) {
       console.error('Error fetching cart:', error);
@@ -159,21 +164,21 @@ export function FloatingNav() {
     try {
       const auth = getAuth(app); // Ensure Firebase Auth is initialized
       const user = auth.currentUser; // Get the currently signed-in user
-  
+
       if (!user) {
         throw new Error("User is not authenticated");
       }
-    
+
       // Update the local state by filtering out the removed item
       setCartItems((prevCartItems) => prevCartItems.filter((item) => item.itemId !== itemId));
-  
+
       return await deleteItem(itemId, cartItems, user);
-      
+
     } catch (error) {
       console.error("Error removing item from cart:", error);
     }
   }
-  
+
   React.useEffect(() => {
     // Check if the user is already authenticated when the component mounts
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -215,6 +220,35 @@ export function FloatingNav() {
       console.error('Error signing out:', error);
     }
   };
+
+  async function handlePurchaseComplete() {
+    try {
+      if (!user || cartItems.length === 0) {
+        console.log('Cannot complete purchase: no user or empty cart');
+        return;
+      }
+
+      // Calculate total amount
+      const totalAmount = cartItems.reduce((sum, item) => {
+        const price = parseFloat((item.price || '$0').replace('$', ''));
+        return sum + (price * item.quantity);
+      }, 0);
+
+      // Save purchase to Firebase using existing cart items
+      await savePurchase(user, cartItems, totalAmount);
+
+      // Clear the cart in Firebase and local state
+      await updateCart(user, []);
+      setCartItems([]);
+
+      // Close dialog
+      setDialogOpen(false);
+
+      console.log('Purchase completed successfully!');
+    } catch (error) {
+      console.error('Error completing purchase:', error);
+    }
+  }
 
   return (
     <div
@@ -346,7 +380,9 @@ export function FloatingNav() {
                         className="w-16 h-16 object-cover"
                       />
                     ) : (
-                      <></>
+                      <div className="w-16 h-16 bg-gray-200 flex items-center justify-center text-gray-500 text-xs">
+                        No Image
+                      </div>
                     )}
                     <span>{item.name}</span>
                     <div className="text-center font-bold">{item.quantity}</div>
@@ -355,7 +391,7 @@ export function FloatingNav() {
                       className="text-red-600 text-xl bg-transparent rounded-full w-10 h-10 flex items-center justify-center hover:text-3xl active:text-3xl hover:bg-transparent"
                       onClick={() => removeItemFromCart(item.itemId)}
                     >
-                      🗑️
+                      <span role="img" aria-label="Delete item">🗑️</span>
                     </Button>
                   </div>
                 ))}
@@ -410,14 +446,13 @@ export function FloatingNav() {
                 </div>
               </div>
               <DialogFooter>
-                <DialogClose>
-                  <Button
-                    type="submit"
-                    className="bg-accent hover:bg-destructive cursor-pointer"
-                  >
-                    Buy
-                  </Button>
-                </DialogClose>
+                <Button
+                  type="submit"
+                  className="bg-accent hover:bg-destructive cursor-pointer"
+                  onClick={handlePurchaseComplete}
+                >
+                  Buy
+                </Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>

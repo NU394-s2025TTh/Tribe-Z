@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import IngredientCard from '@/components/sections/IngredientCard';
+import RecentPurchases from '@/components/sections/RecentPurchases';
 import type { Ingredient } from '@cs394-vite-nx-template/shared';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { collection, getDocs, doc, onSnapshot } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import { CartItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
+import { CartItem, PurchaseItem } from '@cs394-vite-nx-template/shared'; // Adjust the import path as necessary
 import { app } from '@/lib/firebase';
 import { getAuth } from 'firebase/auth';
 import { User } from 'firebase/auth';
@@ -16,9 +17,9 @@ import { updateCart } from '../lib/function/cartFunctions'; // Adjust the import
 export default function Ingredients() {
   const [search, setSearch] = useState('');
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  
+
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  
+
   const [cartItems, setCartItems] = React.useState<CartItem[]>([]);
   const [user, setUser] = useState<User | null>(null);
   // const [cartLoaded, setCartLoaded] = useState(false);
@@ -102,17 +103,17 @@ export default function Ingredients() {
       // })(i);
       return cond1 || !selectedCategory; // cond2;
     });
-  
-  
+
+
   function subscribeToCart(uid: string) {
     const cartRef = doc(db, 'carts', uid);
-  
+
     return onSnapshot(cartRef, snap => {
       if (!snap.exists()) {
-        setCartItems([]);        
+        setCartItems([]);
         return;
       }
-  
+
       const data = snap.data() as { items: CartItem[] };
       setCartItems(data.items);
     });
@@ -136,7 +137,7 @@ export default function Ingredients() {
     if (!user) return;
 
     const unsubscribe = subscribeToCart(user.uid);
-    return () => unsubscribe(); 
+    return () => unsubscribe();
   }, [user])
 
   async function handleUpdateCart(
@@ -155,6 +156,47 @@ export default function Ingredients() {
       console.log('Cart updated successfully:', data);
     } catch (error) {
       console.error('Error updating cart:', error);
+    }
+  }
+
+  // Handle adding items from recent purchases to cart
+  async function handleAddRecentPurchasesToCart(purchaseItems: PurchaseItem[]) {
+    try {
+      if (!user) {
+        throw new Error('User is not authenticated');
+      }
+
+      // Convert purchase items to cart items
+      const newCartItems: CartItem[] = purchaseItems.map(item => ({
+        itemId: item.itemId,
+        ingredientOrEquipmentId: true, // Assuming ingredients for now
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+        imageUrl: item.imageUrl
+      }));
+
+      // Check which items are already in cart to avoid duplicates
+      const itemsToAdd = newCartItems.filter(newItem =>
+        !cartItems.some(existingItem => existingItem.itemId === newItem.itemId)
+      );
+
+      if (itemsToAdd.length === 0) {
+        console.log('All selected items are already in cart');
+        return;
+      }
+
+      const updatedCartItems = [...cartItems, ...itemsToAdd];
+
+      // Update cart in Firebase
+      await updateCart(user, updatedCartItems);
+
+      // Update local state
+      setCartItems(updatedCartItems);
+
+      console.log(`Added ${itemsToAdd.length} items from recent purchases to cart`);
+    } catch (error) {
+      console.error('Error adding recent purchases to cart:', error);
     }
   }
 
@@ -199,6 +241,15 @@ export default function Ingredients() {
           </div>
         </div>
 
+        {/* Recent Purchases Section - only show for authenticated users */}
+        {user && (
+          <RecentPurchases
+            user={user}
+            onAddToCart={handleAddRecentPurchasesToCart}
+            className="mb-8"
+          />
+        )}
+
         {/* Grid of Cards */}
         {user ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -210,9 +261,11 @@ export default function Ingredients() {
                 price={ing.price ?? 'Price not available'}
                 brand={ing.brand}
                 productImage={ing.productImage}
-                packageSize={ing.packageSize}
+                packageSize={(ing as Ingredient & { packageSize?: string }).packageSize}
                 isInCart={cartItems.some((item) => item.itemId === ing.id)}
-                onFlip={() => {}}
+                onFlip={() => {
+                  // Empty flip handler for now
+                }}
                 onAddToCart={() =>
                   setCartItems((prevCartItems) => {
                     let isRemoving = false;
