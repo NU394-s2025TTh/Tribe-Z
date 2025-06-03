@@ -10,7 +10,7 @@ import { app } from '@/lib/firebase';
 import { getAuth } from 'firebase/auth';
 import { User } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth';
-import { fetchCart, updateCart } from '../lib/function/cartFunctions'; // Adjust the import path as necessary
+import { updateCart } from '../lib/function/cartFunctions'; // Adjust the import path as necessary
 
 
 export default function Ingredients() {
