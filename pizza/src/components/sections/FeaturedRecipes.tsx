@@ -54,8 +54,6 @@ export function FeaturedCard({
   );
 }
 
-// ...existing imports...
-
 export default function FeaturedRecipes() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
@@ -100,6 +98,15 @@ export default function FeaturedRecipes() {
           delicious pizza right from their own kitchen. Fresh ingredients,
           high-quality equipment, and a helpful chatbot are just a click away!
         </p>
+        {/* Call-to-Action Button */}
+        <div className="mt-6">
+          <a
+            href="/materials"
+            className="inline-block bg-accent-foreground text-accent py-3 px-6 rounded-md font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+          >
+            Buy Fresh Ingredients
+          </a>
+        </div>
       </div>
 
       {/* Featured Recipes Section */}
