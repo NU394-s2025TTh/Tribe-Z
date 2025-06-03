@@ -98,13 +98,25 @@ export default function FeaturedRecipes() {
           delicious pizza right from their own kitchen. Fresh ingredients,
           high-quality equipment, and a helpful chatbot are just a click away!
         </p>
-        {/* Call-to-Action Button */}
-        <div className="mt-6">
+        {/* Call-to-Action Buttons */}
+        <div className="mt-6 flex flex-col gap-4">
           <a
             href="/materials"
             className="inline-block bg-accent-foreground text-accent py-3 px-6 rounded-md font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
           >
             Buy Fresh Ingredients
+          </a>
+          <a
+            href="/materials"
+            className="inline-block bg-accent-foreground text-accent py-3 px-6 rounded-md font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+          >
+            Shop Pizza Tools
+          </a>
+          <a
+            href="/chatbot"
+            className="inline-block bg-accent-foreground text-accent py-3 px-6 rounded-md font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+          >
+            Ask Our Chatbot
           </a>
         </div>
       </div>

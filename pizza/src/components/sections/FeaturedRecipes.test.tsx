@@ -57,4 +57,74 @@ describe('FeaturedRecipes Component', () => {
       );
     });
   });
+  describe('Call-to-Action Button for High-Quality Equipment', () => {
+    it('should render the call-to-action button with the correct text', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Shop Pizza Tools/i,
+      });
+      expect(ctaButton).toBeInTheDocument();
+    });
+
+    it('should link the call-to-action button to the correct page', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Shop Pizza Tools/i,
+      });
+      expect(ctaButton).toHaveAttribute('href', '/materials');
+    });
+
+    it('should apply the correct styling to the call-to-action button', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Shop Pizza Tools/i,
+      });
+      expect(ctaButton).toHaveClass(
+        'inline-block bg-accent-foreground text-accent py-3 px-6 rounded-md font-medium hover:bg-accent hover:text-accent-foreground transition-colors'
+      );
+    });
+
+    it('should be accessible and responsive across devices', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Shop Pizza Tools/i,
+      });
+      expect(ctaButton).toBeVisible();
+    });
+  });
+  describe('Call-to-Action Button for Chatbot', () => {
+    it('should render the call-to-action button with the correct text', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Ask Our Chatbot/i,
+      });
+      expect(ctaButton).toBeInTheDocument();
+    });
+
+    it('should link the call-to-action button to the correct page', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Ask Our Chatbot/i,
+      });
+      expect(ctaButton).toHaveAttribute('href', '/chatbot');
+    });
+
+    it('should apply the correct styling to the call-to-action button', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Ask Our Chatbot/i,
+      });
+      expect(ctaButton).toHaveClass(
+        'inline-block bg-accent-foreground text-accent py-3 px-6 rounded-md font-medium hover:bg-accent hover:text-accent-foreground transition-colors'
+      );
+    });
+
+    it('should be accessible and responsive across devices', () => {
+      render(<FeaturedRecipes />);
+      const ctaButton = screen.getByRole('link', {
+        name: /Ask Our Chatbot/i,
+      });
+      expect(ctaButton).toBeVisible();
+    });
+  });
 });
