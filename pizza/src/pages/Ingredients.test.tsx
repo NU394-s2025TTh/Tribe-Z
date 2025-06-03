@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-empty-function */
-// filepath: /Users/azb/Documents/code/394/Tribe-Z/pizza/src/pages/Ingredients.test.tsx
+
 // run with npx nx test pizza
 
 import '@testing-library/jest-dom';
@@ -263,10 +263,10 @@ describe('Ingredients Component', () => {
   });
   test('does not show ingredients when user is logged out', async () => {
     const { getAuth, onAuthStateChanged } = vi.mocked(await import('firebase/auth'));
-  
+
     // Mock getAuth to return no user
     getAuth.mockReturnValue({ currentUser: null } as any);
-  
+
     // Mock onAuthStateChanged to simulate a logged-out state
     onAuthStateChanged.mockImplementation((auth, callback) => {
       if (typeof callback === 'function') {
@@ -274,9 +274,9 @@ describe('Ingredients Component', () => {
       }
       return () => {}; // Valid unsubscribe function
     });
-  
+
     render(<Ingredients />);
-  
+
     await waitFor(() => {
       expect(screen.queryByTestId('ingredient-Mozzarella Cheese')).not.toBeInTheDocument();
       expect(screen.queryByTestId('ingredient-Tomato Sauce')).not.toBeInTheDocument();
@@ -297,15 +297,15 @@ describe('Ingredients Component', () => {
     });
     test('calls handleUpdateCart and updates cart correctly', async () => {
         render(<Ingredients />);
-      
+
         const card = await screen.findByTestId('ingredient-Mozzarella Cheese');
         const updateButton = card.querySelector('button')!;
         fireEvent.click(updateButton);
-      
+
         const { updateCart } = vi.mocked(
           await import('../lib/function/cartFunctions')
         );
-      
+
         await waitFor(() => {
           expect(updateCart).toHaveBeenCalled();
           expect(updateCart).toHaveBeenCalledWith(
@@ -326,34 +326,34 @@ describe('Ingredients Component', () => {
 
     test('deselecting the active category shows everything again', async () => {
         render(<Ingredients />);
-    
+
         // Mozzarella is shown at first
         const cheeseBtn = await screen.findByTestId('category-Cheese');
         fireEvent.click(cheeseBtn);        // select
         fireEvent.click(cheeseBtn);        // **toggle off**
-    
+
         await waitFor(() => {
         expect(screen.getByTestId('ingredient-Mozzarella Cheese')).toBeInTheDocument();
         expect(screen.getByTestId('ingredient-Tomato Sauce')).toBeInTheDocument();
         expect(screen.getByTestId('ingredient-Flour')).toBeInTheDocument();
         });
     });
-    
+
     test('clicking an item already in the cart removes it and calls updateCart with an empty array', async () => {
         render(<Ingredients />);
-    
+
         const card = await screen.findByTestId('ingredient-Mozzarella Cheese');
-        fireEvent.click(card.querySelector('button')!); 
-        fireEvent.click(card.querySelector('button')!); 
-    
+        fireEvent.click(card.querySelector('button')!);
+        fireEvent.click(card.querySelector('button')!);
+
         const { updateCart } = vi.mocked(await import('../lib/function/cartFunctions'));
-    
+
         await waitFor(() => {
-        expect(updateCart).toHaveBeenCalledTimes(3); 
-        expect(updateCart).toHaveBeenLastCalledWith({ uid: 'test-user' }, []); 
+        expect(updateCart).toHaveBeenCalledTimes(3);
+        expect(updateCart).toHaveBeenLastCalledWith({ uid: 'test-user' }, []);
         });
     });
-    
+
     test('subscribeToCart clears the cart when the document does NOT exist', async () => {
         // make onSnapshot invoke its callback with exists() === false
         const { onSnapshot } = vi.mocked(await import('firebase/firestore'));
@@ -361,40 +361,40 @@ describe('Ingredients Component', () => {
         cb({ exists: () => false });         // triggers the early-return branch
         return () => {};
         });
-    
+
         render(<Ingredients />);
-    
+
         await waitFor(() => {
         // Cart cleared → none of the three mock items are marked "in cart"
         expect(screen.getAllByRole('button', { name: /add to cart/i })).toHaveLength(3);
         });
     });
-    
+
     test('handleUpdateCart surfaces errors gracefully', async () => {
         const { updateCart } = vi.mocked(await import('../lib/function/cartFunctions'));
         updateCart.mockRejectedValueOnce(new Error('kaboom'));
-    
+
         render(<Ingredients />);
         const card = await screen.findByTestId('ingredient-Tomato Sauce');
         fireEvent.click(card.querySelector('button')!);  // triggers failing updateCart
-    
+
         await waitFor(() => {
         expect(updateCart).toHaveBeenCalled();
         });
         // Nothing to assert in UI, but running through this path bumps branch coverage
     });
-    
+
     test('search is case-insensitive', async () => {
         render(<Ingredients />);
-    
+
         fireEvent.change(screen.getByTestId('search-input'), { target: { value: 'FLOUR' } });
-    
+
         await waitFor(() => {
         expect(screen.getByTestId('ingredient-Flour')).toBeInTheDocument();
         expect(screen.queryByTestId('ingredient-Mozzarella Cheese')).not.toBeInTheDocument();
         });
     });
-    
+
     test('ingredient with no category is still rendered', async () => {
         // inject an extra document whose type.category is undefined
         const { getDocs } = vi.mocked(await import('firebase/firestore'));
@@ -419,14 +419,14 @@ describe('Ingredients Component', () => {
               },
             ],
           } as any);
-          
-    
+
+
         render(<Ingredients />);
-    
+
         await waitFor(() => {
         expect(screen.getByTestId('ingredient-Mystery Item')).toBeInTheDocument();
         });
     });
-    
-        
+
+
 });
