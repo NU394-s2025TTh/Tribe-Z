@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import FeaturedRecipes from './FeaturedRecipes';
+import '@testing-library/jest-dom';
 
 describe('FeaturedRecipes Component', () => {
   describe('Marketing Header', () => {
