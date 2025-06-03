@@ -234,4 +234,38 @@ describe('Ingredients Component', () => {
       expect(screen.queryByTestId('ingredient-Flour')).not.toBeInTheDocument();
     });
   });
+  test('does not show ingredients when user is logged out', async () => {
+  // Mock getAuth to return no user
+  const { getAuth } = vi.mocked(await import('firebase/auth'));
+  getAuth.mockReturnValue({ currentUser: null } as any);
+
+  // Mock onAuthStateChanged to call back with null (logged out)
+  const { onAuthStateChanged } = vi.mocked(await import('firebase/auth'));
+  onAuthStateChanged.mockImplementation((auth, callback) => {
+    if (typeof callback === 'function') {
+      callback(null);
+    }
+    return () => {};
+  });
+
+  render(<Ingredients />);
+
+  await waitFor(() => {
+    expect(screen.queryByTestId('ingredient-Mozzarella Cheese')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('ingredient-Tomato Sauce')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('ingredient-Flour')).not.toBeInTheDocument();
+    expect(screen.getByText(/please log in to view and manage your cart/i)).toBeInTheDocument();
+  });
+});
+
+test('shows ingredients when user is logged in', async () => {
+  render(<Ingredients />);
+
+  // Wait for the ingredients to appear
+  await waitFor(() => {
+    expect(screen.getByTestId('ingredient-Mozzarella Cheese')).toBeInTheDocument();
+    expect(screen.getByTestId('ingredient-Tomato Sauce')).toBeInTheDocument();
+    expect(screen.getByTestId('ingredient-Flour')).toBeInTheDocument();
+  });
+});
 });
