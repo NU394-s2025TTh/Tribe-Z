@@ -32,13 +32,29 @@ vi.mock('../lib/function/cartFunctions', () => ({
 vi.mock('@/components/sections/IngredientCard', () => ({
   default: ({
     name,
+    description,
+    brand,
     onAddToCart,
+    productImage,
   }: {
     name: string;
+    description?: string;
+    brand?: string;
     onAddToCart: () => void;
+    productImage?: string;
   }) => (
     <div data-testid={`ingredient-${name}`}>
+    <img
+        src={productImage || '/logo/doughjo_main.png'}
+        alt={name}
+    />
       <span>{name}</span>
+      <span data-testid="ingredient-description">
+        {description || 'No description available'}
+      </span>
+      <span data-testid="ingredient-brand">
+        {brand || 'Brand not specified'}
+      </span>
       <button onClick={onAddToCart}>Add to Cart</button>
     </div>
   ),
@@ -268,4 +284,67 @@ test('shows ingredients when user is logged in', async () => {
     expect(screen.getByTestId('ingredient-Flour')).toBeInTheDocument();
   });
 });
+
+test('displays placeholder image when productImage is missing', async () => {
+  const mockIngredientsWithMissingImage = [
+    ...mockIngredients,
+    {
+      id: '4',
+      name: 'Missing Image Ingredient',
+      type: { category: 'Test', description: 'Test description' },
+      price: '$0.00',
+      brand: 'Test Brand',
+      packageSize: '1lb',
+      productImage: null,
+    },
+  ];
+
+  const { getDocs } = vi.mocked(await import('firebase/firestore'));
+  getDocs.mockResolvedValue({
+    docs: mockIngredientsWithMissingImage.map((ing) => ({
+      id: ing.id,
+      data: () => ing,
+    })),
+  } as any);
+
+  render(<Ingredients />);
+
+  await waitFor(() => {
+    const fallbackImage = screen.getByTestId('ingredient-Missing Image Ingredient').querySelector('img');
+    expect(fallbackImage).toHaveAttribute('src', '/logo/doughjo_main.png');
+  });
+});
+
+test('displays fallback text for missing ingredient information', async () => {
+  const mockIngredientsWithMissingFields = [
+    {
+      id: '5',
+      name: null,
+      type: null,
+      price: null,
+      brand: null,
+      packageSize: null,
+      productImage: null,
+    },
+  ];
+
+  const { getDocs } = vi.mocked(await import('firebase/firestore'));
+  getDocs.mockResolvedValue({
+    docs: mockIngredientsWithMissingFields.map((ing) => ({
+      id: ing.id,
+      data: () => ing,
+    })),
+  } as any);
+
+  render(<Ingredients />);
+
+  await waitFor(() => {
+    expect(screen.getByText((content, element) => {
+      return element?.textContent === 'Unknown Ingredient';
+    })).toBeInTheDocument();
+    expect(screen.getByTestId('ingredient-description')).toHaveTextContent('No description available');
+    expect(screen.getByTestId('ingredient-brand')).toHaveTextContent('Brand not specified');
+  });
+});
+
 });
