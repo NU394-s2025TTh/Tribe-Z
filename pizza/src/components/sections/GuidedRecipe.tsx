@@ -20,7 +20,10 @@ import {
   type CarouselApi,
 } from '../ui/carousel';
 import { Clock, Send, Lightbulb, CheckCircle } from 'lucide-react';
-import type { Recipe, MeasuredIngredient } from '@cs394-vite-nx-template/shared';
+import type {
+  Recipe,
+  MeasuredIngredient,
+} from '@cs394-vite-nx-template/shared';
 
 interface GuidedRecipeProps {
   recipe?: Recipe;
@@ -37,11 +40,15 @@ interface DetailedStep {
   suggestedQuestions: string[];
 }
 
+// add SpeechRecognition types
+const SpeechRecognition =
+  (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+
 export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   recipe,
   recipeId,
   stepSetter,
-  missingIngredients = []
+  missingIngredients = [],
 }) => {
   const [detailedSteps, setDetailedSteps] = useState<DetailedStep[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -61,6 +68,8 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   >([]);
   const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
   const [isTyping, setIsTyping] = useState(false);
+  // Voice mode state
+  const [voiceEnabled, setVoiceEnabled] = useState(false);
 
   const ai = getAI(app, { backend: new GoogleAIBackend() });
 
@@ -133,6 +142,36 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   );
   const textModel = getTextModel();
 
+  // Structured schema for classifying voice commands
+  const voiceCommandSchema = {
+    type: SchemaType.OBJECT,
+    properties: {
+      action: {
+        type: SchemaType.STRING,
+        enum: ['question', 'next', 'previous'],
+        description: 'Voice command action',
+      },
+      questionText: {
+        type: SchemaType.STRING,
+        description: 'Question text when action=question',
+      },
+    },
+    required: ['action'],
+  };
+
+  // Voice command model using schema
+  const getVoiceModel = useCallback(
+    () =>
+      getGenerativeModel(ai, {
+        model: 'gemini-2.0-flash',
+        generationConfig: {
+          responseMimeType: 'application/json',
+          responseSchema: voiceCommandSchema,
+        },
+      }),
+    [ai]
+  );
+
   const createFallbackSteps = useCallback(() => {
     if (!recipe) return;
 
@@ -160,14 +199,23 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   const generateDetailedSteps = useCallback(async () => {
     if (!recipe) return;
 
-    console.log(`"MISSING INGREDIENTS: ${missingIngredients.map(ing => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`).join(', ')}"`);
+    console.log(
+      `"MISSING INGREDIENTS: ${missingIngredients
+        .map((ing) => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`)
+        .join(', ')}"`
+    );
 
     setIsLoading(true);
     try {
       // Build missing ingredients context
-      const missingIngredientsText = missingIngredients.length > 0
-        ? `\n\nMISSING INGREDIENTS: ${missingIngredients.map(ing => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`).join(', ')}\n\nIMPORTANT: The cook is missing these ingredients. For any step that requires these missing ingredients, provide alternative techniques, substitution suggestions, or modified instructions that work around these missing items. Be creative and practical with adaptations.`
-        : '';
+      const missingIngredientsText =
+        missingIngredients.length > 0
+          ? `\n\nMISSING INGREDIENTS: ${missingIngredients
+              .map((ing) => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`)
+              .join(
+                ', '
+              )}\n\nIMPORTANT: The cook is missing these ingredients. For any step that requires these missing ingredients, provide alternative techniques, substitution suggestions, or modified instructions that work around these missing items. Be creative and practical with adaptations.`
+          : '';
 
       const prompt = `
         You are an expert cooking instructor. Given this recipe, create detailed cooking steps with tips and suggested questions.
@@ -181,10 +229,22 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
 
         For each instruction step, provide:
         1. A clear title (3-5 words)
-        2. Detailed description with specific techniques${missingIngredients.length > 0 ? ' (include adaptations for missing ingredients where applicable)' : ''}
-        3. 2-3 practical tips${missingIngredients.length > 0 ? ' (include substitution or workaround tips for missing ingredients). make sure to note what changes you made to the recipe, because of missing ingredients, here' : ''}
+        2. Detailed description with specific techniques${
+          missingIngredients.length > 0
+            ? ' (include adaptations for missing ingredients where applicable)'
+            : ''
+        }
+        3. 2-3 practical tips${
+          missingIngredients.length > 0
+            ? ' (include substitution or workaround tips for missing ingredients). make sure to note what changes you made to the recipe, because of missing ingredients, here'
+            : ''
+        }
         4. Estimated time in minutes
-        5. 3 common questions beginners might ask about this step${missingIngredients.length > 0 ? ' (include questions about ingredient substitutions)' : ''}
+        5. 3 common questions beginners might ask about this step${
+          missingIngredients.length > 0
+            ? ' (include questions about ingredient substitutions)'
+            : ''
+        }
 
         Return a JSON array of detailed steps following the provided schema.
       `;
@@ -246,7 +306,7 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
 
 Current step: ${currentStep?.description || 'No step description available'}
 
-Provide helpful, detailed answers that address their specific concerns. Be encouraging and practical. Keep responses conversational and reference previous parts of the conversation when relevant. Do not use Markdown formatting, including bold, italics, or code blocks. They are not supported in this chat interface.`;
+Provide helpful, VERY CONCISE answers that address their specific concerns. Be encouraging and practical. Do not use Markdown formatting, including bold, italics, or code blocks. They are not supported in this chat interface.`;
 
       const result = await textModel.generateContent([
         systemPrompt,
@@ -303,17 +363,24 @@ Provide helpful, detailed answers that address their specific concerns. Be encou
       const conversationHistory = chatHistory.map((msg) => msg.message);
 
       // Build missing ingredients context for chatbot
-      const missingIngredientsContext = missingIngredients.length > 0
-        ? `\n\nIMPORTANT: The student is missing these ingredients: ${missingIngredients.map(ing => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`).join(', ')}. If they ask about substitutions or alternatives, provide practical suggestions for these missing items.`
-        : '';
+      const missingIngredientsContext =
+        missingIngredients.length > 0
+          ? `\n\nIMPORTANT: The student is missing these ingredients: ${missingIngredients
+              .map((ing) => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`)
+              .join(
+                ', '
+              )}. If they ask about substitutions or alternatives, provide practical suggestions for these missing items.`
+          : '';
 
       const systemPrompt = `You are an expert cooking instructor. A student is working on "${
         currentStep?.title || 'this step'
       }" step of making "${recipe?.name}".
 
-Current step: ${currentStep?.description || 'No step description available'}${missingIngredientsContext}
+Current step: ${
+        currentStep?.description || 'No step description available'
+      }${missingIngredientsContext}
 
-Provide helpful, detailed answers that address their specific concerns. Be encouraging and practical. Keep responses conversational and reference previous parts of the conversation when relevant. Do not use Markdown formatting, including bold, italics, or code blocks. They are not supported in this chat interface.`;
+Provide helpful, VERY CONCISE answers that address their specific concerns. Be encouraging and practical. Do not use Markdown formatting, including bold, italics, or code blocks. They are not supported in this chat interface.`;
 
       const result = await textModel.generateContent([
         systemPrompt,
@@ -331,6 +398,15 @@ Provide helpful, detailed answers that address their specific concerns. Be encou
           timestamp: new Date(),
         },
       ]);
+      // Speak AI response if voice mode is on, then listen again
+      if (voiceEnabled) {
+        const respText = response.text();
+        const utterance = new SpeechSynthesisUtterance(respText);
+        utterance.onend = () => {
+          startVoiceRecognition();
+        };
+        speechSynthesis.speak(utterance);
+      }
     } catch (error) {
       console.error('Error generating question response:', error);
       setChatHistory((prev) => [
@@ -382,6 +458,63 @@ Provide helpful, detailed answers that address their specific concerns. Be encou
     }
   }, [currentStepIndex, detailedSteps]);
 
+  // Trigger TTS/STT when voice mode toggled or step changes
+  useEffect(() => {
+    if (voiceEnabled) readCurrentStep();
+  }, [voiceEnabled, currentStepIndex]);
+
+  // Read current step and tips via TTS, then start STT
+  const readCurrentStep = useCallback(() => {
+    const step = detailedSteps[currentStepIndex];
+    if (!step) return;
+    const utterance = new SpeechSynthesisUtterance();
+    utterance.text = `Step ${currentStepIndex + 1}: ${step.title}. ${
+      step.description
+    }. Here are some tips: ${step.tips.join('. ')}`;
+    utterance.onend = () => {
+      if (voiceEnabled && SpeechRecognition) startVoiceRecognition();
+    };
+    speechSynthesis.speak(utterance);
+  }, [currentStepIndex, detailedSteps, voiceEnabled]);
+
+  // Classify transcript and handle accordingly
+  const classifyAndHandle = useCallback(
+    async (transcript: string) => {
+      const voiceModel = getVoiceModel();
+      const result = await voiceModel.generateContent([
+        `Classify the following user input into a JSON with keys: action ('question','next','previous') and questionText. Input: ${transcript}`,
+      ]);
+      const resp = await result.response;
+      let cmd;
+      try {
+        cmd = JSON.parse(resp.text());
+      } catch {
+        return;
+      }
+      if (cmd.action === 'next') carouselApi?.scrollNext();
+      else if (cmd.action === 'previous') carouselApi?.scrollPrev();
+      else if (cmd.action === 'question' && cmd.questionText)
+        handleSendMessage(cmd.questionText);
+    },
+    [getVoiceModel, carouselApi, handleSendMessage]
+  );
+
+  // Initialize and start speech recognition
+  const startVoiceRecognition = useCallback(() => {
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.onresult = (event: SpeechRecognitionEvent) => {
+      const transcript = event.results[0][0].transcript;
+      classifyAndHandle(transcript);
+    };
+    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+      console.error('Speech recognition error', event.error);
+    };
+    recognition.start();
+  }, [classifyAndHandle]);
+
   if (!recipe) {
     return (
       <div className="flex flex-col items-center justify-center p-8">
@@ -410,197 +543,211 @@ Provide helpful, detailed answers that address their specific concerns. Be encou
   }
 
   return (
-    <div className="flex flex-col h-full max-h-[90vh] bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden">
-      {/* Header with Progress
-      <div className="bg-white border-b shadow-sm p-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <Badge
-              variant="secondary"
-              className="px-3 py-1 text-sm font-medium"
-            >
-              Step {currentStepIndex + 1} of {detailedSteps.length}
-            </Badge>
-          </div>
-          <div className="text-right">
-            <div className="text-sm text-gray-600 mb-1">
-              {detailedSteps.length - currentStepIndex - 1 === 0
-                ? 'Final Step!'
-                : `${
-                    detailedSteps.length - currentStepIndex - 1
-                  } steps remaining`}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Carousel Section */}
-      <div className="flex-1 overflow-hidden p-6 bg-card">
-        <Carousel
-          setApi={setCarouselApi}
-          className="w-full h-full"
-          opts={{
-            align: 'start',
-            loop: false,
-          }}
+    <>
+      {/* Voice mode toggle */}
+      <div className="p-4">
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() => setVoiceEnabled((v) => !v)}
         >
-          <CarouselContent className="h-full bg-card">
-            {detailedSteps.map((step, index) => (
-              <CarouselItem key={index} className="h-full ">
-                <Card className="h-full flex flex-col justify-baseline bg-white shadow-lg border">
-                  <CardHeader className="">
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                        <CheckCircle
-                          className={`w-6 h-6 ${
-                            index < currentStepIndex
-                              ? 'text-green-500'
-                              : index === currentStepIndex
-                              ? 'text-accent'
-                              : 'text-gray-300'
-                          }`}
-                        />
-                        {step.title}
-                      </CardTitle>
-                      <Badge
-                        variant="outline"
-                        className="flex items-center gap-1 px-3 py-1"
-                      >
-                        <Clock className="w-4 h-4" />~{step.estimatedTime} min
-                      </Badge>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="flex-1 space-y-6">
-                    {/* Step Description */}
-                    <div className="prose prose-lg max-w-none">
-                      <p className="text-gray-700 leading-relaxed text-lg">
-                        {step.description}
-                      </p>
-                    </div>
-
-                    {/* Tips Section */}
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                      <h4 className="font-semibold mb-3 text-accent flex items-center gap-2">
-                        <Lightbulb className="w-5 h-5" />
-                        Sensei's Pro Tips
-                      </h4>
-                      <ul className=" items-center">
-                        {step.tips.map((tip, tipIndex) => (
-                          <li
-                            key={tipIndex}
-                            className="text-sm text-gray-700 flex items-center gap-2"
-                          >
-                            <span className="text-accent mt-1 text-lg">•</span>
-                            <span>{tip}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-gray-300 shadow-lg" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-gray-300 shadow-lg" />
-        </Carousel>
+          {voiceEnabled ? 'Disable Voice Mode' : 'Enable Voice Mode'}
+        </Button>
       </div>
-
-      {/* Compact Chatbot Interface */}
-      <div className="bg-white border-t shadow-lg">
-        {chatHistory.length === 0 && (
-          <div className="border-b bg-accent/5 p-3 w-full">
-            <div className="flex flex-row overflow-x-auto justify-around">
-              {suggestedQuestions.slice(0, 3).map((question, index) => (
-                <Button
-                  key={index}
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handleQuestionSelect(question)}
-                  className="text-left h-auto p-3 min-w-0 flex-shrink-0 bg-accent/10 border-accent/30 hover:bg-accent/20 text-accent text-sm"
-                >
-                  {question}
-                </Button>
-              ))}
+      <div className="flex flex-col h-full max-h-[90vh] bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden">
+        {/* Header with Progress
+        <div className="bg-white border-b shadow-sm p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <Badge
+                variant="secondary"
+                className="px-3 py-1 text-sm font-medium"
+              >
+                Step {currentStepIndex + 1} of {detailedSteps.length}
+              </Badge>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-600 mb-1">
+                {detailedSteps.length - currentStepIndex - 1 === 0
+                  ? 'Final Step!'
+                  : `${
+                      detailedSteps.length - currentStepIndex - 1
+                    } steps remaining`}
+              </div>
             </div>
           </div>
-        )}
-      </div>
+        </div> */}
 
-      <div className="bg-white border-t shadow-lg">
-        {/* Compact Chat Messages - Only show actual conversations */}
-        {chatHistory.length > 0 && (
-          <div className="max-h-32 overflow-y-auto p-2 space-y-1">
-            {chatHistory
-              .slice(-4) // Show last 4 messages to allow more conversation
-              .map((message, index) => (
-                <div
-                  key={index}
-                  className={`flex ${
-                    message.type === 'user' ? 'justify-end' : 'justify-start'
-                  }`}
-                >
+        {/* Carousel Section */}
+        <div className="flex-1 overflow-hidden p-6 bg-card">
+          <Carousel
+            setApi={setCarouselApi}
+            className="w-full h-full"
+            opts={{
+              align: 'start',
+              loop: false,
+            }}
+          >
+            <CarouselContent className="h-full bg-card">
+              {detailedSteps.map((step, index) => (
+                <CarouselItem key={index} className="h-full ">
+                  <Card className="h-full flex flex-col justify-baseline bg-white shadow-lg border">
+                    <CardHeader className="">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                          <CheckCircle
+                            className={`w-6 h-6 ${
+                              index < currentStepIndex
+                                ? 'text-green-500'
+                                : index === currentStepIndex
+                                ? 'text-accent'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                          {step.title}
+                        </CardTitle>
+                        <Badge
+                          variant="outline"
+                          className="flex items-center gap-1 px-3 py-1"
+                        >
+                          <Clock className="w-4 h-4" />~{step.estimatedTime} min
+                        </Badge>
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className="flex-1 space-y-6">
+                      {/* Step Description */}
+                      <div className="prose prose-lg max-w-none">
+                        <p className="text-gray-700 leading-relaxed text-lg">
+                          {step.description}
+                        </p>
+                      </div>
+
+                      {/* Tips Section */}
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                        <h4 className="font-semibold mb-3 text-accent flex items-center gap-2">
+                          <Lightbulb className="w-5 h-5" />
+                          Sensei's Pro Tips
+                        </h4>
+                        <ul className=" items-center">
+                          {step.tips.map((tip, tipIndex) => (
+                            <li
+                              key={tipIndex}
+                              className="text-sm text-gray-700 flex items-center gap-2"
+                            >
+                              <span className="text-accent mt-1 text-lg">
+                                •
+                              </span>
+                              <span>{tip}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-gray-300 shadow-lg" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-gray-300 shadow-lg" />
+          </Carousel>
+        </div>
+
+        {/* Compact Chatbot Interface */}
+        <div className="bg-white border-t shadow-lg">
+          {chatHistory.length === 0 && (
+            <div className="border-b bg-accent/5 p-3 w-full">
+              <div className="flex flex-row overflow-x-auto justify-around">
+                {suggestedQuestions.slice(0, 3).map((question, index) => (
+                  <Button
+                    key={index}
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleQuestionSelect(question)}
+                    className="text-left h-auto p-3 min-w-0 flex-shrink-0 bg-accent/10 border-accent/30 hover:bg-accent/20 text-accent text-sm"
+                  >
+                    {question}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="bg-white border-t shadow-lg">
+          {/* Compact Chat Messages - Only show actual conversations */}
+          {chatHistory.length > 0 && (
+            <div className="max-h-32 overflow-y-auto p-2 space-y-1">
+              {chatHistory
+                .slice(-4) // Show last 4 messages to allow more conversation
+                .map((message, index) => (
                   <div
-                    className={`max-w-xs px-3 py-2 rounded text-sm leading-relaxed ${
-                      message.type === 'user'
-                        ? 'bg-accent text-accent-foreground'
-                        : 'bg-gray-100 text-gray-800'
+                    key={index}
+                    className={`flex ${
+                      message.type === 'user' ? 'justify-end' : 'justify-start'
                     }`}
                   >
-                    <p>{message.message}</p>
+                    <div
+                      className={`max-w-xs px-3 py-2 rounded text-sm leading-relaxed ${
+                        message.type === 'user'
+                          ? 'bg-accent text-accent-foreground'
+                          : 'bg-gray-100 text-gray-800'
+                      }`}
+                    >
+                      <p>{message.message}</p>
+                    </div>
+                  </div>
+                ))}
+
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-gray-100 text-gray-800 px-2 py-1 rounded">
+                    <div className="flex items-center space-x-1">
+                      <div className="animate-bounce w-1 h-1 bg-gray-500 rounded-full"></div>
+                      <div
+                        className="animate-bounce w-1 h-1 bg-gray-500 rounded-full"
+                        style={{ animationDelay: '0.1s' }}
+                      ></div>
+                      <div
+                        className="animate-bounce w-1 h-1 bg-gray-500 rounded-full"
+                        style={{ animationDelay: '0.2s' }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
-              ))}
+              )}
+            </div>
+          )}
 
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-800 px-2 py-1 rounded">
-                  <div className="flex items-center space-x-1">
-                    <div className="animate-bounce w-1 h-1 bg-gray-500 rounded-full"></div>
-                    <div
-                      className="animate-bounce w-1 h-1 bg-gray-500 rounded-full"
-                      style={{ animationDelay: '0.1s' }}
-                    ></div>
-                    <div
-                      className="animate-bounce w-1 h-1 bg-gray-500 rounded-full"
-                      style={{ animationDelay: '0.2s' }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Input Area */}
-        <div className="p-2">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSendMessage();
-            }}
-            className="flex gap-2"
-          >
-            <Input
-              value={userQuestion}
-              onChange={(e) => setUserQuestion(e.target.value)}
-              placeholder="Ask about this step..."
-              className="flex-1 bg-white h-8 text-sm"
-              disabled={isTyping}
-            />
-            <Button
-              type="submit"
-              disabled={!userQuestion.trim() || isTyping}
-              size="sm"
-              className="px-3 bg-accent hover:bg-accent/90 h-8"
+          {/* Input Area */}
+          <div className="p-2">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSendMessage();
+              }}
+              className="flex gap-2"
             >
-              <Send className="w-3 h-3" />
-            </Button>
-          </form>
+              <Input
+                value={userQuestion}
+                onChange={(e) => setUserQuestion(e.target.value)}
+                placeholder="Ask about this step..."
+                className="flex-1 bg-white h-8 text-sm"
+                disabled={isTyping}
+              />
+              <Button
+                type="submit"
+                disabled={!userQuestion.trim() || isTyping}
+                size="sm"
+                className="px-3 bg-accent hover:bg-accent/90 h-8"
+              >
+                <Send className="w-3 h-3" />
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
