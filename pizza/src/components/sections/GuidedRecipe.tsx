@@ -582,7 +582,7 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
         <div className="flex-1 overflow-hidden p-6 bg-card">
           <Carousel
             setApi={setCarouselApi}
-            className="w-full h-full"
+            className="w-full h-full overflow-y-scroll"
             opts={{
               align: 'start',
               loop: false,
@@ -590,8 +590,8 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
           >
             <CarouselContent className="h-full bg-card">
               {detailedSteps.map((step, index) => (
-                <CarouselItem key={index} className="h-full ">
-                  <Card className="h-full flex flex-col justify-baseline bg-white shadow-lg border h-fit ">
+                <CarouselItem key={index} className="h-full overflow-y-scroll ">
+                  <Card className="flex flex-col justify-baseline bg-white shadow-lg border h-fit">
                     <CardHeader className="">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
