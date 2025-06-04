@@ -12,27 +12,19 @@ This is the overview of the project documentation for Tribe Z, which is composed
 
 # Attribution
 
-Please see below for which subset of tribe members worked on each documentation page. The template for this repository and its respective documentation was provided by our teaching staff, Team Gray (@toddwseattle). 
+Please see below for the primary responsibilities of each tribe member. The template for this repository and its respective documentation was provided by our teaching staff, Team Gray (@toddwseattle). 
 
 ## Teaching Guild
+| Team   | Name           |
+| ------ | -------------- |
+| Gray   | Todd Warren    |
+| Gray   | Paula Kayongo  |
+
+
+## Product Owners Guild 
 
 | Team   | Name           |
 | ------ | -------------- |
-| Purple | Ashwin Baluja  |
-| Green  | Anthony Behery |
-
-## Development Practices Guild
-
-| Team   | Name           |
-| ------ | -------------- |
-| Purple | Laura Felix    |
-| Green  | Ludi Yu        |
-
-## Client Interactions Guild 
-
-| Team   | Name           |
-| ------ | -------------- |
-| Purple | Laura Felix    |
 | Purple | Eric Polanski  |
 | Green  | Joanna Soltys  |
 
@@ -42,3 +34,18 @@ Please see below for which subset of tribe members worked on each documentation 
 | ------ | -------------- |
 | Purple | Ashwin Baluja  |
 | Green  | Anthony Behery |
+
+## Full-Stack Developers Guild
+
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Laura Felix    |
+| Purple | Aanand Patel   |
+| Green  | Ludi Yu        |
+
+## Frontend Design Guild
+
+| Team   | Name           |
+| ------ | -------------- |
+| Green  | David Park     |
+| Green  | Aidan Goodrow  |

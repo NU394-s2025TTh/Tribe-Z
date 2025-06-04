@@ -10,6 +10,3 @@ https://docs.google.com/presentation/d/1QrCITPAL4K_yVLtifIUMavjoguySdQjodxUHFWAV
 All client and tribe meeting notes can be found in the following Google Drive folder:
 https://drive.google.com/drive/folders/1PAtJ9s20I0rjSyh0PhNmWX7Xu4CFYgYL?usp=sharing 
 
-### Note
-We plan on moving all these files to the github repo for easier access.
-
