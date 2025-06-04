@@ -214,7 +214,7 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
               .map((ing) => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`)
               .join(
                 ', '
-              )}\n\nIMPORTANT: The cook is missing these ingredients. For any step that requires these missing ingredients, provide alternative techniques, substitution suggestions, or modified instructions that work around these missing items. Be creative and practical with adaptations.`
+              )}\n\nIMPORTANT: The cook is missing these ingredients. For any step that requires these missing ingredients, provide alternative techniques, substitution suggestions, or modified instructions that work around these missing items. Be creative and practical with adaptations. MAKE SURE TO EXPLICITLY ADDRESS THE MISSING INGREDIENTS; IT IS AN IMPORTANT FEATURE OF THIS PRODUCT.`
           : '';
 
       const prompt = `
@@ -591,7 +591,7 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
             <CarouselContent className="h-full bg-card">
               {detailedSteps.map((step, index) => (
                 <CarouselItem key={index} className="h-full ">
-                  <Card className="h-full flex flex-col justify-baseline bg-white shadow-lg border">
+                  <Card className="h-full flex flex-col justify-baseline bg-white shadow-lg border h-fit ">
                     <CardHeader className="">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
