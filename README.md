@@ -39,7 +39,7 @@ The Task backlog contains any technical work items completed by team members and
 [TODO BY ANTHONY]
 
 ## Additional Information and Documentation
-You can learn more about the behind-the-scenes design and development process of DoughJo throughout the following documentation:
+You can learn more about the behind-the-scenes design and development process of DoughJo throughout the following documentation found in this repository:
 
 [Overview of Documentation Available in this Repository](docs/Home.md)\
 [Organizational Practices](docs/Organizational-Practices.md)\
@@ -47,6 +47,12 @@ You can learn more about the behind-the-scenes design and development process of
 [Development Practices](docs/Development-Practices.md)\
 [Client Information](docs/Client-Information.md)\
 [Architecture Overview](docs/Architecture-Overview.md)
+
+You can access our day-to-day meeting notes and documents at the following Google Drive links:
+
+[Tribe Google Drive Folder](https://drive.google.com/drive/folders/1_gJ4Z9EAXGhxvh53fvZtDEVC9etsvMdk?usp=sharing)
+[Tribe Meeting Notes](https://docs.google.com/document/d/1Uqcr_zaJSmKHLNT8eJ4DopKrVTxgoCXqTyZuMeAjSwU/edit?tab=t.0#heading=h.l8i64pgdxonv)
+[Client Meeting Notes](https://drive.google.com/drive/folders/1ECqC5RHikWsLMxAY9um4lr84YafrYQIv?usp=drive_link)
 
 ## Acknowledgements
 Big thanks to:
