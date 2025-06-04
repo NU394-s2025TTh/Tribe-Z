@@ -20,12 +20,13 @@ import {
   type CarouselApi,
 } from '../ui/carousel';
 import { Clock, Send, Lightbulb, CheckCircle } from 'lucide-react';
-import type { Recipe } from '@cs394-vite-nx-template/shared';
+import type { Recipe, MeasuredIngredient } from '@cs394-vite-nx-template/shared';
 
 interface GuidedRecipeProps {
   recipe?: Recipe;
   recipeId?: string;
   stepSetter?: React.Dispatch<React.SetStateAction<number>>;
+  missingIngredients?: MeasuredIngredient[];
 }
 
 interface DetailedStep {
@@ -39,7 +40,8 @@ interface DetailedStep {
 export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   recipe,
   recipeId,
-  stepSetter
+  stepSetter,
+  missingIngredients = []
 }) => {
   const [detailedSteps, setDetailedSteps] = useState<DetailedStep[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -158,8 +160,15 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   const generateDetailedSteps = useCallback(async () => {
     if (!recipe) return;
 
+    console.log(`"MISSING INGREDIENTS: ${missingIngredients.map(ing => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`).join(', ')}"`);
+
     setIsLoading(true);
     try {
+      // Build missing ingredients context
+      const missingIngredientsText = missingIngredients.length > 0
+        ? `\n\nMISSING INGREDIENTS: ${missingIngredients.map(ing => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`).join(', ')}\n\nIMPORTANT: The cook is missing these ingredients. For any step that requires these missing ingredients, provide alternative techniques, substitution suggestions, or modified instructions that work around these missing items. Be creative and practical with adaptations.`
+        : '';
+
       const prompt = `
         You are an expert cooking instructor. Given this recipe, create detailed cooking steps with tips and suggested questions.
 
@@ -168,21 +177,21 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
         Instructions: ${recipe.instructions.join('. ')}
         Ingredients: ${recipe.ingredients
           .map((ing) => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`)
-          .join(', ')}
+          .join(', ')}${missingIngredientsText}
 
         For each instruction step, provide:
         1. A clear title (3-5 words)
-        2. Detailed description with specific techniques
-        3. 2-3 practical tips
+        2. Detailed description with specific techniques${missingIngredients.length > 0 ? ' (include adaptations for missing ingredients where applicable)' : ''}
+        3. 2-3 practical tips${missingIngredients.length > 0 ? ' (include substitution or workaround tips for missing ingredients). make sure to note what changes you made to the recipe, because of missing ingredients, here' : ''}
         4. Estimated time in minutes
-        5. 3 common questions beginners might ask about this step
+        5. 3 common questions beginners might ask about this step${missingIngredients.length > 0 ? ' (include questions about ingredient substitutions)' : ''}
 
         Return a JSON array of detailed steps following the provided schema.
       `;
 
       const result = await model.generateContent([prompt]);
       const response = await result.response;
-      const responseText = response.text();
+      const responseText = response.text().replace(/\*\*/g, ''); // Remove any Markdown bold formatting
 
       const parsedSteps: DetailedStep[] = JSON.parse(responseText);
 
@@ -210,7 +219,7 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
     } finally {
       setIsLoading(false);
     }
-  }, [recipe, model, createFallbackSteps]);
+  }, [recipe, model, createFallbackSteps, missingIngredients]);
 
   const handleQuestionSelect = async (question: string) => {
     // Add the question to chat history as user message first
@@ -251,7 +260,7 @@ Provide helpful, detailed answers that address their specific concerns. Be encou
         ...prev,
         {
           type: 'model',
-          message: response.text(),
+          message: response.text().replace(/\*\*/g, ''),
           timestamp: new Date(),
         },
       ]);
@@ -293,11 +302,16 @@ Provide helpful, detailed answers that address their specific concerns. Be encou
       // Build conversation context with current chat history
       const conversationHistory = chatHistory.map((msg) => msg.message);
 
+      // Build missing ingredients context for chatbot
+      const missingIngredientsContext = missingIngredients.length > 0
+        ? `\n\nIMPORTANT: The student is missing these ingredients: ${missingIngredients.map(ing => `${ing.amount} ${ing.unit} ${ing.ingredient.name}`).join(', ')}. If they ask about substitutions or alternatives, provide practical suggestions for these missing items.`
+        : '';
+
       const systemPrompt = `You are an expert cooking instructor. A student is working on "${
         currentStep?.title || 'this step'
       }" step of making "${recipe?.name}".
 
-Current step: ${currentStep?.description || 'No step description available'}
+Current step: ${currentStep?.description || 'No step description available'}${missingIngredientsContext}
 
 Provide helpful, detailed answers that address their specific concerns. Be encouraging and practical. Keep responses conversational and reference previous parts of the conversation when relevant. Do not use Markdown formatting, including bold, italics, or code blocks. They are not supported in this chat interface.`;
 
