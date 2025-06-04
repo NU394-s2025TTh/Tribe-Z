@@ -1,14 +1,22 @@
 import { type Recipe } from '@cs394-vite-nx-template/shared';
 import { SetStateAction, useEffect, useState, Dispatch } from 'react';
-import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import Fuse from 'fuse.js';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Switch } from '@/components/ui/switch';
 import { Checkbox } from '@/components/ui/checkbox';
 import OverlayCard from '@/components/sections/LocationInputForm';
-import type { Ingredient } from '@cs394-vite-nx-template/shared';
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { GuidedRecipe } from './GuidedRecipe';
+import { Badge } from 'lucide-react';
 
 interface RecipeAndIngredientInfoProps {
   recipeId: string | undefined;
@@ -21,6 +29,8 @@ export default function RecipeAndIngredientInfo({
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
   const [overlayOpen, setOverlayOpen] = useState(false);
+  const [guidedStep, setGuidedStep] = useState(null as unknown as number);
+
   const [checkedIngredients, setCheckedIngredients] = useState<Set<number>>(
     new Set()
   );
@@ -69,41 +79,6 @@ export default function RecipeAndIngredientInfo({
     getRecipe();
   }, [recipeId]);
 
-  const logFuzzyMatches = async () => {
-    if (!recipe) return;
-    const snap = await getDocs(collection(db, 'ingredients'));
-    const allIngredients = snap.docs.map((doc) => ({
-      id: doc.id,
-      name: doc.data().name ?? 'Unknown Ingredient',
-      type: doc.data().type ?? { description: 'No description available' },
-      price: doc.data().price ?? null,
-      brand: doc.data().brand ?? 'Brand not specified',
-      packageSize: doc.data().packageSize,
-    })) as Ingredient[];
-    const ingredientOnly = allIngredients.filter((i) => {
-      const cat = (i.type as any).category;
-      return !cat || String(cat).toLowerCase() !== 'equipment';
-    });
-
-    const fuse = new Fuse(ingredientOnly, {
-      keys: ['name'],
-      threshold: 0.55, // higher threshold = more lenient
-      distance: 200, // allow matches farther apart
-      minMatchCharLength: 1, // match even short terms oka
-      ignoreLocation: true, // don't penalize based on match location
-    });
-
-    //findds best match
-    const matches = recipe.ingredients
-      .map(({ ingredient }) => {
-        const results = fuse.search(ingredient.name);
-        return results.length ? results[0].item : null;
-      })
-      .filter((m): m is Ingredient => Boolean(m));
-
-    console.log('Fuzzy matches for recipe:', matches);
-  };
-
   if (loading) {
     return <div>Loading recipe...</div>; // Show a loading state while fetching
   }
@@ -150,7 +125,26 @@ export default function RecipeAndIngredientInfo({
       </div>
       <div className="md:w-[50%] md:translate-x-[50%] border-4 rounded-md p-2">
         <div className="flex w-full justify-center items-center">
-          <Button>Sensei, guide me</Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>Sensei, guide me</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[90vw] h-[90vh]">
+              <DialogHeader>
+                <div className="flex justify-between items-center">
+                  <DialogTitle>
+                    Sensei's Guidance on {recipe.name}{' '}
+                    {guidedStep !== null ? `- Step ${guidedStep + 1}` : ''}
+                  </DialogTitle>
+                </div>
+              </DialogHeader>
+              <GuidedRecipe
+                recipe={recipe}
+                recipeId={recipeId}
+                stepSetter={setGuidedStep}
+              />
+            </DialogContent>
+          </Dialog>
         </div>
         <p className="pt-5">
           <strong>Ingredients Needed:</strong>
