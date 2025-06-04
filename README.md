@@ -41,12 +41,12 @@ The Task backlog contains any technical work items completed by team members and
 ## Additional Information and Documentation
 You can learn more about the behind-the-scenes design and development process of DoughJo throughout the following documentation found in this repository:
 
-[Overview of Documentation Available in this Repository](docs/Home.md)\
+[Documentation Overview](docs/Home.md)\
+[Architecture Overview](docs/Architecture-Overview.md)\
 [Organizational Practices](docs/Organizational-Practices.md)\
-[Backlog](docs/Backlog.md)\
 [Development Practices](docs/Development-Practices.md)\
 [Client Information](docs/Client-Information.md)\
-[Architecture Overview](docs/Architecture-Overview.md)
+[Backlog](docs/Backlog.md)\
 
 You can access our day-to-day meeting notes and documents at the following Google Drive links:
 
