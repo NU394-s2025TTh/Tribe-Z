@@ -56,7 +56,10 @@ export default function Chatbot() {
     <div className="container mx-auto px-4">
       <div className="py-8">
         <h1 className="text-2xl text-center center sm:text-3xl md:text-4xl font-bold text-accent">
-          Ask Sensei 🍕
+          Ask Sensei{' '}
+          <span role="img" aria-label="pizza">
+            🍕
+          </span>
         </h1>
         <p className="text-lg text-center">Chat with our chatbot!</p>
       </div>
@@ -66,28 +69,40 @@ export default function Chatbot() {
         <Loading isLoading={isLoading} />
       </div>
 
-      <div className="flex mt-4">
+      <form
+        className="flex mt-4 gap-2"
+        onSubmit={e => {
+          e.preventDefault();
+          sendMessage();
+        }}
+      >
         <input
           type="text"
           className="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Type your message..."
           value={userInput}
           onChange={handleUserInput}
+          disabled={isLoading}
         />
         <button
-          className="px-4 py-2 ml-2 rounded-lg bg-red-600 text-white hover:bg-accent focus:outline-none"
-          onClick={sendMessage}
-          disabled={isLoading}
+          type="submit"
+          className="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-accent hover:text-accent-foreground cursor-pointer focus:outline-none disabled:opacity-60 disabled:cursor-not-allowed"
+          disabled={isLoading || !userInput.trim()}
         >
           Send
         </button>
-      </div>
-      <button
-        className="mt-4 block px-4 py-2 rounded-lg bg-gray-400 text-white hover:bg-gray-500 focus:outline-none"
-        onClick={clearChat}
-      >
-        Clear Chat
-      </button>
+        <button
+          className="px-4 py-2 rounded-lg bg-gray-400 text-white hover:bg-gray-500 cursor-pointer focus:outline-none disabled:opacity-60 disabled:cursor-not-allowed"
+          onClick={e => {
+            e.preventDefault();
+            clearChat();
+          }}
+          type="button"
+          disabled={chatHistory.length === 0}
+        >
+          Clear
+        </button>
+      </form>
     </div>
   );
 }

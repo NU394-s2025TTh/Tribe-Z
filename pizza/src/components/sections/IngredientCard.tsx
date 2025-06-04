@@ -95,11 +95,11 @@ export default function IngredientCard({
               e.stopPropagation();
               onAddToCart();
             }}
-            className={`mt-4 w-full ${
+            className={`mt-4 w-full transition-colors ${
               isInCart
                 ? "bg-green-500 hover:bg-green-600 text-white"
                 : "bg-accent hover:bg-accent text-white"
-            }`}
+            } hover:cursor-pointer`}
           >
             {isInCart ? "Remove from cart" : "Add to cart"}
           </Button>
