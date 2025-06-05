@@ -70,6 +70,9 @@ export const GuidedRecipe: React.FC<GuidedRecipeProps> = ({
   const [isTyping, setIsTyping] = useState(false);
   // Voice mode state
   const [voiceEnabled, setVoiceEnabled] = useState(false);
+  const [recognition, setRecognition] = useState<SpeechRecognition | null>(
+    null
+  );
 
   const ai = getAI(app, { backend: new GoogleAIBackend() });
 
@@ -399,13 +402,11 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
         },
       ]);
       // Speak AI response if voice mode is on, then listen again
-      if (voiceEnabled && !speechSynthesis.speaking) {
+      if (voiceEnabled) {
         const respText = response.text();
         const utterance = new SpeechSynthesisUtterance(respText);
         utterance.onend = () => {
-          if (voiceEnabled) {
-            startVoiceRecognition();
-          }
+          startVoiceRecognition();
         };
         speechSynthesis.speak(utterance);
       }
@@ -462,12 +463,7 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
 
   // Trigger TTS/STT when voice mode toggled or step changes
   useEffect(() => {
-    if (voiceEnabled) {
-      readCurrentStep();
-    } else {
-      // Cancel any ongoing speech synthesis when voice mode is disabled
-      speechSynthesis.cancel();
-    }
+    if (voiceEnabled) readCurrentStep();
   }, [voiceEnabled, currentStepIndex]);
 
   // Read current step and tips via TTS, then start STT
@@ -508,21 +504,30 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
 
   // Initialize and start speech recognition
   const startVoiceRecognition = useCallback(() => {
-    if (!SpeechRecognition) return;
-    
     const recognition = new SpeechRecognition();
     recognition.lang = 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
-    recognition.onresult = (event: any) => {
+    recognition.onresult = (event: SpeechRecognitionEvent) => {
       const transcript = event.results[0][0].transcript;
       classifyAndHandle(transcript);
     };
-    recognition.onerror = (event: any) => {
+    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
       console.error('Speech recognition error', event.error);
     };
     recognition.start();
+    setRecognition(recognition);
   }, [classifyAndHandle]);
+
+  const stopSpeech = useCallback(() => {
+    // Cancel any ongoing speech
+    speechSynthesis.cancel();
+    // If voice mode is enabled, start listening again
+    if (voiceEnabled && SpeechRecognition) {
+      console.log('starting voice recognition');
+      startVoiceRecognition();
+    }
+  }, [voiceEnabled, startVoiceRecognition]);
 
   if (!recipe) {
     return (
@@ -553,15 +558,27 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
 
   return (
     <>
-      {/* Voice mode toggle */}
-      <div className="p-4">
+      {/* Voice controls */}
+      <div className="p-4 flex gap-2">
         <Button
           size="sm"
-          variant={voiceEnabled ? "default" : "outline"}
-          onClick={() => setVoiceEnabled((v) => !v)}
-          className={voiceEnabled ? "bg-green-600 hover:bg-green-700" : ""}
+          variant="outline"
+          onClick={() => {
+            setVoiceEnabled((v) => !v);
+            if (recognition) {
+              recognition.stop();
+              recognition.abort();
+              recognition.onresult = null;
+              recognition.onerror = null;
+              setRecognition(null);
+            }
+            speechSynthesis.cancel();
+          }}
         >
           {voiceEnabled ? 'Disable Voice Mode' : 'Enable Voice Mode'}
+        </Button>
+        <Button size="sm" variant="outline" onClick={stopSpeech}>
+          Stop Speech
         </Button>
       </div>
       <div className="flex flex-col h-full max-h-[90vh] bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden">

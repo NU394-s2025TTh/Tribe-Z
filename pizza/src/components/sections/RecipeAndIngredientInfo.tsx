@@ -41,8 +41,10 @@ export default function RecipeAndIngredientInfo({
     if (!recipe) return;
 
     // Check if all items are already selected
-    const allIngredientsSelected = checkedIngredients.size === recipe.ingredients.length;
-    const allEquipmentSelected = !recipe.equipment || checkedEquipment.size === recipe.equipment.length;
+    const allIngredientsSelected =
+      checkedIngredients.size === recipe.ingredients.length;
+    const allEquipmentSelected =
+      !recipe.equipment || checkedEquipment.size === recipe.equipment.length;
     const everythingSelected = allIngredientsSelected && allEquipmentSelected;
 
     if (everythingSelected) {
@@ -55,9 +57,7 @@ export default function RecipeAndIngredientInfo({
         Array.from({ length: recipe.ingredients.length }, (_, i) => i)
       );
       const allEquipment = recipe.equipment
-        ? new Set(
-            Array.from({ length: recipe.equipment.length }, (_, i) => i)
-          )
+        ? new Set(Array.from({ length: recipe.equipment.length }, (_, i) => i))
         : new Set<number>();
 
       setCheckedIngredients(allIngredients);
@@ -121,7 +121,7 @@ export default function RecipeAndIngredientInfo({
       </h1>
 
       <div className="w-full flex justify-center flex-col items-center">
-        <div className="w-[80%] text-center bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4">
+        <div className="md:w-[80%] text-center bg-accent text-accent-foreground rounded-md flex flex-col gap-2 p-2 mt-4">
           <div>
             <img
               src={recipe.headerImage}
@@ -152,7 +152,7 @@ export default function RecipeAndIngredientInfo({
             <strong>Ingredients Needed:</strong>
           </p>
           <div className="flex flex-row">
-            <div className="flex-col flex">
+            <div className="flex-col flex w-full">
               <ul style={{ paddingLeft: '1.5rem' }}>
                 {recipe.ingredients.map((ingredient, index) => {
                   const isChecked = checkedIngredients.has(index);
@@ -202,23 +202,27 @@ export default function RecipeAndIngredientInfo({
                   );
                 })}
               </ul>
-              <div className="mt-4 flex justify-end">
-                <Button
-                  variant="outline"
-                  onClick={markAllAsChecked}
-                  className={`${
-                    checkedIngredients.size === recipe.ingredients.length && 
-                    (!recipe.equipment || checkedEquipment.size === recipe.equipment.length)
-                      ? "bg-red-50 border-red-200 text-red-700 hover:bg-red-100 hover:text-red-800"
-                      : "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800"
-                  } cursor-pointer`}
-                >
-                  <CheckCircle className="mr-2 h-4 w-4" />
-                  {checkedIngredients.size === recipe.ingredients.length && 
-                   (!recipe.equipment || checkedEquipment.size === recipe.equipment.length)
-                    ? "Unselect All"
-                    : "Got Everything?"}
-                </Button>
+              <div className="flex flex-row justify-center w-full">
+                <div className="mt-4 flex justify-center">
+                  <Button
+                    variant="outline"
+                    onClick={markAllAsChecked}
+                    className={`${
+                      checkedIngredients.size === recipe.ingredients.length &&
+                      (!recipe.equipment ||
+                        checkedEquipment.size === recipe.equipment.length)
+                        ? 'bg-red-50 border-red-200 text-red-700 hover:bg-red-100 hover:text-red-800'
+                        : 'bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800'
+                    } cursor-pointer`}
+                  >
+                    <CheckCircle className="mr-2 h-4 w-4" />
+                    {checkedIngredients.size === recipe.ingredients.length &&
+                    (!recipe.equipment ||
+                      checkedEquipment.size === recipe.equipment.length)
+                      ? 'Unselect All'
+                      : 'Got Everything?'}
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -239,7 +243,8 @@ export default function RecipeAndIngredientInfo({
             </div>
 
             {(checkedIngredients.size < recipe.ingredients.length ||
-              (recipe.equipment && checkedEquipment.size < recipe.equipment.length)) && (
+              (recipe.equipment &&
+                checkedEquipment.size < recipe.equipment.length)) && (
               <div className="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
                 <h4 className="font-medium text-amber-800 mb-2">
                   <span role="img" aria-label="clipboard">
@@ -249,25 +254,36 @@ export default function RecipeAndIngredientInfo({
                 </h4>
                 <p className="text-sm text-amber-700 mb-3">
                   You have {recipe.ingredients.length - checkedIngredients.size}{' '}
-                  unchecked ingredients{recipe.equipment && checkedEquipment.size < recipe.equipment.length ?
-                    ` and ${recipe.equipment.length - checkedEquipment.size} unchecked equipment items` : ''}.
-                  AI Sensei will adapt the recipe with alternative techniques and substitutions!
+                  unchecked ingredients
+                  {recipe.equipment &&
+                  checkedEquipment.size < recipe.equipment.length
+                    ? ` and ${
+                        recipe.equipment.length - checkedEquipment.size
+                      } unchecked equipment items`
+                    : ''}
+                  . AI Sensei will adapt the recipe with alternative techniques
+                  and substitutions!
                 </p>
                 <div className="text-xs text-amber-600">
                   {checkedIngredients.size < recipe.ingredients.length && (
-                    <div>Missing ingredients: {recipe.ingredients
-                      .filter((_, index) => !checkedIngredients.has(index))
-                      .map((ing) => ing.ingredient.name)
-                      .join(', ')}
+                    <div>
+                      Missing ingredients:{' '}
+                      {recipe.ingredients
+                        .filter((_, index) => !checkedIngredients.has(index))
+                        .map((ing) => ing.ingredient.name)
+                        .join(', ')}
                     </div>
                   )}
-                  {recipe.equipment && checkedEquipment.size < recipe.equipment.length && (
-                    <div>Missing equipment: {recipe.equipment
-                      .filter((_, index) => !checkedEquipment.has(index))
-                      .map((eq) => eq.name)
-                      .join(', ')}
-                    </div>
-                  )}
+                  {recipe.equipment &&
+                    checkedEquipment.size < recipe.equipment.length && (
+                      <div>
+                        Missing equipment:{' '}
+                        {recipe.equipment
+                          .filter((_, index) => !checkedEquipment.has(index))
+                          .map((eq) => eq.name)
+                          .join(', ')}
+                      </div>
+                    )}
                 </div>
               </div>
             )}
@@ -316,11 +332,11 @@ export default function RecipeAndIngredientInfo({
                         .map((eq) => ({
                           ingredient: {
                             name: eq.name,
-                            description: eq.description || "Equipment item"
+                            description: eq.description || 'Equipment item',
                           },
                           amount: 1,
                           unit: MeasurementUnits.GRAM,
-                        })) || [])
+                        })) || []),
                     ]}
                   />
                 </DialogContent>
