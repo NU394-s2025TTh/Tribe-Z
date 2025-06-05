@@ -399,11 +399,13 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
         },
       ]);
       // Speak AI response if voice mode is on, then listen again
-      if (voiceEnabled) {
+      if (voiceEnabled && !speechSynthesis.speaking) {
         const respText = response.text();
         const utterance = new SpeechSynthesisUtterance(respText);
         utterance.onend = () => {
-          startVoiceRecognition();
+          if (voiceEnabled) {
+            startVoiceRecognition();
+          }
         };
         speechSynthesis.speak(utterance);
       }
@@ -460,7 +462,12 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
 
   // Trigger TTS/STT when voice mode toggled or step changes
   useEffect(() => {
-    if (voiceEnabled) readCurrentStep();
+    if (voiceEnabled) {
+      readCurrentStep();
+    } else {
+      // Cancel any ongoing speech synthesis when voice mode is disabled
+      speechSynthesis.cancel();
+    }
   }, [voiceEnabled, currentStepIndex]);
 
   // Read current step and tips via TTS, then start STT
@@ -501,15 +508,17 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
 
   // Initialize and start speech recognition
   const startVoiceRecognition = useCallback(() => {
+    if (!SpeechRecognition) return;
+    
     const recognition = new SpeechRecognition();
     recognition.lang = 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
+    recognition.onresult = (event: any) => {
       const transcript = event.results[0][0].transcript;
       classifyAndHandle(transcript);
     };
-    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+    recognition.onerror = (event: any) => {
       console.error('Speech recognition error', event.error);
     };
     recognition.start();
@@ -548,8 +557,9 @@ Provide helpful, VERY CONCISE answers that address their specific concerns. Be e
       <div className="p-4">
         <Button
           size="sm"
-          variant="outline"
+          variant={voiceEnabled ? "default" : "outline"}
           onClick={() => setVoiceEnabled((v) => !v)}
+          className={voiceEnabled ? "bg-green-600 hover:bg-green-700" : ""}
         >
           {voiceEnabled ? 'Disable Voice Mode' : 'Enable Voice Mode'}
         </Button>
