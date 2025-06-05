@@ -1,8 +1,8 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 interface ChatMessage {
-  type: 'user' | 'bot';
+  role: string;
   message: string;
 }
 
@@ -17,12 +17,10 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({ chatHistory }) => {
         <div
           key={index}
           className={`flex items-start py-2 px-4 rounded-lg ${
-            message.type === "user"
-              ? "bg-accent text-white"
-              : "text-black-800"
+            message.role === 'user' ? 'bg-accent text-white' : 'text-black-800'
           }`}
         >
-          {message.type === "user" && (
+          {message.role === 'user' && (
             <span className="mr-2 font-bold text-black-800">You:</span>
           )}
 

@@ -33,15 +33,19 @@ export default function Chatbot() {
 
     try {
       // call Gemini API to get a response
-      const result = await model.generateContent(userInput);
+      const result = await model.generateContent([
+        ...chatHistory.map((msg) => msg.message),
+        userInput,
+      ]);
+
       const response = await result.response;
       console.log(response);
 
       // add Gemini's response to the chat history
       setChatHistory([
         ...chatHistory,
-        { type: 'user', message: userInput },
-        { type: 'bot', message: response.text() },
+        { role: 'user', message: userInput },
+        { role: 'model', message: response.text() },
       ]);
     } catch {
       console.error('Gemini Chatbot: Error sending message');
