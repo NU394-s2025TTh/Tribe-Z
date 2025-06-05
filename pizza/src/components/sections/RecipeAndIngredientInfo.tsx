@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Checkbox } from '@/components/ui/checkbox';
 import OverlayCard from '@/components/sections/LocationInputForm';
+import { CheckCircle } from 'lucide-react';
 
 import {
   Dialog,
@@ -27,14 +28,42 @@ export default function RecipeAndIngredientInfo({
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
   const [overlayOpen, setOverlayOpen] = useState(false);
-  const [guidedStep, setGuidedStep] = useState(null as unknown as number);
-
   const [checkedIngredients, setCheckedIngredients] = useState<Set<number>>(
     new Set()
   );
   const [checkedEquipment, setCheckedEquipment] = useState<Set<number>>(
     new Set()
   );
+  const [guidedStep, setGuidedStep] = useState<number>(0);
+
+  // Toggle between checking all ingredients/equipment and unchecking all
+  const markAllAsChecked = () => {
+    if (!recipe) return;
+
+    // Check if all items are already selected
+    const allIngredientsSelected = checkedIngredients.size === recipe.ingredients.length;
+    const allEquipmentSelected = !recipe.equipment || checkedEquipment.size === recipe.equipment.length;
+    const everythingSelected = allIngredientsSelected && allEquipmentSelected;
+
+    if (everythingSelected) {
+      // If everything is selected, clear all selections
+      setCheckedIngredients(new Set());
+      setCheckedEquipment(new Set());
+    } else {
+      // Otherwise, select everything
+      const allIngredients = new Set(
+        Array.from({ length: recipe.ingredients.length }, (_, i) => i)
+      );
+      const allEquipment = recipe.equipment
+        ? new Set(
+            Array.from({ length: recipe.equipment.length }, (_, i) => i)
+          )
+        : new Set<number>();
+
+      setCheckedIngredients(allIngredients);
+      setCheckedEquipment(allEquipment);
+    }
+  };
 
   const toggleItem = (
     index: number,
@@ -173,6 +202,24 @@ export default function RecipeAndIngredientInfo({
                   );
                 })}
               </ul>
+              <div className="mt-4 flex justify-end">
+                <Button
+                  variant="outline"
+                  onClick={markAllAsChecked}
+                  className={`${
+                    checkedIngredients.size === recipe.ingredients.length && 
+                    (!recipe.equipment || checkedEquipment.size === recipe.equipment.length)
+                      ? "bg-red-50 border-red-200 text-red-700 hover:bg-red-100 hover:text-red-800"
+                      : "bg-green-50 border-green-200 text-green-700 hover:bg-green-100 hover:text-green-800"
+                  } cursor-pointer`}
+                >
+                  <CheckCircle className="mr-2 h-4 w-4" />
+                  {checkedIngredients.size === recipe.ingredients.length && 
+                   (!recipe.equipment || checkedEquipment.size === recipe.equipment.length)
+                    ? "Unselect All"
+                    : "Got Everything?"}
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -251,7 +298,7 @@ export default function RecipeAndIngredientInfo({
                           🧑‍🍳
                         </span>{' '}
                         Sensei's Guidance: {recipe.name}
-                        {guidedStep !== null ? ` - Step ${guidedStep + 1}` : ''}
+                        {` - Step ${guidedStep + 1}`}
                       </DialogTitle>
                     </div>
                   </DialogHeader>
