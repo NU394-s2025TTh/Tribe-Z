@@ -21,22 +21,156 @@ The User Story backlog contains user scenarios and stories as issues. Issues for
 The Task backlog contains any technical work items completed by team members and identifies the primary tribe member who was responsible for implementing that work item. Any non-technical work items (such as client communication, product research, UI design, etc.) were instead communicated between tribe members and in written tribe meeting notes. See the subheading 'Additional Information and Documentation' below for where to find these meeting notes. 
 
 ## Build & Deployment
-[DELETE THIS PARAGRAPH OF INSTRUCTIONS AFTER COMPLETION: Clearly outline the steps needed to build and deploy the application. This should cover any prerequisites, software dependencies, and a step-by-step guide to getting the application up and running on a new environment.]
 
-### Prerequisites
-[TODO BY ANTHONY]
+### 🧱 Prerequisites
 
-### Software Dependencies 
-[TODO BY ANTHONY]
+Ensure you have the following installed:
 
-### Step-by-Step Guide to Getting the Application Running on a New Environment
-[TODO BY ANTHONY]
+- **Node.js** (v18+): [Download](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Firebase CLI**:  
+  ```bash
+  npm install -g firebase-tools
+  ```
+- **Nx CLI** (optional but helpful):  
+  ```bash
+  npm install -g nx
+  ```
+- **Google account** with access to the Firebase project
 
-### How to Build the Application
-[TODO BY ANTHONY]
+---
 
-### How to Deploy the Application
-[TODO BY ANTHONY]
+### 📦 Software Dependencies
+
+From the root of the monorepo, install all dependencies:
+
+```bash
+npm install
+```
+
+Key libraries include:
+
+- `@nrwl/react`
+- `firebase`
+- `react-router-dom`
+- `@mui/material`
+- `dotenv` (optional for env variables)
+- `@nrwl/node` (for Firebase functions if integrated with Nx)
+
+---
+
+### 🧪 Run the App Locally (Frontend + Functions)
+
+#### 1. Serve the Frontend (`pizza`)
+
+```bash
+nx serve pizza
+```
+
+The app will be available at: [http://localhost:4200](http://localhost:4200)
+
+#### 2. Watch and Build Cloud Functions
+
+**If using raw Firebase setup:**
+
+```bash
+cd functions
+npm run build:watch
+```
+
+> Add this script to `functions/package.json`:
+> ```json
+> "scripts": {
+>   "build:watch": "tsc --watch"
+> }
+> ```
+
+**If using Nx-managed functions:**
+
+```bash
+nx build functions --watch
+```
+
+This will recompile functions on every code change.
+
+#### 3. Run Firebase Emulators
+
+To emulate backend functions (and optionally hosting):
+
+```bash
+firebase emulators:start
+```
+
+Make sure your `firebase.json` includes:
+
+```json
+{
+  "hosting": {
+    "public": "dist/apps/pizza",
+    "rewrites": [{ "source": "**", "function": "yourFunctionName" }]
+  },
+  "functions": {
+    "source": "functions"
+  }
+}
+```
+
+---
+
+### 🏗 Build for Production
+
+#### Frontend
+
+```bash
+nx build pizza --configuration=production
+```
+
+Output: `dist/apps/pizza`
+
+#### Functions
+
+**If using plain Firebase:**
+
+```bash
+cd functions
+npm run build
+```
+
+**If using Nx-managed:**
+
+```bash
+nx build functions
+```
+
+Ensure `functions/package.json` includes:
+
+```json
+"main": "lib/index.js"
+```
+
+---
+
+### 🚀 Deploy to Firebase Hosting and Functions
+
+Deploy both frontend and backend to Firebase:
+
+```bash
+firebase deploy --only hosting,functions
+```
+
+---
+
+### ✅ Quick Command Reference
+
+| Task                        | Command                                      |
+|-----------------------------|----------------------------------------------|
+| Serve frontend              | `nx serve pizza`                             |
+| Watch & build functions     | `nx build functions --watch` or `npm run build:watch` |
+| Run Firebase locally        | `firebase emulators:start`                   |
+| Build frontend for prod     | `nx build pizza --configuration=production`  |
+| Build backend functions     | `nx build functions`                         |
+| Deploy frontend + backend   | `firebase deploy --only hosting,functions`   |
+
 
 ## Additional Information and Documentation
 You can learn more about the behind-the-scenes design and development process of DoughJo throughout the following documentation found in this repository:
