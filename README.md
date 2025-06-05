@@ -1,169 +1,219 @@
-# CS 394 Template NX Repo
+# DoughJo: Your One-Stop Shop for Crafting World-Class Pizza at Home
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+## Project Overview
+Tired of mediocre pizza? **Perfect the art of homemade pizza** with **DoughJo**, your all-in-one web app for crafting pizzeria-quality pies with ease. No more guesswork—just perfect, homemade pizza every time. 
+- **Curated Recipes & Tools** – Easily access delicious recipes, vetted - equipment, and consolidated ingredient lists
+- **Effortless Shopping** – Find and purchase the best tools and ingredients with just a few clicks
+- **Step-by-Step Mastery** – Learn foolproof techniques to stretch, top, and bake like a pro
 
-✨ This is an empty [Nx workspace](https://nx.dev) for your tribe to populate ✨.
+![Screenshot of DoughJo home page](pizza/public/ui/DoughJo-Home-Page-Screenshot.png)
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/tutorials/2-react-monorepo/1r-introduction/1-welcome?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Application Link
+Visit DoughJo at [pizza-app-394.web.app](https://pizza-app-394.web.app/). 
 
-## Contents
+In order to be able to view and buy fresh ingredients or pizza-making equipment, you'll need to log in with Google using the "Sign In" button in the top left corner of our website. Otherwise, all other site features are available even without log in.
 
-This workspace does not contain any applications or libraries. It is a blank slate for you to build upon. It does have the template documents for helping describe the work process of your tribe and teams. All of them in are in the [`docs`](docs) folder. You can add your own documents to this folder as well. The [Home](docs/Home.md) document is the main page for your tribe. You can add links to other documents in this folder to help describe your work process.
+## Project Management
+Click [here](https://github.com/orgs/NU394-s2025TTh/projects/6/views/1) to access our project backlog. The backlog is split into 2 different boards, the ["User Story Backlog"](https://github.com/orgs/NU394-s2025TTh/projects/6/views/1) and the ["Task Backlog"](https://github.com/orgs/NU394-s2025TTh/projects/6/views/7). 
 
-## Getting started
+The User Story backlog contains user scenarios and stories as issues. Issues for scenarios have their corresponding stories listed as sub-issues. Issues for stories display a prime number representing the size of the story.   
 
-I recommend using degit to make a copy of this repository. This will create a new directory with the contents of this repository without taking its git history. Run the following command to create a new directory with the contents of this repository:
+The Task backlog contains any technical work items completed by team members and identifies the primary tribe member who was responsible for implementing that work item. Any non-technical work items (such as client communication, product research, UI design, etc.) were instead communicated between tribe members and in written tribe meeting notes. See the subheading 'Additional Information and Documentation' below for where to find these meeting notes. 
 
-```sh
-npx degit https://github.com/toddwseattle/cs394-nx-template-2025.git <your-project-name>
-```
+## Build & Deployment
 
-Then, navigate to the new directory:
+### 🧱 Prerequisites
 
-```sh
-cd <your-project-name>
-```
+Ensure you have the following installed:
 
-To get started, run the following command to install the dependencies:
+- **Node.js** (v18+): [Download](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Firebase CLI**:  
+  ```bash
+  npm install -g firebase-tools
+  ```
+- **Nx CLI** (optional but helpful):  
+  ```bash
+  npm install -g nx
+  ```
+- **Google account** with access to the Firebase project
 
-```sh
+---
+
+### 📦 Software Dependencies
+
+From the root of the monorepo, install all dependencies:
+
+```bash
 npm install
 ```
 
-and initialize the git repository:
+Key libraries include:
 
-```sh
-git init
+- `@nrwl/react`
+- `firebase`
+- `react-router-dom`
+- `@mui/material`
+- `dotenv` (optional for env variables)
+- `@nrwl/node` (for Firebase functions if integrated with Nx)
+
+---
+
+### 🧪 Run the App Locally (Frontend + Functions)
+
+#### 1. Serve the Frontend (`pizza`)
+
+```bash
+nx serve pizza
 ```
 
-applications can be add using
+The app will be available at: [http://localhost:4200](http://localhost:4200)
 
-```sh
-npx nx g @nx/react:app <application name>
+#### 2. Watch and Build Cloud Functions
+
+**If using raw Firebase setup:**
+
+```bash
+cd functions
+npm run build:watch
 ```
 
-or libraries can be added using
+> Add this script to `functions/package.json`:
+> ```json
+> "scripts": {
+>   "build:watch": "tsc --watch"
+> }
+> ```
 
-```sh
-npx nx g @nx/react:lib <library name>
+**If using Nx-managed functions:**
+
+```bash
+nx build functions --watch
 ```
 
-The monorepo provides a way to share code between applications and libraries. You can add shared code to the `libs` folder. This is a great way to share code between applications and libraries. As you develop servers to go along with your react frontend, you can add them to the `apps` folder as well. This is a great way to keep your code organized and easy to maintain. You can share libraries between front end apps and backend apps as well; assuming they don't have conflicting dependencies. This is a great way to keep your code organized and easy to maintain.
+This will recompile functions on every code change.
 
-## Run the development server
+#### 3. Run Firebase Emulators
 
-## Run tasks
+To emulate backend functions (and optionally hosting):
 
-To run the dev server for your app, use:
-
-```sh
-npx nx serve <application name>
+```bash
+firebase emulators:start
 ```
 
-To create a production bundle:
+Make sure your `firebase.json` includes:
 
-```sh
-npx nx build <application name>
+```json
+{
+  "hosting": {
+    "public": "dist/apps/pizza",
+    "rewrites": [{ "source": "**", "function": "yourFunctionName" }]
+  },
+  "functions": {
+    "source": "functions"
+  }
+}
 ```
 
-To see all available targets to run for a project, run:
+---
 
-```sh
-npx nx show project <application name>
+### 🏗 Build for Production
+
+#### Frontend
+
+```bash
+nx build pizza --configuration=production
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+Output: `dist/apps/pizza`
 
-[More about running tasks in the nx docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+#### Functions
 
-## Add new projects
+**If using plain Firebase:**
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/react:app demo
+```bash
+cd functions
+npm run build
 ```
 
-To generate a new library, use:
+**If using Nx-managed:**
 
-```sh
-npx nx g @nx/react:lib my-lib
+```bash
+nx build functions
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+Ensure `functions/package.json` includes:
 
-There are also plugins to help with things like firebase. For example, firebase functions has a plugin that can be used to help with creating and deploying functions. You can find a useful plugin [here](https://github.com/simondotm/nx-firebase).
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-NX makes it easy to setup continuous integration (CI) for your workspace. It provides a command to connect to [Nx Cloud](https://nx.dev/nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects), which is a cloud-based service that provides caching and distributed task execution. This can significantly speed up your CI pipeline.
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
+```json
+"main": "lib/index.js"
 ```
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+---
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### 🚀 Deploy to Firebase Hosting and Functions
 
-### Step 2
+Deploy both frontend and backend to Firebase:
 
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
+```bash
+firebase deploy --only hosting,functions
 ```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-## Install Nx Console
+### ✅ Quick Command Reference
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+| Task                        | Command                                      |
+|-----------------------------|----------------------------------------------|
+| Serve frontend              | `nx serve pizza`                             |
+| Watch & build functions     | `nx build functions --watch` or `npm run build:watch` |
+| Run Firebase locally        | `firebase emulators:start`                   |
+| Build frontend for prod     | `nx build pizza --configuration=production`  |
+| Build backend functions     | `nx build functions`                         |
+| Deploy frontend + backend   | `firebase deploy --only hosting,functions`   |
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Useful links
+## Additional Information and Documentation
+You can learn more about the behind-the-scenes design and development process of DoughJo throughout the following documentation found in this repository:
 
-Learn more:
+[Documentation Overview](docs/Home.md)\
+[Architecture Overview](docs/Architecture-Overview.md)\
+[Organizational Practices](docs/Organizational-Practices.md)\
+[Development Practices](docs/Development-Practices.md)\
+[Client Information](docs/Client-Information.md)\
+[Backlog](docs/Backlog.md)
 
-- [Learn more about this workspace setup](https://nx.dev/tutorials/2-react-monorepo/1r-introduction/1-welcome?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+You can access our day-to-day meeting notes and documents at the following Google Drive links:
 
-And join the Nx community:
+[Tribe Google Drive Folder](https://drive.google.com/drive/folders/1_gJ4Z9EAXGhxvh53fvZtDEVC9etsvMdk?usp=sharing)\
+[Tribe Meeting Notes](https://docs.google.com/document/d/1Uqcr_zaJSmKHLNT8eJ4DopKrVTxgoCXqTyZuMeAjSwU/edit?tab=t.0#heading=h.l8i64pgdxonv)\
+[Client Meeting Notes](https://drive.google.com/drive/folders/1ECqC5RHikWsLMxAY9um4lr84YafrYQIv?usp=drive_link)
 
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Acknowledgements
+Big thanks to:
+- Our teaching staff, Prof. Todd Warren and TA Paula Kayongo, for their constant guidance and support
+- Our clients, Bob Rapp and Ian Gibbs, for their great communication and mentorship
 
-## Files in this project
+## Attribution
+Two teams, Team Green and Team Purple, worked together as a tribe to develop this project. 
 
-Here are the key files in the root directory of this workspace:
+### Product Owners
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Eric Polanski  |
+| Green  | Joanna Soltys  |
 
-- `.editorconfig` - Defines coding styles across different editors and IDEs
-- `.gitignore` - Specifies which files Git should ignore
-- `.prettierignore` - Lists files to be ignored by Prettier formatting
-- `.prettierrc` - Configuration for Prettier code formatting
-- `eslintrc.config.mjs` - Configuration for ESLint, a tool for identifying and fixing problems in JavaScript code
-- `README.md` - This file, containing project documentation
-- `nx.json` - Configuration for Nx workspace
-- `package-lock.json` - Lock file for npm dependencies
-- `package.json` - Project metadata and dependencies
-- `tsconfig.base.json` - Base TypeScript configuration shared across the workspace
-- `tsconfig.json` - TypeScript configuration for the root project
-- `vitest.workspace.ts` - Configuration for Vitest, a testing framework
+### Architects
+| Team   | Name           |
+| ------ | -------------- |
+| Purple | Ashwin Baluja  |
+| Green  | Anthony Behery |
+
+### Developers
+
+| Team   | Name           |
+| ------ | -------------- |
+| Green  | Ludi Yu        |
+| Purple | Aanand Patel   |
+| Purple | Laura Felix    |
+| Green  | David Park     |
+| Green  | Aidan Goodrow  |

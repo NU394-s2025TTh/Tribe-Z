@@ -12,7 +12,7 @@ P2 - lowest priority: nice-to-have features
 
 ### How are stories and work items estimated?
 
-Based on how much time it would take to complete. Different buckets for each time commitment small (1 hour fix) through large (>6 hour fix)
+Based on how much time it would take to complete. Different buckets for each time commitment were initially treated as small (1 hour fix) through large (>6 hour fix) at the beginning of the project. However, after a burndown chart was created, all tribe members each submitted estimates for the time it would take to implement each task. Then, we held a discussion as a group to finalize the prime number weight associated with each story. 
 
 ### How are stories and work items assigned to team members?
 

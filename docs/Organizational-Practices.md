@@ -12,7 +12,7 @@ Our product owners will be Eric for Team Purple and Joanna for Team Green.
 # Team Coordination within the tribe
 
 ### How are issues between teams within the tribe raised?
-Any technical issues should be reflected in the backlog, where each task will reflect how urgent the task is and which team is responsible. If any tribe members have concerns about organizational issues between teams, they are free to address those concerns to the whole tribe, or they can reach out to the product owners, who will work together to address said issues.
+Any technical issues should be reflected in the backlog, where tasks will correspond to a designated size and priority level. If any tribe members have concerns about organizational issues between teams, they are free to address those concerns to the whole tribe, or they can reach out to the product owners, who will work together to address said issues.
 
 ### What is the forum for discussion of issues between the teams?
 Issues can be raised in the tribe discord, directly to product owners, during team reviews, or at team meetings.
@@ -31,7 +31,7 @@ All team members are already in the tribe's Discord server.
 # Client Meeting Time
 
 ### When is the client meeting each week?
-Wednesdays at 8 AM CDT over Zoom
+Wednesdays and Fridays at 8 AM CDT over Zoom
 
 ### Is it static or does it move?
 The client meeting is static, but if requested, the client has expressed their availability for emergency meetings during the weekend. 
